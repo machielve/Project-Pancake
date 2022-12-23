@@ -22,8 +22,24 @@ namespace MvE_SQL_test
 
         }
 
-        private void button1_Click(object sender, EventArgs e)
+
+        private void btnGoToAdd_Click_1(object sender, EventArgs e)
         {
+            Form frm = new NewCustomer();
+            frm.Show();
+
+        }
+
+        private void btnGoToFillOrCancel_Click_1(object sender, EventArgs e)
+        {
+            Form frm = new FillOrCancel();
+            frm.ShowDialog();
+
+        }
+
+        private void btnExit_Click_1(object sender, EventArgs e)
+        {
+            this.Close();
 
         }
     }

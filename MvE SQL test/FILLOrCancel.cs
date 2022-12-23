@@ -10,9 +10,9 @@ using System.Windows.Forms;
 
 namespace MvE_SQL_test
 {
-    public partial class FILLOrCancel : Form
+    public partial class FillOrCancel : Form
     {
-        public FILLOrCancel()
+        public FillOrCancel()
         {
             InitializeComponent();
         }

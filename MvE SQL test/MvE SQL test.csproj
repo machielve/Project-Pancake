@@ -58,14 +58,17 @@
     <Compile Include="NewCustomer.Designer.cs">
       <DependentUpon>NewCustomer.cs</DependentUpon>
     </Compile>
-    <Compile Include="FILLOrCancel.cs">
+    <Compile Include="FillOrCancel.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="FILLOrCancel.Designer.cs">
-      <DependentUpon>FILLOrCancel.cs</DependentUpon>
+    <Compile Include="FillOrCancel.Designer.cs">
+      <DependentUpon>FillOrCancel.cs</DependentUpon>
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="FillOrCancel.resx">
+      <DependentUpon>FillOrCancel.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Navigation.resx">
       <DependentUpon>Navigation.cs</DependentUpon>
     </EmbeddedResource>

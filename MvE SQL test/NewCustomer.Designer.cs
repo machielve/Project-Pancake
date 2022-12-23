@@ -39,6 +39,8 @@ namespace MvE_SQL_test
             this.btnPlaceOrder = new System.Windows.Forms.Button();
             this.btnAddAnotherAccount = new System.Windows.Forms.Button();
             this.btnAddFnnish = new System.Windows.Forms.Button();
+            this.label3 = new System.Windows.Forms.Label();
+            this.label4 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.numOrderAmount)).BeginInit();
             this.SuspendLayout();
             // 
@@ -50,6 +52,7 @@ namespace MvE_SQL_test
             this.btnCreateAccount.TabIndex = 0;
             this.btnCreateAccount.Text = "Create account";
             this.btnCreateAccount.UseVisualStyleBackColor = true;
+            this.btnCreateAccount.Click += new System.EventHandler(this.btnCreateAccount_Click);
             // 
             // txtCustomerName
             // 
@@ -78,7 +81,7 @@ namespace MvE_SQL_test
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(62, 76);
+            this.label2.Location = new System.Drawing.Point(65, 78);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(68, 13);
             this.label2.TabIndex = 4;
@@ -113,6 +116,7 @@ namespace MvE_SQL_test
             this.btnPlaceOrder.TabIndex = 7;
             this.btnPlaceOrder.Text = "Place order";
             this.btnPlaceOrder.UseVisualStyleBackColor = true;
+            this.btnPlaceOrder.Click += new System.EventHandler(this.btnPlaceOrder_Click);
             // 
             // btnAddAnotherAccount
             // 
@@ -122,22 +126,43 @@ namespace MvE_SQL_test
             this.btnAddAnotherAccount.TabIndex = 8;
             this.btnAddAnotherAccount.Text = "Add another account";
             this.btnAddAnotherAccount.UseVisualStyleBackColor = true;
+            this.btnAddAnotherAccount.Click += new System.EventHandler(this.btnAddAnotherAccount_Click);
             // 
             // btnAddFnnish
             // 
-            this.btnAddFnnish.Location = new System.Drawing.Point(65, 227);
+            this.btnAddFnnish.Location = new System.Drawing.Point(68, 227);
             this.btnAddFnnish.Name = "btnAddFnnish";
             this.btnAddFnnish.Size = new System.Drawing.Size(140, 23);
             this.btnAddFnnish.TabIndex = 9;
             this.btnAddFnnish.Text = "Finnish";
             this.btnAddFnnish.UseVisualStyleBackColor = true;
-            this.btnAddFnnish.Click += new System.EventHandler(this.button1_Click);
+            this.btnAddFnnish.Click += new System.EventHandler(this.btnAddFnnish_Click);
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Location = new System.Drawing.Point(65, 137);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(71, 13);
+            this.label3.TabIndex = 10;
+            this.label3.Text = "Order amount";
+            // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.Location = new System.Drawing.Point(65, 171);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(57, 13);
+            this.label4.TabIndex = 11;
+            this.label4.Text = "Order date";
             // 
             // NewCustomer
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(490, 279);
+            this.Controls.Add(this.label4);
+            this.Controls.Add(this.label3);
             this.Controls.Add(this.btnAddFnnish);
             this.Controls.Add(this.btnAddAnotherAccount);
             this.Controls.Add(this.btnPlaceOrder);
@@ -168,5 +193,7 @@ namespace MvE_SQL_test
         private System.Windows.Forms.Button btnPlaceOrder;
         private System.Windows.Forms.Button btnAddAnotherAccount;
         private System.Windows.Forms.Button btnAddFnnish;
+        private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.Label label4;
     }
 }

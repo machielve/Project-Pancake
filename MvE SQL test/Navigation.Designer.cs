@@ -43,7 +43,7 @@ namespace MvE_SQL_test
             this.btnGoToAdd.TabIndex = 0;
             this.btnGoToAdd.Text = "Add an account";
             this.btnGoToAdd.UseVisualStyleBackColor = true;
-            this.btnGoToAdd.Click += new System.EventHandler(this.button1_Click);
+            this.btnGoToAdd.Click += new System.EventHandler(this.btnGoToAdd_Click_1);
             // 
             // btnGoToFillOrCancel
             // 
@@ -53,15 +53,16 @@ namespace MvE_SQL_test
             this.btnGoToFillOrCancel.TabIndex = 1;
             this.btnGoToFillOrCancel.Text = "Fill or cancel an order";
             this.btnGoToFillOrCancel.UseVisualStyleBackColor = true;
+            this.btnGoToFillOrCancel.Click += new System.EventHandler(this.btnGoToFillOrCancel_Click_1);
             // 
             // label1
             // 
             this.label1.AutoSize = true;
             this.label1.Location = new System.Drawing.Point(86, 13);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(35, 13);
+            this.label1.Size = new System.Drawing.Size(127, 13);
             this.label1.TabIndex = 2;
-            this.label1.Text = "label1";
+            this.label1.Text = "What do you want to do?";
             // 
             // btnExit
             // 
@@ -71,6 +72,7 @@ namespace MvE_SQL_test
             this.btnExit.TabIndex = 3;
             this.btnExit.Text = "Exit";
             this.btnExit.UseVisualStyleBackColor = true;
+            this.btnExit.Click += new System.EventHandler(this.btnExit_Click_1);
             // 
             // Navigation
             // 
