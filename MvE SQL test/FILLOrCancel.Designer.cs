@@ -56,6 +56,7 @@ namespace MvE_SQL_test
             this.btnFindByOrderID.TabIndex = 1;
             this.btnFindByOrderID.Text = "Find Order";
             this.btnFindByOrderID.UseVisualStyleBackColor = true;
+            this.btnFindByOrderID.Click += new System.EventHandler(this.btnFindByOrderID_Click);
             // 
             // label1
             // 
@@ -99,6 +100,7 @@ namespace MvE_SQL_test
             this.btnCancelOrder.TabIndex = 6;
             this.btnCancelOrder.Text = "Cancel order";
             this.btnCancelOrder.UseVisualStyleBackColor = true;
+            this.btnCancelOrder.Click += new System.EventHandler(this.btnCancelOrder_Click);
             // 
             // btnFillOrder
             // 
@@ -108,6 +110,7 @@ namespace MvE_SQL_test
             this.btnFillOrder.TabIndex = 7;
             this.btnFillOrder.Text = "Fill order";
             this.btnFillOrder.UseVisualStyleBackColor = true;
+            this.btnFillOrder.Click += new System.EventHandler(this.btnFillOrder_Click);
             // 
             // btnFinnishUpdates
             // 
@@ -117,6 +120,7 @@ namespace MvE_SQL_test
             this.btnFinnishUpdates.TabIndex = 8;
             this.btnFinnishUpdates.Text = "Finnish";
             this.btnFinnishUpdates.UseVisualStyleBackColor = true;
+            this.btnFinnishUpdates.Click += new System.EventHandler(this.btnFinnishUpdates_Click);
             // 
             // FillOrCancel
             // 
