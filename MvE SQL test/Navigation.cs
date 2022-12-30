@@ -42,5 +42,11 @@ namespace MvE_SQL_test
             this.Close();
 
         }
+
+        private void btnAddUnit_Click(object sender, EventArgs e)
+        {
+            Form frm = new NewUnit();
+            frm.Show();
+        }
     }
 }

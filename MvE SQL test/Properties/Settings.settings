@@ -5,10 +5,10 @@
     <Setting Name="connString" Type="(Connection string)" Scope="Application">
       <DesignTimeValue Profile="(Default)">&lt;?xml version="1.0" encoding="utf-16"?&gt;
 &lt;SerializableConnectionString xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema"&gt;
-  &lt;ConnectionString&gt;server=192.168.2.61;user id=machiel;persistsecurityinfo=True;database=MvESQLtest&lt;/ConnectionString&gt;
+  &lt;ConnectionString&gt;server=192.168.2.61;user id=machiel;persistsecurityinfo=True;database=Victoriam;password=Welkom#2017&lt;/ConnectionString&gt;
   &lt;ProviderName&gt;MySql.Data.MySqlClient&lt;/ProviderName&gt;
 &lt;/SerializableConnectionString&gt;</DesignTimeValue>
-      <Value Profile="(Default)">server=192.168.2.61;user id=machiel;persistsecurityinfo=True;database=MvESQLtest</Value>
+      <Value Profile="(Default)">server=192.168.2.61;user id=machiel;persistsecurityinfo=True;database=Victoriam;password=Welkom#2017</Value>
     </Setting>
   </Settings>
 </SettingsFile>

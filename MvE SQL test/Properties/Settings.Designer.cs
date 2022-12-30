@@ -26,7 +26,8 @@ namespace MvE_SQL_test.Properties {
         [global::System.Configuration.ApplicationScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.Configuration.SpecialSettingAttribute(global::System.Configuration.SpecialSetting.ConnectionString)]
-        [global::System.Configuration.DefaultSettingValueAttribute("server=192.168.2.61;user id=machiel;persistsecurityinfo=True;database=MvESQLtest")]
+        [global::System.Configuration.DefaultSettingValueAttribute("server=192.168.2.61;user id=machiel;persistsecurityinfo=True;database=Victoriam;p" +
+            "assword=Welkom#2017")]
         public string connString {
             get {
                 return ((string)(this["connString"]));
