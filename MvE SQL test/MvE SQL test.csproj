@@ -111,28 +111,10 @@
     <Compile Include="Navigation.Designer.cs">
       <DependentUpon>Navigation.cs</DependentUpon>
     </Compile>
-    <Compile Include="NewCustomer.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="NewCustomer.Designer.cs">
-      <DependentUpon>NewCustomer.cs</DependentUpon>
-    </Compile>
-    <Compile Include="FillOrCancel.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="FillOrCancel.Designer.cs">
-      <DependentUpon>FillOrCancel.cs</DependentUpon>
-    </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <EmbeddedResource Include="FillOrCancel.resx">
-      <DependentUpon>FillOrCancel.cs</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="Navigation.resx">
       <DependentUpon>Navigation.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="NewCustomer.resx">
-      <DependentUpon>NewCustomer.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="NewUnit.resx">
       <DependentUpon>NewUnit.cs</DependentUpon>

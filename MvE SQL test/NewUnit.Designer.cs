@@ -29,6 +29,7 @@ namespace MvE_SQL_test
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             this.btnFinnish = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
             this.txtUnitName = new System.Windows.Forms.TextBox();
@@ -36,6 +37,7 @@ namespace MvE_SQL_test
             this.txtUnitID = new System.Windows.Forms.TextBox();
             this.btnNewUnit = new System.Windows.Forms.Button();
             this.btnAddAnotherUnit = new System.Windows.Forms.Button();
+            this.tUNITBindingSource1 = new System.Windows.Forms.BindingSource(this.components);
             this.SuspendLayout();
             // 
             // btnFinnish
@@ -101,11 +103,23 @@ namespace MvE_SQL_test
             this.btnAddAnotherUnit.UseVisualStyleBackColor = true;
             this.btnAddAnotherUnit.Click += new System.EventHandler(this.btnAddAnotherUnit_Click);
             // 
+            
+            // 
+            // tUNITBindingSource
+            // 
+            this.tUNITBindingSource.DataMember = "T_UNIT";
+            // 
+           
+            // 
+            // tUNITBindingSource1
+            // 
+            this.tUNITBindingSource1.DataMember = "T_UNIT";
+            // 
             // NewUnit
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(466, 260);
+            this.ClientSize = new System.Drawing.Size(372, 231);
             this.Controls.Add(this.btnAddAnotherUnit);
             this.Controls.Add(this.btnNewUnit);
             this.Controls.Add(this.txtUnitID);
@@ -115,6 +129,7 @@ namespace MvE_SQL_test
             this.Controls.Add(this.btnFinnish);
             this.Name = "NewUnit";
             this.Text = "New Unit";
+            this.Load += new System.EventHandler(this.NewUnit_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -129,5 +144,7 @@ namespace MvE_SQL_test
         private System.Windows.Forms.TextBox txtUnitID;
         private System.Windows.Forms.Button btnNewUnit;
         private System.Windows.Forms.Button btnAddAnotherUnit;
+        private System.Windows.Forms.BindingSource tUNITBindingSource;
+        private System.Windows.Forms.BindingSource tUNITBindingSource1;
     }
 }

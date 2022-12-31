@@ -29,32 +29,10 @@ namespace MvE_SQL_test
         /// </summary>
         private void InitializeComponent()
         {
-            this.btnGoToAdd = new System.Windows.Forms.Button();
-            this.btnGoToFillOrCancel = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
             this.btnExit = new System.Windows.Forms.Button();
             this.btnAddUnit = new System.Windows.Forms.Button();
             this.SuspendLayout();
-            // 
-            // btnGoToAdd
-            // 
-            this.btnGoToAdd.Location = new System.Drawing.Point(86, 55);
-            this.btnGoToAdd.Name = "btnGoToAdd";
-            this.btnGoToAdd.Size = new System.Drawing.Size(179, 23);
-            this.btnGoToAdd.TabIndex = 0;
-            this.btnGoToAdd.Text = "Add an account";
-            this.btnGoToAdd.UseVisualStyleBackColor = true;
-            this.btnGoToAdd.Click += new System.EventHandler(this.btnGoToAdd_Click_1);
-            // 
-            // btnGoToFillOrCancel
-            // 
-            this.btnGoToFillOrCancel.Location = new System.Drawing.Point(86, 101);
-            this.btnGoToFillOrCancel.Name = "btnGoToFillOrCancel";
-            this.btnGoToFillOrCancel.Size = new System.Drawing.Size(179, 23);
-            this.btnGoToFillOrCancel.TabIndex = 1;
-            this.btnGoToFillOrCancel.Text = "Fill or cancel an order";
-            this.btnGoToFillOrCancel.UseVisualStyleBackColor = true;
-            this.btnGoToFillOrCancel.Click += new System.EventHandler(this.btnGoToFillOrCancel_Click_1);
             // 
             // label1
             // 
@@ -93,8 +71,6 @@ namespace MvE_SQL_test
             this.Controls.Add(this.btnAddUnit);
             this.Controls.Add(this.btnExit);
             this.Controls.Add(this.label1);
-            this.Controls.Add(this.btnGoToFillOrCancel);
-            this.Controls.Add(this.btnGoToAdd);
             this.Name = "Navigation";
             this.Text = "Welcome";
             this.Load += new System.EventHandler(this.Navigation_Load);
@@ -104,9 +80,6 @@ namespace MvE_SQL_test
         }
 
         #endregion
-
-        private System.Windows.Forms.Button btnGoToAdd;
-        private System.Windows.Forms.Button btnGoToFillOrCancel;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Button btnExit;
         private System.Windows.Forms.Button btnAddUnit;
