@@ -104,16 +104,8 @@ namespace MvE_SQL_test
             this.btnAddAnotherUnit.Click += new System.EventHandler(this.btnAddAnotherUnit_Click);
             // 
             
-            // 
-            // tUNITBindingSource
-            // 
-            this.tUNITBindingSource.DataMember = "T_UNIT";
-            // 
+            
            
-            // 
-            // tUNITBindingSource1
-            // 
-            this.tUNITBindingSource1.DataMember = "T_UNIT";
             // 
             // NewUnit
             // 
@@ -129,7 +121,6 @@ namespace MvE_SQL_test
             this.Controls.Add(this.btnFinnish);
             this.Name = "NewUnit";
             this.Text = "New Unit";
-            this.Load += new System.EventHandler(this.NewUnit_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 
