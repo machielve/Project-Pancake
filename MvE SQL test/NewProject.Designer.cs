@@ -31,8 +31,8 @@ namespace MvE_SQL_test
         {
             this.btnFinnish = new System.Windows.Forms.Button();
             this.btnNewProject = new System.Windows.Forms.Button();
-            this.textBox1 = new System.Windows.Forms.TextBox();
-            this.textBox2 = new System.Windows.Forms.TextBox();
+            this.txtProjectID = new System.Windows.Forms.TextBox();
+            this.txtProjectName = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.SuspendLayout();
@@ -55,20 +55,22 @@ namespace MvE_SQL_test
             this.btnNewProject.TabIndex = 6;
             this.btnNewProject.Text = "Add new project";
             this.btnNewProject.UseVisualStyleBackColor = true;
+            this.btnNewProject.Click += new System.EventHandler(this.btnNewProject_Click);
             // 
-            // textBox1
+            // txtProjectID
             // 
-            this.textBox1.Location = new System.Drawing.Point(108, 46);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(234, 20);
-            this.textBox1.TabIndex = 7;
+            this.txtProjectID.Location = new System.Drawing.Point(108, 46);
+            this.txtProjectID.Name = "txtProjectID";
+            this.txtProjectID.ReadOnly = true;
+            this.txtProjectID.Size = new System.Drawing.Size(234, 20);
+            this.txtProjectID.TabIndex = 7;
             // 
-            // textBox2
+            // txtProjectName
             // 
-            this.textBox2.Location = new System.Drawing.Point(108, 20);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(234, 20);
-            this.textBox2.TabIndex = 8;
+            this.txtProjectName.Location = new System.Drawing.Point(108, 20);
+            this.txtProjectName.Name = "txtProjectName";
+            this.txtProjectName.Size = new System.Drawing.Size(234, 20);
+            this.txtProjectName.TabIndex = 8;
             // 
             // label1
             // 
@@ -95,8 +97,8 @@ namespace MvE_SQL_test
             this.ClientSize = new System.Drawing.Size(384, 211);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
-            this.Controls.Add(this.textBox2);
-            this.Controls.Add(this.textBox1);
+            this.Controls.Add(this.txtProjectName);
+            this.Controls.Add(this.txtProjectID);
             this.Controls.Add(this.btnNewProject);
             this.Controls.Add(this.btnFinnish);
             this.Name = "NewProject";
@@ -110,8 +112,8 @@ namespace MvE_SQL_test
 
         private System.Windows.Forms.Button btnFinnish;
         private System.Windows.Forms.Button btnNewProject;
-        private System.Windows.Forms.TextBox textBox1;
-        private System.Windows.Forms.TextBox textBox2;
+        private System.Windows.Forms.TextBox txtProjectID;
+        private System.Windows.Forms.TextBox txtProjectName;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label2;
     }

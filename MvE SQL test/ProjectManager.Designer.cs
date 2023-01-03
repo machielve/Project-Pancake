@@ -29,36 +29,56 @@ namespace MvE_SQL_test
         /// </summary>
         private void InitializeComponent()
         {
-            this.dataGridView1 = new System.Windows.Forms.DataGridView();
-            this.button1 = new System.Windows.Forms.Button();
-            this.btnFinnish = new System.Windows.Forms.Button();
-            this.btnUsedAssemblies = new System.Windows.Forms.Button();
+            this.dgvProject = new System.Windows.Forms.DataGridView();
             this.ProjectNumber = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.ProjectName = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.TotalValue = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            this.btnNewProject = new System.Windows.Forms.Button();
+            this.btnFinnish = new System.Windows.Forms.Button();
+            this.btnUsedAssemblies = new System.Windows.Forms.Button();
+            this.btnLoadProjects = new System.Windows.Forms.Button();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvProject)).BeginInit();
             this.SuspendLayout();
             // 
-            // dataGridView1
+            // dgvProject
             // 
-            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.dgvProject.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvProject.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.ProjectNumber,
             this.ProjectName,
             this.TotalValue});
-            this.dataGridView1.Location = new System.Drawing.Point(165, 12);
-            this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.Size = new System.Drawing.Size(653, 358);
-            this.dataGridView1.TabIndex = 0;
+            this.dgvProject.Location = new System.Drawing.Point(165, 12);
+            this.dgvProject.Name = "dgvProject";
+            this.dgvProject.Size = new System.Drawing.Size(653, 358);
+            this.dgvProject.TabIndex = 0;
             // 
-            // button1
+            // ProjectNumber
             // 
-            this.button1.Location = new System.Drawing.Point(13, 12);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(133, 23);
-            this.button1.TabIndex = 1;
-            this.button1.Text = "New Project";
-            this.button1.UseVisualStyleBackColor = true;
+            this.ProjectNumber.HeaderText = "Project number";
+            this.ProjectNumber.Name = "ProjectNumber";
+            this.ProjectNumber.Width = 200;
+            // 
+            // ProjectName
+            // 
+            this.ProjectName.HeaderText = "Project name";
+            this.ProjectName.Name = "ProjectName";
+            this.ProjectName.Width = 200;
+            // 
+            // TotalValue
+            // 
+            this.TotalValue.HeaderText = "Total value";
+            this.TotalValue.Name = "TotalValue";
+            this.TotalValue.Width = 200;
+            // 
+            // btnNewProject
+            // 
+            this.btnNewProject.Location = new System.Drawing.Point(13, 71);
+            this.btnNewProject.Name = "btnNewProject";
+            this.btnNewProject.Size = new System.Drawing.Size(133, 23);
+            this.btnNewProject.TabIndex = 1;
+            this.btnNewProject.Text = "New Project";
+            this.btnNewProject.UseVisualStyleBackColor = true;
+            this.btnNewProject.Click += new System.EventHandler(this.btnNewProject_Click);
             // 
             // btnFinnish
             // 
@@ -79,48 +99,42 @@ namespace MvE_SQL_test
             this.btnUsedAssemblies.Text = "See details";
             this.btnUsedAssemblies.UseVisualStyleBackColor = true;
             // 
-            // ProjectNumber
+            // btnLoadProjects
             // 
-            this.ProjectNumber.HeaderText = "Project number";
-            this.ProjectNumber.Name = "ProjectNumber";
-            this.ProjectNumber.Width = 200;
-            // 
-            // ProjectName
-            // 
-            this.ProjectName.HeaderText = "Project name";
-            this.ProjectName.Name = "ProjectName";
-            this.ProjectName.Width = 200;
-            // 
-            // TotalValue
-            // 
-            this.TotalValue.HeaderText = "Total value";
-            this.TotalValue.Name = "TotalValue";
-            this.TotalValue.Width = 200;
+            this.btnLoadProjects.Location = new System.Drawing.Point(13, 13);
+            this.btnLoadProjects.Name = "btnLoadProjects";
+            this.btnLoadProjects.Size = new System.Drawing.Size(133, 23);
+            this.btnLoadProjects.TabIndex = 4;
+            this.btnLoadProjects.Text = "Load projects";
+            this.btnLoadProjects.UseVisualStyleBackColor = true;
+            this.btnLoadProjects.Click += new System.EventHandler(this.btnLoadProjects_Click);
             // 
             // ProjectManager
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(928, 412);
+            this.Controls.Add(this.btnLoadProjects);
             this.Controls.Add(this.btnUsedAssemblies);
             this.Controls.Add(this.btnFinnish);
-            this.Controls.Add(this.button1);
-            this.Controls.Add(this.dataGridView1);
+            this.Controls.Add(this.btnNewProject);
+            this.Controls.Add(this.dgvProject);
             this.Name = "ProjectManager";
             this.Text = "Project manager";
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvProject)).EndInit();
             this.ResumeLayout(false);
 
         }
 
         #endregion
 
-        private System.Windows.Forms.DataGridView dataGridView1;
-        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.DataGridView dgvProject;
+        private System.Windows.Forms.Button btnNewProject;
         private System.Windows.Forms.Button btnFinnish;
         private System.Windows.Forms.Button btnUsedAssemblies;
         private System.Windows.Forms.DataGridViewTextBoxColumn ProjectNumber;
         private System.Windows.Forms.DataGridViewTextBoxColumn ProjectName;
         private System.Windows.Forms.DataGridViewTextBoxColumn TotalValue;
+        private System.Windows.Forms.Button btnLoadProjects;
     }
 }

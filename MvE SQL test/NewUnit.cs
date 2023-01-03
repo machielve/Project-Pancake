@@ -51,48 +51,53 @@ namespace MvE_SQL_test
 
         private void btnNewUnit_Click(object sender, EventArgs e)
         {
-            // Create the connection.
-            string connectionstring = Properties.Settings.Default.connString;
-            using (MySqlConnection connection = new MySqlConnection(connectionstring))
+            if (IsUnitNameValid())
             {
-                using (MySqlCommand msqlcommand = new MySqlCommand("uspNewUnit", connection))
+                // Create the connection.
+                string connectionstring = Properties.Settings.Default.connString;
+                using (MySqlConnection connection = new MySqlConnection(connectionstring))
                 {
-                    msqlcommand.CommandType = CommandType.StoredProcedure;
-
-                    msqlcommand.Parameters.Add(new MySqlParameter("UnitName", MySqlDbType.Text));
-                    msqlcommand.Parameters["UnitName"].Value = txtUnitName.Text;
-
-                    msqlcommand.Parameters.Add(new MySqlParameter("UnitGroup", MySqlDbType.Text));
-                    msqlcommand.Parameters["UnitGroup"].Value = txtUnitGroup.Text;
-
-                    msqlcommand.Parameters.Add(new MySqlParameter("UnitID", MySqlDbType.Int32));
-                    msqlcommand.Parameters["UnitID"].Direction = ParameterDirection.Output;
-
-                    try
+                    using (MySqlCommand msqlcommand = new MySqlCommand("uspNewUnit", connection))
                     {
-                        connection.Open();
+                        msqlcommand.CommandType = CommandType.StoredProcedure;
 
-                        msqlcommand.ExecuteNonQuery();
+                        msqlcommand.Parameters.Add(new MySqlParameter("UnitName", MySqlDbType.Text));
+                        msqlcommand.Parameters["UnitName"].Value = txtUnitName.Text;
 
-                        this.parsedUnitID = (int)msqlcommand.Parameters["UnitID"].Value;
-                        this.txtUnitID.Text = Convert.ToString(parsedUnitID);
+                        msqlcommand.Parameters.Add(new MySqlParameter("UnitGroup", MySqlDbType.Text));
+                        msqlcommand.Parameters["UnitGroup"].Value = txtUnitGroup.Text;
+
+                        msqlcommand.Parameters.Add(new MySqlParameter("UnitID", MySqlDbType.Int32));
+                        msqlcommand.Parameters["UnitID"].Direction = ParameterDirection.Output;
+
+                        try
+                        {
+                            connection.Open();
+
+                            msqlcommand.ExecuteNonQuery();
+
+                            this.parsedUnitID = (int)msqlcommand.Parameters["UnitID"].Value;
+                            this.txtUnitID.Text = Convert.ToString(parsedUnitID);
+
+                        }
+
+                        catch (MySqlException ex)
+                        {
+                            MessageBox.Show("error " + ex.Number + " has occurd " + ex.Message);
+
+                            MessageBox.Show("Unit ID was not returned. Unit could not be created.");
+                        }
+
+                        finally
+                        {
+                            connection.Close();
+                        }
 
                     }
-
-                    catch (MySqlException ex)
-                    {
-                        MessageBox.Show("error " + ex.Number + " has occurd " + ex.Message);
-
-                        MessageBox.Show("Unit ID was not returned. Account could not be created.");
-                    }
-
-                    finally
-                    {
-                        connection.Close();
-                    }
-
                 }
+
             }
+
 
         }
 
@@ -101,5 +106,6 @@ namespace MvE_SQL_test
             this.ClearForm();
         }
 
- 
+
+    }
 }
