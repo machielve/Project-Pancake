@@ -101,9 +101,5 @@ namespace MvE_SQL_test
             this.ClearForm();
         }
 
-        private void label3_Click(object sender, EventArgs e)
-        {
-
-        }
-    }
+ 
 }

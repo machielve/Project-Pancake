@@ -71,7 +71,7 @@
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(15, 80);
+            this.label2.Location = new System.Drawing.Point(12, 79);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(40, 13);
             this.label2.TabIndex = 3;
@@ -108,12 +108,11 @@
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(15, 49);
+            this.label3.Location = new System.Drawing.Point(12, 49);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(56, 13);
             this.label3.TabIndex = 8;
             this.label3.Text = "Unit group";
-            this.label3.Click += new System.EventHandler(this.label3_Click);
             // 
             // txtUnitGroup
             // 
@@ -132,7 +131,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(372, 231);
+            this.ClientSize = new System.Drawing.Size(384, 211);
             this.Controls.Add(this.txtUnitGroup);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.btnAddAnotherUnit);

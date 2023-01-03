@@ -16,5 +16,11 @@ namespace MvE_SQL_test
         {
             InitializeComponent();
         }
+
+        private void btnFinnish_Click(object sender, EventArgs e)
+        {
+            this.Close();
+
+        }
     }
 }
