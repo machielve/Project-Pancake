@@ -47,8 +47,6 @@ namespace MvE_SQL_test
 
                         using (MySqlDataReader dr = mysqlcommand.ExecuteReader())
                         {
-                            MessageBox.Show("Test");
-                            
                             DataTable dt = new DataTable();
                             dt.Load(dr);
                             this.dgvProject.DataSource = dt;
