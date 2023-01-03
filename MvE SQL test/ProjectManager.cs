@@ -60,5 +60,54 @@ namespace MvE_SQL_test
                 }
             }
         }
+
+        private void btnSeeDetails_Click(object sender, EventArgs e)
+        {
+            if (dgvProject.SelectedRows.Count == 0)
+            {
+                MessageBox.Show("No project selected");
+             }
+
+            else if (dgvProject.SelectedRows.Count == 1)
+            {
+                Int32 selectedrowindex = dgvProject.SelectedCells[0].RowIndex;
+                DataGridViewRow SelectedRow = dgvProject.Rows[selectedrowindex];
+                string ProjectId = Convert.ToString(SelectedRow.Cells["Project_id"].Value);
+
+                // Create the connection.
+                string connectionstring = Properties.Settings.Default.connString;
+                using (MySqlConnection connection = new MySqlConnection(connectionstring))
+                {
+                    // mysql string
+                    const string mysqlString1 = "SELECT * FROM Victoriam.T_PROJECTDETAIL WHERE Project = ";
+                    string mysqlString = mysqlString1 + ProjectId;
+                    using (MySqlCommand mysqlcommand = new MySqlCommand(mysqlString, connection))
+                    {
+                        MessageBox.Show(mysqlString);
+                        try
+                        {
+                            connection.Open();
+
+                            using (MySqlDataReader dr = mysqlcommand.ExecuteReader())
+                            {
+                                DataTable dt = new DataTable();
+                                dt.Load(dr);
+                                this.dgvProjectDetails.DataSource = dt;
+                                dr.Close();
+                            }
+                        }
+                        catch
+                        {
+                            MessageBox.Show("Project details could not be loaded");
+                        }
+                    }
+                }                   
+            }
+            else if (dgvProject.SelectedRows.Count > 1)
+            {
+                MessageBox.Show("More than one project selected. Please select one project");
+            }
+
+        }
     }
 }

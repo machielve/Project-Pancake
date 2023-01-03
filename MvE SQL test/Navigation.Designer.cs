@@ -86,6 +86,7 @@ namespace MvE_SQL_test
             this.btnAssemblyManager.TabIndex = 6;
             this.btnAssemblyManager.Text = "Assembly manager";
             this.btnAssemblyManager.UseVisualStyleBackColor = true;
+            this.btnAssemblyManager.Click += new System.EventHandler(this.btnAssemblyManager_Click);
             // 
             // btnPartManager
             // 
@@ -95,6 +96,7 @@ namespace MvE_SQL_test
             this.btnPartManager.TabIndex = 7;
             this.btnPartManager.Text = "Part manager";
             this.btnPartManager.UseVisualStyleBackColor = true;
+            this.btnPartManager.Click += new System.EventHandler(this.btnPartManager_Click);
             // 
             // btnOperationManager
             // 

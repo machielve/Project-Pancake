@@ -42,5 +42,19 @@ namespace MvE_SQL_test
             frm.Show();
 
         }
+
+        private void btnAssemblyManager_Click(object sender, EventArgs e)
+        {
+            Form frm = new AssemblyManager();
+            frm.Show();
+
+        }
+
+        private void btnPartManager_Click(object sender, EventArgs e)
+        {
+            Form frm = new PartManager();
+            frm.Show();
+
+        }
     }
 }

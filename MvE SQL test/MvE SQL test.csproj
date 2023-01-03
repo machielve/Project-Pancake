@@ -99,6 +99,12 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="AssemblyManager.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AssemblyManager.Designer.cs">
+      <DependentUpon>AssemblyManager.cs</DependentUpon>
+    </Compile>
     <Compile Include="NewProject.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -110,6 +116,12 @@
     </Compile>
     <Compile Include="NewUnit.Designer.cs">
       <DependentUpon>NewUnit.cs</DependentUpon>
+    </Compile>
+    <Compile Include="PartManager.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="PartManager.Designer.cs">
+      <DependentUpon>PartManager.cs</DependentUpon>
     </Compile>
     <Compile Include="ProjectManager.cs">
       <SubType>Form</SubType>
@@ -125,11 +137,17 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="AssemblyManager.resx">
+      <DependentUpon>AssemblyManager.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="NewProject.resx">
       <DependentUpon>NewProject.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="NewUnit.resx">
       <DependentUpon>NewUnit.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PartManager.resx">
+      <DependentUpon>PartManager.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="ProjectManager.resx">
       <DependentUpon>ProjectManager.cs</DependentUpon>
