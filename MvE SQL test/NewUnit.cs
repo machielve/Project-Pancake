@@ -62,6 +62,9 @@ namespace MvE_SQL_test
                     msqlcommand.Parameters.Add(new MySqlParameter("UnitName", MySqlDbType.Text));
                     msqlcommand.Parameters["UnitName"].Value = txtUnitName.Text;
 
+                    msqlcommand.Parameters.Add(new MySqlParameter("UnitGroup", MySqlDbType.Text));
+                    msqlcommand.Parameters["UnitGroup"].Value = txtUnitGroup.Text;
+
                     msqlcommand.Parameters.Add(new MySqlParameter("UnitID", MySqlDbType.Int32));
                     msqlcommand.Parameters["UnitID"].Direction = ParameterDirection.Output;
 
@@ -98,23 +101,9 @@ namespace MvE_SQL_test
             this.ClearForm();
         }
 
+        private void label3_Click(object sender, EventArgs e)
+        {
 
+        }
     }
 }
-Footer
-© 2023 GitHub, Inc.
-Footer navigation
-
-    Terms
-    Privacy
-    Security
-    Status
-    Docs
-    Contact GitHub
-    Pricing
-    API
-    Training
-    Blog
-    About
-
-MvE-SQL-test/NewUnit.cs at master · machielve/MvE-SQL-test

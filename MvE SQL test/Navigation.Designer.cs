@@ -60,7 +60,7 @@ namespace MvE_SQL_test
             // 
             // btnAddUnit
             // 
-            this.btnAddUnit.Location = new System.Drawing.Point(15, 326);
+            this.btnAddUnit.Location = new System.Drawing.Point(15, 350);
             this.btnAddUnit.Name = "btnAddUnit";
             this.btnAddUnit.Size = new System.Drawing.Size(124, 23);
             this.btnAddUnit.TabIndex = 4;
@@ -80,7 +80,7 @@ namespace MvE_SQL_test
             // 
             // btnAssemblyManager
             // 
-            this.btnAssemblyManager.Location = new System.Drawing.Point(15, 83);
+            this.btnAssemblyManager.Location = new System.Drawing.Point(15, 66);
             this.btnAssemblyManager.Name = "btnAssemblyManager";
             this.btnAssemblyManager.Size = new System.Drawing.Size(124, 23);
             this.btnAssemblyManager.TabIndex = 6;
@@ -89,7 +89,7 @@ namespace MvE_SQL_test
             // 
             // btnPartManager
             // 
-            this.btnPartManager.Location = new System.Drawing.Point(15, 125);
+            this.btnPartManager.Location = new System.Drawing.Point(15, 95);
             this.btnPartManager.Name = "btnPartManager";
             this.btnPartManager.Size = new System.Drawing.Size(124, 23);
             this.btnPartManager.TabIndex = 7;
@@ -98,7 +98,7 @@ namespace MvE_SQL_test
             // 
             // btnOperationManager
             // 
-            this.btnOperationManager.Location = new System.Drawing.Point(15, 168);
+            this.btnOperationManager.Location = new System.Drawing.Point(15, 124);
             this.btnOperationManager.Name = "btnOperationManager";
             this.btnOperationManager.Size = new System.Drawing.Size(124, 23);
             this.btnOperationManager.TabIndex = 8;
@@ -107,7 +107,7 @@ namespace MvE_SQL_test
             // 
             // btnStockManager
             // 
-            this.btnStockManager.Location = new System.Drawing.Point(15, 212);
+            this.btnStockManager.Location = new System.Drawing.Point(15, 153);
             this.btnStockManager.Name = "btnStockManager";
             this.btnStockManager.Size = new System.Drawing.Size(124, 23);
             this.btnStockManager.TabIndex = 9;
@@ -118,7 +118,7 @@ namespace MvE_SQL_test
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1287, 787);
+            this.ClientSize = new System.Drawing.Size(346, 549);
             this.Controls.Add(this.btnStockManager);
             this.Controls.Add(this.btnOperationManager);
             this.Controls.Add(this.btnPartManager);

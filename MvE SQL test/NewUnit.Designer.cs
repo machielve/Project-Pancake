@@ -37,6 +37,9 @@
             this.btnNewUnit = new System.Windows.Forms.Button();
             this.btnAddAnotherUnit = new System.Windows.Forms.Button();
             this.tUNITBindingSource1 = new System.Windows.Forms.BindingSource(this.components);
+            this.label3 = new System.Windows.Forms.Label();
+            this.txtUnitGroup = new System.Windows.Forms.ComboBox();
+            ((System.ComponentModel.ISupportInitialize)(this.tUNITBindingSource1)).BeginInit();
             this.SuspendLayout();
             // 
             // btnFinnish
@@ -68,7 +71,7 @@
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(15, 60);
+            this.label2.Location = new System.Drawing.Point(15, 80);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(40, 13);
             this.label2.TabIndex = 3;
@@ -76,7 +79,7 @@
             // 
             // txtUnitID
             // 
-            this.txtUnitID.Location = new System.Drawing.Point(108, 52);
+            this.txtUnitID.Location = new System.Drawing.Point(108, 72);
             this.txtUnitID.Name = "txtUnitID";
             this.txtUnitID.ReadOnly = true;
             this.txtUnitID.Size = new System.Drawing.Size(234, 20);
@@ -102,15 +105,36 @@
             this.btnAddAnotherUnit.UseVisualStyleBackColor = true;
             this.btnAddAnotherUnit.Click += new System.EventHandler(this.btnAddAnotherUnit_Click);
             // 
-
-
-
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Location = new System.Drawing.Point(15, 49);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(56, 13);
+            this.label3.TabIndex = 8;
+            this.label3.Text = "Unit group";
+            this.label3.Click += new System.EventHandler(this.label3_Click);
+            // 
+            // txtUnitGroup
+            // 
+            this.txtUnitGroup.FormattingEnabled = true;
+            this.txtUnitGroup.Items.AddRange(new object[] {
+            "-",
+            "Time",
+            "Weight",
+            "Length"});
+            this.txtUnitGroup.Location = new System.Drawing.Point(108, 46);
+            this.txtUnitGroup.Name = "txtUnitGroup";
+            this.txtUnitGroup.Size = new System.Drawing.Size(234, 21);
+            this.txtUnitGroup.TabIndex = 9;
             // 
             // NewUnit
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(372, 231);
+            this.Controls.Add(this.txtUnitGroup);
+            this.Controls.Add(this.label3);
             this.Controls.Add(this.btnAddAnotherUnit);
             this.Controls.Add(this.btnNewUnit);
             this.Controls.Add(this.txtUnitID);
@@ -120,6 +144,7 @@
             this.Controls.Add(this.btnFinnish);
             this.Name = "NewUnit";
             this.Text = "New Unit";
+            ((System.ComponentModel.ISupportInitialize)(this.tUNITBindingSource1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -136,22 +161,7 @@
         private System.Windows.Forms.Button btnAddAnotherUnit;
         private System.Windows.Forms.BindingSource tUNITBindingSource;
         private System.Windows.Forms.BindingSource tUNITBindingSource1;
+        private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.ComboBox txtUnitGroup;
     }
 }
-Footer
-© 2023 GitHub, Inc.
-Footer navigation
-
-    Terms
-    Privacy
-    Security
-    Status
-    Docs
-    Contact GitHub
-    Pricing
-    API
-    Training
-    Blog
-    About
-
-MvE-SQL-test/NewUnit.Designer.cs at master · machielve/MvE-SQL-test
