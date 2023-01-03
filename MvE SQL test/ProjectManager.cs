@@ -37,22 +37,22 @@ namespace MvE_SQL_test
             using (MySqlConnection connection = new MySqlConnection(connectionstring))
             {
                 // mysql string
-                const string mysqlString = "SELECT * FROM Vicorium.T_PROJECT";
+                const string mysqlString = "SELECT * FROM Victoriam.T_PROJECT";
 
-                using (MySqlCommand mysqlcommand = new MySqlCommand(mysqlString,connection))
+                using (MySqlCommand mysqlcommand = new MySqlCommand(mysqlString, connection))
                 {
-                    mysqlcommand.Parameters.Add(new MySqlParameter("ProjectID", MySqlDbType.Int32));
-
                     try
                     {
-                        connection.Open();
+                        connection.Open();                        
 
-                        using (MySqlDataReader dataReader = mysqlcommand.ExecuteReader())
+                        using (MySqlDataReader dr = mysqlcommand.ExecuteReader())
                         {
-                            DataTable datatable = new DataTable();
-                            datatable.Load(dataReader);
-                            this.dgvProject.DataSource = datatable;
-                            dataReader.Close();
+                            MessageBox.Show("Test");
+                            
+                            DataTable dt = new DataTable();
+                            dt.Load(dr);
+                            this.dgvProject.DataSource = dt;
+                            dr.Close();
                         }
                     }
                     catch

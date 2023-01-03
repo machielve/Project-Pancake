@@ -30,9 +30,6 @@ namespace MvE_SQL_test
         private void InitializeComponent()
         {
             this.dgvProject = new System.Windows.Forms.DataGridView();
-            this.ProjectNumber = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.ProjectName = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.TotalValue = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.btnNewProject = new System.Windows.Forms.Button();
             this.btnFinnish = new System.Windows.Forms.Button();
             this.btnUsedAssemblies = new System.Windows.Forms.Button();
@@ -43,32 +40,10 @@ namespace MvE_SQL_test
             // dgvProject
             // 
             this.dgvProject.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvProject.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.ProjectNumber,
-            this.ProjectName,
-            this.TotalValue});
             this.dgvProject.Location = new System.Drawing.Point(165, 12);
             this.dgvProject.Name = "dgvProject";
             this.dgvProject.Size = new System.Drawing.Size(653, 358);
             this.dgvProject.TabIndex = 0;
-            // 
-            // ProjectNumber
-            // 
-            this.ProjectNumber.HeaderText = "Project number";
-            this.ProjectNumber.Name = "ProjectNumber";
-            this.ProjectNumber.Width = 200;
-            // 
-            // ProjectName
-            // 
-            this.ProjectName.HeaderText = "Project name";
-            this.ProjectName.Name = "ProjectName";
-            this.ProjectName.Width = 200;
-            // 
-            // TotalValue
-            // 
-            this.TotalValue.HeaderText = "Total value";
-            this.TotalValue.Name = "TotalValue";
-            this.TotalValue.Width = 200;
             // 
             // btnNewProject
             // 
@@ -132,9 +107,6 @@ namespace MvE_SQL_test
         private System.Windows.Forms.Button btnNewProject;
         private System.Windows.Forms.Button btnFinnish;
         private System.Windows.Forms.Button btnUsedAssemblies;
-        private System.Windows.Forms.DataGridViewTextBoxColumn ProjectNumber;
-        private System.Windows.Forms.DataGridViewTextBoxColumn ProjectName;
-        private System.Windows.Forms.DataGridViewTextBoxColumn TotalValue;
         private System.Windows.Forms.Button btnLoadProjects;
     }
 }
