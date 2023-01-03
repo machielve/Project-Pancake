@@ -1,5 +1,4 @@
-﻿
-namespace MvE_SQL_test
+﻿namespace MvE_SQL_test
 {
     partial class NewUnit
     {
@@ -103,9 +102,9 @@ namespace MvE_SQL_test
             this.btnAddAnotherUnit.UseVisualStyleBackColor = true;
             this.btnAddAnotherUnit.Click += new System.EventHandler(this.btnAddAnotherUnit_Click);
             // 
-            
-            
-           
+
+
+
             // 
             // NewUnit
             // 
@@ -139,3 +138,20 @@ namespace MvE_SQL_test
         private System.Windows.Forms.BindingSource tUNITBindingSource1;
     }
 }
+Footer
+© 2023 GitHub, Inc.
+Footer navigation
+
+    Terms
+    Privacy
+    Security
+    Status
+    Docs
+    Contact GitHub
+    Pricing
+    API
+    Training
+    Blog
+    About
+
+MvE-SQL-test/NewUnit.Designer.cs at master · machielve/MvE-SQL-test

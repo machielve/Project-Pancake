@@ -36,5 +36,11 @@ namespace MvE_SQL_test
             frm.Show();
         }
 
+        private void btnProjectManager_Click(object sender, EventArgs e)
+        {
+            Form frm = new ProjectManager();
+            frm.Show();
+
+        }
     }
 }

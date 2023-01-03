@@ -68,7 +68,7 @@ namespace MvE_SQL_test
                     try
                     {
                         connection.Open();
-                        
+
                         msqlcommand.ExecuteNonQuery();
 
                         this.parsedUnitID = (int)msqlcommand.Parameters["UnitID"].Value;
@@ -78,8 +78,8 @@ namespace MvE_SQL_test
 
                     catch (MySqlException ex)
                     {
-                        MessageBox.Show("error " + ex.Number + " has occurd " + ex.Message);                        
-                        
+                        MessageBox.Show("error " + ex.Number + " has occurd " + ex.Message);
+
                         MessageBox.Show("Unit ID was not returned. Account could not be created.");
                     }
 
@@ -87,11 +87,11 @@ namespace MvE_SQL_test
                     {
                         connection.Close();
                     }
-                    
-                }
-            }  
 
-    }
+                }
+            }
+
+        }
 
         private void btnAddAnotherUnit_Click(object sender, EventArgs e)
         {
@@ -101,3 +101,20 @@ namespace MvE_SQL_test
 
     }
 }
+Footer
+© 2023 GitHub, Inc.
+Footer navigation
+
+    Terms
+    Privacy
+    Security
+    Status
+    Docs
+    Contact GitHub
+    Pricing
+    API
+    Training
+    Blog
+    About
+
+MvE-SQL-test/NewUnit.cs at master · machielve/MvE-SQL-test

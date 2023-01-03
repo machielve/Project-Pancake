@@ -34,9 +34,9 @@ namespace MvE_SQL_test
             this.btnAddUnit = new System.Windows.Forms.Button();
             this.btnProjectManager = new System.Windows.Forms.Button();
             this.btnAssemblyManager = new System.Windows.Forms.Button();
-            this.button1 = new System.Windows.Forms.Button();
-            this.button2 = new System.Windows.Forms.Button();
-            this.button3 = new System.Windows.Forms.Button();
+            this.btnPartManager = new System.Windows.Forms.Button();
+            this.btnOperationManager = new System.Windows.Forms.Button();
+            this.btnStockManager = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // label1
@@ -76,6 +76,7 @@ namespace MvE_SQL_test
             this.btnProjectManager.TabIndex = 5;
             this.btnProjectManager.Text = "Project manager";
             this.btnProjectManager.UseVisualStyleBackColor = true;
+            this.btnProjectManager.Click += new System.EventHandler(this.btnProjectManager_Click);
             // 
             // btnAssemblyManager
             // 
@@ -86,41 +87,41 @@ namespace MvE_SQL_test
             this.btnAssemblyManager.Text = "Assembly manager";
             this.btnAssemblyManager.UseVisualStyleBackColor = true;
             // 
-            // button1
+            // btnPartManager
             // 
-            this.button1.Location = new System.Drawing.Point(15, 125);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(124, 23);
-            this.button1.TabIndex = 7;
-            this.button1.Text = "Part manager";
-            this.button1.UseVisualStyleBackColor = true;
+            this.btnPartManager.Location = new System.Drawing.Point(15, 125);
+            this.btnPartManager.Name = "btnPartManager";
+            this.btnPartManager.Size = new System.Drawing.Size(124, 23);
+            this.btnPartManager.TabIndex = 7;
+            this.btnPartManager.Text = "Part manager";
+            this.btnPartManager.UseVisualStyleBackColor = true;
             // 
-            // button2
+            // btnOperationManager
             // 
-            this.button2.Location = new System.Drawing.Point(15, 168);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(124, 23);
-            this.button2.TabIndex = 8;
-            this.button2.Text = "Operations manager";
-            this.button2.UseVisualStyleBackColor = true;
+            this.btnOperationManager.Location = new System.Drawing.Point(15, 168);
+            this.btnOperationManager.Name = "btnOperationManager";
+            this.btnOperationManager.Size = new System.Drawing.Size(124, 23);
+            this.btnOperationManager.TabIndex = 8;
+            this.btnOperationManager.Text = "Operations manager";
+            this.btnOperationManager.UseVisualStyleBackColor = true;
             // 
-            // button3
+            // btnStockManager
             // 
-            this.button3.Location = new System.Drawing.Point(15, 212);
-            this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(124, 23);
-            this.button3.TabIndex = 9;
-            this.button3.Text = "Stock managerr";
-            this.button3.UseVisualStyleBackColor = true;
+            this.btnStockManager.Location = new System.Drawing.Point(15, 212);
+            this.btnStockManager.Name = "btnStockManager";
+            this.btnStockManager.Size = new System.Drawing.Size(124, 23);
+            this.btnStockManager.TabIndex = 9;
+            this.btnStockManager.Text = "Stock managerr";
+            this.btnStockManager.UseVisualStyleBackColor = true;
             // 
             // Navigation
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1287, 787);
-            this.Controls.Add(this.button3);
-            this.Controls.Add(this.button2);
-            this.Controls.Add(this.button1);
+            this.Controls.Add(this.btnStockManager);
+            this.Controls.Add(this.btnOperationManager);
+            this.Controls.Add(this.btnPartManager);
             this.Controls.Add(this.btnAssemblyManager);
             this.Controls.Add(this.btnProjectManager);
             this.Controls.Add(this.btnAddUnit);
@@ -141,9 +142,9 @@ namespace MvE_SQL_test
         private System.Windows.Forms.Button btnAddUnit;
         private System.Windows.Forms.Button btnProjectManager;
         private System.Windows.Forms.Button btnAssemblyManager;
-        private System.Windows.Forms.Button button1;
-        private System.Windows.Forms.Button button2;
-        private System.Windows.Forms.Button button3;
+        private System.Windows.Forms.Button btnPartManager;
+        private System.Windows.Forms.Button btnOperationManager;
+        private System.Windows.Forms.Button btnStockManager;
     }
 }
 
