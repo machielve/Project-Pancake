@@ -35,7 +35,7 @@ namespace MvE_SQL_test
             this.txtAssemblyName = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
-            this.txtUnitID = new System.Windows.Forms.TextBox();
+            this.txtAssemblyID = new System.Windows.Forms.TextBox();
             this.SuspendLayout();
             // 
             // btnFinnish
@@ -46,6 +46,7 @@ namespace MvE_SQL_test
             this.btnFinnish.TabIndex = 1;
             this.btnFinnish.Text = "Finnish";
             this.btnFinnish.UseVisualStyleBackColor = true;
+            this.btnFinnish.Click += new System.EventHandler(this.btnFinnish_Click);
             // 
             // btnNewAssembly
             // 
@@ -55,6 +56,7 @@ namespace MvE_SQL_test
             this.btnNewAssembly.TabIndex = 6;
             this.btnNewAssembly.Text = "Add new assembly";
             this.btnNewAssembly.UseVisualStyleBackColor = true;
+            this.btnNewAssembly.Click += new System.EventHandler(this.btnNewAssembly_Click);
             // 
             // btnAddAnotherAssembly
             // 
@@ -64,6 +66,7 @@ namespace MvE_SQL_test
             this.btnAddAnotherAssembly.TabIndex = 7;
             this.btnAddAnotherAssembly.Text = "Add another assembly";
             this.btnAddAnotherAssembly.UseVisualStyleBackColor = true;
+            this.btnAddAnotherAssembly.Click += new System.EventHandler(this.btnAddAnotherAssembly_Click);
             // 
             // txtAssemblyName
             // 
@@ -90,20 +93,20 @@ namespace MvE_SQL_test
             this.label2.TabIndex = 10;
             this.label2.Text = "Assembly ID";
             // 
-            // txtUnitID
+            // txtAssemblyID
             // 
-            this.txtUnitID.Location = new System.Drawing.Point(108, 76);
-            this.txtUnitID.Name = "txtUnitID";
-            this.txtUnitID.ReadOnly = true;
-            this.txtUnitID.Size = new System.Drawing.Size(234, 20);
-            this.txtUnitID.TabIndex = 11;
+            this.txtAssemblyID.Location = new System.Drawing.Point(108, 76);
+            this.txtAssemblyID.Name = "txtAssemblyID";
+            this.txtAssemblyID.ReadOnly = true;
+            this.txtAssemblyID.Size = new System.Drawing.Size(234, 20);
+            this.txtAssemblyID.TabIndex = 11;
             // 
             // NewAssembly
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(384, 211);
-            this.Controls.Add(this.txtUnitID);
+            this.Controls.Add(this.txtAssemblyID);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.txtAssemblyName);
@@ -125,6 +128,6 @@ namespace MvE_SQL_test
         private System.Windows.Forms.TextBox txtAssemblyName;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.TextBox txtUnitID;
+        private System.Windows.Forms.TextBox txtAssemblyID;
     }
 }
