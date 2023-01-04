@@ -35,7 +35,14 @@ namespace MvE_SQL_test
             this.btnFinnish = new System.Windows.Forms.Button();
             this.btnSeeDetails = new System.Windows.Forms.Button();
             this.btnNewAssembly = new System.Windows.Forms.Button();
+            this.dgvAssemblyParts = new System.Windows.Forms.DataGridView();
+            this.label2 = new System.Windows.Forms.Label();
+            this.dgvAssemblyOps = new System.Windows.Forms.DataGridView();
+            this.label3 = new System.Windows.Forms.Label();
+            this.btnAssemblyLock = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dgvAssemblies)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvAssemblyParts)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvAssemblyOps)).BeginInit();
             this.SuspendLayout();
             // 
             // dgvAssemblies
@@ -46,7 +53,7 @@ namespace MvE_SQL_test
             this.dgvAssemblies.Location = new System.Drawing.Point(165, 38);
             this.dgvAssemblies.Name = "dgvAssemblies";
             this.dgvAssemblies.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.AutoSizeToAllHeaders;
-            this.dgvAssemblies.Size = new System.Drawing.Size(691, 608);
+            this.dgvAssemblies.Size = new System.Drawing.Size(691, 191);
             this.dgvAssemblies.TabIndex = 0;
             // 
             // btnLoadAssemblies
@@ -86,6 +93,7 @@ namespace MvE_SQL_test
             this.btnSeeDetails.TabIndex = 8;
             this.btnSeeDetails.Text = "See details";
             this.btnSeeDetails.UseVisualStyleBackColor = true;
+            this.btnSeeDetails.Click += new System.EventHandler(this.btnSeeDetails_Click);
             // 
             // btnNewAssembly
             // 
@@ -95,12 +103,68 @@ namespace MvE_SQL_test
             this.btnNewAssembly.TabIndex = 9;
             this.btnNewAssembly.Text = "New assembly";
             this.btnNewAssembly.UseVisualStyleBackColor = true;
+            this.btnNewAssembly.Click += new System.EventHandler(this.btnNewAssembly_Click);
+            // 
+            // dgvAssemblyParts
+            // 
+            this.dgvAssemblyParts.AllowUserToAddRows = false;
+            this.dgvAssemblyParts.AllowUserToDeleteRows = false;
+            this.dgvAssemblyParts.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvAssemblyParts.Location = new System.Drawing.Point(165, 299);
+            this.dgvAssemblyParts.Name = "dgvAssemblyParts";
+            this.dgvAssemblyParts.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.AutoSizeToAllHeaders;
+            this.dgvAssemblyParts.Size = new System.Drawing.Size(691, 190);
+            this.dgvAssemblyParts.TabIndex = 10;
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Location = new System.Drawing.Point(162, 283);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(77, 13);
+            this.label2.TabIndex = 11;
+            this.label2.Text = "Assembly parts";
+            // 
+            // dgvAssemblyOps
+            // 
+            this.dgvAssemblyOps.AllowUserToAddRows = false;
+            this.dgvAssemblyOps.AllowUserToDeleteRows = false;
+            this.dgvAssemblyOps.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvAssemblyOps.Location = new System.Drawing.Point(165, 536);
+            this.dgvAssemblyOps.Name = "dgvAssemblyOps";
+            this.dgvAssemblyOps.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.AutoSizeToAllHeaders;
+            this.dgvAssemblyOps.Size = new System.Drawing.Size(691, 110);
+            this.dgvAssemblyOps.TabIndex = 12;
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Location = new System.Drawing.Point(162, 520);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(103, 13);
+            this.label3.TabIndex = 13;
+            this.label3.Text = "Assembly operations";
+            // 
+            // btnAssemblyLock
+            // 
+            this.btnAssemblyLock.Location = new System.Drawing.Point(13, 126);
+            this.btnAssemblyLock.Name = "btnAssemblyLock";
+            this.btnAssemblyLock.Size = new System.Drawing.Size(133, 23);
+            this.btnAssemblyLock.TabIndex = 14;
+            this.btnAssemblyLock.Text = "Lock assembly";
+            this.btnAssemblyLock.UseVisualStyleBackColor = true;
+            this.btnAssemblyLock.Click += new System.EventHandler(this.btnAssemblyLock_Click);
             // 
             // AssemblyManager
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(928, 703);
+            this.Controls.Add(this.btnAssemblyLock);
+            this.Controls.Add(this.label3);
+            this.Controls.Add(this.dgvAssemblyOps);
+            this.Controls.Add(this.label2);
+            this.Controls.Add(this.dgvAssemblyParts);
             this.Controls.Add(this.btnNewAssembly);
             this.Controls.Add(this.btnSeeDetails);
             this.Controls.Add(this.btnFinnish);
@@ -111,6 +175,8 @@ namespace MvE_SQL_test
             this.Text = " ";
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             ((System.ComponentModel.ISupportInitialize)(this.dgvAssemblies)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvAssemblyParts)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvAssemblyOps)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -124,5 +190,10 @@ namespace MvE_SQL_test
         private System.Windows.Forms.Button btnFinnish;
         private System.Windows.Forms.Button btnSeeDetails;
         private System.Windows.Forms.Button btnNewAssembly;
+        private System.Windows.Forms.DataGridView dgvAssemblyParts;
+        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.DataGridView dgvAssemblyOps;
+        private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.Button btnAssemblyLock;
     }
 }

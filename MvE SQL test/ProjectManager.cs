@@ -66,7 +66,7 @@ namespace MvE_SQL_test
             if (dgvProject.SelectedRows.Count == 0)
             {
                 MessageBox.Show("No project selected");
-             }
+            }
 
             else if (dgvProject.SelectedRows.Count == 1)
             {

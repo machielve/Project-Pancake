@@ -105,6 +105,12 @@
     <Compile Include="AssemblyManager.Designer.cs">
       <DependentUpon>AssemblyManager.cs</DependentUpon>
     </Compile>
+    <Compile Include="NewAssembly.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="NewAssembly.Designer.cs">
+      <DependentUpon>NewAssembly.cs</DependentUpon>
+    </Compile>
     <Compile Include="NewProject.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -139,6 +145,9 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
     <EmbeddedResource Include="AssemblyManager.resx">
       <DependentUpon>AssemblyManager.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="NewAssembly.resx">
+      <DependentUpon>NewAssembly.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="NewProject.resx">
       <DependentUpon>NewProject.cs</DependentUpon>

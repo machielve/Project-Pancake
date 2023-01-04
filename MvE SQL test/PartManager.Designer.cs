@@ -95,6 +95,7 @@ namespace MvE_SQL_test
             this.Controls.Add(this.dgvParts);
             this.Name = "PartManager";
             this.Text = "Part manager";
+            this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             ((System.ComponentModel.ISupportInitialize)(this.dgvParts)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
