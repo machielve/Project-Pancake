@@ -108,7 +108,7 @@ namespace MvE_SQL_test
             this.Controls.Add(this.btnLoadAssemblies);
             this.Controls.Add(this.dgvAssemblies);
             this.Name = "AssemblyManager";
-            this.Text = "Assembly manager";
+            this.Text = " ";
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             ((System.ComponentModel.ISupportInitialize)(this.dgvAssemblies)).EndInit();
             this.ResumeLayout(false);
