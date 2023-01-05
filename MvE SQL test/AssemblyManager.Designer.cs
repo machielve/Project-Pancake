@@ -206,6 +206,7 @@ namespace MvE_SQL_test
             this.btnRemoveOperation.TabIndex = 19;
             this.btnRemoveOperation.Text = "Remove operation";
             this.btnRemoveOperation.UseVisualStyleBackColor = true;
+            this.btnRemoveOperation.Click += new System.EventHandler(this.btnRemoveOperation_Click);
             // 
             // AssemblyManager
             // 

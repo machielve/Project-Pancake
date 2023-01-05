@@ -19,6 +19,38 @@ namespace MvE_SQL_test
             InitializeComponent();
         }
 
+        public static string AssemblyID = "";
+
+        public void AssemblyRefresh()
+        {
+            // Create the connection.
+            string connectionstring = Properties.Settings.Default.connString;
+            using (MySqlConnection connection = new MySqlConnection(connectionstring))
+            {
+                // mysql string
+                const string mysqlString = "SELECT * FROM Victoriam.T_ASSEMBLY";
+                using (MySqlCommand mysqlcommand = new MySqlCommand(mysqlString, connection))
+                {
+                    try
+                    {
+                        connection.Open();
+
+                        using (MySqlDataReader dr = mysqlcommand.ExecuteReader())
+                        {
+                            DataTable dt = new DataTable();
+                            dt.Load(dr);
+                            this.dgvAssemblies.DataSource = dt;
+                            dr.Close();
+                        }
+                    }
+                    catch
+                    {
+                        MessageBox.Show("Assemblies could not be loaded");
+                    }
+                }
+            }
+
+        }
         public void TotalRefresh()
         {
 
@@ -93,7 +125,10 @@ namespace MvE_SQL_test
 
 
         }
-        
+
+
+
+
         private void btnFinnish_Click(object sender, EventArgs e)
         {
             this.Close();
@@ -101,33 +136,15 @@ namespace MvE_SQL_test
 
         private void btnLoadAssemblies_Click(object sender, EventArgs e)
         {
-            // Create the connection.
-            string connectionstring = Properties.Settings.Default.connString;
-            using (MySqlConnection connection = new MySqlConnection(connectionstring))
-            {
-                // mysql string
-                const string mysqlString = "SELECT * FROM Victoriam.T_ASSEMBLY";
-                using (MySqlCommand mysqlcommand = new MySqlCommand(mysqlString, connection))
-                {
-                    try
-                    {
-                        connection.Open();
-
-                        using (MySqlDataReader dr = mysqlcommand.ExecuteReader())
-                        {
-                            DataTable dt = new DataTable();
-                            dt.Load(dr);
-                            this.dgvAssemblies.DataSource = dt;
-                            dr.Close();
-                        }
-                    }
-                    catch
-                    {
-                        MessageBox.Show("Assemblies could not be loaded");
-                    }
-                }
-            }
+            AssemblyRefresh();
         }
+
+        private void btnNewAssembly_Click(object sender, EventArgs e)
+        {
+            Form frm = new NewAssembly();
+            frm.Show();
+        }
+              
 
         private void btnSeeDetails_Click(object sender, EventArgs e)
         {
@@ -140,27 +157,46 @@ namespace MvE_SQL_test
             DataGridViewRow SelectedRow = dgvAssemblies.Rows[selectedrowindex];
             string AssemblyId = Convert.ToString(SelectedRow.Cells["Assembly_id"].Value);
 
-
-
-            // Create the connection.
-            string connectionstring = Properties.Settings.Default.connString;
-            using (MySqlConnection connection = new MySqlConnection(connectionstring))
+            if (dgvAssemblies.SelectedRows.Count == 0)
             {
-                MessageBox.Show("Nog te doen");              
-
+                MessageBox.Show("No part selected");
             }
 
-        }
+            else if (dgvAssemblies.SelectedRows.Count == 1)
+            {
+                // Create the connection.
+                string connectionstring = Properties.Settings.Default.connString;
+                using (MySqlConnection connection = new MySqlConnection(connectionstring))
+                {
+                    // mysql string
+                    const string mysqlString1 = "UPDATE Victoriam.T_ASSEMBLY SET Locked = 1 WHERE Assembly_id = ";
+                    string mysqlString = mysqlString1 + AssemblyId;
+                    using (MySqlCommand mysqlcommand = new MySqlCommand(mysqlString, connection))
+                    {
+                        try
+                        {
+                            connection.Open();
+                            mysqlcommand.ExecuteNonQuery();
+                        }
+                        catch
+                        {
+                            MessageBox.Show("Assembly could not be locked");
+                        }
+                    }
 
-        private void btnNewAssembly_Click(object sender, EventArgs e)
-        {
-            Form frm = new NewAssembly();
-            frm.Show();
-        }
+                }
+            }
 
+            else if (dgvAssemblies.SelectedRows.Count > 1)
+            {
+                MessageBox.Show("More than one assembly selected. Please select one assembly");
+            }
+
+            TotalRefresh();
+            AssemblyRefresh();
+
+        }              
         
-        
-        public static string AssemblyID = "";
         public void btnAddPart_Click(object sender, EventArgs e)
         {
             Int32 selectedrowindex = dgvAssemblies.SelectedCells[0].RowIndex;
@@ -218,6 +254,49 @@ namespace MvE_SQL_test
 
         }
 
+        private void btnRemoveOperation_Click(object sender, EventArgs e)
+        {
+            Int32 selectedrowindex = dgvAssemblyOps.SelectedCells[0].RowIndex;
+            DataGridViewRow SelectedRow = dgvAssemblyOps.Rows[selectedrowindex];
+            string AssemblyOpsId = Convert.ToString(SelectedRow.Cells["Assemblydetailoperation_id"].Value);
+
+            if (dgvAssemblyOps.SelectedRows.Count == 0)
+            {
+                MessageBox.Show("No operation selected");
+            }
+
+            else if (dgvAssemblyOps.SelectedRows.Count == 1)
+            {
+                // Create the connection.
+                string connectionstring = Properties.Settings.Default.connString;
+                using (MySqlConnection connection = new MySqlConnection(connectionstring))
+                {
+                    // mysql string parts
+                    const string mysqlString1 = "DELETE FROM Victoriam.T_ASSEMBLYDETAILOPERATION WHERE Assemblydetailoperation_id = ";
+                    string mysqlString = mysqlString1 + AssemblyOpsId;
+                    using (MySqlCommand mysqlcommand = new MySqlCommand(mysqlString, connection))
+                    {
+                        try
+                        {
+                            connection.Open();
+                            mysqlcommand.ExecuteNonQuery();
+                        }
+                        catch
+                        {
+                            MessageBox.Show("Operation could not be removed");
+                        }
+                    }
+
+                }
+            }
+
+            else if (dgvAssemblyOps.SelectedRows.Count > 1)
+            {
+                MessageBox.Show("More than one operation selected. Please select one operation");
+            }
+
+            TotalRefresh();
+        }
 
     }
 }
