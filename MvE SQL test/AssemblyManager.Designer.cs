@@ -45,6 +45,7 @@ namespace MvE_SQL_test
             this.btnCreatePart = new System.Windows.Forms.Button();
             this.btnRemovePart = new System.Windows.Forms.Button();
             this.btnRemoveOperation = new System.Windows.Forms.Button();
+            this.btnAssemblyUnlock = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dgvAssemblies)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgvAssemblyParts)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgvAssemblyOps)).BeginInit();
@@ -102,7 +103,7 @@ namespace MvE_SQL_test
             // 
             // btnNewAssembly
             // 
-            this.btnNewAssembly.Location = new System.Drawing.Point(12, 68);
+            this.btnNewAssembly.Location = new System.Drawing.Point(13, 68);
             this.btnNewAssembly.Name = "btnNewAssembly";
             this.btnNewAssembly.Size = new System.Drawing.Size(133, 23);
             this.btnNewAssembly.TabIndex = 9;
@@ -178,10 +179,11 @@ namespace MvE_SQL_test
             this.btnAddOperation.TabIndex = 16;
             this.btnAddOperation.Text = "Add operation";
             this.btnAddOperation.UseVisualStyleBackColor = true;
+            this.btnAddOperation.Click += new System.EventHandler(this.btnAddOperation_Click);
             // 
             // btnCreatePart
             // 
-            this.btnCreatePart.Location = new System.Drawing.Point(12, 155);
+            this.btnCreatePart.Location = new System.Drawing.Point(13, 184);
             this.btnCreatePart.Name = "btnCreatePart";
             this.btnCreatePart.Size = new System.Drawing.Size(133, 23);
             this.btnCreatePart.TabIndex = 17;
@@ -208,11 +210,22 @@ namespace MvE_SQL_test
             this.btnRemoveOperation.UseVisualStyleBackColor = true;
             this.btnRemoveOperation.Click += new System.EventHandler(this.btnRemoveOperation_Click);
             // 
+            // btnAssemblyUnlock
+            // 
+            this.btnAssemblyUnlock.Location = new System.Drawing.Point(13, 155);
+            this.btnAssemblyUnlock.Name = "btnAssemblyUnlock";
+            this.btnAssemblyUnlock.Size = new System.Drawing.Size(133, 23);
+            this.btnAssemblyUnlock.TabIndex = 20;
+            this.btnAssemblyUnlock.Text = "Unlock assembly";
+            this.btnAssemblyUnlock.UseVisualStyleBackColor = true;
+            this.btnAssemblyUnlock.Click += new System.EventHandler(this.btnAssemblyUnlock_Click);
+            // 
             // AssemblyManager
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(984, 703);
+            this.Controls.Add(this.btnAssemblyUnlock);
             this.Controls.Add(this.btnRemoveOperation);
             this.Controls.Add(this.btnRemovePart);
             this.Controls.Add(this.btnCreatePart);
@@ -258,5 +271,6 @@ namespace MvE_SQL_test
         private System.Windows.Forms.Button btnCreatePart;
         private System.Windows.Forms.Button btnRemovePart;
         private System.Windows.Forms.Button btnRemoveOperation;
+        private System.Windows.Forms.Button btnAssemblyUnlock;
     }
 }

@@ -47,7 +47,7 @@ namespace MvE_SQL_test
                     }
                     catch
                     {
-                        MessageBox.Show("Assembly parts could not be loaded");
+                        MessageBox.Show("Parts could not be loaded");
                     }
                 }
             }   

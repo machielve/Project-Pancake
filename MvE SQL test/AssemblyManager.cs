@@ -159,7 +159,7 @@ namespace MvE_SQL_test
 
             if (dgvAssemblies.SelectedRows.Count == 0)
             {
-                MessageBox.Show("No part selected");
+                MessageBox.Show("No assembly selected");
             }
 
             else if (dgvAssemblies.SelectedRows.Count == 1)
@@ -168,7 +168,7 @@ namespace MvE_SQL_test
                 string connectionstring = Properties.Settings.Default.connString;
                 using (MySqlConnection connection = new MySqlConnection(connectionstring))
                 {
-                    // mysql string
+                    // mysql string assembly
                     const string mysqlString1 = "UPDATE Victoriam.T_ASSEMBLY SET Locked = 1 WHERE Assembly_id = ";
                     string mysqlString = mysqlString1 + AssemblyId;
                     using (MySqlCommand mysqlcommand = new MySqlCommand(mysqlString, connection))
@@ -181,6 +181,36 @@ namespace MvE_SQL_test
                         catch
                         {
                             MessageBox.Show("Assembly could not be locked");
+                        }
+                    }
+
+                    //mysql string detail parts
+                    const string mysqlString4 = "UPDATE Victoriam.T_ASSEMBLYDETAILPART SET Locked = 1 WHERE Assembly = ";
+                    string mysqlString5 = mysqlString4 + AssemblyId;
+                    using (MySqlCommand mysqlcommand = new MySqlCommand(mysqlString5, connection))
+                    {
+                        try
+                        {                            
+                            mysqlcommand.ExecuteNonQuery();
+                        }
+                        catch
+                        {
+                            MessageBox.Show("Assembly detail parts could not be locked");
+                        }
+                    }
+
+                    //mysql string detail ops
+                    const string mysqlString7 = "UPDATE Victoriam.T_ASSEMBLYDETAILOPERATION SET Locked = 1 WHERE Assembly = ";
+                    string mysqlString8 = mysqlString7 + AssemblyId;
+                    using (MySqlCommand mysqlcommand = new MySqlCommand(mysqlString8, connection))
+                    {
+                        try
+                        {
+                            mysqlcommand.ExecuteNonQuery();
+                        }
+                        catch
+                        {
+                            MessageBox.Show("Assembly detail operations could not be locked");
                         }
                     }
 
@@ -298,5 +328,92 @@ namespace MvE_SQL_test
             TotalRefresh();
         }
 
+        private void btnAssemblyUnlock_Click(object sender, EventArgs e)
+        {
+            Int32 selectedrowindex = dgvAssemblies.SelectedCells[0].RowIndex;
+            DataGridViewRow SelectedRow = dgvAssemblies.Rows[selectedrowindex];
+            string AssemblyId = Convert.ToString(SelectedRow.Cells["Assembly_id"].Value);
+
+            if (dgvAssemblies.SelectedRows.Count == 0)
+            {
+                MessageBox.Show("No assembly selected");
+            }
+
+            else if (dgvAssemblies.SelectedRows.Count == 1)
+            {
+                // Create the connection.
+                string connectionstring = Properties.Settings.Default.connString;
+                using (MySqlConnection connection = new MySqlConnection(connectionstring))
+                {
+                    // mysql string assembly
+                    const string mysqlString1 = "UPDATE Victoriam.T_ASSEMBLY SET Locked = 0 WHERE Assembly_id = ";
+                    string mysqlString = mysqlString1 + AssemblyId;
+                    using (MySqlCommand mysqlcommand = new MySqlCommand(mysqlString, connection))
+                    {
+                        try
+                        {
+                            connection.Open();
+                            mysqlcommand.ExecuteNonQuery();
+                        }
+                        catch
+                        {
+                            MessageBox.Show("Assembly could not be unlocked");
+                        }
+                    }
+
+                    //mysql string detail parts
+                    const string mysqlString4 = "UPDATE Victoriam.T_ASSEMBLYDETAILPART SET Locked = 0 WHERE Assembly = ";
+                    string mysqlString5 = mysqlString4 + AssemblyId;
+                    using (MySqlCommand mysqlcommand = new MySqlCommand(mysqlString5, connection))
+                    {
+                        try
+                        {
+                            mysqlcommand.ExecuteNonQuery();
+                        }
+                        catch
+                        {
+                            MessageBox.Show("Assembly detail parts could not be unlocked");
+                        }
+                    }
+
+                    //mysql string detail ops
+                    const string mysqlString7 = "UPDATE Victoriam.T_ASSEMBLYDETAILOPERATION SET Locked = 0 WHERE Assembly = ";
+                    string mysqlString8 = mysqlString7 + AssemblyId;
+                    using (MySqlCommand mysqlcommand = new MySqlCommand(mysqlString8, connection))
+                    {
+                        try
+                        {
+                            mysqlcommand.ExecuteNonQuery();
+                        }
+                        catch
+                        {
+                            MessageBox.Show("Assembly detail operations could not be unlocked");
+                        }
+                    }
+
+                }
+            }
+
+            else if (dgvAssemblies.SelectedRows.Count > 1)
+            {
+                MessageBox.Show("More than one assembly selected. Please select one assembly");
+            }
+
+            TotalRefresh();
+            AssemblyRefresh();
+
+        }
+
+        private void btnAddOperation_Click(object sender, EventArgs e)
+        {
+            Int32 selectedrowindex = dgvAssemblies.SelectedCells[0].RowIndex;
+            DataGridViewRow SelectedRow = dgvAssemblies.Rows[selectedrowindex];
+            string AssemblyId = Convert.ToString(SelectedRow.Cells["Assembly_id"].Value);
+            AssemblyID = AssemblyId;
+
+            Form frm = new NewAssemblyDetailOps();
+            frm.Show();
+
+        }
     }
 }

@@ -78,7 +78,7 @@ namespace MvE_SQL_test
             // 
             // btnAddPart
             // 
-            this.btnAddPart.Location = new System.Drawing.Point(15, 154);
+            this.btnAddPart.Location = new System.Drawing.Point(12, 154);
             this.btnAddPart.Name = "btnAddPart";
             this.btnAddPart.Size = new System.Drawing.Size(133, 23);
             this.btnAddPart.TabIndex = 13;
@@ -106,6 +106,7 @@ namespace MvE_SQL_test
             // 
             this.txtAssemblyID.Location = new System.Drawing.Point(100, 23);
             this.txtAssemblyID.Name = "txtAssemblyID";
+            this.txtAssemblyID.ReadOnly = true;
             this.txtAssemblyID.Size = new System.Drawing.Size(218, 20);
             this.txtAssemblyID.TabIndex = 16;
             // 
