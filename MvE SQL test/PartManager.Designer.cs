@@ -42,7 +42,7 @@ namespace MvE_SQL_test
             this.dgvParts.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvParts.Location = new System.Drawing.Point(165, 38);
             this.dgvParts.Name = "dgvParts";
-            this.dgvParts.Size = new System.Drawing.Size(691, 608);
+            this.dgvParts.Size = new System.Drawing.Size(800, 608);
             this.dgvParts.TabIndex = 0;
             // 
             // label1
@@ -87,7 +87,7 @@ namespace MvE_SQL_test
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(928, 703);
+            this.ClientSize = new System.Drawing.Size(984, 703);
             this.Controls.Add(this.btnNewPart);
             this.Controls.Add(this.btnLoadParts);
             this.Controls.Add(this.btnFinnish);

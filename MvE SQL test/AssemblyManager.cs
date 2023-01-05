@@ -139,15 +139,7 @@ namespace MvE_SQL_test
             string connectionstring = Properties.Settings.Default.connString;
             using (MySqlConnection connection = new MySqlConnection(connectionstring))
             {
-                // mysql string
-                string mysqlString1 = "SELECT locked FROM Victoriam.T_ASSEMBLY WHERE Assembly_id = ";
-                string mysqlString2 = "UPDATE Victoriam.T_ASSEMBLY SET Locked=1 WHERE Assembly_id = ";
-                string mysqlString = mysqlString1 + AssemblyId;
-                string mysqlString3 = mysqlString2 + AssemblyId;
-                MySqlDataAdapter mysqladapt = new MySqlDataAdapter(mysqlString, connection);
-                mysqladapt.UpdateCommand = new MySqlCommand(mysqlString3, connection); 
-
-                
+                MessageBox.Show("Nog te doen");              
 
             }
 
@@ -157,6 +149,13 @@ namespace MvE_SQL_test
         {
             Form frm = new NewAssembly();
             frm.Show();
+        }
+
+        private void btnAddPart_Click(object sender, EventArgs e)
+        {
+            Form frm = new NewAssemblyDetailPart();
+            frm.Show();
+
         }
     }
 }
