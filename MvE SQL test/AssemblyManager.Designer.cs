@@ -196,6 +196,7 @@ namespace MvE_SQL_test
             this.btnRemovePart.TabIndex = 18;
             this.btnRemovePart.Text = "Remove part";
             this.btnRemovePart.UseVisualStyleBackColor = true;
+            this.btnRemovePart.Click += new System.EventHandler(this.btnRemovePart_Click);
             // 
             // btnRemoveOperation
             // 

@@ -157,5 +157,51 @@ namespace MvE_SQL_test
             frm.Show();
 
         }
+
+        private void btnRemovePart_Click(object sender, EventArgs e)
+        {
+            Int32 selectedrowindex = dgvAssemblyParts.SelectedCells[0].RowIndex;
+            DataGridViewRow SelectedRow = dgvAssemblyParts.Rows[selectedrowindex];
+            string AssemblyPartId = Convert.ToString(SelectedRow.Cells["Assemblydetailpart_id"].Value);
+
+            if (dgvAssemblyParts.SelectedRows.Count == 0)
+            {
+                MessageBox.Show("No part selected");
+            }
+
+            else if (dgvAssemblyParts.SelectedRows.Count == 1)
+            {
+                // Create the connection.
+                string connectionstring = Properties.Settings.Default.connString;
+                using (MySqlConnection connection = new MySqlConnection(connectionstring))
+                {
+                    // mysql string parts
+                    const string mysqlString1 = "DELETE FROM Victoriam.T_ASSEMBLYDETAILPART WHERE Assemblydetailpart_id = ";
+                    string mysqlString = mysqlString1 + AssemblyPartId;
+                    using (MySqlCommand mysqlcommand = new MySqlCommand(mysqlString, connection))
+                    {
+                        try
+                        {
+                            connection.Open();
+                            mysqlcommand.ExecuteNonQuery();
+                        }
+                        catch
+                        {
+                            MessageBox.Show("Part could not be removed");
+                        }
+                    }
+                    
+
+                }
+            }
+
+            else if (dgvAssemblyParts.SelectedRows.Count > 1)
+            {
+                MessageBox.Show("More than one part selected. Please select one part");
+            }
+
+
+
+        }
     }
 }
