@@ -35,6 +35,8 @@ namespace MvE_SQL_test
             this.label2 = new System.Windows.Forms.Label();
             this.btnAddPart = new System.Windows.Forms.Button();
             this.countPart = new System.Windows.Forms.NumericUpDown();
+            this.label3 = new System.Windows.Forms.Label();
+            this.txtAssemblyID = new System.Windows.Forms.TextBox();
             ((System.ComponentModel.ISupportInitialize)(this.countPart)).BeginInit();
             this.SuspendLayout();
             // 
@@ -82,6 +84,7 @@ namespace MvE_SQL_test
             this.btnAddPart.TabIndex = 13;
             this.btnAddPart.Text = "Add part";
             this.btnAddPart.UseVisualStyleBackColor = true;
+            this.btnAddPart.Click += new System.EventHandler(this.btnAddPart_Click);
             // 
             // countPart
             // 
@@ -90,11 +93,29 @@ namespace MvE_SQL_test
             this.countPart.Size = new System.Drawing.Size(218, 20);
             this.countPart.TabIndex = 14;
             // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Location = new System.Drawing.Point(12, 26);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(51, 13);
+            this.label3.TabIndex = 15;
+            this.label3.Text = "Assembly";
+            // 
+            // txtAssemblyID
+            // 
+            this.txtAssemblyID.Location = new System.Drawing.Point(100, 23);
+            this.txtAssemblyID.Name = "txtAssemblyID";
+            this.txtAssemblyID.Size = new System.Drawing.Size(218, 20);
+            this.txtAssemblyID.TabIndex = 16;
+            // 
             // NewAssemblyDetailPart
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(374, 258);
+            this.Controls.Add(this.txtAssemblyID);
+            this.Controls.Add(this.label3);
             this.Controls.Add(this.countPart);
             this.Controls.Add(this.btnAddPart);
             this.Controls.Add(this.label2);
@@ -119,5 +140,7 @@ namespace MvE_SQL_test
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Button btnAddPart;
         private System.Windows.Forms.NumericUpDown countPart;
+        private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.TextBox txtAssemblyID;
     }
 }

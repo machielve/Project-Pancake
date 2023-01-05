@@ -50,13 +50,73 @@ namespace MvE_SQL_test
                 }
             }   
 
-        }
 
+        }
 
 
         private void btnFinnish_Click(object sender, EventArgs e)
         {
             this.Close();
+        }
+
+        private void btnAddPart_Click(object sender, EventArgs e)
+        {
+            int AssemblyID = Convert.ToInt32(txtAssemblyID.Text);
+            int PartID = Convert.ToInt32(cmbPart.SelectedValue.ToString());
+            decimal PartQuantity = Convert.ToDecimal(countPart.Value);
+            string PartName = cmbPart.Text;
+
+            // Create the connection.
+            string connectionstring = Properties.Settings.Default.connString;
+            using (MySqlConnection connection = new MySqlConnection(connectionstring))
+            {
+
+
+                using (MySqlCommand msqlcommand = new MySqlCommand("uspNewAssemblyDetailPart", connection))
+                {
+                    msqlcommand.CommandType = CommandType.StoredProcedure;
+
+                    msqlcommand.Parameters.Add(new MySqlParameter("PartAssembly", MySqlDbType.Int32));
+                    msqlcommand.Parameters["PartAssembly"].Value = AssemblyID;
+
+                    msqlcommand.Parameters.Add(new MySqlParameter("PartID", MySqlDbType.Text));
+                    msqlcommand.Parameters["PartID"].Value = PartID;
+
+                    msqlcommand.Parameters.Add(new MySqlParameter("Partname", MySqlDbType.Text));
+                    msqlcommand.Parameters["Partname"].Value = PartName;
+
+                    msqlcommand.Parameters.Add(new MySqlParameter("PartQuantity", MySqlDbType.Decimal));
+                    msqlcommand.Parameters["PartQuantity"].Value = PartQuantity;
+
+                    msqlcommand.Parameters.Add(new MySqlParameter("PartWeight", MySqlDbType.Decimal));
+                    msqlcommand.Parameters["PartWeight"].Value = 1;
+
+                    msqlcommand.Parameters.Add(new MySqlParameter("PartCostprice", MySqlDbType.Decimal));
+                    msqlcommand.Parameters["PartCostprice"].Value = 1;
+
+                    try
+                    {
+                        connection.Open();
+
+                        msqlcommand.ExecuteNonQuery();
+
+                    }
+
+                    catch (MySqlException ex)
+                    {
+                        MessageBox.Show("error " + ex.Number + " has occurd " + ex.Message);
+                    }
+
+                    finally
+                    {
+                        connection.Close();
+                    }
+
+                }
+            }
+
+            this.Close();
+
         }
     }
 }
