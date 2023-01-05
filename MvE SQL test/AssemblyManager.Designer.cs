@@ -245,6 +245,7 @@ namespace MvE_SQL_test
             this.Name = "AssemblyManager";
             this.Text = " Assembly manager";
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
+            this.Load += new System.EventHandler(this.AssemblyManager_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dgvAssemblies)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgvAssemblyParts)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgvAssemblyOps)).EndInit();

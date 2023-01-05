@@ -72,6 +72,7 @@ namespace MvE_SQL_test
             this.btnAddOperation.TabIndex = 21;
             this.btnAddOperation.Text = "Add Operation";
             this.btnAddOperation.UseVisualStyleBackColor = true;
+            this.btnAddOperation.Click += new System.EventHandler(this.btnAddOperation_Click);
             // 
             // label2
             // 
@@ -124,6 +125,7 @@ namespace MvE_SQL_test
             this.Controls.Add(this.btnFinnish);
             this.Name = "NewAssemblyDetailOps";
             this.Text = "New assembly operations";
+            this.Load += new System.EventHandler(this.NewAssemblyDetailOps_Load);
             ((System.ComponentModel.ISupportInitialize)(this.countOps)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();

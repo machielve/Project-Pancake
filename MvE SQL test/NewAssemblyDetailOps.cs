@@ -19,7 +19,13 @@ namespace MvE_SQL_test
             InitializeComponent();
         }
 
-        private void NewAssemblyDetailOps_Load()
+
+        private void btnFinnish_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
+
+        private void NewAssemblyDetailOps_Load(object sender, EventArgs e)
         {
             txtAssemblyID.Text = AssemblyManager.AssemblyID;
             // Create the connection.
@@ -27,7 +33,7 @@ namespace MvE_SQL_test
             using (MySqlConnection connection = new MySqlConnection(connectionstring))
             {
                 // mysql string parts
-                const string mysqlString = "SELECT Operation_id, Name FROM Victoriam.T_OPERATON";
+                const string mysqlString = "SELECT Operation_id, Name FROM Victoriam.T_OPERATION";
                 using (MySqlCommand mysqlcommand = new MySqlCommand(mysqlString, connection))
                 {
                     try
@@ -53,12 +59,59 @@ namespace MvE_SQL_test
 
         }
 
-        private void btnFinnish_Click(object sender, EventArgs e)
+        private void btnAddOperation_Click(object sender, EventArgs e)
         {
+            int AssemblyID = Convert.ToInt32(txtAssemblyID.Text);
+            int OpsID = Convert.ToInt32(cmbOps.SelectedValue.ToString());
+            decimal OpsQuantity = Convert.ToDecimal(countOps.Value);
+            string Opsname = cmbOps.Text;
+
+            // Create the connection.
+            string connectionstring = Properties.Settings.Default.connString;
+            using (MySqlConnection connection = new MySqlConnection(connectionstring))
+            {
+
+
+                using (MySqlCommand msqlcommand = new MySqlCommand("uspNewAssemblyDetailOperation", connection))
+                {
+                    msqlcommand.CommandType = CommandType.StoredProcedure;
+
+                    msqlcommand.Parameters.Add(new MySqlParameter("OpsAssembly", MySqlDbType.Int32));
+                    msqlcommand.Parameters["OpsAssembly"].Value = AssemblyID;
+
+                    msqlcommand.Parameters.Add(new MySqlParameter("OpsID", MySqlDbType.Text));
+                    msqlcommand.Parameters["OpsID"].Value = OpsID;
+
+                    msqlcommand.Parameters.Add(new MySqlParameter("Opsname", MySqlDbType.Text));
+                    msqlcommand.Parameters["Opsname"].Value = Opsname;
+
+                    msqlcommand.Parameters.Add(new MySqlParameter("OpsQuantity", MySqlDbType.Decimal));
+                    msqlcommand.Parameters["OpsQuantity"].Value = OpsQuantity;
+
+                    msqlcommand.Parameters.Add(new MySqlParameter("OpsCostprice", MySqlDbType.Decimal));
+                    msqlcommand.Parameters["OpsCostprice"].Value = 1;
+
+                    try
+                    {
+                        connection.Open();
+
+                        msqlcommand.ExecuteNonQuery();
+
+                    }
+
+                    catch (MySqlException ex)
+                    {
+                        MessageBox.Show("error " + ex.Number + " has occurd " + ex.Message);
+                    }
+
+                    finally
+                    {
+                        connection.Close();
+                    }
+
+                }
+            }
             this.Close();
         }
-
-
-
     }
 }

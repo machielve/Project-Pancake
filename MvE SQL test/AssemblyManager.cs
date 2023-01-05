@@ -415,5 +415,11 @@ namespace MvE_SQL_test
             frm.Show();
 
         }
+
+        private void AssemblyManager_Load(object sender, EventArgs e)
+        {
+            AssemblyRefresh();
+
+        }
     }
 }
