@@ -19,8 +19,10 @@ namespace MvE_SQL_test
         {       
             InitializeComponent();
         }
-        private void NewAssemblyDetailPart_Load(object sender, EventArgs e)
+
+         private void NewAssemblyDetailPart_Load(object sender, EventArgs e)
         {
+            txtAssemblyID.Text = AssemblyManager.AssemblyID;
             // Create the connection.
             string connectionstring = Properties.Settings.Default.connString;
             using (MySqlConnection connection = new MySqlConnection(connectionstring))
@@ -52,7 +54,6 @@ namespace MvE_SQL_test
 
 
         }
-
 
         private void btnFinnish_Click(object sender, EventArgs e)
         {
@@ -114,7 +115,6 @@ namespace MvE_SQL_test
 
                 }
             }
-
             this.Close();
 
         }
