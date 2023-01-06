@@ -46,6 +46,7 @@ namespace MvE_SQL_test
             this.btnRemovePart = new System.Windows.Forms.Button();
             this.btnRemoveOperation = new System.Windows.Forms.Button();
             this.btnAssemblyUnlock = new System.Windows.Forms.Button();
+            this.txtAssemblyID = new System.Windows.Forms.TextBox();
             ((System.ComponentModel.ISupportInitialize)(this.dgvAssemblies)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgvAssemblyParts)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgvAssemblyOps)).BeginInit();
@@ -220,11 +221,20 @@ namespace MvE_SQL_test
             this.btnAssemblyUnlock.UseVisualStyleBackColor = true;
             this.btnAssemblyUnlock.Click += new System.EventHandler(this.btnAssemblyUnlock_Click);
             // 
+            // txtAssemblyID
+            // 
+            this.txtAssemblyID.Location = new System.Drawing.Point(165, 260);
+            this.txtAssemblyID.Name = "txtAssemblyID";
+            this.txtAssemblyID.ReadOnly = true;
+            this.txtAssemblyID.Size = new System.Drawing.Size(100, 20);
+            this.txtAssemblyID.TabIndex = 21;
+            // 
             // AssemblyManager
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(984, 703);
+            this.Controls.Add(this.txtAssemblyID);
             this.Controls.Add(this.btnAssemblyUnlock);
             this.Controls.Add(this.btnRemoveOperation);
             this.Controls.Add(this.btnRemovePart);
@@ -273,5 +283,6 @@ namespace MvE_SQL_test
         private System.Windows.Forms.Button btnRemovePart;
         private System.Windows.Forms.Button btnRemoveOperation;
         private System.Windows.Forms.Button btnAssemblyUnlock;
+        private System.Windows.Forms.TextBox txtAssemblyID;
     }
 }

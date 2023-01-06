@@ -54,5 +54,12 @@ namespace MvE_SQL_test
                 }
             }
         }
+
+        private void btnNewPart_Click(object sender, EventArgs e)
+        {
+            Form frm = new NewPart();
+
+            frm.Show();
+        }
     }
 }

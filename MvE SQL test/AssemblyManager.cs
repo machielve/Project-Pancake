@@ -23,6 +23,10 @@ namespace MvE_SQL_test
 
         public void AssemblyRefresh()
         {
+            
+            
+            
+            
             // Create the connection.
             string connectionstring = Properties.Settings.Default.connString;
             using (MySqlConnection connection = new MySqlConnection(connectionstring))
@@ -54,9 +58,7 @@ namespace MvE_SQL_test
         public void TotalRefresh()
         {
 
-            Int32 selectedrowindex = dgvAssemblies.SelectedCells[0].RowIndex;
-            DataGridViewRow SelectedRow = dgvAssemblies.Rows[selectedrowindex];
-            string AssemblyId = Convert.ToString(SelectedRow.Cells["Assembly_id"].Value);
+            string AssemblyId=(txtAssemblyID.Text);
 
             if (dgvAssemblies.SelectedRows.Count == 0)
             {
@@ -149,6 +151,13 @@ namespace MvE_SQL_test
 
         private void btnSeeDetails_Click(object sender, EventArgs e)
         {
+            Int32 selectedrowindex = dgvAssemblies.SelectedCells[0].RowIndex;
+            DataGridViewRow SelectedRow = dgvAssemblies.Rows[selectedrowindex];
+            string AssemblyId = Convert.ToString(SelectedRow.Cells["Assembly_id"].Value);
+
+            txtAssemblyID.Text = AssemblyId;
+
+
             TotalRefresh();
         }
 
@@ -427,12 +436,12 @@ namespace MvE_SQL_test
 
         public void NewAssemblyDetailPart_Formclosing(object sender, EventArgs e)
         {
-            AssemblyRefresh();
+            TotalRefresh();
 
         }
         public void NewAssemblyDetailOperation_Formclosing(object sender, EventArgs e)
         {
-            AssemblyRefresh();
+            TotalRefresh();
 
         }
     }
