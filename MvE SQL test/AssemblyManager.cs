@@ -142,6 +142,7 @@ namespace MvE_SQL_test
         private void btnNewAssembly_Click(object sender, EventArgs e)
         {
             Form frm = new NewAssembly();
+            
             frm.Show();
         }
               
@@ -235,6 +236,7 @@ namespace MvE_SQL_test
             AssemblyID = AssemblyId;
 
             Form frm = new NewAssemblyDetailPart();
+            frm.FormClosing += new FormClosingEventHandler(this.NewAssemblyDetailPart_Formclosing);
             frm.Show();
 
         }
@@ -412,11 +414,23 @@ namespace MvE_SQL_test
             AssemblyID = AssemblyId;
 
             Form frm = new NewAssemblyDetailOps();
+            frm.FormClosing += new FormClosingEventHandler(this.NewAssemblyDetailOperation_Formclosing);
             frm.Show();
 
         }
 
         private void AssemblyManager_Load(object sender, EventArgs e)
+        {
+            AssemblyRefresh();
+
+        }
+
+        public void NewAssemblyDetailPart_Formclosing(object sender, EventArgs e)
+        {
+            AssemblyRefresh();
+
+        }
+        public void NewAssemblyDetailOperation_Formclosing(object sender, EventArgs e)
         {
             AssemblyRefresh();
 

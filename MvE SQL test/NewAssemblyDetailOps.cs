@@ -70,11 +70,34 @@ namespace MvE_SQL_test
             string connectionstring = Properties.Settings.Default.connString;
             using (MySqlConnection connection = new MySqlConnection(connectionstring))
             {
+                decimal cost=0;
 
+                string mysqlString = "SELECT Cost, Name FROM Victoriam.T_OPERATION WHERE Operation_id = " ;
+                string mysqlString2 = mysqlString + OpsID.ToString();
+                using (MySqlCommand mysqlcommand = new MySqlCommand(mysqlString2, connection))
+                {
+                    try
+                    {
+                        connection.Open();
+                        using (MySqlDataReader dr = mysqlcommand.ExecuteReader())
+                        {
+                            dr.Read();
+                            decimal price = Convert.ToDecimal(dr.GetValue(0).ToString());
+                            cost += price;
+                            dr.Close();
+                        }
+                    }
+                    catch
+                    {
+                        MessageBox.Show("Operations could not be loaded");
+                    }
+                }
 
-                using (MySqlCommand msqlcommand = new MySqlCommand("uspNewAssemblyDetailOperation", connection))
+                    using (MySqlCommand msqlcommand = new MySqlCommand("uspNewAssemblyDetailOperation", connection))
                 {
                     msqlcommand.CommandType = CommandType.StoredProcedure;
+
+                    decimal costprice = cost * OpsQuantity;
 
                     msqlcommand.Parameters.Add(new MySqlParameter("OpsAssembly", MySqlDbType.Int32));
                     msqlcommand.Parameters["OpsAssembly"].Value = AssemblyID;
@@ -86,14 +109,18 @@ namespace MvE_SQL_test
                     msqlcommand.Parameters["Opsname"].Value = Opsname;
 
                     msqlcommand.Parameters.Add(new MySqlParameter("OpsQuantity", MySqlDbType.Decimal));
+                    msqlcommand.Parameters["OpsQuantity"].Precision = 10;
+                    msqlcommand.Parameters["OpsQuantity"].Scale = 2;
                     msqlcommand.Parameters["OpsQuantity"].Value = OpsQuantity;
 
                     msqlcommand.Parameters.Add(new MySqlParameter("OpsCostprice", MySqlDbType.Decimal));
-                    msqlcommand.Parameters["OpsCostprice"].Value = 1;
+                    msqlcommand.Parameters["OpsCostprice"].Precision = 10;
+                    msqlcommand.Parameters["OpsCostprice"].Scale = 2;
+                    msqlcommand.Parameters["OpsCostprice"].Value = costprice;
 
                     try
                     {
-                        connection.Open();
+                       // connection.Open();
 
                         msqlcommand.ExecuteNonQuery();
 
