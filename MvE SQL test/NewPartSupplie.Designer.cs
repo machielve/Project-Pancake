@@ -33,7 +33,7 @@ namespace MvE_SQL_test
             this.label3 = new System.Windows.Forms.Label();
             this.btnAddAnotherSupplier = new System.Windows.Forms.Button();
             this.btnNewSupplier = new System.Windows.Forms.Button();
-            this.txtUnitID = new System.Windows.Forms.TextBox();
+            this.txtPartID = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
             this.btnFinnish = new System.Windows.Forms.Button();
             this.countPrice = new System.Windows.Forms.NumericUpDown();
@@ -83,14 +83,15 @@ namespace MvE_SQL_test
             this.btnNewSupplier.TabIndex = 15;
             this.btnNewSupplier.Text = "Add new supplier";
             this.btnNewSupplier.UseVisualStyleBackColor = true;
+            this.btnNewSupplier.Click += new System.EventHandler(this.btnNewSupplier_Click);
             // 
-            // txtUnitID
+            // txtPartID
             // 
-            this.txtUnitID.Location = new System.Drawing.Point(108, 13);
-            this.txtUnitID.Name = "txtUnitID";
-            this.txtUnitID.ReadOnly = true;
-            this.txtUnitID.Size = new System.Drawing.Size(234, 20);
-            this.txtUnitID.TabIndex = 14;
+            this.txtPartID.Location = new System.Drawing.Point(108, 13);
+            this.txtPartID.Name = "txtPartID";
+            this.txtPartID.ReadOnly = true;
+            this.txtPartID.Size = new System.Drawing.Size(234, 20);
+            this.txtPartID.TabIndex = 14;
             // 
             // label2
             // 
@@ -113,7 +114,13 @@ namespace MvE_SQL_test
             // 
             // countPrice
             // 
+            this.countPrice.DecimalPlaces = 2;
             this.countPrice.Location = new System.Drawing.Point(108, 67);
+            this.countPrice.Maximum = new decimal(new int[] {
+            1000,
+            0,
+            0,
+            0});
             this.countPrice.Name = "countPrice";
             this.countPrice.Size = new System.Drawing.Size(234, 20);
             this.countPrice.TabIndex = 19;
@@ -121,6 +128,11 @@ namespace MvE_SQL_test
             // CountQuantity
             // 
             this.CountQuantity.Location = new System.Drawing.Point(108, 93);
+            this.CountQuantity.Maximum = new decimal(new int[] {
+            100000,
+            0,
+            0,
+            0});
             this.CountQuantity.Name = "CountQuantity";
             this.CountQuantity.Size = new System.Drawing.Size(234, 20);
             this.CountQuantity.TabIndex = 20;
@@ -156,7 +168,7 @@ namespace MvE_SQL_test
             this.Controls.Add(this.label3);
             this.Controls.Add(this.btnAddAnotherSupplier);
             this.Controls.Add(this.btnNewSupplier);
-            this.Controls.Add(this.txtUnitID);
+            this.Controls.Add(this.txtPartID);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.btnFinnish);
             this.Name = "NewPartSupplier";
@@ -175,7 +187,7 @@ namespace MvE_SQL_test
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Button btnAddAnotherSupplier;
         private System.Windows.Forms.Button btnNewSupplier;
-        private System.Windows.Forms.TextBox txtUnitID;
+        private System.Windows.Forms.TextBox txtPartID;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Button btnFinnish;
         private System.Windows.Forms.NumericUpDown countPrice;

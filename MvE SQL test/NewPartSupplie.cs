@@ -26,6 +26,8 @@ namespace MvE_SQL_test
 
         private void NewPartSupplier_Load(object sender, EventArgs e)
         {
+            txtPartID.Text = PartManager.PartID;
+
             // Create the connection.
             string connectionstring = Properties.Settings.Default.connString;
             using (MySqlConnection connection = new MySqlConnection(connectionstring))
@@ -57,5 +59,60 @@ namespace MvE_SQL_test
             }
         }
 
+        private void btnNewSupplier_Click(object sender, EventArgs e)
+        {
+            decimal pricetotal = Convert.ToDecimal(countPrice.Value);
+            decimal totalquant = Convert.ToDecimal(CountQuantity.Value);
+
+            decimal unitprice = pricetotal / totalquant;
+
+            int PartID = Convert.ToInt32(txtPartID.Text);
+            int SupplierID = Convert.ToInt32(cmbSupplier.SelectedValue.ToString());
+
+            // Create the connection.
+            string connectionstring = Properties.Settings.Default.connString;
+            using (MySqlConnection connection = new MySqlConnection(connectionstring))
+            {
+
+                using (MySqlCommand msqlcommand = new MySqlCommand("uspNewPartSupplier", connection))
+                {
+                    msqlcommand.CommandType = CommandType.StoredProcedure;
+
+                    msqlcommand.Parameters.Add(new MySqlParameter("nPart", MySqlDbType.Int32));
+                    msqlcommand.Parameters["nPart"].Value = PartID;
+
+                    msqlcommand.Parameters.Add(new MySqlParameter("nSupplier", MySqlDbType.Int32));
+                    msqlcommand.Parameters["nSupplier"].Value = SupplierID;
+
+                    msqlcommand.Parameters.Add(new MySqlParameter("nPrice", MySqlDbType.Decimal));
+                    msqlcommand.Parameters["nPrice"].Precision = 10;
+                    msqlcommand.Parameters["nPrice"].Scale = 2;
+                    msqlcommand.Parameters["nPrice"].Value = unitprice;
+
+                    try
+                    {
+                        connection.Open();
+
+                        msqlcommand.ExecuteNonQuery();
+
+                        connection.Close();
+
+                    }
+
+                    catch (MySqlException ex)
+                    {
+                        MessageBox.Show("error " + ex.Number + " has occurd " + ex.Message);
+                    }
+
+                    finally
+                    {
+                        connection.Close();
+                    }
+
+                }
+            }
+            this.Close();
+
+        }
     }
 }
