@@ -129,6 +129,12 @@
     <Compile Include="NewPart.Designer.cs">
       <DependentUpon>NewPart.cs</DependentUpon>
     </Compile>
+    <Compile Include="NewPartSupplie.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="NewPartSupplie.Designer.cs">
+      <DependentUpon>NewPartSupplie.cs</DependentUpon>
+    </Compile>
     <Compile Include="NewProject.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -175,6 +181,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="NewPart.resx">
       <DependentUpon>NewPart.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="NewPartSupplie.resx">
+      <DependentUpon>NewPartSupplie.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="NewProject.resx">
       <DependentUpon>NewProject.cs</DependentUpon>

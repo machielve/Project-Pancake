@@ -34,12 +34,13 @@ namespace MvE_SQL_test
             this.btnFinnish = new System.Windows.Forms.Button();
             this.btnLoadParts = new System.Windows.Forms.Button();
             this.btnNewPart = new System.Windows.Forms.Button();
-            this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.dgvSuppliers = new System.Windows.Forms.DataGridView();
             this.label2 = new System.Windows.Forms.Label();
-            this.button1 = new System.Windows.Forms.Button();
-            this.button2 = new System.Windows.Forms.Button();
+            this.btnAddSupplier = new System.Windows.Forms.Button();
+            this.btnLoadSuppliers = new System.Windows.Forms.Button();
+            this.txtPartID = new System.Windows.Forms.TextBox();
             ((System.ComponentModel.ISupportInitialize)(this.dgvParts)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvSuppliers)).BeginInit();
             this.SuspendLayout();
             // 
             // dgvParts
@@ -91,13 +92,15 @@ namespace MvE_SQL_test
             this.btnNewPart.UseVisualStyleBackColor = true;
             this.btnNewPart.Click += new System.EventHandler(this.btnNewPart_Click);
             // 
-            // dataGridView1
+            // dgvSuppliers
             // 
-            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Location = new System.Drawing.Point(165, 587);
-            this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.Size = new System.Drawing.Size(800, 104);
-            this.dataGridView1.TabIndex = 11;
+            this.dgvSuppliers.AllowUserToAddRows = false;
+            this.dgvSuppliers.AllowUserToDeleteRows = false;
+            this.dgvSuppliers.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvSuppliers.Location = new System.Drawing.Point(165, 587);
+            this.dgvSuppliers.Name = "dgvSuppliers";
+            this.dgvSuppliers.Size = new System.Drawing.Size(800, 104);
+            this.dgvSuppliers.TabIndex = 11;
             // 
             // label2
             // 
@@ -108,33 +111,44 @@ namespace MvE_SQL_test
             this.label2.TabIndex = 12;
             this.label2.Text = "Suppliers";
             // 
-            // button1
+            // btnAddSupplier
             // 
-            this.button1.Location = new System.Drawing.Point(13, 587);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(133, 23);
-            this.button1.TabIndex = 13;
-            this.button1.Text = "Add supplier";
-            this.button1.UseVisualStyleBackColor = true;
+            this.btnAddSupplier.Location = new System.Drawing.Point(13, 587);
+            this.btnAddSupplier.Name = "btnAddSupplier";
+            this.btnAddSupplier.Size = new System.Drawing.Size(133, 23);
+            this.btnAddSupplier.TabIndex = 13;
+            this.btnAddSupplier.Text = "Add supplier";
+            this.btnAddSupplier.UseVisualStyleBackColor = true;
+            this.btnAddSupplier.Click += new System.EventHandler(this.btnAddSupplier_Click);
             // 
-            // button2
+            // btnLoadSuppliers
             // 
-            this.button2.Location = new System.Drawing.Point(13, 67);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(133, 23);
-            this.button2.TabIndex = 14;
-            this.button2.Text = "Load suppliers";
-            this.button2.UseVisualStyleBackColor = true;
+            this.btnLoadSuppliers.Location = new System.Drawing.Point(13, 67);
+            this.btnLoadSuppliers.Name = "btnLoadSuppliers";
+            this.btnLoadSuppliers.Size = new System.Drawing.Size(133, 23);
+            this.btnLoadSuppliers.TabIndex = 14;
+            this.btnLoadSuppliers.Text = "Load suppliers";
+            this.btnLoadSuppliers.UseVisualStyleBackColor = true;
+            this.btnLoadSuppliers.Click += new System.EventHandler(this.btnLoadSuppliers_Click);
+            // 
+            // txtPartID
+            // 
+            this.txtPartID.Location = new System.Drawing.Point(165, 548);
+            this.txtPartID.Name = "txtPartID";
+            this.txtPartID.ReadOnly = true;
+            this.txtPartID.Size = new System.Drawing.Size(100, 20);
+            this.txtPartID.TabIndex = 15;
             // 
             // PartManager
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(984, 703);
-            this.Controls.Add(this.button2);
-            this.Controls.Add(this.button1);
+            this.Controls.Add(this.txtPartID);
+            this.Controls.Add(this.btnLoadSuppliers);
+            this.Controls.Add(this.btnAddSupplier);
             this.Controls.Add(this.label2);
-            this.Controls.Add(this.dataGridView1);
+            this.Controls.Add(this.dgvSuppliers);
             this.Controls.Add(this.btnNewPart);
             this.Controls.Add(this.btnLoadParts);
             this.Controls.Add(this.btnFinnish);
@@ -144,7 +158,7 @@ namespace MvE_SQL_test
             this.Text = "Part manager";
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             ((System.ComponentModel.ISupportInitialize)(this.dgvParts)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvSuppliers)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -157,9 +171,10 @@ namespace MvE_SQL_test
         private System.Windows.Forms.Button btnFinnish;
         private System.Windows.Forms.Button btnLoadParts;
         private System.Windows.Forms.Button btnNewPart;
-        private System.Windows.Forms.DataGridView dataGridView1;
+        private System.Windows.Forms.DataGridView dgvSuppliers;
         private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.Button button1;
-        private System.Windows.Forms.Button button2;
+        private System.Windows.Forms.Button btnAddSupplier;
+        private System.Windows.Forms.Button btnLoadSuppliers;
+        private System.Windows.Forms.TextBox txtPartID;
     }
 }

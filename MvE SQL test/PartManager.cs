@@ -14,17 +14,9 @@ namespace MvE_SQL_test
 {
     public partial class PartManager : Form
     {
-        public PartManager()
-        {
-            InitializeComponent();
-        }
 
-        private void btnFinnish_Click(object sender, EventArgs e)
-        {
-            this.Close();
-        }
-
-        private void btnLoadParts_Click(object sender, EventArgs e)
+        public static string PartID = "";
+        public void PartRefresh()
         {
             // Create the connection.
             string connectionstring = Properties.Settings.Default.connString;
@@ -53,13 +45,117 @@ namespace MvE_SQL_test
                     }
                 }
             }
+
+        }
+        
+        public void TotalRefresh()
+        {
+
+            string AssemblyId = (txtPartID.Text);
+
+            if (dgvParts.SelectedRows.Count == 0)
+            {
+                MessageBox.Show("No part selected");
+            }
+
+            else if (dgvParts.SelectedRows.Count == 1)
+            {
+                // Create the connection.
+                string connectionstring = Properties.Settings.Default.connString;
+                using (MySqlConnection connection = new MySqlConnection(connectionstring))
+                {
+                    // mysql string parts
+                    const string mysqlString1 = "SELECT * FROM Victoriam.T_PARTSUPPLIER WHERE Part = ";
+                    string mysqlString = mysqlString1 + AssemblyId;
+                    using (MySqlCommand mysqlcommand = new MySqlCommand(mysqlString, connection))
+                    {
+                        try
+                        {
+                            connection.Open();
+                            using (MySqlDataReader dr = mysqlcommand.ExecuteReader())
+                            {
+                                DataTable dt = new DataTable();
+                                dt.Load(dr);
+                                this.dgvSuppliers.DataSource = dt;
+                                dr.Close();
+                            }
+                        }
+                        catch
+                        {
+                            MessageBox.Show("Suppliers could not be loaded");
+                        }
+                    }
+
+                }
+            }
+
+            else if (dgvParts.SelectedRows.Count > 1)
+            {
+                MessageBox.Show("More than one part selected. Please select one part");
+            }
+
+
+        }
+        
+        public PartManager()
+        {
+            InitializeComponent();
+        }
+
+        private void btnFinnish_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
+
+        private void btnLoadParts_Click(object sender, EventArgs e)
+        {
+            PartRefresh();
+            
         }
 
         private void btnNewPart_Click(object sender, EventArgs e)
         {
             Form frm = new NewPart();
-
+            frm.FormClosing += new FormClosingEventHandler(this.NewPart_Formclosing);
             frm.Show();
+        }
+
+        private void btnLoadSuppliers_Click(object sender, EventArgs e)
+        {
+            Int32 selectedrowindex = dgvParts.SelectedCells[0].RowIndex;
+            DataGridViewRow SelectedRow = dgvParts.Rows[selectedrowindex];
+            string PartID = Convert.ToString(SelectedRow.Cells["Part_id"].Value);
+
+            txtPartID.Text = PartID;
+
+
+            TotalRefresh();
+        }
+
+        private void NewPart_Formclosing(object sender, EventArgs e)
+        {
+            PartRefresh();
+
+        }
+
+        private void btnAddSupplier_Click(object sender, EventArgs e)
+        {
+
+            Int32 selectedrowindex = dgvParts.SelectedCells[0].RowIndex;
+            DataGridViewRow SelectedRow = dgvParts.Rows[selectedrowindex];
+            string PartId = Convert.ToString(SelectedRow.Cells["Part_id"].Value);
+            PartID = PartId;
+
+            Form frm = new NewPartSupplier();
+            frm.FormClosing += new FormClosingEventHandler(this.NewPartSUpplier_Formclosing);
+            frm.Show();
+
+        }
+
+        public void NewPartSUpplier_Formclosing(object sender, EventArgs e)
+        {
+            TotalRefresh();
+
         }
     }
 }

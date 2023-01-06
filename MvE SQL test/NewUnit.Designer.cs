@@ -36,9 +36,9 @@
             this.txtUnitID = new System.Windows.Forms.TextBox();
             this.btnNewUnit = new System.Windows.Forms.Button();
             this.btnAddAnotherUnit = new System.Windows.Forms.Button();
-            this.tUNITBindingSource1 = new System.Windows.Forms.BindingSource(this.components);
             this.label3 = new System.Windows.Forms.Label();
             this.txtUnitGroup = new System.Windows.Forms.ComboBox();
+            this.tUNITBindingSource1 = new System.Windows.Forms.BindingSource(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.tUNITBindingSource1)).BeginInit();
             this.SuspendLayout();
             // 
