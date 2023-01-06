@@ -90,6 +90,7 @@ namespace MvE_SQL_test
             this.btnNewUnit.TabIndex = 15;
             this.btnNewUnit.Text = "Add new part";
             this.btnNewUnit.UseVisualStyleBackColor = true;
+            this.btnNewUnit.Click += new System.EventHandler(this.btnNewUnit_Click);
             // 
             // txtUnitID
             // 

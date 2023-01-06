@@ -14,6 +14,8 @@ namespace MvE_SQL_test
 {
     public partial class NewPart : Form
     {
+        private int parsedUnitID;
+
         public NewPart()
         {
             InitializeComponent();
@@ -142,6 +144,72 @@ namespace MvE_SQL_test
 
         }
 
+        private void btnNewUnit_Click(object sender, EventArgs e)
+        {
+            string PartName = txtPartName.Text;
+            string PartMemo = txtPartMemo.Text;
+            int Parttype = Convert.ToInt32(cmbPartType.SelectedValue);
+            int PartUnit = Convert.ToInt32(cmbPartUnit.SelectedValue);
+            int PartMaterial = Convert.ToInt32(cmbMaterial.SelectedValue);
+            decimal PartWeight = Convert.ToDecimal(numericUpDown1.Value);
+            int PartWeightU = Convert.ToInt32(cmbWeightUnit.SelectedValue);
 
+            // Create the connection.
+            string connectionstring = Properties.Settings.Default.connString;
+            using (MySqlConnection connection = new MySqlConnection(connectionstring))
+            {
+                using (MySqlCommand msqlcommand = new MySqlCommand("uspNewPart", connection))
+                {
+                    msqlcommand.CommandType = CommandType.StoredProcedure;
+
+                    msqlcommand.Parameters.Add(new MySqlParameter("PartName", MySqlDbType.Text));
+                    msqlcommand.Parameters["PartName"].Value = PartName;
+
+                    msqlcommand.Parameters.Add(new MySqlParameter("PartMemo", MySqlDbType.Text));
+                    msqlcommand.Parameters["PartMemo"].Value = PartMemo;
+
+                    msqlcommand.Parameters.Add(new MySqlParameter("PartType", MySqlDbType.Int32));
+                    msqlcommand.Parameters["PartType"].Value = Parttype;
+
+                    msqlcommand.Parameters.Add(new MySqlParameter("PartUnit", MySqlDbType.Int32));
+                    msqlcommand.Parameters["PartUnit"].Value = PartUnit;
+
+                    msqlcommand.Parameters.Add(new MySqlParameter("PartMaterial", MySqlDbType.Int32));
+                    msqlcommand.Parameters["PartMaterial"].Value = PartMaterial;
+
+                    msqlcommand.Parameters.Add(new MySqlParameter("PartWeight", MySqlDbType.Decimal));
+                    msqlcommand.Parameters["Partweight"].Scale = 2;
+                    msqlcommand.Parameters["Partweight"].Precision = 10;
+                    msqlcommand.Parameters["PartWeight"].Value = PartWeight;
+
+                    msqlcommand.Parameters.Add(new MySqlParameter("PartWeightUnit", MySqlDbType.Int32));
+                    msqlcommand.Parameters["PartWeightUnit"].Value = PartWeightU;
+
+                    msqlcommand.Parameters.Add(new MySqlParameter("PartID", MySqlDbType.Int32));
+                    msqlcommand.Parameters["PartID"].Direction = ParameterDirection.Output;
+
+                    try
+                    {
+                        connection.Open();
+
+                        msqlcommand.ExecuteNonQuery();
+                        this.parsedUnitID = (int)msqlcommand.Parameters["PartID"].Value;
+                        this.txtUnitID.Text = Convert.ToString(parsedUnitID);
+
+                    }
+
+                    catch (MySqlException ex)
+                    {
+                        MessageBox.Show("error " + ex.Number + " has occurd " + ex.Message);
+                    }
+
+                    finally
+                    {
+                        connection.Close();
+                    }
+
+                }
+            }
+        }
     }
 }
