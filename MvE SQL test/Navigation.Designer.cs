@@ -37,10 +37,11 @@ namespace MvE_SQL_test
             this.btnPartManager = new System.Windows.Forms.Button();
             this.btnOperationManager = new System.Windows.Forms.Button();
             this.btnStockManager = new System.Windows.Forms.Button();
-            this.tabControl1 = new System.Windows.Forms.TabControl();
-            this.tabPage1 = new System.Windows.Forms.TabPage();
-            this.tabPage2 = new System.Windows.Forms.TabPage();
-            this.tabControl1.SuspendLayout();
+            this.Managers = new System.Windows.Forms.TabControl();
+            this.tabProject = new System.Windows.Forms.TabPage();
+            this.tabAssembly = new System.Windows.Forms.TabPage();
+            this.button1 = new System.Windows.Forms.Button();
+            this.Managers.SuspendLayout();
             this.SuspendLayout();
             // 
             // label1
@@ -54,7 +55,7 @@ namespace MvE_SQL_test
             // 
             // btnExit
             // 
-            this.btnExit.Location = new System.Drawing.Point(15, 379);
+            this.btnExit.Location = new System.Drawing.Point(15, 756);
             this.btnExit.Name = "btnExit";
             this.btnExit.Size = new System.Drawing.Size(124, 23);
             this.btnExit.TabIndex = 3;
@@ -64,7 +65,7 @@ namespace MvE_SQL_test
             // 
             // btnAddUnit
             // 
-            this.btnAddUnit.Location = new System.Drawing.Point(15, 350);
+            this.btnAddUnit.Location = new System.Drawing.Point(15, 646);
             this.btnAddUnit.Name = "btnAddUnit";
             this.btnAddUnit.Size = new System.Drawing.Size(124, 23);
             this.btnAddUnit.TabIndex = 4;
@@ -117,45 +118,55 @@ namespace MvE_SQL_test
             this.btnStockManager.Name = "btnStockManager";
             this.btnStockManager.Size = new System.Drawing.Size(124, 23);
             this.btnStockManager.TabIndex = 9;
-            this.btnStockManager.Text = "Stock managerr";
+            this.btnStockManager.Text = "Stock manager";
             this.btnStockManager.UseVisualStyleBackColor = true;
             // 
-            // tabControl1
+            // Managers
             // 
-            this.tabControl1.Controls.Add(this.tabPage1);
-            this.tabControl1.Controls.Add(this.tabPage2);
-            this.tabControl1.Location = new System.Drawing.Point(162, 37);
-            this.tabControl1.Name = "tabControl1";
-            this.tabControl1.SelectedIndex = 0;
-            this.tabControl1.Size = new System.Drawing.Size(1181, 726);
-            this.tabControl1.TabIndex = 10;
+            this.Managers.Controls.Add(this.tabProject);
+            this.Managers.Controls.Add(this.tabAssembly);
+            this.Managers.Location = new System.Drawing.Point(162, 12);
+            this.Managers.Name = "Managers";
+            this.Managers.SelectedIndex = 0;
+            this.Managers.Size = new System.Drawing.Size(1181, 771);
+            this.Managers.TabIndex = 10;
             // 
-            // tabPage1
+            // tabProject
             // 
-            this.tabPage1.Location = new System.Drawing.Point(4, 22);
-            this.tabPage1.Name = "tabPage1";
-            this.tabPage1.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage1.Size = new System.Drawing.Size(1173, 700);
-            this.tabPage1.TabIndex = 0;
-            this.tabPage1.Text = "tabPage1";
-            this.tabPage1.UseVisualStyleBackColor = true;
+            this.tabProject.Location = new System.Drawing.Point(4, 22);
+            this.tabProject.Name = "tabProject";
+            this.tabProject.Padding = new System.Windows.Forms.Padding(3);
+            this.tabProject.Size = new System.Drawing.Size(1173, 745);
+            this.tabProject.TabIndex = 0;
+            this.tabProject.Text = "Project manager";
+            this.tabProject.UseVisualStyleBackColor = true;
             // 
-            // tabPage2
+            // tabAssembly
             // 
-            this.tabPage2.Location = new System.Drawing.Point(4, 22);
-            this.tabPage2.Name = "tabPage2";
-            this.tabPage2.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage2.Size = new System.Drawing.Size(1173, 700);
-            this.tabPage2.TabIndex = 1;
-            this.tabPage2.Text = "tabPage2";
-            this.tabPage2.UseVisualStyleBackColor = true;
+            this.tabAssembly.Location = new System.Drawing.Point(4, 22);
+            this.tabAssembly.Name = "tabAssembly";
+            this.tabAssembly.Padding = new System.Windows.Forms.Padding(3);
+            this.tabAssembly.Size = new System.Drawing.Size(1173, 745);
+            this.tabAssembly.TabIndex = 1;
+            this.tabAssembly.Text = "Assembly manager";
+            this.tabAssembly.UseVisualStyleBackColor = true;
+            // 
+            // button1
+            // 
+            this.button1.Location = new System.Drawing.Point(15, 617);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(124, 23);
+            this.button1.TabIndex = 11;
+            this.button1.Text = "Material manager";
+            this.button1.UseVisualStyleBackColor = true;
             // 
             // Navigation
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1367, 795);
-            this.Controls.Add(this.tabControl1);
+            this.Controls.Add(this.button1);
+            this.Controls.Add(this.Managers);
             this.Controls.Add(this.btnStockManager);
             this.Controls.Add(this.btnOperationManager);
             this.Controls.Add(this.btnPartManager);
@@ -168,7 +179,7 @@ namespace MvE_SQL_test
             this.Text = "Welcome";
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             this.Load += new System.EventHandler(this.Navigation_Load);
-            this.tabControl1.ResumeLayout(false);
+            this.Managers.ResumeLayout(false);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -183,9 +194,10 @@ namespace MvE_SQL_test
         private System.Windows.Forms.Button btnPartManager;
         private System.Windows.Forms.Button btnOperationManager;
         private System.Windows.Forms.Button btnStockManager;
-        private System.Windows.Forms.TabControl tabControl1;
-        private System.Windows.Forms.TabPage tabPage1;
-        private System.Windows.Forms.TabPage tabPage2;
+        private System.Windows.Forms.TabControl Managers;
+        private System.Windows.Forms.TabPage tabProject;
+        private System.Windows.Forms.TabPage tabAssembly;
+        private System.Windows.Forms.Button button1;
     }
 }
 

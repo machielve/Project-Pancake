@@ -59,6 +59,7 @@ namespace MvE_SQL_test
             // 
             // countOps
             // 
+            this.countOps.DecimalPlaces = 1;
             this.countOps.Location = new System.Drawing.Point(100, 77);
             this.countOps.Name = "countOps";
             this.countOps.Size = new System.Drawing.Size(218, 20);

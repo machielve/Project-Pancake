@@ -20,7 +20,7 @@ namespace MvE_SQL_test
             InitializeComponent();
         }
 
-         private void NewAssemblyDetailPart_Load(object sender, EventArgs e)
+        private void NewAssemblyDetailPart_Load(object sender, EventArgs e)
         {
             txtAssemblyID.Text = AssemblyManager.AssemblyID;
             // Create the connection.
@@ -55,6 +55,44 @@ namespace MvE_SQL_test
 
         }
 
+        private void cmbPart_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            string PartID = cmbPart.ValueMember;
+            // Create the connection.
+            string connectionstring = Properties.Settings.Default.connString;
+            using (MySqlConnection connection = new MySqlConnection(connectionstring))
+            {
+                // mysql string drawing
+                string mysqlString1 = "SELECT DrawingNumber, DrawingRevision FROM Victoriam.T_PART WHERE Part_id = ";
+                string mysqlString2 = PartID;
+                string mysqlString = mysqlString1 + mysqlString2;
+                using (MySqlCommand mysqlcommand = new MySqlCommand(mysqlString, connection))
+                {
+                    try
+                    {
+                        connection.Open();
+                        MySqlDataReader reader = mysqlcommand.ExecuteReader();
+
+                        this.txtDrawingNumber.Text = reader.GetString("DrawingNumber");
+                        this.txtDrawingRevision.Text = reader.GetString("DrawingRevision");
+                    }
+                    catch
+                    {
+                        MessageBox.Show("Drawing information could not be loaded");
+                    }
+                    finally
+                    {
+                        connection.Close();
+                    }
+                }
+
+
+
+
+            }
+
+        }
+
         private void btnFinnish_Click(object sender, EventArgs e)
         {
             this.Close();
@@ -66,11 +104,69 @@ namespace MvE_SQL_test
             int PartID = Convert.ToInt32(cmbPart.SelectedValue.ToString());
             decimal PartQuantity = Convert.ToDecimal(countPart.Value);
             string PartName = cmbPart.Text;
+            string PartDNumber = txtDrawingNumber.Text;
+            int PartDRev = Convert.ToInt32(txtDrawingRevision.Text);
 
             // Create the connection.
             string connectionstring = Properties.Settings.Default.connString;
             using (MySqlConnection connection = new MySqlConnection(connectionstring))
             {
+                decimal cost = 0;
+                decimal weight = 0;
+
+                string mysqlString = "SELECT Price, Part FROM Victoriam.T_PARTSUPPLIER WHERE Part = ";
+                string mysqlString2 = mysqlString + PartID.ToString();
+                using (MySqlCommand mysqlcommand = new MySqlCommand(mysqlString2, connection))
+                {
+                    try
+                    {
+                        connection.Open();
+                        using (MySqlDataReader dr = mysqlcommand.ExecuteReader())
+                        {
+                            dr.Read();
+                            decimal price = Convert.ToDecimal(dr.GetValue(0).ToString());
+                            cost += (price* PartQuantity);
+                            dr.Close();
+                        }
+                        connection.Close();
+                    }
+                    catch
+                    {
+                        MessageBox.Show("Costs could not be loaded");
+                    }
+                    finally
+                    {
+                        connection.Close();
+                    }
+                }
+            
+
+                string mysqlString5 = "SELECT Weight, Name FROM Victoriam.T_PART WHERE Part_id = ";
+                string mysqlString6 = mysqlString5 + PartID.ToString();
+                using (MySqlCommand mysqlcommand = new MySqlCommand(mysqlString6, connection))
+                {
+                    try
+                    {
+                        connection.Open();
+                        using (MySqlDataReader dr = mysqlcommand.ExecuteReader())
+                        {
+                            dr.Read();
+                            decimal Mass = Convert.ToDecimal(dr.GetValue(0).ToString());
+                            weight += (Mass* PartQuantity);
+                            dr.Close();
+                        }
+                        connection.Close();
+                    }
+                    catch
+                    {
+                        MessageBox.Show("Weights could not be loaded");
+                    }
+                    finally
+                    {
+                        connection.Close();
+                    }
+                }
+
 
 
                 using (MySqlCommand msqlcommand = new MySqlCommand("uspNewAssemblyDetailPart", connection))
@@ -90,10 +186,16 @@ namespace MvE_SQL_test
                     msqlcommand.Parameters["PartQuantity"].Value = PartQuantity;
 
                     msqlcommand.Parameters.Add(new MySqlParameter("PartWeight", MySqlDbType.Decimal));
-                    msqlcommand.Parameters["PartWeight"].Value = 1;
+                    msqlcommand.Parameters["PartWeight"].Value = weight;
 
                     msqlcommand.Parameters.Add(new MySqlParameter("PartCostprice", MySqlDbType.Decimal));
-                    msqlcommand.Parameters["PartCostprice"].Value = 1;
+                    msqlcommand.Parameters["PartCostprice"].Value = cost;
+
+                    msqlcommand.Parameters.Add(new MySqlParameter("PartDNumber", MySqlDbType.VarChar));
+                    msqlcommand.Parameters["PartDNumber"].Value = PartDNumber;
+
+                    msqlcommand.Parameters.Add(new MySqlParameter("PartDRev", MySqlDbType.Int32));
+                    msqlcommand.Parameters["PartDRev"].Value = PartDRev;
 
                     try
                     {

@@ -37,12 +37,16 @@ namespace MvE_SQL_test
             this.countPart = new System.Windows.Forms.NumericUpDown();
             this.label3 = new System.Windows.Forms.Label();
             this.txtAssemblyID = new System.Windows.Forms.TextBox();
+            this.txtDrawingNumber = new System.Windows.Forms.TextBox();
+            this.txtDrawingRevision = new System.Windows.Forms.TextBox();
+            this.label4 = new System.Windows.Forms.Label();
+            this.label5 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.countPart)).BeginInit();
             this.SuspendLayout();
             // 
             // btnFinnish
             // 
-            this.btnFinnish.Location = new System.Drawing.Point(185, 154);
+            this.btnFinnish.Location = new System.Drawing.Point(185, 206);
             this.btnFinnish.Name = "btnFinnish";
             this.btnFinnish.Size = new System.Drawing.Size(133, 23);
             this.btnFinnish.TabIndex = 8;
@@ -57,6 +61,7 @@ namespace MvE_SQL_test
             this.cmbPart.Name = "cmbPart";
             this.cmbPart.Size = new System.Drawing.Size(218, 21);
             this.cmbPart.TabIndex = 10;
+            this.cmbPart.SelectedIndexChanged += new System.EventHandler(this.cmbPart_SelectedIndexChanged);
             // 
             // label1
             // 
@@ -78,7 +83,7 @@ namespace MvE_SQL_test
             // 
             // btnAddPart
             // 
-            this.btnAddPart.Location = new System.Drawing.Point(12, 154);
+            this.btnAddPart.Location = new System.Drawing.Point(12, 206);
             this.btnAddPart.Name = "btnAddPart";
             this.btnAddPart.Size = new System.Drawing.Size(133, 23);
             this.btnAddPart.TabIndex = 13;
@@ -88,6 +93,7 @@ namespace MvE_SQL_test
             // 
             // countPart
             // 
+            this.countPart.DecimalPlaces = 1;
             this.countPart.Location = new System.Drawing.Point(100, 77);
             this.countPart.Name = "countPart";
             this.countPart.Size = new System.Drawing.Size(218, 20);
@@ -110,11 +116,47 @@ namespace MvE_SQL_test
             this.txtAssemblyID.Size = new System.Drawing.Size(218, 20);
             this.txtAssemblyID.TabIndex = 16;
             // 
+            // txtDrawingNumber
+            // 
+            this.txtDrawingNumber.Location = new System.Drawing.Point(100, 104);
+            this.txtDrawingNumber.Name = "txtDrawingNumber";
+            this.txtDrawingNumber.Size = new System.Drawing.Size(218, 20);
+            this.txtDrawingNumber.TabIndex = 17;
+            // 
+            // txtDrawingRevision
+            // 
+            this.txtDrawingRevision.Location = new System.Drawing.Point(100, 130);
+            this.txtDrawingRevision.Name = "txtDrawingRevision";
+            this.txtDrawingRevision.Size = new System.Drawing.Size(218, 20);
+            this.txtDrawingRevision.TabIndex = 18;
+            // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.Location = new System.Drawing.Point(12, 133);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(85, 13);
+            this.label4.TabIndex = 19;
+            this.label4.Text = "Drawing revision";
+            // 
+            // label5
+            // 
+            this.label5.AutoSize = true;
+            this.label5.Location = new System.Drawing.Point(12, 107);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(84, 13);
+            this.label5.TabIndex = 20;
+            this.label5.Text = "Drawing number";
+            // 
             // NewAssemblyDetailPart
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(374, 258);
+            this.Controls.Add(this.label5);
+            this.Controls.Add(this.label4);
+            this.Controls.Add(this.txtDrawingRevision);
+            this.Controls.Add(this.txtDrawingNumber);
             this.Controls.Add(this.txtAssemblyID);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.countPart);
@@ -143,5 +185,9 @@ namespace MvE_SQL_test
         private System.Windows.Forms.NumericUpDown countPart;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.TextBox txtAssemblyID;
+        private System.Windows.Forms.TextBox txtDrawingNumber;
+        private System.Windows.Forms.TextBox txtDrawingRevision;
+        private System.Windows.Forms.Label label4;
+        private System.Windows.Forms.Label label5;
     }
 }

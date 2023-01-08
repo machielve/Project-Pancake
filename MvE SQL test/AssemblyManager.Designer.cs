@@ -47,6 +47,8 @@ namespace MvE_SQL_test
             this.btnRemoveOperation = new System.Windows.Forms.Button();
             this.btnAssemblyUnlock = new System.Windows.Forms.Button();
             this.txtAssemblyID = new System.Windows.Forms.TextBox();
+            this.btnUpdateAssembly = new System.Windows.Forms.Button();
+            this.btnLinkPart = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dgvAssemblies)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgvAssemblyParts)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgvAssemblyOps)).BeginInit();
@@ -60,12 +62,12 @@ namespace MvE_SQL_test
             this.dgvAssemblies.Location = new System.Drawing.Point(165, 38);
             this.dgvAssemblies.Name = "dgvAssemblies";
             this.dgvAssemblies.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.AutoSizeToAllHeaders;
-            this.dgvAssemblies.Size = new System.Drawing.Size(800, 191);
+            this.dgvAssemblies.Size = new System.Drawing.Size(890, 271);
             this.dgvAssemblies.TabIndex = 0;
             // 
             // btnLoadAssemblies
             // 
-            this.btnLoadAssemblies.Location = new System.Drawing.Point(13, 39);
+            this.btnLoadAssemblies.Location = new System.Drawing.Point(12, 39);
             this.btnLoadAssemblies.Name = "btnLoadAssemblies";
             this.btnLoadAssemblies.Size = new System.Drawing.Size(133, 23);
             this.btnLoadAssemblies.TabIndex = 5;
@@ -84,7 +86,7 @@ namespace MvE_SQL_test
             // 
             // btnFinnish
             // 
-            this.btnFinnish.Location = new System.Drawing.Point(13, 623);
+            this.btnFinnish.Location = new System.Drawing.Point(12, 707);
             this.btnFinnish.Name = "btnFinnish";
             this.btnFinnish.Size = new System.Drawing.Size(133, 23);
             this.btnFinnish.TabIndex = 7;
@@ -94,7 +96,7 @@ namespace MvE_SQL_test
             // 
             // btnSeeDetails
             // 
-            this.btnSeeDetails.Location = new System.Drawing.Point(13, 97);
+            this.btnSeeDetails.Location = new System.Drawing.Point(11, 141);
             this.btnSeeDetails.Name = "btnSeeDetails";
             this.btnSeeDetails.Size = new System.Drawing.Size(133, 23);
             this.btnSeeDetails.TabIndex = 8;
@@ -104,7 +106,7 @@ namespace MvE_SQL_test
             // 
             // btnNewAssembly
             // 
-            this.btnNewAssembly.Location = new System.Drawing.Point(13, 68);
+            this.btnNewAssembly.Location = new System.Drawing.Point(12, 68);
             this.btnNewAssembly.Name = "btnNewAssembly";
             this.btnNewAssembly.Size = new System.Drawing.Size(133, 23);
             this.btnNewAssembly.TabIndex = 9;
@@ -117,16 +119,16 @@ namespace MvE_SQL_test
             this.dgvAssemblyParts.AllowUserToAddRows = false;
             this.dgvAssemblyParts.AllowUserToDeleteRows = false;
             this.dgvAssemblyParts.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvAssemblyParts.Location = new System.Drawing.Point(165, 299);
+            this.dgvAssemblyParts.Location = new System.Drawing.Point(165, 385);
             this.dgvAssemblyParts.Name = "dgvAssemblyParts";
             this.dgvAssemblyParts.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.AutoSizeToAllHeaders;
-            this.dgvAssemblyParts.Size = new System.Drawing.Size(800, 190);
+            this.dgvAssemblyParts.Size = new System.Drawing.Size(890, 190);
             this.dgvAssemblyParts.TabIndex = 10;
             // 
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(162, 283);
+            this.label2.Location = new System.Drawing.Point(162, 369);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(77, 13);
             this.label2.TabIndex = 11;
@@ -137,16 +139,16 @@ namespace MvE_SQL_test
             this.dgvAssemblyOps.AllowUserToAddRows = false;
             this.dgvAssemblyOps.AllowUserToDeleteRows = false;
             this.dgvAssemblyOps.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvAssemblyOps.Location = new System.Drawing.Point(165, 536);
+            this.dgvAssemblyOps.Location = new System.Drawing.Point(165, 620);
             this.dgvAssemblyOps.Name = "dgvAssemblyOps";
             this.dgvAssemblyOps.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.AutoSizeToAllHeaders;
-            this.dgvAssemblyOps.Size = new System.Drawing.Size(800, 110);
+            this.dgvAssemblyOps.Size = new System.Drawing.Size(890, 110);
             this.dgvAssemblyOps.TabIndex = 12;
             // 
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(162, 520);
+            this.label3.Location = new System.Drawing.Point(162, 604);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(103, 13);
             this.label3.TabIndex = 13;
@@ -154,7 +156,7 @@ namespace MvE_SQL_test
             // 
             // btnAssemblyLock
             // 
-            this.btnAssemblyLock.Location = new System.Drawing.Point(13, 126);
+            this.btnAssemblyLock.Location = new System.Drawing.Point(11, 199);
             this.btnAssemblyLock.Name = "btnAssemblyLock";
             this.btnAssemblyLock.Size = new System.Drawing.Size(133, 23);
             this.btnAssemblyLock.TabIndex = 14;
@@ -164,7 +166,7 @@ namespace MvE_SQL_test
             // 
             // btnAddPart
             // 
-            this.btnAddPart.Location = new System.Drawing.Point(13, 299);
+            this.btnAddPart.Location = new System.Drawing.Point(12, 385);
             this.btnAddPart.Name = "btnAddPart";
             this.btnAddPart.Size = new System.Drawing.Size(133, 23);
             this.btnAddPart.TabIndex = 15;
@@ -174,7 +176,7 @@ namespace MvE_SQL_test
             // 
             // btnAddOperation
             // 
-            this.btnAddOperation.Location = new System.Drawing.Point(13, 536);
+            this.btnAddOperation.Location = new System.Drawing.Point(12, 620);
             this.btnAddOperation.Name = "btnAddOperation";
             this.btnAddOperation.Size = new System.Drawing.Size(133, 23);
             this.btnAddOperation.TabIndex = 16;
@@ -184,7 +186,7 @@ namespace MvE_SQL_test
             // 
             // btnCreatePart
             // 
-            this.btnCreatePart.Location = new System.Drawing.Point(13, 184);
+            this.btnCreatePart.Location = new System.Drawing.Point(11, 257);
             this.btnCreatePart.Name = "btnCreatePart";
             this.btnCreatePart.Size = new System.Drawing.Size(133, 23);
             this.btnCreatePart.TabIndex = 17;
@@ -193,7 +195,7 @@ namespace MvE_SQL_test
             // 
             // btnRemovePart
             // 
-            this.btnRemovePart.Location = new System.Drawing.Point(13, 328);
+            this.btnRemovePart.Location = new System.Drawing.Point(12, 414);
             this.btnRemovePart.Name = "btnRemovePart";
             this.btnRemovePart.Size = new System.Drawing.Size(133, 23);
             this.btnRemovePart.TabIndex = 18;
@@ -203,7 +205,7 @@ namespace MvE_SQL_test
             // 
             // btnRemoveOperation
             // 
-            this.btnRemoveOperation.Location = new System.Drawing.Point(13, 565);
+            this.btnRemoveOperation.Location = new System.Drawing.Point(13, 649);
             this.btnRemoveOperation.Name = "btnRemoveOperation";
             this.btnRemoveOperation.Size = new System.Drawing.Size(133, 23);
             this.btnRemoveOperation.TabIndex = 19;
@@ -213,7 +215,7 @@ namespace MvE_SQL_test
             // 
             // btnAssemblyUnlock
             // 
-            this.btnAssemblyUnlock.Location = new System.Drawing.Point(13, 155);
+            this.btnAssemblyUnlock.Location = new System.Drawing.Point(11, 228);
             this.btnAssemblyUnlock.Name = "btnAssemblyUnlock";
             this.btnAssemblyUnlock.Size = new System.Drawing.Size(133, 23);
             this.btnAssemblyUnlock.TabIndex = 20;
@@ -223,17 +225,38 @@ namespace MvE_SQL_test
             // 
             // txtAssemblyID
             // 
-            this.txtAssemblyID.Location = new System.Drawing.Point(165, 260);
+            this.txtAssemblyID.Location = new System.Drawing.Point(165, 346);
             this.txtAssemblyID.Name = "txtAssemblyID";
             this.txtAssemblyID.ReadOnly = true;
             this.txtAssemblyID.Size = new System.Drawing.Size(100, 20);
             this.txtAssemblyID.TabIndex = 21;
             // 
+            // btnUpdateAssembly
+            // 
+            this.btnUpdateAssembly.Location = new System.Drawing.Point(11, 170);
+            this.btnUpdateAssembly.Name = "btnUpdateAssembly";
+            this.btnUpdateAssembly.Size = new System.Drawing.Size(133, 23);
+            this.btnUpdateAssembly.TabIndex = 22;
+            this.btnUpdateAssembly.Text = "Update assembly";
+            this.btnUpdateAssembly.UseVisualStyleBackColor = true;
+            this.btnUpdateAssembly.Click += new System.EventHandler(this.btnUpdateAssembly_Click);
+            // 
+            // btnLinkPart
+            // 
+            this.btnLinkPart.Location = new System.Drawing.Point(12, 286);
+            this.btnLinkPart.Name = "btnLinkPart";
+            this.btnLinkPart.Size = new System.Drawing.Size(133, 23);
+            this.btnLinkPart.TabIndex = 23;
+            this.btnLinkPart.Text = "Link Part";
+            this.btnLinkPart.UseVisualStyleBackColor = true;
+            // 
             // AssemblyManager
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(984, 703);
+            this.ClientSize = new System.Drawing.Size(1097, 813);
+            this.Controls.Add(this.btnLinkPart);
+            this.Controls.Add(this.btnUpdateAssembly);
             this.Controls.Add(this.txtAssemblyID);
             this.Controls.Add(this.btnAssemblyUnlock);
             this.Controls.Add(this.btnRemoveOperation);
@@ -284,5 +307,7 @@ namespace MvE_SQL_test
         private System.Windows.Forms.Button btnRemoveOperation;
         private System.Windows.Forms.Button btnAssemblyUnlock;
         private System.Windows.Forms.TextBox txtAssemblyID;
+        private System.Windows.Forms.Button btnUpdateAssembly;
+        private System.Windows.Forms.Button btnLinkPart;
     }
 }

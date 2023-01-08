@@ -86,7 +86,7 @@ namespace MvE_SQL_test
 
                     msqlcommand.Parameters.Add(new MySqlParameter("nPrice", MySqlDbType.Decimal));
                     msqlcommand.Parameters["nPrice"].Precision = 10;
-                    msqlcommand.Parameters["nPrice"].Scale = 2;
+                    msqlcommand.Parameters["nPrice"].Scale = 4;
                     msqlcommand.Parameters["nPrice"].Value = unitprice;
 
                     try

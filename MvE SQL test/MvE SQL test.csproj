@@ -123,6 +123,12 @@
     <Compile Include="NewAssemblyDetailPart.Designer.cs">
       <DependentUpon>NewAssemblyDetailPart.cs</DependentUpon>
     </Compile>
+    <Compile Include="NewMaterial.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="NewMaterial.Designer.cs">
+      <DependentUpon>NewMaterial.cs</DependentUpon>
+    </Compile>
     <Compile Include="NewPart.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -178,6 +184,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="NewAssemblyDetailPart.resx">
       <DependentUpon>NewAssemblyDetailPart.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="NewMaterial.resx">
+      <DependentUpon>NewMaterial.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="NewPart.resx">
       <DependentUpon>NewPart.cs</DependentUpon>
