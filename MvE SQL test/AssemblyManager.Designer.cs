@@ -62,7 +62,7 @@ namespace MvE_SQL_test
             this.dgvAssemblies.Location = new System.Drawing.Point(165, 38);
             this.dgvAssemblies.Name = "dgvAssemblies";
             this.dgvAssemblies.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.AutoSizeToAllHeaders;
-            this.dgvAssemblies.Size = new System.Drawing.Size(890, 271);
+            this.dgvAssemblies.Size = new System.Drawing.Size(900, 271);
             this.dgvAssemblies.TabIndex = 0;
             // 
             // btnLoadAssemblies
@@ -122,7 +122,7 @@ namespace MvE_SQL_test
             this.dgvAssemblyParts.Location = new System.Drawing.Point(165, 385);
             this.dgvAssemblyParts.Name = "dgvAssemblyParts";
             this.dgvAssemblyParts.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.AutoSizeToAllHeaders;
-            this.dgvAssemblyParts.Size = new System.Drawing.Size(890, 190);
+            this.dgvAssemblyParts.Size = new System.Drawing.Size(900, 190);
             this.dgvAssemblyParts.TabIndex = 10;
             // 
             // label2
@@ -142,7 +142,7 @@ namespace MvE_SQL_test
             this.dgvAssemblyOps.Location = new System.Drawing.Point(165, 620);
             this.dgvAssemblyOps.Name = "dgvAssemblyOps";
             this.dgvAssemblyOps.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.AutoSizeToAllHeaders;
-            this.dgvAssemblyOps.Size = new System.Drawing.Size(890, 110);
+            this.dgvAssemblyOps.Size = new System.Drawing.Size(900, 110);
             this.dgvAssemblyOps.TabIndex = 12;
             // 
             // label3
@@ -254,7 +254,7 @@ namespace MvE_SQL_test
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1097, 813);
+            this.ClientSize = new System.Drawing.Size(1184, 811);
             this.Controls.Add(this.btnLinkPart);
             this.Controls.Add(this.btnUpdateAssembly);
             this.Controls.Add(this.txtAssemblyID);

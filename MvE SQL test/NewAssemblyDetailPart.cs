@@ -74,7 +74,7 @@ namespace MvE_SQL_test
                         MySqlDataReader reader = mysqlcommand.ExecuteReader();
 
                         this.txtDrawingNumber.Text = reader.GetString("DrawingNumber");
-                        this.txtDrawingRevision.Text = reader.GetString("DrawingRevision");
+                        this.txtDrawingRevision.Text = reader.GetInt32("DrawingRevision").ToString();
                     }
                     catch
                     {

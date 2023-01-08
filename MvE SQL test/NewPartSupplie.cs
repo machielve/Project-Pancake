@@ -92,10 +92,7 @@ namespace MvE_SQL_test
                     try
                     {
                         connection.Open();
-
                         msqlcommand.ExecuteNonQuery();
-
-                        connection.Close();
 
                     }
 

@@ -24,9 +24,6 @@ namespace MvE_SQL_test
         public void AssemblyRefresh()
         {
             
-            
-            
-            
             // Create the connection.
             string connectionstring = Properties.Settings.Default.connString;
             using (MySqlConnection connection = new MySqlConnection(connectionstring))
@@ -60,12 +57,12 @@ namespace MvE_SQL_test
 
             string AssemblyId=(txtAssemblyID.Text);
 
-            if (dgvAssemblies.SelectedRows.Count == 0)
+            if (AssemblyId == "")
             {
                 MessageBox.Show("No assembly selected");
             }
 
-            else if (dgvAssemblies.SelectedRows.Count == 1)
+            else 
             {
                 // Create the connection.
                 string connectionstring = Properties.Settings.Default.connString;
@@ -118,11 +115,6 @@ namespace MvE_SQL_test
 
 
                 }
-            }
-
-            else if (dgvAssemblies.SelectedRows.Count > 1)
-            {
-                MessageBox.Show("More than one assembly selected. Please select one assembly");
             }
 
 
@@ -323,16 +315,14 @@ namespace MvE_SQL_test
 
         private void btnAssemblyLock_Click(object sender, EventArgs e)
         {
-            Int32 selectedrowindex = dgvAssemblies.SelectedCells[0].RowIndex;
-            DataGridViewRow SelectedRow = dgvAssemblies.Rows[selectedrowindex];
-            string AssemblyId = Convert.ToString(SelectedRow.Cells["Assembly_id"].Value);
+            string AssemblyId = txtAssemblyID.Text;
 
-            if (dgvAssemblies.SelectedRows.Count == 0)
+            if (AssemblyId == "")
             {
                 MessageBox.Show("No assembly selected");
             }
 
-            else if (dgvAssemblies.SelectedRows.Count == 1)
+            else 
             {
                 // Create the connection.
                 string connectionstring = Properties.Settings.Default.connString;
@@ -387,11 +377,6 @@ namespace MvE_SQL_test
                 }
             }
 
-            else if (dgvAssemblies.SelectedRows.Count > 1)
-            {
-                MessageBox.Show("More than one assembly selected. Please select one assembly");
-            }
-
             TotalRefresh();
             AssemblyRefresh();
 
@@ -399,10 +384,8 @@ namespace MvE_SQL_test
         
         public void btnAddPart_Click(object sender, EventArgs e)
         {
-            Int32 selectedrowindex = dgvAssemblies.SelectedCells[0].RowIndex;
-            DataGridViewRow SelectedRow = dgvAssemblies.Rows[selectedrowindex];
-            string AssemblyId = Convert.ToString(SelectedRow.Cells["Assembly_id"].Value);
-            
+            string AssemblyId = txtAssemblyID.Text;
+
             AssemblyID = AssemblyId;
 
             Form frm = new NewAssemblyDetailPart();
@@ -502,16 +485,14 @@ namespace MvE_SQL_test
 
         private void btnAssemblyUnlock_Click(object sender, EventArgs e)
         {
-            Int32 selectedrowindex = dgvAssemblies.SelectedCells[0].RowIndex;
-            DataGridViewRow SelectedRow = dgvAssemblies.Rows[selectedrowindex];
-            string AssemblyId = Convert.ToString(SelectedRow.Cells["Assembly_id"].Value);
+            string AssemblyId = txtAssemblyID.Text;
 
-            if (dgvAssemblies.SelectedRows.Count == 0)
+            if (AssemblyId == "")
             {
                 MessageBox.Show("No assembly selected");
             }
 
-            else if (dgvAssemblies.SelectedRows.Count == 1)
+            else
             {
                 // Create the connection.
                 string connectionstring = Properties.Settings.Default.connString;
@@ -566,11 +547,6 @@ namespace MvE_SQL_test
                 }
             }
 
-            else if (dgvAssemblies.SelectedRows.Count > 1)
-            {
-                MessageBox.Show("More than one assembly selected. Please select one assembly");
-            }
-
             TotalRefresh();
             AssemblyRefresh();
 
@@ -578,9 +554,8 @@ namespace MvE_SQL_test
 
         private void btnAddOperation_Click(object sender, EventArgs e)
         {
-            Int32 selectedrowindex = dgvAssemblies.SelectedCells[0].RowIndex;
-            DataGridViewRow SelectedRow = dgvAssemblies.Rows[selectedrowindex];
-            string AssemblyId = Convert.ToString(SelectedRow.Cells["Assembly_id"].Value);
+            string AssemblyId = txtAssemblyID.Text;
+
             AssemblyID = AssemblyId;
 
             Form frm = new NewAssemblyDetailOps();

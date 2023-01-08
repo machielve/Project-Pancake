@@ -136,6 +136,11 @@ namespace MvE_SQL_test
             this.CountQuantity.Name = "CountQuantity";
             this.CountQuantity.Size = new System.Drawing.Size(234, 20);
             this.CountQuantity.TabIndex = 20;
+            this.CountQuantity.Value = new decimal(new int[] {
+            1,
+            0,
+            0,
+            0});
             // 
             // label1
             // 

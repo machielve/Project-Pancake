@@ -157,5 +157,49 @@ namespace MvE_SQL_test
             TotalRefresh();
 
         }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            Int32 selectedrowindex = dgvSuppliers.SelectedCells[0].RowIndex;
+            DataGridViewRow SelectedRow = dgvSuppliers.Rows[selectedrowindex];
+            string AssemblyOpsId = Convert.ToString(SelectedRow.Cells["PartSupplier_id"].Value);
+
+            if (dgvSuppliers.SelectedRows.Count == 0)
+            {
+                MessageBox.Show("No supplier selected");
+            }
+
+            else if (dgvSuppliers.SelectedRows.Count == 1)
+            {
+                // Create the connection.
+                string connectionstring = Properties.Settings.Default.connString;
+                using (MySqlConnection connection = new MySqlConnection(connectionstring))
+                {
+                    // mysql string parts
+                    const string mysqlString1 = "DELETE FROM Victoriam.T_PARTSUPPLIER WHERE PartSupplier_id = ";
+                    string mysqlString = mysqlString1 + AssemblyOpsId;
+                    using (MySqlCommand mysqlcommand = new MySqlCommand(mysqlString, connection))
+                    {
+                        try
+                        {
+                            connection.Open();
+                            mysqlcommand.ExecuteNonQuery();
+                        }
+                        catch
+                        {
+                            MessageBox.Show("Supplier could not be removed");
+                        }
+                    }
+
+                }
+            }
+
+            else if (dgvSuppliers.SelectedRows.Count > 1)
+            {
+                MessageBox.Show("More than one supplier selected. Please select one supplier");
+            }
+
+            TotalRefresh();
+        }
     }
 }
