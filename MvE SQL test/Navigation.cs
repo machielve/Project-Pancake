@@ -58,6 +58,11 @@ namespace MvE_SQL_test
 
         }
 
+        private void button1_Click(object sender, EventArgs e)
+        {
+            Form frm = new NewMaterial();
+            frm.Show();
 
+        }
     }
 }

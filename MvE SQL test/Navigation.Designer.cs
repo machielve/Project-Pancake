@@ -40,8 +40,8 @@ namespace MvE_SQL_test
             this.Managers = new System.Windows.Forms.TabControl();
             this.tabProject = new System.Windows.Forms.TabPage();
             this.tabAssembly = new System.Windows.Forms.TabPage();
-            this.button1 = new System.Windows.Forms.Button();
             this.tabPart = new System.Windows.Forms.TabPage();
+            this.button1 = new System.Windows.Forms.Button();
             this.Managers.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -155,15 +155,6 @@ namespace MvE_SQL_test
             this.tabAssembly.Text = "Assembly manager";
             this.tabAssembly.UseVisualStyleBackColor = true;
             // 
-            // button1
-            // 
-            this.button1.Location = new System.Drawing.Point(15, 617);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(124, 23);
-            this.button1.TabIndex = 11;
-            this.button1.Text = "Material manager";
-            this.button1.UseVisualStyleBackColor = true;
-            // 
             // tabPart
             // 
             this.tabPart.Location = new System.Drawing.Point(4, 22);
@@ -173,6 +164,16 @@ namespace MvE_SQL_test
             this.tabPart.TabIndex = 2;
             this.tabPart.Text = "Part manager";
             this.tabPart.UseVisualStyleBackColor = true;
+            // 
+            // button1
+            // 
+            this.button1.Location = new System.Drawing.Point(15, 617);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(124, 23);
+            this.button1.TabIndex = 11;
+            this.button1.Text = "Material manager";
+            this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
             // Navigation
             // 

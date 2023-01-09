@@ -16,6 +16,15 @@ namespace MvE_SQL_test
     {
         private int parsedUnitID;
 
+        private void ClearForm()
+        {
+            txtDrawingNumber.Clear();
+            txtPartName.Clear();
+            txtPartMemo.Clear();
+
+            this.parsedUnitID = 0;
+        }
+
         public NewPart()
         {
             InitializeComponent();
@@ -153,6 +162,8 @@ namespace MvE_SQL_test
             int PartMaterial = Convert.ToInt32(cmbMaterial.SelectedValue);
             decimal PartWeight = Convert.ToDecimal(numericUpDown1.Value);
             int PartWeightU = Convert.ToInt32(cmbWeightUnit.SelectedValue);
+            string PartDNumber = txtDrawingNumber.Text;
+            int PartDRev = Convert.ToInt32(txtDrawingRevision.Text);
 
             // Create the connection.
             string connectionstring = Properties.Settings.Default.connString;
@@ -185,6 +196,12 @@ namespace MvE_SQL_test
                     msqlcommand.Parameters.Add(new MySqlParameter("PartWeightUnit", MySqlDbType.Int32));
                     msqlcommand.Parameters["PartWeightUnit"].Value = PartWeightU;
 
+                    msqlcommand.Parameters.Add(new MySqlParameter("PartDrawngNumber", MySqlDbType.Text));
+                    msqlcommand.Parameters["PartDrawngNumber"].Value = PartDNumber;
+
+                    msqlcommand.Parameters.Add(new MySqlParameter("PartDrawngRev", MySqlDbType.Int32));
+                    msqlcommand.Parameters["PartDrawngRev"].Value = PartDRev;
+
                     msqlcommand.Parameters.Add(new MySqlParameter("PartID", MySqlDbType.Int32));
                     msqlcommand.Parameters["PartID"].Direction = ParameterDirection.Output;
 
@@ -210,6 +227,11 @@ namespace MvE_SQL_test
 
                 }
             }
+        }
+
+        private void btnAddAnotherUnit_Click(object sender, EventArgs e)
+        {
+            this.ClearForm();
         }
     }
 }

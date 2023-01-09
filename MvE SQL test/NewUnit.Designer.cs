@@ -35,7 +35,7 @@
             this.label2 = new System.Windows.Forms.Label();
             this.txtUnitID = new System.Windows.Forms.TextBox();
             this.btnNewUnit = new System.Windows.Forms.Button();
-            this.btnAddAnotherUnit = new System.Windows.Forms.Button();
+            this.btnAddAnotherMaterial = new System.Windows.Forms.Button();
             this.label3 = new System.Windows.Forms.Label();
             this.txtUnitGroup = new System.Windows.Forms.ComboBox();
             this.tUNITBindingSource1 = new System.Windows.Forms.BindingSource(this.components);
@@ -95,15 +95,15 @@
             this.btnNewUnit.UseVisualStyleBackColor = true;
             this.btnNewUnit.Click += new System.EventHandler(this.btnNewUnit_Click);
             // 
-            // btnAddAnotherUnit
+            // btnAddAnotherMaterial
             // 
-            this.btnAddAnotherUnit.Location = new System.Drawing.Point(203, 179);
-            this.btnAddAnotherUnit.Name = "btnAddAnotherUnit";
-            this.btnAddAnotherUnit.Size = new System.Drawing.Size(139, 23);
-            this.btnAddAnotherUnit.TabIndex = 6;
-            this.btnAddAnotherUnit.Text = "Add another unit";
-            this.btnAddAnotherUnit.UseVisualStyleBackColor = true;
-            this.btnAddAnotherUnit.Click += new System.EventHandler(this.btnAddAnotherUnit_Click);
+            this.btnAddAnotherMaterial.Location = new System.Drawing.Point(203, 179);
+            this.btnAddAnotherMaterial.Name = "btnAddAnotherMaterial";
+            this.btnAddAnotherMaterial.Size = new System.Drawing.Size(139, 23);
+            this.btnAddAnotherMaterial.TabIndex = 6;
+            this.btnAddAnotherMaterial.Text = "Add another material";
+            this.btnAddAnotherMaterial.UseVisualStyleBackColor = true;
+            this.btnAddAnotherMaterial.Click += new System.EventHandler(this.btnAddAnotherUnit_Click);
             // 
             // label3
             // 
@@ -134,7 +134,7 @@
             this.ClientSize = new System.Drawing.Size(384, 211);
             this.Controls.Add(this.txtUnitGroup);
             this.Controls.Add(this.label3);
-            this.Controls.Add(this.btnAddAnotherUnit);
+            this.Controls.Add(this.btnAddAnotherMaterial);
             this.Controls.Add(this.btnNewUnit);
             this.Controls.Add(this.txtUnitID);
             this.Controls.Add(this.label2);
@@ -157,7 +157,7 @@
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.TextBox txtUnitID;
         private System.Windows.Forms.Button btnNewUnit;
-        private System.Windows.Forms.Button btnAddAnotherUnit;
+        private System.Windows.Forms.Button btnAddAnotherMaterial;
         private System.Windows.Forms.BindingSource tUNITBindingSource;
         private System.Windows.Forms.BindingSource tUNITBindingSource1;
         private System.Windows.Forms.Label label3;

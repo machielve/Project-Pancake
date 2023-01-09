@@ -48,7 +48,12 @@ namespace MvE_SQL_test
             this.label7 = new System.Windows.Forms.Label();
             this.cmbWeightUnit = new System.Windows.Forms.ComboBox();
             this.label8 = new System.Windows.Forms.Label();
+            this.txtDrawingNumber = new System.Windows.Forms.TextBox();
+            this.label9 = new System.Windows.Forms.Label();
+            this.label10 = new System.Windows.Forms.Label();
+            this.txtDrawingRevision = new System.Windows.Forms.NumericUpDown();
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDown1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txtDrawingRevision)).BeginInit();
             this.SuspendLayout();
             // 
             // cmbPartType
@@ -81,10 +86,11 @@ namespace MvE_SQL_test
             this.btnAddAnotherUnit.TabIndex = 16;
             this.btnAddAnotherUnit.Text = "Add another part";
             this.btnAddAnotherUnit.UseVisualStyleBackColor = true;
+            this.btnAddAnotherUnit.Click += new System.EventHandler(this.btnAddAnotherUnit_Click);
             // 
             // btnNewUnit
             // 
-            this.btnNewUnit.Location = new System.Drawing.Point(109, 282);
+            this.btnNewUnit.Location = new System.Drawing.Point(109, 293);
             this.btnNewUnit.Name = "btnNewUnit";
             this.btnNewUnit.Size = new System.Drawing.Size(234, 23);
             this.btnNewUnit.TabIndex = 15;
@@ -94,7 +100,7 @@ namespace MvE_SQL_test
             // 
             // txtUnitID
             // 
-            this.txtUnitID.Location = new System.Drawing.Point(109, 236);
+            this.txtUnitID.Location = new System.Drawing.Point(109, 267);
             this.txtUnitID.Name = "txtUnitID";
             this.txtUnitID.ReadOnly = true;
             this.txtUnitID.Size = new System.Drawing.Size(234, 20);
@@ -103,7 +109,7 @@ namespace MvE_SQL_test
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(11, 243);
+            this.label2.Location = new System.Drawing.Point(13, 270);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(40, 13);
             this.label2.TabIndex = 13;
@@ -233,11 +239,47 @@ namespace MvE_SQL_test
             this.label8.TabIndex = 27;
             this.label8.Text = "Weight unit";
             // 
+            // txtDrawingNumber
+            // 
+            this.txtDrawingNumber.Location = new System.Drawing.Point(109, 204);
+            this.txtDrawingNumber.Name = "txtDrawingNumber";
+            this.txtDrawingNumber.Size = new System.Drawing.Size(234, 20);
+            this.txtDrawingNumber.TabIndex = 30;
+            // 
+            // label9
+            // 
+            this.label9.AutoSize = true;
+            this.label9.Location = new System.Drawing.Point(12, 207);
+            this.label9.Name = "label9";
+            this.label9.Size = new System.Drawing.Size(84, 13);
+            this.label9.TabIndex = 29;
+            this.label9.Text = "Drawing number";
+            // 
+            // label10
+            // 
+            this.label10.AutoSize = true;
+            this.label10.Location = new System.Drawing.Point(12, 233);
+            this.label10.Name = "label10";
+            this.label10.Size = new System.Drawing.Size(85, 13);
+            this.label10.TabIndex = 31;
+            this.label10.Text = "Drawing revision";
+            // 
+            // txtDrawingRevision
+            // 
+            this.txtDrawingRevision.Location = new System.Drawing.Point(109, 231);
+            this.txtDrawingRevision.Name = "txtDrawingRevision";
+            this.txtDrawingRevision.Size = new System.Drawing.Size(234, 20);
+            this.txtDrawingRevision.TabIndex = 32;
+            // 
             // NewPart
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(384, 387);
+            this.Controls.Add(this.txtDrawingRevision);
+            this.Controls.Add(this.label10);
+            this.Controls.Add(this.txtDrawingNumber);
+            this.Controls.Add(this.label9);
             this.Controls.Add(this.cmbWeightUnit);
             this.Controls.Add(this.label8);
             this.Controls.Add(this.label7);
@@ -261,6 +303,7 @@ namespace MvE_SQL_test
             this.Text = "New Part";
             this.Load += new System.EventHandler(this.NewPart_Load);
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDown1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txtDrawingRevision)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -287,5 +330,9 @@ namespace MvE_SQL_test
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.ComboBox cmbWeightUnit;
         private System.Windows.Forms.Label label8;
+        private System.Windows.Forms.TextBox txtDrawingNumber;
+        private System.Windows.Forms.Label label9;
+        private System.Windows.Forms.Label label10;
+        private System.Windows.Forms.NumericUpDown txtDrawingRevision;
     }
 }
