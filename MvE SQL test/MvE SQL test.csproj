@@ -147,6 +147,12 @@
     <Compile Include="NewProject.Designer.cs">
       <DependentUpon>NewProject.cs</DependentUpon>
     </Compile>
+    <Compile Include="NewProjectDetailPart.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="NewProjectDetailPart.Designer.cs">
+      <DependentUpon>NewProjectDetailPart.cs</DependentUpon>
+    </Compile>
     <Compile Include="NewUnit.cs">
       <SubType>Form</SubType>
     </Compile>

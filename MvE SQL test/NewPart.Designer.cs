@@ -80,7 +80,7 @@ namespace MvE_SQL_test
             // 
             // btnAddAnotherUnit
             // 
-            this.btnAddAnotherUnit.Location = new System.Drawing.Point(204, 343);
+            this.btnAddAnotherUnit.Location = new System.Drawing.Point(204, 370);
             this.btnAddAnotherUnit.Name = "btnAddAnotherUnit";
             this.btnAddAnotherUnit.Size = new System.Drawing.Size(139, 23);
             this.btnAddAnotherUnit.TabIndex = 16;
@@ -90,7 +90,7 @@ namespace MvE_SQL_test
             // 
             // btnNewUnit
             // 
-            this.btnNewUnit.Location = new System.Drawing.Point(109, 293);
+            this.btnNewUnit.Location = new System.Drawing.Point(109, 320);
             this.btnNewUnit.Name = "btnNewUnit";
             this.btnNewUnit.Size = new System.Drawing.Size(234, 23);
             this.btnNewUnit.TabIndex = 15;
@@ -100,7 +100,7 @@ namespace MvE_SQL_test
             // 
             // txtUnitID
             // 
-            this.txtUnitID.Location = new System.Drawing.Point(109, 267);
+            this.txtUnitID.Location = new System.Drawing.Point(109, 294);
             this.txtUnitID.Name = "txtUnitID";
             this.txtUnitID.ReadOnly = true;
             this.txtUnitID.Size = new System.Drawing.Size(234, 20);
@@ -109,7 +109,7 @@ namespace MvE_SQL_test
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(13, 270);
+            this.label2.Location = new System.Drawing.Point(13, 297);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(40, 13);
             this.label2.TabIndex = 13;
@@ -133,7 +133,7 @@ namespace MvE_SQL_test
             // 
             // btnFinnish
             // 
-            this.btnFinnish.Location = new System.Drawing.Point(16, 343);
+            this.btnFinnish.Location = new System.Drawing.Point(16, 370);
             this.btnFinnish.Name = "btnFinnish";
             this.btnFinnish.Size = new System.Drawing.Size(146, 23);
             this.btnFinnish.TabIndex = 10;
@@ -275,7 +275,7 @@ namespace MvE_SQL_test
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(384, 387);
+            this.ClientSize = new System.Drawing.Size(384, 405);
             this.Controls.Add(this.txtDrawingRevision);
             this.Controls.Add(this.label10);
             this.Controls.Add(this.txtDrawingNumber);

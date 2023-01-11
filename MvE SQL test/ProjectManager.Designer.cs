@@ -38,13 +38,18 @@ namespace MvE_SQL_test
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
-            this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.dgvProjectParts = new System.Windows.Forms.DataGridView();
             this.label4 = new System.Windows.Forms.Label();
-            this.dataGridView2 = new System.Windows.Forms.DataGridView();
+            this.dgvProjectOps = new System.Windows.Forms.DataGridView();
+            this.txtSeeContent = new System.Windows.Forms.Button();
+            this.txtAddPart = new System.Windows.Forms.Button();
+            this.txtAddOperation = new System.Windows.Forms.Button();
+            this.txtDetailID = new System.Windows.Forms.TextBox();
+            this.txtProjectID = new System.Windows.Forms.TextBox();
             ((System.ComponentModel.ISupportInitialize)(this.dgvProject)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgvProjectDetails)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvProjectParts)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvProjectOps)).BeginInit();
             this.SuspendLayout();
             // 
             // dgvProject
@@ -60,7 +65,7 @@ namespace MvE_SQL_test
             // 
             // btnNewProject
             // 
-            this.btnNewProject.Location = new System.Drawing.Point(13, 68);
+            this.btnNewProject.Location = new System.Drawing.Point(12, 206);
             this.btnNewProject.Name = "btnNewProject";
             this.btnNewProject.Size = new System.Drawing.Size(133, 23);
             this.btnNewProject.TabIndex = 1;
@@ -80,17 +85,17 @@ namespace MvE_SQL_test
             // 
             // btnSeeDetails
             // 
-            this.btnSeeDetails.Location = new System.Drawing.Point(12, 292);
+            this.btnSeeDetails.Location = new System.Drawing.Point(12, 67);
             this.btnSeeDetails.Name = "btnSeeDetails";
             this.btnSeeDetails.Size = new System.Drawing.Size(133, 23);
             this.btnSeeDetails.TabIndex = 3;
-            this.btnSeeDetails.Text = "See details";
+            this.btnSeeDetails.Text = "See project details";
             this.btnSeeDetails.UseVisualStyleBackColor = true;
             this.btnSeeDetails.Click += new System.EventHandler(this.btnSeeDetails_Click);
             // 
             // btnLoadProjects
             // 
-            this.btnLoadProjects.Location = new System.Drawing.Point(13, 39);
+            this.btnLoadProjects.Location = new System.Drawing.Point(12, 38);
             this.btnLoadProjects.Name = "btnLoadProjects";
             this.btnLoadProjects.Size = new System.Drawing.Size(133, 23);
             this.btnLoadProjects.TabIndex = 4;
@@ -112,7 +117,7 @@ namespace MvE_SQL_test
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(165, 22);
+            this.label1.Location = new System.Drawing.Point(165, 15);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(45, 13);
             this.label1.TabIndex = 6;
@@ -121,7 +126,7 @@ namespace MvE_SQL_test
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(165, 276);
+            this.label2.Location = new System.Drawing.Point(165, 269);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(73, 13);
             this.label2.TabIndex = 7;
@@ -136,16 +141,16 @@ namespace MvE_SQL_test
             this.label3.TabIndex = 9;
             this.label3.Text = "Project detail parts";
             // 
-            // dataGridView1
+            // dgvProjectParts
             // 
-            this.dataGridView1.AllowUserToAddRows = false;
-            this.dataGridView1.AllowUserToDeleteRows = false;
-            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Location = new System.Drawing.Point(165, 466);
-            this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.AutoSizeToAllHeaders;
-            this.dataGridView1.Size = new System.Drawing.Size(1028, 114);
-            this.dataGridView1.TabIndex = 8;
+            this.dgvProjectParts.AllowUserToAddRows = false;
+            this.dgvProjectParts.AllowUserToDeleteRows = false;
+            this.dgvProjectParts.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvProjectParts.Location = new System.Drawing.Point(165, 466);
+            this.dgvProjectParts.Name = "dgvProjectParts";
+            this.dgvProjectParts.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.AutoSizeToAllHeaders;
+            this.dgvProjectParts.Size = new System.Drawing.Size(1028, 114);
+            this.dgvProjectParts.TabIndex = 8;
             // 
             // label4
             // 
@@ -156,26 +161,75 @@ namespace MvE_SQL_test
             this.label4.TabIndex = 11;
             this.label4.Text = "Project detail opeaions";
             // 
-            // dataGridView2
+            // dgvProjectOps
             // 
-            this.dataGridView2.AllowUserToAddRows = false;
-            this.dataGridView2.AllowUserToDeleteRows = false;
-            this.dataGridView2.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView2.Location = new System.Drawing.Point(165, 608);
-            this.dataGridView2.Name = "dataGridView2";
-            this.dataGridView2.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.AutoSizeToAllHeaders;
-            this.dataGridView2.Size = new System.Drawing.Size(1028, 114);
-            this.dataGridView2.TabIndex = 10;
+            this.dgvProjectOps.AllowUserToAddRows = false;
+            this.dgvProjectOps.AllowUserToDeleteRows = false;
+            this.dgvProjectOps.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvProjectOps.Location = new System.Drawing.Point(165, 608);
+            this.dgvProjectOps.Name = "dgvProjectOps";
+            this.dgvProjectOps.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.AutoSizeToAllHeaders;
+            this.dgvProjectOps.Size = new System.Drawing.Size(1028, 114);
+            this.dgvProjectOps.TabIndex = 10;
+            // 
+            // txtSeeContent
+            // 
+            this.txtSeeContent.Location = new System.Drawing.Point(12, 292);
+            this.txtSeeContent.Name = "txtSeeContent";
+            this.txtSeeContent.Size = new System.Drawing.Size(133, 23);
+            this.txtSeeContent.TabIndex = 12;
+            this.txtSeeContent.Text = "See detail content";
+            this.txtSeeContent.UseVisualStyleBackColor = true;
+            this.txtSeeContent.Click += new System.EventHandler(this.txtSeeContent_Click);
+            // 
+            // txtAddPart
+            // 
+            this.txtAddPart.Location = new System.Drawing.Point(12, 466);
+            this.txtAddPart.Name = "txtAddPart";
+            this.txtAddPart.Size = new System.Drawing.Size(133, 23);
+            this.txtAddPart.TabIndex = 13;
+            this.txtAddPart.Text = "Add part";
+            this.txtAddPart.UseVisualStyleBackColor = true;
+            // 
+            // txtAddOperation
+            // 
+            this.txtAddOperation.Location = new System.Drawing.Point(12, 608);
+            this.txtAddOperation.Name = "txtAddOperation";
+            this.txtAddOperation.Size = new System.Drawing.Size(133, 23);
+            this.txtAddOperation.TabIndex = 14;
+            this.txtAddOperation.Text = "Add operation";
+            this.txtAddOperation.UseVisualStyleBackColor = true;
+            // 
+            // txtDetailID
+            // 
+            this.txtDetailID.Location = new System.Drawing.Point(244, 266);
+            this.txtDetailID.Name = "txtDetailID";
+            this.txtDetailID.ReadOnly = true;
+            this.txtDetailID.Size = new System.Drawing.Size(100, 20);
+            this.txtDetailID.TabIndex = 15;
+            // 
+            // txtProjectID
+            // 
+            this.txtProjectID.Location = new System.Drawing.Point(244, 12);
+            this.txtProjectID.Name = "txtProjectID";
+            this.txtProjectID.ReadOnly = true;
+            this.txtProjectID.Size = new System.Drawing.Size(100, 20);
+            this.txtProjectID.TabIndex = 16;
             // 
             // ProjectManager
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1260, 793);
+            this.Controls.Add(this.txtProjectID);
+            this.Controls.Add(this.txtDetailID);
+            this.Controls.Add(this.txtAddOperation);
+            this.Controls.Add(this.txtAddPart);
+            this.Controls.Add(this.txtSeeContent);
             this.Controls.Add(this.label4);
-            this.Controls.Add(this.dataGridView2);
+            this.Controls.Add(this.dgvProjectOps);
             this.Controls.Add(this.label3);
-            this.Controls.Add(this.dataGridView1);
+            this.Controls.Add(this.dgvProjectParts);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.dgvProjectDetails);
@@ -189,8 +243,8 @@ namespace MvE_SQL_test
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             ((System.ComponentModel.ISupportInitialize)(this.dgvProject)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgvProjectDetails)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvProjectParts)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvProjectOps)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -207,8 +261,13 @@ namespace MvE_SQL_test
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.DataGridView dataGridView1;
+        private System.Windows.Forms.DataGridView dgvProjectParts;
         private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.DataGridView dataGridView2;
+        private System.Windows.Forms.DataGridView dgvProjectOps;
+        private System.Windows.Forms.Button txtSeeContent;
+        private System.Windows.Forms.Button txtAddPart;
+        private System.Windows.Forms.Button txtAddOperation;
+        private System.Windows.Forms.TextBox txtDetailID;
+        private System.Windows.Forms.TextBox txtProjectID;
     }
 }

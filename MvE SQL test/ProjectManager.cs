@@ -63,17 +63,19 @@ namespace MvE_SQL_test
 
         private void btnSeeDetails_Click(object sender, EventArgs e)
         {
-            if (dgvProject.SelectedRows.Count == 0)
+            Int32 selectedrowindex = dgvProject.SelectedCells[0].RowIndex;
+            DataGridViewRow SelectedRow = dgvProject.Rows[selectedrowindex];
+            string ProjectId = Convert.ToString(SelectedRow.Cells["Project_id"].Value);
+
+            txtProjectID.Text = ProjectId;
+
+            if (ProjectId == "")
             {
                 MessageBox.Show("No project selected");
             }
 
-            else if (dgvProject.SelectedRows.Count == 1)
+            else 
             {
-                Int32 selectedrowindex = dgvProject.SelectedCells[0].RowIndex;
-                DataGridViewRow SelectedRow = dgvProject.Rows[selectedrowindex];
-                string ProjectId = Convert.ToString(SelectedRow.Cells["Project_id"].Value);
-
                 // Create the connection.
                 string connectionstring = Properties.Settings.Default.connString;
                 using (MySqlConnection connection = new MySqlConnection(connectionstring))
@@ -102,11 +104,87 @@ namespace MvE_SQL_test
                     }
                 }                   
             }
-            else if (dgvProject.SelectedRows.Count > 1)
+
+        }
+
+        private void txtSeeContent_Click(object sender, EventArgs e)
+        {
+            Int32 selectedrowindex = dgvProjectDetails.SelectedCells[0].RowIndex;
+            DataGridViewRow SelectedRow = dgvProjectDetails.Rows[selectedrowindex];
+            string DetailtId = Convert.ToString(SelectedRow.Cells["ProjectDetail_id"].Value);
+
+            txtDetailID.Text = DetailtId;
+
+            if (DetailtId == "")
             {
-                MessageBox.Show("More than one project selected. Please select one project");
+                MessageBox.Show("No project detail selected");
+            }
+
+            else
+            {
+                // Create the connection.
+                string connectionstring = Properties.Settings.Default.connString;
+                using (MySqlConnection connection = new MySqlConnection(connectionstring))
+                {
+                    // mysql string parts
+                    const string mysqlString1 = "SELECT * FROM Victoriam.T_PROJECTDETAILPART WHERE Projectdetail = ";
+                    string mysqlString = mysqlString1 + DetailtId;
+                    using (MySqlCommand mysqlcommand = new MySqlCommand(mysqlString, connection))
+                    {
+                        try
+                        {
+                            connection.Open();
+
+                            using (MySqlDataReader dr = mysqlcommand.ExecuteReader())
+                            {
+                                DataTable dt = new DataTable();
+                                dt.Load(dr);
+                                this.dgvProjectParts.DataSource = dt;
+                                dr.Close();
+                            }
+                        }
+                        catch
+                        {
+                            MessageBox.Show("Project parts could not be loaded");
+                        }
+                        finally
+                        {
+                            connection.Close();
+                        }
+                    }
+                    // mysql string ops
+                    const string mysqlString10 = "SELECT * FROM Victoriam.T_PROJECTDETAILOPERATION WHERE Projectdetail = ";
+                    string mysqlString00 = mysqlString10 + DetailtId;
+                    using (MySqlCommand mysqlcommand = new MySqlCommand(mysqlString00, connection))
+                    {
+                        try
+                        {
+                            connection.Open();
+
+                            using (MySqlDataReader dr = mysqlcommand.ExecuteReader())
+                            {
+                                DataTable dt = new DataTable();
+                                dt.Load(dr);
+                                this.dgvProjectOps.DataSource = dt;
+                                dr.Close();
+                            }
+                        }
+                        catch
+                        {
+                            MessageBox.Show("Project operations could not be loaded");
+                        }
+                        finally
+                        {
+                            connection.Close();
+                        }
+                    }
+                }
             }
 
         }
+
+
+
+
     }
 }
