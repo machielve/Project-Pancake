@@ -83,7 +83,6 @@ namespace MvE_SQL_test
                     string mysqlString = mysqlString1 + ProjectId;
                     using (MySqlCommand mysqlcommand = new MySqlCommand(mysqlString, connection))
                     {
-                        MessageBox.Show(mysqlString);
                         try
                         {
                             connection.Open();
