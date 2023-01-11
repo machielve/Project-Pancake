@@ -203,6 +203,9 @@
     <EmbeddedResource Include="NewProject.resx">
       <DependentUpon>NewProject.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="NewProjectDetailPart.resx">
+      <DependentUpon>NewProjectDetailPart.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="NewUnit.resx">
       <DependentUpon>NewUnit.cs</DependentUpon>
     </EmbeddedResource>

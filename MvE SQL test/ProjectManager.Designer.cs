@@ -190,6 +190,7 @@ namespace MvE_SQL_test
             this.txtAddPart.TabIndex = 13;
             this.txtAddPart.Text = "Add part";
             this.txtAddPart.UseVisualStyleBackColor = true;
+            this.txtAddPart.Click += new System.EventHandler(this.txtAddPart_Click);
             // 
             // txtAddOperation
             // 

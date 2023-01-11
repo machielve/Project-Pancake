@@ -29,12 +29,123 @@ namespace MvE_SQL_test
         /// </summary>
         private void InitializeComponent()
         {
-            this.components = new System.ComponentModel.Container();
+            this.btnFinnish = new System.Windows.Forms.Button();
+            this.txtProjectDetailID = new System.Windows.Forms.TextBox();
+            this.label1 = new System.Windows.Forms.Label();
+            this.countPart = new System.Windows.Forms.NumericUpDown();
+            this.label2 = new System.Windows.Forms.Label();
+            this.label3 = new System.Windows.Forms.Label();
+            this.cmbPart = new System.Windows.Forms.ComboBox();
+            this.btnAddPart = new System.Windows.Forms.Button();
+            ((System.ComponentModel.ISupportInitialize)(this.countPart)).BeginInit();
+            this.SuspendLayout();
+            // 
+            // btnFinnish
+            // 
+            this.btnFinnish.Location = new System.Drawing.Point(180, 176);
+            this.btnFinnish.Name = "btnFinnish";
+            this.btnFinnish.Size = new System.Drawing.Size(146, 23);
+            this.btnFinnish.TabIndex = 11;
+            this.btnFinnish.Text = "Cancel";
+            this.btnFinnish.UseVisualStyleBackColor = true;
+            this.btnFinnish.Click += new System.EventHandler(this.btnFinnish_Click);
+            // 
+            // txtProjectDetailID
+            // 
+            this.txtProjectDetailID.Location = new System.Drawing.Point(108, 9);
+            this.txtProjectDetailID.Name = "txtProjectDetailID";
+            this.txtProjectDetailID.ReadOnly = true;
+            this.txtProjectDetailID.Size = new System.Drawing.Size(218, 20);
+            this.txtProjectDetailID.TabIndex = 13;
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(20, 9);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(82, 13);
+            this.label1.TabIndex = 12;
+            this.label1.Text = "Project detail ID";
+            // 
+            // countPart
+            // 
+            this.countPart.DecimalPlaces = 1;
+            this.countPart.Location = new System.Drawing.Point(108, 63);
+            this.countPart.Name = "countPart";
+            this.countPart.Size = new System.Drawing.Size(218, 20);
+            this.countPart.TabIndex = 18;
+            this.countPart.Value = new decimal(new int[] {
+            1,
+            0,
+            0,
+            0});
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Location = new System.Drawing.Point(20, 65);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(46, 13);
+            this.label2.TabIndex = 17;
+            this.label2.Text = "Quantity";
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Location = new System.Drawing.Point(20, 38);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(26, 13);
+            this.label3.TabIndex = 16;
+            this.label3.Text = "Part";
+            // 
+            // cmbPart
+            // 
+            this.cmbPart.FormattingEnabled = true;
+            this.cmbPart.Location = new System.Drawing.Point(108, 35);
+            this.cmbPart.Name = "cmbPart";
+            this.cmbPart.Size = new System.Drawing.Size(218, 21);
+            this.cmbPart.TabIndex = 15;
+            // 
+            // btnAddPart
+            // 
+            this.btnAddPart.Location = new System.Drawing.Point(12, 176);
+            this.btnAddPart.Name = "btnAddPart";
+            this.btnAddPart.Size = new System.Drawing.Size(133, 23);
+            this.btnAddPart.TabIndex = 19;
+            this.btnAddPart.Text = "Add part";
+            this.btnAddPart.UseVisualStyleBackColor = true;
+            // 
+            // NewProjectDetailPart
+            // 
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 450);
-            this.Text = "NewProjectDetailPart";
+            this.ClientSize = new System.Drawing.Size(384, 211);
+            this.Controls.Add(this.btnAddPart);
+            this.Controls.Add(this.countPart);
+            this.Controls.Add(this.label2);
+            this.Controls.Add(this.label3);
+            this.Controls.Add(this.cmbPart);
+            this.Controls.Add(this.txtProjectDetailID);
+            this.Controls.Add(this.label1);
+            this.Controls.Add(this.btnFinnish);
+            this.Name = "NewProjectDetailPart";
+            this.Text = "New Project Detail Part";
+            this.Load += new System.EventHandler(this.NewProjectDetailPart_Load);
+            ((System.ComponentModel.ISupportInitialize)(this.countPart)).EndInit();
+            this.ResumeLayout(false);
+            this.PerformLayout();
+
         }
 
         #endregion
+
+        private System.Windows.Forms.Button btnFinnish;
+        private System.Windows.Forms.TextBox txtProjectDetailID;
+        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.NumericUpDown countPart;
+        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.ComboBox cmbPart;
+        private System.Windows.Forms.Button btnAddPart;
     }
 }
