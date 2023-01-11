@@ -53,6 +53,9 @@ namespace MvE_SQL_test
                         msqlcommand.Parameters.Add(new MySqlParameter("ProjectName", MySqlDbType.Text));
                         msqlcommand.Parameters["ProjectName"].Value = txtProjectName.Text;
 
+                        msqlcommand.Parameters.Add(new MySqlParameter("ProjecMemo", MySqlDbType.Text));
+                        msqlcommand.Parameters["ProjecMemo"].Value = txtProjectMemo.Text;
+
                         msqlcommand.Parameters.Add(new MySqlParameter("ProjectID", MySqlDbType.Int32));
                         msqlcommand.Parameters["ProjectID"].Direction = ParameterDirection.Output;
 

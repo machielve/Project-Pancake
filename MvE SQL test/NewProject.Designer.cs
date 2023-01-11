@@ -35,6 +35,8 @@ namespace MvE_SQL_test
             this.txtProjectName = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
+            this.txtProjectMemo = new System.Windows.Forms.TextBox();
+            this.label3 = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // btnFinnish
@@ -49,7 +51,7 @@ namespace MvE_SQL_test
             // 
             // btnNewProject
             // 
-            this.btnNewProject.Location = new System.Drawing.Point(108, 118);
+            this.btnNewProject.Location = new System.Drawing.Point(108, 151);
             this.btnNewProject.Name = "btnNewProject";
             this.btnNewProject.Size = new System.Drawing.Size(234, 23);
             this.btnNewProject.TabIndex = 6;
@@ -90,11 +92,31 @@ namespace MvE_SQL_test
             this.label2.TabIndex = 10;
             this.label2.Text = "Project ID";
             // 
+            // txtProjectMemo
+            // 
+            this.txtProjectMemo.Location = new System.Drawing.Point(108, 73);
+            this.txtProjectMemo.Multiline = true;
+            this.txtProjectMemo.Name = "txtProjectMemo";
+            this.txtProjectMemo.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
+            this.txtProjectMemo.Size = new System.Drawing.Size(234, 60);
+            this.txtProjectMemo.TabIndex = 11;
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Location = new System.Drawing.Point(12, 76);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(36, 13);
+            this.label3.TabIndex = 12;
+            this.label3.Text = "Memo";
+            // 
             // NewProject
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(384, 211);
+            this.Controls.Add(this.label3);
+            this.Controls.Add(this.txtProjectMemo);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.txtProjectName);
@@ -116,5 +138,7 @@ namespace MvE_SQL_test
         private System.Windows.Forms.TextBox txtProjectName;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.TextBox txtProjectMemo;
+        private System.Windows.Forms.Label label3;
     }
 }
