@@ -64,6 +64,10 @@ namespace MvE_SQL_test
                     {
                         MessageBox.Show("Types could not be loaded");
                     }
+                    finally
+                    {
+                        connection.Close();
+                    }
                 }
 
                 // mysql string units
@@ -89,6 +93,10 @@ namespace MvE_SQL_test
                     {
                         MessageBox.Show("Units could not be loaded");
                     }
+                    finally
+                    {
+                        connection.Close();
+                    }
                 }
 
                 // mysql string materials
@@ -113,6 +121,10 @@ namespace MvE_SQL_test
                     catch
                     {
                         MessageBox.Show("Materials could not be loaded");
+                    }
+                    finally
+                    {
+                        connection.Close();
                     }
                 }
 
@@ -236,6 +248,61 @@ namespace MvE_SQL_test
         private void btnAddAnotherUnit_Click(object sender, EventArgs e)
         {
             this.ClearForm();
+        }
+
+        private void label2_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label10_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label9_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label8_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label7_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label6_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label5_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label3_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label4_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label11_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label1_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

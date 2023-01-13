@@ -579,6 +579,12 @@ namespace MvE_SQL_test
             TotalRefresh();
 
         }
+        public void LinkPart_Formclosing(object sender, EventArgs e)
+        {
+            AssemblyRefresh();
+            TotalRefresh();
+
+        }
 
         private void btnUpdateAssembly_Click(object sender, EventArgs e)
         {
@@ -596,6 +602,9 @@ namespace MvE_SQL_test
 
         private void btnLinkPart_Click(object sender, EventArgs e)
         {
+            Form frm = new LinkPart();
+            frm.FormClosing += new FormClosingEventHandler(this.LinkPart_Formclosing);
+            frm.Show();
 
         }
     }

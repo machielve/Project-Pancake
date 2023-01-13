@@ -67,7 +67,7 @@ namespace MvE_SQL_test
             "Time",
             "Weight",
             "Length"});
-            this.cmbPartType.Location = new System.Drawing.Point(109, 153);
+            this.cmbPartType.Location = new System.Drawing.Point(105, 153);
             this.cmbPartType.Name = "cmbPartType";
             this.cmbPartType.Size = new System.Drawing.Size(234, 21);
             this.cmbPartType.TabIndex = 18;
@@ -75,15 +75,16 @@ namespace MvE_SQL_test
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(12, 156);
+            this.label3.Location = new System.Drawing.Point(11, 156);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(49, 13);
             this.label3.TabIndex = 17;
             this.label3.Text = "Part type";
+            this.label3.Click += new System.EventHandler(this.label3_Click);
             // 
             // btnAddAnotherUnit
             // 
-            this.btnAddAnotherUnit.Location = new System.Drawing.Point(204, 454);
+            this.btnAddAnotherUnit.Location = new System.Drawing.Point(200, 473);
             this.btnAddAnotherUnit.Name = "btnAddAnotherUnit";
             this.btnAddAnotherUnit.Size = new System.Drawing.Size(139, 23);
             this.btnAddAnotherUnit.TabIndex = 16;
@@ -93,7 +94,7 @@ namespace MvE_SQL_test
             // 
             // btnNewUnit
             // 
-            this.btnNewUnit.Location = new System.Drawing.Point(109, 404);
+            this.btnNewUnit.Location = new System.Drawing.Point(105, 404);
             this.btnNewUnit.Name = "btnNewUnit";
             this.btnNewUnit.Size = new System.Drawing.Size(234, 23);
             this.btnNewUnit.TabIndex = 15;
@@ -103,7 +104,7 @@ namespace MvE_SQL_test
             // 
             // txtUnitID
             // 
-            this.txtUnitID.Location = new System.Drawing.Point(109, 378);
+            this.txtUnitID.Location = new System.Drawing.Point(105, 378);
             this.txtUnitID.Name = "txtUnitID";
             this.txtUnitID.ReadOnly = true;
             this.txtUnitID.Size = new System.Drawing.Size(234, 20);
@@ -112,15 +113,16 @@ namespace MvE_SQL_test
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(13, 381);
+            this.label2.Location = new System.Drawing.Point(12, 381);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(40, 13);
             this.label2.TabIndex = 13;
             this.label2.Text = "Part ID";
+            this.label2.Click += new System.EventHandler(this.label2_Click);
             // 
             // txtPartName
             // 
-            this.txtPartName.Location = new System.Drawing.Point(109, 17);
+            this.txtPartName.Location = new System.Drawing.Point(105, 17);
             this.txtPartName.Name = "txtPartName";
             this.txtPartName.Size = new System.Drawing.Size(234, 20);
             this.txtPartName.TabIndex = 12;
@@ -128,15 +130,16 @@ namespace MvE_SQL_test
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(12, 20);
+            this.label1.Location = new System.Drawing.Point(11, 20);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(55, 13);
             this.label1.TabIndex = 11;
             this.label1.Text = "Part name";
+            this.label1.Click += new System.EventHandler(this.label1_Click);
             // 
             // btnFinnish
             // 
-            this.btnFinnish.Location = new System.Drawing.Point(16, 454);
+            this.btnFinnish.Location = new System.Drawing.Point(12, 473);
             this.btnFinnish.Name = "btnFinnish";
             this.btnFinnish.Size = new System.Drawing.Size(146, 23);
             this.btnFinnish.TabIndex = 10;
@@ -146,7 +149,7 @@ namespace MvE_SQL_test
             // 
             // txtPartMemo
             // 
-            this.txtPartMemo.Location = new System.Drawing.Point(109, 69);
+            this.txtPartMemo.Location = new System.Drawing.Point(105, 69);
             this.txtPartMemo.Multiline = true;
             this.txtPartMemo.Name = "txtPartMemo";
             this.txtPartMemo.Size = new System.Drawing.Size(234, 78);
@@ -155,11 +158,12 @@ namespace MvE_SQL_test
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(12, 72);
+            this.label4.Location = new System.Drawing.Point(11, 72);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(57, 13);
             this.label4.TabIndex = 19;
             this.label4.Text = "Part memo";
+            this.label4.Click += new System.EventHandler(this.label4_Click);
             // 
             // cmbPartUnit
             // 
@@ -169,7 +173,7 @@ namespace MvE_SQL_test
             "Time",
             "Weight",
             "Length"});
-            this.cmbPartUnit.Location = new System.Drawing.Point(109, 180);
+            this.cmbPartUnit.Location = new System.Drawing.Point(105, 180);
             this.cmbPartUnit.Name = "cmbPartUnit";
             this.cmbPartUnit.Size = new System.Drawing.Size(234, 21);
             this.cmbPartUnit.TabIndex = 22;
@@ -177,11 +181,12 @@ namespace MvE_SQL_test
             // label5
             // 
             this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(12, 183);
+            this.label5.Location = new System.Drawing.Point(11, 183);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(46, 13);
             this.label5.TabIndex = 21;
             this.label5.Text = "Part unit";
+            this.label5.Click += new System.EventHandler(this.label5_Click);
             // 
             // cmbMaterial
             // 
@@ -191,7 +196,7 @@ namespace MvE_SQL_test
             "Time",
             "Weight",
             "Length"});
-            this.cmbMaterial.Location = new System.Drawing.Point(109, 207);
+            this.cmbMaterial.Location = new System.Drawing.Point(105, 207);
             this.cmbMaterial.Name = "cmbMaterial";
             this.cmbMaterial.Size = new System.Drawing.Size(234, 21);
             this.cmbMaterial.TabIndex = 24;
@@ -199,16 +204,17 @@ namespace MvE_SQL_test
             // label6
             // 
             this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(12, 210);
+            this.label6.Location = new System.Drawing.Point(11, 210);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(44, 13);
             this.label6.TabIndex = 23;
             this.label6.Text = "Material";
+            this.label6.Click += new System.EventHandler(this.label6_Click);
             // 
             // numericUpDown1
             // 
             this.numericUpDown1.DecimalPlaces = 2;
-            this.numericUpDown1.Location = new System.Drawing.Point(109, 235);
+            this.numericUpDown1.Location = new System.Drawing.Point(105, 235);
             this.numericUpDown1.Name = "numericUpDown1";
             this.numericUpDown1.Size = new System.Drawing.Size(234, 20);
             this.numericUpDown1.TabIndex = 25;
@@ -216,11 +222,12 @@ namespace MvE_SQL_test
             // label7
             // 
             this.label7.AutoSize = true;
-            this.label7.Location = new System.Drawing.Point(12, 237);
+            this.label7.Location = new System.Drawing.Point(11, 237);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(41, 13);
             this.label7.TabIndex = 26;
             this.label7.Text = "Weight";
+            this.label7.Click += new System.EventHandler(this.label7_Click);
             // 
             // cmbWeightUnit
             // 
@@ -230,7 +237,7 @@ namespace MvE_SQL_test
             "Time",
             "Weight",
             "Length"});
-            this.cmbWeightUnit.Location = new System.Drawing.Point(109, 261);
+            this.cmbWeightUnit.Location = new System.Drawing.Point(105, 261);
             this.cmbWeightUnit.Name = "cmbWeightUnit";
             this.cmbWeightUnit.Size = new System.Drawing.Size(234, 21);
             this.cmbWeightUnit.TabIndex = 28;
@@ -238,15 +245,16 @@ namespace MvE_SQL_test
             // label8
             // 
             this.label8.AutoSize = true;
-            this.label8.Location = new System.Drawing.Point(12, 264);
+            this.label8.Location = new System.Drawing.Point(11, 264);
             this.label8.Name = "label8";
             this.label8.Size = new System.Drawing.Size(61, 13);
             this.label8.TabIndex = 27;
             this.label8.Text = "Weight unit";
+            this.label8.Click += new System.EventHandler(this.label8_Click);
             // 
             // txtDrawingNumber
             // 
-            this.txtDrawingNumber.Location = new System.Drawing.Point(109, 288);
+            this.txtDrawingNumber.Location = new System.Drawing.Point(105, 288);
             this.txtDrawingNumber.Name = "txtDrawingNumber";
             this.txtDrawingNumber.Size = new System.Drawing.Size(234, 20);
             this.txtDrawingNumber.TabIndex = 30;
@@ -254,31 +262,33 @@ namespace MvE_SQL_test
             // label9
             // 
             this.label9.AutoSize = true;
-            this.label9.Location = new System.Drawing.Point(12, 291);
+            this.label9.Location = new System.Drawing.Point(11, 291);
             this.label9.Name = "label9";
             this.label9.Size = new System.Drawing.Size(84, 13);
             this.label9.TabIndex = 29;
             this.label9.Text = "Drawing number";
+            this.label9.Click += new System.EventHandler(this.label9_Click);
             // 
             // label10
             // 
             this.label10.AutoSize = true;
-            this.label10.Location = new System.Drawing.Point(12, 317);
+            this.label10.Location = new System.Drawing.Point(11, 317);
             this.label10.Name = "label10";
             this.label10.Size = new System.Drawing.Size(85, 13);
             this.label10.TabIndex = 31;
             this.label10.Text = "Drawing revision";
+            this.label10.Click += new System.EventHandler(this.label10_Click);
             // 
             // txtDrawingRevision
             // 
-            this.txtDrawingRevision.Location = new System.Drawing.Point(109, 315);
+            this.txtDrawingRevision.Location = new System.Drawing.Point(105, 315);
             this.txtDrawingRevision.Name = "txtDrawingRevision";
             this.txtDrawingRevision.Size = new System.Drawing.Size(234, 20);
             this.txtDrawingRevision.TabIndex = 32;
             // 
             // countRevision
             // 
-            this.countRevision.Location = new System.Drawing.Point(109, 43);
+            this.countRevision.Location = new System.Drawing.Point(105, 43);
             this.countRevision.Name = "countRevision";
             this.countRevision.Size = new System.Drawing.Size(234, 20);
             this.countRevision.TabIndex = 34;
@@ -286,11 +296,12 @@ namespace MvE_SQL_test
             // label11
             // 
             this.label11.AutoSize = true;
-            this.label11.Location = new System.Drawing.Point(12, 45);
+            this.label11.Location = new System.Drawing.Point(11, 45);
             this.label11.Name = "label11";
             this.label11.Size = new System.Drawing.Size(48, 13);
             this.label11.TabIndex = 33;
             this.label11.Text = "Revision";
+            this.label11.Click += new System.EventHandler(this.label11_Click);
             // 
             // NewPart
             // 

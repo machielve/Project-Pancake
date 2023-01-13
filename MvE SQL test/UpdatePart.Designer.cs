@@ -29,10 +29,17 @@ namespace MvE_SQL_test
         /// </summary>
         private void InitializeComponent()
         {
-            this.components = new System.ComponentModel.Container();
+            this.SuspendLayout();
+            // 
+            // UpdatePart
+            // 
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
-            this.Text = "UpdatePart";
+            this.Name = "UpdatePart";
+            this.Text = "Update part";
+            this.ResumeLayout(false);
+
         }
 
         #endregion

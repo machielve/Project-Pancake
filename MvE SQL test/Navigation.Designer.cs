@@ -228,10 +228,9 @@ namespace MvE_SQL_test
             this.rdbIPAdres1.AutoSize = true;
             this.rdbIPAdres1.Location = new System.Drawing.Point(6, 8);
             this.rdbIPAdres1.Name = "rdbIPAdres1";
-            this.rdbIPAdres1.Size = new System.Drawing.Size(108, 17);
+            this.rdbIPAdres1.Size = new System.Drawing.Size(116, 17);
             this.rdbIPAdres1.TabIndex = 3;
-            this.rdbIPAdres1.TabStop = true;
-            this.rdbIPAdres1.Text = "Interne connectie";
+            this.rdbIPAdres1.Text = "Internal connection";
             this.rdbIPAdres1.UseVisualStyleBackColor = true;
             // 
             // rdbIPAdres2
@@ -239,10 +238,9 @@ namespace MvE_SQL_test
             this.rdbIPAdres2.AutoSize = true;
             this.rdbIPAdres2.Location = new System.Drawing.Point(6, 37);
             this.rdbIPAdres2.Name = "rdbIPAdres2";
-            this.rdbIPAdres2.Size = new System.Drawing.Size(111, 17);
+            this.rdbIPAdres2.Size = new System.Drawing.Size(119, 17);
             this.rdbIPAdres2.TabIndex = 4;
-            this.rdbIPAdres2.TabStop = true;
-            this.rdbIPAdres2.Text = "Externe connectie";
+            this.rdbIPAdres2.Text = "External connection";
             this.rdbIPAdres2.UseVisualStyleBackColor = true;
             // 
             // Navigation

@@ -206,6 +206,9 @@
     <EmbeddedResource Include="AssemblyManager.resx">
       <DependentUpon>AssemblyManager.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="LinkPart.resx">
+      <DependentUpon>LinkPart.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="NewAssembly.resx">
       <DependentUpon>NewAssembly.cs</DependentUpon>
     </EmbeddedResource>
@@ -254,6 +257,9 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="UpdatePart.resx">
+      <DependentUpon>UpdatePart.cs</DependentUpon>
+    </EmbeddedResource>
     <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
