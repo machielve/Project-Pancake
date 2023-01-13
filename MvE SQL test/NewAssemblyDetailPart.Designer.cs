@@ -38,10 +38,11 @@ namespace MvE_SQL_test
             this.label3 = new System.Windows.Forms.Label();
             this.txtAssemblyID = new System.Windows.Forms.TextBox();
             this.txtDrawingNumber = new System.Windows.Forms.TextBox();
-            this.txtDrawingRevision = new System.Windows.Forms.TextBox();
             this.label4 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
+            this.txtDrawingRevision = new System.Windows.Forms.NumericUpDown();
             ((System.ComponentModel.ISupportInitialize)(this.countPart)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txtDrawingRevision)).BeginInit();
             this.SuspendLayout();
             // 
             // btnFinnish
@@ -123,13 +124,6 @@ namespace MvE_SQL_test
             this.txtDrawingNumber.Size = new System.Drawing.Size(218, 20);
             this.txtDrawingNumber.TabIndex = 17;
             // 
-            // txtDrawingRevision
-            // 
-            this.txtDrawingRevision.Location = new System.Drawing.Point(100, 130);
-            this.txtDrawingRevision.Name = "txtDrawingRevision";
-            this.txtDrawingRevision.Size = new System.Drawing.Size(218, 20);
-            this.txtDrawingRevision.TabIndex = 18;
-            // 
             // label4
             // 
             this.label4.AutoSize = true;
@@ -148,14 +142,21 @@ namespace MvE_SQL_test
             this.label5.TabIndex = 20;
             this.label5.Text = "Drawing number";
             // 
+            // txtDrawingRevision
+            // 
+            this.txtDrawingRevision.Location = new System.Drawing.Point(100, 133);
+            this.txtDrawingRevision.Name = "txtDrawingRevision";
+            this.txtDrawingRevision.Size = new System.Drawing.Size(218, 20);
+            this.txtDrawingRevision.TabIndex = 21;
+            // 
             // NewAssemblyDetailPart
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(374, 258);
+            this.Controls.Add(this.txtDrawingRevision);
             this.Controls.Add(this.label5);
             this.Controls.Add(this.label4);
-            this.Controls.Add(this.txtDrawingRevision);
             this.Controls.Add(this.txtDrawingNumber);
             this.Controls.Add(this.txtAssemblyID);
             this.Controls.Add(this.label3);
@@ -169,6 +170,7 @@ namespace MvE_SQL_test
             this.Text = "New assembly part";
             this.Load += new System.EventHandler(this.NewAssemblyDetailPart_Load);
             ((System.ComponentModel.ISupportInitialize)(this.countPart)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txtDrawingRevision)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -186,8 +188,8 @@ namespace MvE_SQL_test
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.TextBox txtAssemblyID;
         private System.Windows.Forms.TextBox txtDrawingNumber;
-        private System.Windows.Forms.TextBox txtDrawingRevision;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label5;
+        private System.Windows.Forms.NumericUpDown txtDrawingRevision;
     }
 }

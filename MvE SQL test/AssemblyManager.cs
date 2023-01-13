@@ -591,5 +591,15 @@ namespace MvE_SQL_test
             AssemblyRefresh();
 
         }
+
+        private void btnCreatePart_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btnLinkPart_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

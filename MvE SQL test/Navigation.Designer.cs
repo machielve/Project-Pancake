@@ -38,6 +38,7 @@ namespace MvE_SQL_test
             this.btnOperationManager = new System.Windows.Forms.Button();
             this.btnStockManager = new System.Windows.Forms.Button();
             this.Managers = new System.Windows.Forms.TabControl();
+            this.GeneralSettings = new System.Windows.Forms.TabPage();
             this.tabProject = new System.Windows.Forms.TabPage();
             this.tabAssembly = new System.Windows.Forms.TabPage();
             this.tabPart = new System.Windows.Forms.TabPage();
@@ -124,6 +125,7 @@ namespace MvE_SQL_test
             // 
             // Managers
             // 
+            this.Managers.Controls.Add(this.GeneralSettings);
             this.Managers.Controls.Add(this.tabProject);
             this.Managers.Controls.Add(this.tabAssembly);
             this.Managers.Controls.Add(this.tabPart);
@@ -134,6 +136,17 @@ namespace MvE_SQL_test
             this.Managers.SelectedIndex = 0;
             this.Managers.Size = new System.Drawing.Size(1310, 840);
             this.Managers.TabIndex = 10;
+            // 
+            // GeneralSettings
+            // 
+            this.GeneralSettings.Location = new System.Drawing.Point(4, 22);
+            this.GeneralSettings.Name = "GeneralSettings";
+            this.GeneralSettings.Padding = new System.Windows.Forms.Padding(3);
+            this.GeneralSettings.Size = new System.Drawing.Size(1302, 814);
+            this.GeneralSettings.TabIndex = 3;
+            this.GeneralSettings.Text = "General settings";
+            this.GeneralSettings.UseVisualStyleBackColor = true;
+            this.GeneralSettings.Click += new System.EventHandler(this.tabPage1_Click);
             // 
             // tabProject
             // 
@@ -180,8 +193,8 @@ namespace MvE_SQL_test
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1484, 861);
-            this.Controls.Add(this.button1);
             this.Controls.Add(this.Managers);
+            this.Controls.Add(this.button1);
             this.Controls.Add(this.btnStockManager);
             this.Controls.Add(this.btnOperationManager);
             this.Controls.Add(this.btnPartManager);
@@ -214,6 +227,7 @@ namespace MvE_SQL_test
         private System.Windows.Forms.TabPage tabAssembly;
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.TabPage tabPart;
+        private System.Windows.Forms.TabPage GeneralSettings;
     }
 }
 

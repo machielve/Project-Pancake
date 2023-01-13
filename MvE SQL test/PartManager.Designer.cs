@@ -53,7 +53,7 @@ namespace MvE_SQL_test
             this.dgvParts.MaximumSize = new System.Drawing.Size(1500, 490);
             this.dgvParts.MinimumSize = new System.Drawing.Size(900, 490);
             this.dgvParts.Name = "dgvParts";
-            this.dgvParts.Size = new System.Drawing.Size(1007, 490);
+            this.dgvParts.Size = new System.Drawing.Size(1310, 490);
             this.dgvParts.TabIndex = 0;
             // 
             // label1
@@ -102,7 +102,7 @@ namespace MvE_SQL_test
             this.dgvSuppliers.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvSuppliers.Location = new System.Drawing.Point(165, 587);
             this.dgvSuppliers.Name = "dgvSuppliers";
-            this.dgvSuppliers.Size = new System.Drawing.Size(1007, 104);
+            this.dgvSuppliers.Size = new System.Drawing.Size(1310, 104);
             this.dgvSuppliers.TabIndex = 11;
             // 
             // label2
@@ -156,7 +156,7 @@ namespace MvE_SQL_test
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1184, 811);
+            this.ClientSize = new System.Drawing.Size(1484, 811);
             this.Controls.Add(this.button1);
             this.Controls.Add(this.txtPartID);
             this.Controls.Add(this.btnLoadSuppliers);

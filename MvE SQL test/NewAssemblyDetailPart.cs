@@ -67,7 +67,7 @@ namespace MvE_SQL_test
                 string mysqlString2 = PartID;
                 string mysqlString = mysqlString1 + mysqlString2;
                 using (MySqlCommand mysqlcommand = new MySqlCommand(mysqlString, connection))
-                {
+                { /*
                     try
                     {
                         connection.Open();
@@ -84,6 +84,7 @@ namespace MvE_SQL_test
                     {
                         connection.Close();
                     }
+                    */
                 }
 
 
@@ -105,7 +106,7 @@ namespace MvE_SQL_test
             decimal PartQuantity = Convert.ToDecimal(countPart.Value);
             string PartName = cmbPart.Text;
             string PartDNumber = txtDrawingNumber.Text;
-            int PartDRev = Convert.ToInt32(txtDrawingRevision.Text);
+            int PartDRev = Convert.ToInt32(txtDrawingRevision.Value);
 
             // Create the connection.
             string connectionstring = Properties.Settings.Default.connString;

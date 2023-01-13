@@ -64,5 +64,10 @@ namespace MvE_SQL_test
             frm.Show();
 
         }
+
+        private void tabPage1_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }
