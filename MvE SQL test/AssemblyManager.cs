@@ -280,9 +280,6 @@ namespace MvE_SQL_test
            
         }
 
-
-
-
         private void btnFinnish_Click(object sender, EventArgs e)
         {
             this.Close();
@@ -298,8 +295,7 @@ namespace MvE_SQL_test
             Form frm = new NewAssembly();
             
             frm.Show();
-        }
-              
+        }              
 
         private void btnSeeDetails_Click(object sender, EventArgs e)
         {
@@ -576,6 +572,7 @@ namespace MvE_SQL_test
             TotalRefresh();
 
         }
+
         public void NewAssemblyDetailOperation_Formclosing(object sender, EventArgs e)
         {
             AssemblyRefresh();
