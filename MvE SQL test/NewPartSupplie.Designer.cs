@@ -40,6 +40,7 @@ namespace MvE_SQL_test
             this.CountQuantity = new System.Windows.Forms.NumericUpDown();
             this.label1 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
+            this.btnCreateSupplier = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.countPrice)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.CountQuantity)).BeginInit();
             this.SuspendLayout();
@@ -68,16 +69,17 @@ namespace MvE_SQL_test
             // 
             // btnAddAnotherSupplier
             // 
-            this.btnAddAnotherSupplier.Location = new System.Drawing.Point(203, 177);
+            this.btnAddAnotherSupplier.Location = new System.Drawing.Point(196, 203);
             this.btnAddAnotherSupplier.Name = "btnAddAnotherSupplier";
-            this.btnAddAnotherSupplier.Size = new System.Drawing.Size(139, 23);
+            this.btnAddAnotherSupplier.Size = new System.Drawing.Size(146, 23);
             this.btnAddAnotherSupplier.TabIndex = 16;
             this.btnAddAnotherSupplier.Text = "Add another supplier";
             this.btnAddAnotherSupplier.UseVisualStyleBackColor = true;
+            this.btnAddAnotherSupplier.Click += new System.EventHandler(this.btnAddAnotherSupplier_Click);
             // 
             // btnNewSupplier
             // 
-            this.btnNewSupplier.Location = new System.Drawing.Point(108, 135);
+            this.btnNewSupplier.Location = new System.Drawing.Point(108, 131);
             this.btnNewSupplier.Name = "btnNewSupplier";
             this.btnNewSupplier.Size = new System.Drawing.Size(234, 23);
             this.btnNewSupplier.TabIndex = 15;
@@ -104,7 +106,7 @@ namespace MvE_SQL_test
             // 
             // btnFinnish
             // 
-            this.btnFinnish.Location = new System.Drawing.Point(15, 177);
+            this.btnFinnish.Location = new System.Drawing.Point(15, 203);
             this.btnFinnish.Name = "btnFinnish";
             this.btnFinnish.Size = new System.Drawing.Size(146, 23);
             this.btnFinnish.TabIndex = 10;
@@ -160,11 +162,22 @@ namespace MvE_SQL_test
             this.label4.TabIndex = 22;
             this.label4.Text = "Quantity";
             // 
+            // btnCreateSupplier
+            // 
+            this.btnCreateSupplier.Location = new System.Drawing.Point(196, 174);
+            this.btnCreateSupplier.Name = "btnCreateSupplier";
+            this.btnCreateSupplier.Size = new System.Drawing.Size(146, 23);
+            this.btnCreateSupplier.TabIndex = 23;
+            this.btnCreateSupplier.Text = "Create new supplier";
+            this.btnCreateSupplier.UseVisualStyleBackColor = true;
+            this.btnCreateSupplier.Click += new System.EventHandler(this.btnCreateSupplier_Click);
+            // 
             // NewPartSupplier
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(384, 211);
+            this.ClientSize = new System.Drawing.Size(384, 263);
+            this.Controls.Add(this.btnCreateSupplier);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.CountQuantity);
@@ -199,5 +212,6 @@ namespace MvE_SQL_test
         private System.Windows.Forms.NumericUpDown CountQuantity;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label4;
+        private System.Windows.Forms.Button btnCreateSupplier;
     }
 }

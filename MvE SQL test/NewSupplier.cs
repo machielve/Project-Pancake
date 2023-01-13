@@ -12,20 +12,18 @@ using MySql.Data.MySqlClient;
 
 namespace MvE_SQL_test
 {
-    public partial class NewMaterial : Form
+    public partial class NewSupplier : Form
     {
-        private void ClearForm()
+        private int parsedSupplierID;
+
+        public NewSupplier()
         {
-            txtMaterialName.Clear();
-            txtMaterialID.Clear();
-            this.parsedMaterialID = 0;
+            InitializeComponent();
         }
 
-        private int parsedMaterialID;
-
-        private bool IsUnitNameValid()
+        private bool IsNameValid()
         {
-            if (txtMaterialName.Text == "")
+            if (txtSupplierName.Text == "")
             {
                 MessageBox.Show("Please enter a name.");
                 return false;
@@ -36,33 +34,28 @@ namespace MvE_SQL_test
             }
         }
 
-        public NewMaterial()
-        {
-            InitializeComponent();
-        }
-
         private void btnFinnish_Click(object sender, EventArgs e)
         {
             this.Close();
         }
 
-        private void btnNewMaterial_Click(object sender, EventArgs e)
+        private void btnNewSupplier_Click(object sender, EventArgs e)
         {
-            if (IsUnitNameValid())
+            if (IsNameValid())
             {
                 // Create the connection.
                 string connectionstring = Properties.Settings.Default.connString;
                 using (MySqlConnection connection = new MySqlConnection(connectionstring))
                 {
-                    using (MySqlCommand msqlcommand = new MySqlCommand("uspNewMaterial", connection))
+                    using (MySqlCommand msqlcommand = new MySqlCommand("uspNewSupplier", connection))
                     {
                         msqlcommand.CommandType = CommandType.StoredProcedure;
 
-                        msqlcommand.Parameters.Add(new MySqlParameter("MaterialName", MySqlDbType.Text));
-                        msqlcommand.Parameters["MaterialName"].Value = txtMaterialName.Text;
+                        msqlcommand.Parameters.Add(new MySqlParameter("SupplierName", MySqlDbType.Text));
+                        msqlcommand.Parameters["SupplierName"].Value = txtSupplierName.Text;
 
-                        msqlcommand.Parameters.Add(new MySqlParameter("MaterialID", MySqlDbType.Int32));
-                        msqlcommand.Parameters["MaterialID"].Direction = ParameterDirection.Output;
+                        msqlcommand.Parameters.Add(new MySqlParameter("SupplierID", MySqlDbType.Int32));
+                        msqlcommand.Parameters["SupplierID"].Direction = ParameterDirection.Output;
 
                         try
                         {
@@ -70,8 +63,8 @@ namespace MvE_SQL_test
 
                             msqlcommand.ExecuteNonQuery();
 
-                            this.parsedMaterialID = (int)msqlcommand.Parameters["MaterialID"].Value;
-                            this.txtMaterialID.Text = Convert.ToString(parsedMaterialID);
+                            this.parsedSupplierID = (int)msqlcommand.Parameters["SupplierID"].Value;
+                            this.txtSupplierID.Text = Convert.ToString(parsedSupplierID);
 
                         }
 
@@ -79,7 +72,7 @@ namespace MvE_SQL_test
                         {
                             MessageBox.Show("error " + ex.Number + " has occurd " + ex.Message);
 
-                            MessageBox.Show("Material ID was not returned. Material could not be created.");
+                            MessageBox.Show("Supplier ID was not returned. Supplier could not be created.");
                         }
 
                         finally
@@ -91,11 +84,13 @@ namespace MvE_SQL_test
                 }
 
             }
+
         }
 
-        private void btnAddAnotherUnit_Click(object sender, EventArgs e)
+        private void btnAddAnotherSupplier_Click(object sender, EventArgs e)
         {
-            this.ClearForm();
+            txtSupplierID.Clear();
+            txtSupplierName.Clear();
         }
     }
 }

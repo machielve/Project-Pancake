@@ -14,20 +14,8 @@ namespace MvE_SQL_test
 {
     public partial class NewPartSupplier : Form
     {
-        public NewPartSupplier()
+        public void RefreshSuppliers()
         {
-            InitializeComponent();
-        }
-
-        private void btnFinnish_Click(object sender, EventArgs e)
-        {
-            this.Close();
-        }
-
-        private void NewPartSupplier_Load(object sender, EventArgs e)
-        {
-            txtPartID.Text = PartManager.PartID;
-
             // Create the connection.
             string connectionstring = Properties.Settings.Default.connString;
             using (MySqlConnection connection = new MySqlConnection(connectionstring))
@@ -57,6 +45,24 @@ namespace MvE_SQL_test
                     }
                 }
             }
+        }
+
+        public NewPartSupplier()
+        {
+            InitializeComponent();
+        }
+
+        private void btnFinnish_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
+
+        private void NewPartSupplier_Load(object sender, EventArgs e)
+        {
+            txtPartID.Text = PartManager.PartID;
+
+            RefreshSuppliers();
+            
         }
 
         private void btnNewSupplier_Click(object sender, EventArgs e)
@@ -109,6 +115,25 @@ namespace MvE_SQL_test
                 }
             }
             this.Close();
+
+        }
+
+        public void NewSupplier_Formclosing(object sender, EventArgs e)
+        {
+            RefreshSuppliers();
+
+        }
+
+        private void btnCreateSupplier_Click(object sender, EventArgs e)
+        {
+            Form frm = new NewSupplier();
+            frm.FormClosing += new FormClosingEventHandler(this.NewSupplier_Formclosing);
+            frm.Show();
+        }
+
+        private void btnAddAnotherSupplier_Click(object sender, EventArgs e)
+        {
+            txtPartID.Clear();
 
         }
     }

@@ -43,7 +43,13 @@ namespace MvE_SQL_test
             this.tabAssembly = new System.Windows.Forms.TabPage();
             this.tabPart = new System.Windows.Forms.TabPage();
             this.button1 = new System.Windows.Forms.Button();
+            this.txtIPIntern = new System.Windows.Forms.TextBox();
+            this.txtIPExtern = new System.Windows.Forms.TextBox();
+            this.txtIPAdres = new System.Windows.Forms.TextBox();
+            this.rdbIPAdres1 = new System.Windows.Forms.RadioButton();
+            this.rdbIPAdres2 = new System.Windows.Forms.RadioButton();
             this.Managers.SuspendLayout();
+            this.GeneralSettings.SuspendLayout();
             this.SuspendLayout();
             // 
             // label1
@@ -139,6 +145,11 @@ namespace MvE_SQL_test
             // 
             // GeneralSettings
             // 
+            this.GeneralSettings.Controls.Add(this.rdbIPAdres2);
+            this.GeneralSettings.Controls.Add(this.rdbIPAdres1);
+            this.GeneralSettings.Controls.Add(this.txtIPAdres);
+            this.GeneralSettings.Controls.Add(this.txtIPExtern);
+            this.GeneralSettings.Controls.Add(this.txtIPIntern);
             this.GeneralSettings.Location = new System.Drawing.Point(4, 22);
             this.GeneralSettings.Name = "GeneralSettings";
             this.GeneralSettings.Padding = new System.Windows.Forms.Padding(3);
@@ -188,6 +199,52 @@ namespace MvE_SQL_test
             this.button1.UseVisualStyleBackColor = true;
             this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
+            // txtIPIntern
+            // 
+            this.txtIPIntern.Location = new System.Drawing.Point(145, 7);
+            this.txtIPIntern.Name = "txtIPIntern";
+            this.txtIPIntern.Size = new System.Drawing.Size(109, 20);
+            this.txtIPIntern.TabIndex = 0;
+            this.txtIPIntern.Text = "192.168.2.61";
+            // 
+            // txtIPExtern
+            // 
+            this.txtIPExtern.Location = new System.Drawing.Point(145, 36);
+            this.txtIPExtern.Name = "txtIPExtern";
+            this.txtIPExtern.Size = new System.Drawing.Size(109, 20);
+            this.txtIPExtern.TabIndex = 1;
+            this.txtIPExtern.Text = "84.87.205.42";
+            // 
+            // txtIPAdres
+            // 
+            this.txtIPAdres.Location = new System.Drawing.Point(145, 123);
+            this.txtIPAdres.Name = "txtIPAdres";
+            this.txtIPAdres.ReadOnly = true;
+            this.txtIPAdres.Size = new System.Drawing.Size(108, 20);
+            this.txtIPAdres.TabIndex = 2;
+            // 
+            // rdbIPAdres1
+            // 
+            this.rdbIPAdres1.AutoSize = true;
+            this.rdbIPAdres1.Location = new System.Drawing.Point(6, 8);
+            this.rdbIPAdres1.Name = "rdbIPAdres1";
+            this.rdbIPAdres1.Size = new System.Drawing.Size(108, 17);
+            this.rdbIPAdres1.TabIndex = 3;
+            this.rdbIPAdres1.TabStop = true;
+            this.rdbIPAdres1.Text = "Interne connectie";
+            this.rdbIPAdres1.UseVisualStyleBackColor = true;
+            // 
+            // rdbIPAdres2
+            // 
+            this.rdbIPAdres2.AutoSize = true;
+            this.rdbIPAdres2.Location = new System.Drawing.Point(6, 37);
+            this.rdbIPAdres2.Name = "rdbIPAdres2";
+            this.rdbIPAdres2.Size = new System.Drawing.Size(111, 17);
+            this.rdbIPAdres2.TabIndex = 4;
+            this.rdbIPAdres2.TabStop = true;
+            this.rdbIPAdres2.Text = "Externe connectie";
+            this.rdbIPAdres2.UseVisualStyleBackColor = true;
+            // 
             // Navigation
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -208,6 +265,8 @@ namespace MvE_SQL_test
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             this.Load += new System.EventHandler(this.Navigation_Load);
             this.Managers.ResumeLayout(false);
+            this.GeneralSettings.ResumeLayout(false);
+            this.GeneralSettings.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -228,6 +287,11 @@ namespace MvE_SQL_test
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.TabPage tabPart;
         private System.Windows.Forms.TabPage GeneralSettings;
+        private System.Windows.Forms.TextBox txtIPAdres;
+        private System.Windows.Forms.TextBox txtIPExtern;
+        private System.Windows.Forms.TextBox txtIPIntern;
+        private System.Windows.Forms.RadioButton rdbIPAdres2;
+        private System.Windows.Forms.RadioButton rdbIPAdres1;
     }
 }
 
