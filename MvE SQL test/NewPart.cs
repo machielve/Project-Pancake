@@ -158,6 +158,7 @@ namespace MvE_SQL_test
             string PartName = txtPartName.Text;
             string PartMemo = txtPartMemo.Text;
             int Parttype = Convert.ToInt32(cmbPartType.SelectedValue);
+            int PartRevision = Convert.ToInt32(countRevision.Value);
             int PartUnit = Convert.ToInt32(cmbPartUnit.SelectedValue);
             int PartMaterial = Convert.ToInt32(cmbMaterial.SelectedValue);
             decimal PartWeight = Convert.ToDecimal(numericUpDown1.Value);
@@ -181,6 +182,9 @@ namespace MvE_SQL_test
 
                     msqlcommand.Parameters.Add(new MySqlParameter("PartType", MySqlDbType.Int32));
                     msqlcommand.Parameters["PartType"].Value = Parttype;
+
+                    msqlcommand.Parameters.Add(new MySqlParameter("PartRevision", MySqlDbType.Int32));
+                    msqlcommand.Parameters["PartRevision"].Value = PartRevision;
 
                     msqlcommand.Parameters.Add(new MySqlParameter("PartUnit", MySqlDbType.Int32));
                     msqlcommand.Parameters["PartUnit"].Value = PartUnit;
