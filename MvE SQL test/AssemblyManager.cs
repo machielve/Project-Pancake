@@ -602,6 +602,10 @@ namespace MvE_SQL_test
 
         private void btnLinkPart_Click(object sender, EventArgs e)
         {
+            string AssemblyId = txtAssemblyID.Text;
+
+            AssemblyID = AssemblyId;
+
             Form frm = new LinkPart();
             frm.FormClosing += new FormClosingEventHandler(this.LinkPart_Formclosing);
             frm.Show();

@@ -26,10 +26,46 @@ namespace MvE_SQL_test
 
         private void LinkPart_Load(object sender, EventArgs e)
         {
+            txtAssemblyID.Text = AssemblyManager.AssemblyID;
+
             // Create the connection.
             string connectionstring = Properties.Settings.Default.connString;
             using (MySqlConnection connection = new MySqlConnection(connectionstring))
             {
+                // mysql assembly info 
+                string mysqlString00 = "SELECT Name, Weight, DrawingNumber, DrawingRevision FROM Victoriam.T_ASSEMBLY WHERE Assembly_id = ";
+                string mysqlString01 = txtAssemblyID.Text;
+                string mysqlString02 = mysqlString00 + mysqlString01;
+                using (MySqlCommand mysqlcommand = new MySqlCommand(mysqlString02, connection))
+                {
+                    try
+                    {
+                        connection.Open();
+                        using (MySqlDataReader dr = mysqlcommand.ExecuteReader())
+                        {
+                            dr.Read();
+                            txtAssemblyName.Text = dr.GetValue(0).ToString();
+                            countAssemblyWeight.Value = Convert.ToDecimal(dr.GetValue(1).ToString());
+                            txtDrawingNumber.Text = dr.GetValue(2).ToString();
+                            countDrawingRevision.Value = Convert.ToInt32(dr.GetValue(3).ToString());
+                            dr.Close();
+                        }
+                        connection.Close();
+                    }
+                    catch
+                    {
+                        MessageBox.Show("Assembly info could not be loaded");
+                    }
+                    finally
+                    {
+                        connection.Close();
+                    }
+                }
+
+
+
+
+
                 // mysql string parts
                 const string mysqlString = "SELECT Part_id, Name FROM Victoriam.T_PART WHERE PartType = 2";
                 using (MySqlCommand mysqlcommand = new MySqlCommand(mysqlString, connection))
@@ -149,6 +185,9 @@ namespace MvE_SQL_test
             }
         }
 
+        private void btnLinkPart_Click(object sender, EventArgs e)
+        {
 
+        }
     }
 }

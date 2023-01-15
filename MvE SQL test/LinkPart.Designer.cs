@@ -47,9 +47,9 @@ namespace MvE_SQL_test
             this.label7 = new System.Windows.Forms.Label();
             this.cmbMaterial = new System.Windows.Forms.ComboBox();
             this.label8 = new System.Windows.Forms.Label();
-            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.txtAssemblyID = new System.Windows.Forms.TextBox();
             this.label9 = new System.Windows.Forms.Label();
-            this.textBox2 = new System.Windows.Forms.TextBox();
+            this.txtPartID = new System.Windows.Forms.TextBox();
             this.label10 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.countDrawingRevision)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.countAssemblyWeight)).BeginInit();
@@ -63,6 +63,7 @@ namespace MvE_SQL_test
             this.btnLinkPart.TabIndex = 18;
             this.btnLinkPart.Text = "Link part";
             this.btnLinkPart.UseVisualStyleBackColor = true;
+            this.btnLinkPart.Click += new System.EventHandler(this.btnLinkPart_Click);
             // 
             // btnFinnish
             // 
@@ -226,13 +227,13 @@ namespace MvE_SQL_test
             this.label8.TabIndex = 34;
             this.label8.Text = "Material";
             // 
-            // textBox1
+            // txtAssemblyID
             // 
-            this.textBox1.Location = new System.Drawing.Point(105, 43);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.ReadOnly = true;
-            this.textBox1.Size = new System.Drawing.Size(234, 20);
-            this.textBox1.TabIndex = 37;
+            this.txtAssemblyID.Location = new System.Drawing.Point(105, 43);
+            this.txtAssemblyID.Name = "txtAssemblyID";
+            this.txtAssemblyID.ReadOnly = true;
+            this.txtAssemblyID.Size = new System.Drawing.Size(234, 20);
+            this.txtAssemblyID.TabIndex = 37;
             // 
             // label9
             // 
@@ -243,13 +244,13 @@ namespace MvE_SQL_test
             this.label9.TabIndex = 36;
             this.label9.Text = "Assembly ID";
             // 
-            // textBox2
+            // txtPartID
             // 
-            this.textBox2.Location = new System.Drawing.Point(105, 147);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.ReadOnly = true;
-            this.textBox2.Size = new System.Drawing.Size(234, 20);
-            this.textBox2.TabIndex = 39;
+            this.txtPartID.Location = new System.Drawing.Point(105, 147);
+            this.txtPartID.Name = "txtPartID";
+            this.txtPartID.ReadOnly = true;
+            this.txtPartID.Size = new System.Drawing.Size(234, 20);
+            this.txtPartID.TabIndex = 39;
             // 
             // label10
             // 
@@ -265,9 +266,9 @@ namespace MvE_SQL_test
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(387, 508);
-            this.Controls.Add(this.textBox2);
+            this.Controls.Add(this.txtPartID);
             this.Controls.Add(this.label10);
-            this.Controls.Add(this.textBox1);
+            this.Controls.Add(this.txtAssemblyID);
             this.Controls.Add(this.label9);
             this.Controls.Add(this.cmbMaterial);
             this.Controls.Add(this.label8);
@@ -317,9 +318,9 @@ namespace MvE_SQL_test
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.ComboBox cmbMaterial;
         private System.Windows.Forms.Label label8;
-        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.TextBox txtAssemblyID;
         private System.Windows.Forms.Label label9;
-        private System.Windows.Forms.TextBox textBox2;
+        private System.Windows.Forms.TextBox txtPartID;
         private System.Windows.Forms.Label label10;
     }
 }
