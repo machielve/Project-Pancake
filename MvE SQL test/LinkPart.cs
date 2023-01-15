@@ -26,7 +26,7 @@ namespace MvE_SQL_test
 
         private void LinkPart_Load(object sender, EventArgs e)
         {
-            txtAssemblyID.Text = AssemblyManager.AssemblyID;
+            txtAssemblyID.Text = ManagerAssembly.AssemblyID;
 
             // Create the connection.
             string connectionstring = Properties.Settings.Default.connString;

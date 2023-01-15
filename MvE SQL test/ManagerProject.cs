@@ -12,9 +12,9 @@ using MySql.Data.MySqlClient;
 
 namespace MvE_SQL_test
 {
-    public partial class ProjectManager : Form
+    public partial class ManagerProject : Form
     {
-        public ProjectManager()
+        public ManagerProject()
         {
             InitializeComponent();
         }
@@ -25,15 +25,15 @@ namespace MvE_SQL_test
 
         private void LoadContent()
         {
-            Int32 selectedrowindex = dgvProjectDetails.SelectedCells[0].RowIndex;
-            DataGridViewRow SelectedRow = dgvProjectDetails.Rows[selectedrowindex];
-            string DetailtId = Convert.ToString(SelectedRow.Cells["ProjectDetail_id"].Value);
+            Int32 selectedrowindex = dgvJobOrders.SelectedCells[0].RowIndex;
+            DataGridViewRow SelectedRow = dgvJobOrders.Rows[selectedrowindex];
+            string DetailtId = Convert.ToString(SelectedRow.Cells["JobOrder_id"].Value);
 
             txtDetailID.Text = DetailtId;
 
             if (DetailtId == "")
             {
-                MessageBox.Show("No project detail selected");
+                MessageBox.Show("No job order selected");
             }
 
             else
@@ -43,7 +43,7 @@ namespace MvE_SQL_test
                 using (MySqlConnection connection = new MySqlConnection(connectionstring))
                 {
                     // mysql string parts
-                    const string mysqlString1 = "SELECT * FROM Victoriam.T_PROJECTDETAILPART WHERE Projectdetail = ";
+                    const string mysqlString1 = "SELECT * FROM Victoriam.T_JOBORDERPART WHERE JobOrder = ";
                     string mysqlString = mysqlString1 + DetailtId;
                     using (MySqlCommand mysqlcommand = new MySqlCommand(mysqlString, connection))
                     {
@@ -55,13 +55,13 @@ namespace MvE_SQL_test
                             {
                                 DataTable dt = new DataTable();
                                 dt.Load(dr);
-                                this.dgvProjectParts.DataSource = dt;
+                                this.dgvJobOrderParts.DataSource = dt;
                                 dr.Close();
                             }
                         }
                         catch
                         {
-                            MessageBox.Show("Project parts could not be loaded");
+                            MessageBox.Show("Job order parts could not be loaded");
                         }
                         finally
                         {
@@ -69,7 +69,7 @@ namespace MvE_SQL_test
                         }
                     }
                     // mysql string ops
-                    const string mysqlString10 = "SELECT * FROM Victoriam.T_PROJECTDETAILOPERATION WHERE Projectdetail = ";
+                    const string mysqlString10 = "SELECT * FROM Victoriam.T_JOBORDEROPERATION WHERE JobOrder = ";
                     string mysqlString00 = mysqlString10 + DetailtId;
                     using (MySqlCommand mysqlcommand = new MySqlCommand(mysqlString00, connection))
                     {
@@ -81,13 +81,13 @@ namespace MvE_SQL_test
                             {
                                 DataTable dt = new DataTable();
                                 dt.Load(dr);
-                                this.dgvProjectOps.DataSource = dt;
+                                this.dgvJobOrderOperations.DataSource = dt;
                                 dr.Close();
                             }
                         }
                         catch
                         {
-                            MessageBox.Show("Project operations could not be loaded");
+                            MessageBox.Show("Job order operations could not be loaded");
                         }
                         finally
                         {
@@ -160,7 +160,7 @@ namespace MvE_SQL_test
                 using (MySqlConnection connection = new MySqlConnection(connectionstring))
                 {
                     // mysql string
-                    const string mysqlString1 = "SELECT * FROM Victoriam.T_PROJECTDETAIL WHERE Project = ";
+                    const string mysqlString1 = "SELECT * FROM Victoriam.T_JOBORDER WHERE Project = ";
                     string mysqlString = mysqlString1 + ProjectId;
                     using (MySqlCommand mysqlcommand = new MySqlCommand(mysqlString, connection))
                     {
@@ -172,13 +172,13 @@ namespace MvE_SQL_test
                             {
                                 DataTable dt = new DataTable();
                                 dt.Load(dr);
-                                this.dgvProjectDetails.DataSource = dt;
+                                this.dgvJobOrders.DataSource = dt;
                                 dr.Close();
                             }
                         }
                         catch
                         {
-                            MessageBox.Show("Project details could not be loaded");
+                            MessageBox.Show("Job orders could not be loaded");
                         }
                     }
                 }                   
@@ -196,7 +196,7 @@ namespace MvE_SQL_test
         {
             string DetailID = txtDetailID.Text;
 
-            Form frm = new NewProjectDetailPart();
+            Form frm = new NewJobOrderPart();
             frm.FormClosing += new FormClosingEventHandler(this.NewProjectDetailPart_Formclosing);
             frm.Show();
         }

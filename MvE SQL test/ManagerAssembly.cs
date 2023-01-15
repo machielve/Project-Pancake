@@ -12,9 +12,9 @@ using MySql.Data.MySqlClient;
 
 namespace MvE_SQL_test
 {
-    public partial class AssemblyManager : Form
+    public partial class ManagerAssembly : Form
     {
-        public AssemblyManager()
+        public ManagerAssembly()
         {
             InitializeComponent();
         }

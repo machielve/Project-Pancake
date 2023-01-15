@@ -27,7 +27,7 @@ namespace MvE_SQL_test
 
         private void NewAssemblyDetailOps_Load(object sender, EventArgs e)
         {
-            txtAssemblyID.Text = AssemblyManager.AssemblyID;
+            txtAssemblyID.Text = ManagerAssembly.AssemblyID;
             // Create the connection.
             string connectionstring = Properties.Settings.Default.connString;
             using (MySqlConnection connection = new MySqlConnection(connectionstring))

@@ -99,17 +99,23 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="AssemblyManager.cs">
+    <Compile Include="ManagerAssembly.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="AssemblyManager.Designer.cs">
-      <DependentUpon>AssemblyManager.cs</DependentUpon>
+    <Compile Include="ManagerAssembly.Designer.cs">
+      <DependentUpon>ManagerAssembly.cs</DependentUpon>
     </Compile>
     <Compile Include="CreatePart.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="CreatePart.Designer.cs">
       <DependentUpon>CreatePart.cs</DependentUpon>
+    </Compile>
+    <Compile Include="DetailsPart.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="DetailsPart.Designer.cs">
+      <DependentUpon>DetailsPart.cs</DependentUpon>
     </Compile>
     <Compile Include="LinkPart.cs">
       <SubType>Form</SubType>
@@ -159,11 +165,11 @@
     <Compile Include="NewProject.Designer.cs">
       <DependentUpon>NewProject.cs</DependentUpon>
     </Compile>
-    <Compile Include="NewProjectDetailPart.cs">
+    <Compile Include="NewJobOrderPart.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="NewProjectDetailPart.Designer.cs">
-      <DependentUpon>NewProjectDetailPart.cs</DependentUpon>
+    <Compile Include="NewJobOrderPart.Designer.cs">
+      <DependentUpon>NewJobOrderPart.cs</DependentUpon>
     </Compile>
     <Compile Include="NewSupplier.cs">
       <SubType>Form</SubType>
@@ -177,17 +183,17 @@
     <Compile Include="NewUnit.Designer.cs">
       <DependentUpon>NewUnit.cs</DependentUpon>
     </Compile>
-    <Compile Include="PartManager.cs">
+    <Compile Include="ManagerPart.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="PartManager.Designer.cs">
-      <DependentUpon>PartManager.cs</DependentUpon>
+    <Compile Include="ManagerPart.Designer.cs">
+      <DependentUpon>ManagerPart.cs</DependentUpon>
     </Compile>
-    <Compile Include="ProjectManager.cs">
+    <Compile Include="ManagerProject.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="ProjectManager.Designer.cs">
-      <DependentUpon>ProjectManager.cs</DependentUpon>
+    <Compile Include="ManagerProject.Designer.cs">
+      <DependentUpon>ManagerProject.cs</DependentUpon>
     </Compile>
     <Compile Include="Navigation.cs">
       <SubType>Form</SubType>
@@ -203,8 +209,8 @@
     <Compile Include="UpdatePart.Designer.cs">
       <DependentUpon>UpdatePart.cs</DependentUpon>
     </Compile>
-    <EmbeddedResource Include="AssemblyManager.resx">
-      <DependentUpon>AssemblyManager.cs</DependentUpon>
+    <EmbeddedResource Include="ManagerAssembly.resx">
+      <DependentUpon>ManagerAssembly.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="LinkPart.resx">
       <DependentUpon>LinkPart.cs</DependentUpon>
@@ -230,8 +236,8 @@
     <EmbeddedResource Include="NewProject.resx">
       <DependentUpon>NewProject.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="NewProjectDetailPart.resx">
-      <DependentUpon>NewProjectDetailPart.cs</DependentUpon>
+    <EmbeddedResource Include="NewJobOrderPart.resx">
+      <DependentUpon>NewJobOrderPart.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="NewSupplier.resx">
       <DependentUpon>NewSupplier.cs</DependentUpon>
@@ -239,11 +245,11 @@
     <EmbeddedResource Include="NewUnit.resx">
       <DependentUpon>NewUnit.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="PartManager.resx">
-      <DependentUpon>PartManager.cs</DependentUpon>
+    <EmbeddedResource Include="ManagerPart.resx">
+      <DependentUpon>ManagerPart.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="ProjectManager.resx">
-      <DependentUpon>ProjectManager.cs</DependentUpon>
+    <EmbeddedResource Include="ManagerProject.resx">
+      <DependentUpon>ManagerProject.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Navigation.resx">
       <DependentUpon>Navigation.cs</DependentUpon>

@@ -1,7 +1,7 @@
 ﻿
 namespace MvE_SQL_test
 {
-    partial class PartManager
+    partial class ManagerPart
     {
         /// <summary>
         /// Required designer variable.

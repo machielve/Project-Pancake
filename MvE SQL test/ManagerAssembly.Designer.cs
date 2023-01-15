@@ -1,7 +1,7 @@
 ﻿
 namespace MvE_SQL_test
 {
-    partial class AssemblyManager
+    partial class ManagerAssembly
     {
         /// <summary>
         /// Required designer variable.

@@ -39,21 +39,21 @@ namespace MvE_SQL_test
         private void btnProjectManager_Click(object sender, EventArgs e)
         {   
 
-            Form frm = new ProjectManager();
+            Form frm = new ManagerProject();
             frm.Show();
 
         }
 
         private void btnAssemblyManager_Click(object sender, EventArgs e)
         {
-            Form frm = new AssemblyManager();
+            Form frm = new ManagerAssembly();
             frm.Show();
 
         }
 
         private void btnPartManager_Click(object sender, EventArgs e)
         {
-            Form frm = new PartManager();
+            Form frm = new ManagerPart();
             frm.Show();
 
         }

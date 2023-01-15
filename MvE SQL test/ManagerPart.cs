@@ -12,7 +12,7 @@ using MySql.Data.MySqlClient;
 
 namespace MvE_SQL_test
 {
-    public partial class PartManager : Form
+    public partial class ManagerPart : Form
     {
 
         public static string PartID = "";
@@ -110,7 +110,7 @@ namespace MvE_SQL_test
 
         }
         
-        public PartManager()
+        public ManagerPart()
         {
             InitializeComponent();
         }

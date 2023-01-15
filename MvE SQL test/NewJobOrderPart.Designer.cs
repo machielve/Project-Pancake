@@ -1,7 +1,7 @@
 ﻿
 namespace MvE_SQL_test
 {
-    partial class NewProjectDetailPart
+    partial class NewJobOrderPart
     {
         /// <summary>
         /// Required designer variable.

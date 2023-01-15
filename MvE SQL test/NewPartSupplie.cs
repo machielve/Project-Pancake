@@ -59,7 +59,7 @@ namespace MvE_SQL_test
 
         private void NewPartSupplier_Load(object sender, EventArgs e)
         {
-            txtPartID.Text = PartManager.PartID;
+            txtPartID.Text = ManagerPart.PartID;
 
             RefreshSuppliers();
             

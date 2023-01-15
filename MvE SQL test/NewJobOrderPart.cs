@@ -12,9 +12,9 @@ using MySql.Data.MySqlClient;
 
 namespace MvE_SQL_test
 {
-    public partial class NewProjectDetailPart : Form
+    public partial class NewJobOrderPart : Form
     {
-        public NewProjectDetailPart()
+        public NewJobOrderPart()
         {
             InitializeComponent();
         }
@@ -27,7 +27,7 @@ namespace MvE_SQL_test
         private void NewProjectDetailPart_Load(object sender, EventArgs e)
         {
 
-            txtProjectDetailID.Text = ProjectManager.DetailID;
+            txtProjectDetailID.Text = ManagerProject.DetailID;
 
             // Create the connection.
             string connectionstring = Properties.Settings.Default.connString;
