@@ -65,7 +65,10 @@ namespace MvE_SQL_test
                 using (MySqlConnection connection = new MySqlConnection(connectionstring))
                 {
                     // mysql string parts
-                    string mysqlString1 = "SELECT PartSupplier_id, T_PART.Name, T_SUPPLIER.Name, Price ";
+                    string mysqlString1 = "SELECT PartSupplier_id, " +
+                                                    "T_PART.Name, " +
+                                                    "T_SUPPLIER.Name, " +
+                                                    "Price ";
                     string mysqlString2 = "FROM Victoriam.T_PARTSUPPLIER "; 
                     string mysqlString3 = "LEFT JOIN Victoriam.T_PART ON Victoriam.T_PARTSUPPLIER.Part=Victoriam.T_PART.Part_id ";
                     string mysqlString4 = "LEFT JOIN Victoriam.T_SUPPLIER ON Victoriam.T_PARTSUPPLIER.Supplier= Victoriam.T_SUPPLIER.Supplier_id ";
