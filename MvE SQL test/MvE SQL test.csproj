@@ -221,6 +221,9 @@
     <EmbeddedResource Include="LinkPart.resx">
       <DependentUpon>LinkPart.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="ManagerStock.resx">
+      <DependentUpon>ManagerStock.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="NewAssembly.resx">
       <DependentUpon>NewAssembly.cs</DependentUpon>
     </EmbeddedResource>
