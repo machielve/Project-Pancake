@@ -54,6 +54,8 @@ namespace MvE_SQL_test
             this.txtDrawingRevision = new System.Windows.Forms.NumericUpDown();
             this.countRevision = new System.Windows.Forms.NumericUpDown();
             this.label11 = new System.Windows.Forms.Label();
+            this.label12 = new System.Windows.Forms.Label();
+            this.cmbTrace = new System.Windows.Forms.ComboBox();
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDown1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtDrawingRevision)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.countRevision)).BeginInit();
@@ -80,7 +82,6 @@ namespace MvE_SQL_test
             this.label3.Size = new System.Drawing.Size(49, 13);
             this.label3.TabIndex = 17;
             this.label3.Text = "Part type";
-            this.label3.Click += new System.EventHandler(this.label3_Click);
             // 
             // btnAddAnotherUnit
             // 
@@ -118,7 +119,6 @@ namespace MvE_SQL_test
             this.label2.Size = new System.Drawing.Size(40, 13);
             this.label2.TabIndex = 13;
             this.label2.Text = "Part ID";
-            this.label2.Click += new System.EventHandler(this.label2_Click);
             // 
             // txtPartName
             // 
@@ -135,7 +135,6 @@ namespace MvE_SQL_test
             this.label1.Size = new System.Drawing.Size(55, 13);
             this.label1.TabIndex = 11;
             this.label1.Text = "Part name";
-            this.label1.Click += new System.EventHandler(this.label1_Click);
             // 
             // btnFinnish
             // 
@@ -163,7 +162,6 @@ namespace MvE_SQL_test
             this.label4.Size = new System.Drawing.Size(57, 13);
             this.label4.TabIndex = 19;
             this.label4.Text = "Part memo";
-            this.label4.Click += new System.EventHandler(this.label4_Click);
             // 
             // cmbPartUnit
             // 
@@ -186,7 +184,6 @@ namespace MvE_SQL_test
             this.label5.Size = new System.Drawing.Size(46, 13);
             this.label5.TabIndex = 21;
             this.label5.Text = "Part unit";
-            this.label5.Click += new System.EventHandler(this.label5_Click);
             // 
             // cmbMaterial
             // 
@@ -209,7 +206,6 @@ namespace MvE_SQL_test
             this.label6.Size = new System.Drawing.Size(44, 13);
             this.label6.TabIndex = 23;
             this.label6.Text = "Material";
-            this.label6.Click += new System.EventHandler(this.label6_Click);
             // 
             // numericUpDown1
             // 
@@ -227,7 +223,6 @@ namespace MvE_SQL_test
             this.label7.Size = new System.Drawing.Size(41, 13);
             this.label7.TabIndex = 26;
             this.label7.Text = "Weight";
-            this.label7.Click += new System.EventHandler(this.label7_Click);
             // 
             // cmbWeightUnit
             // 
@@ -250,7 +245,6 @@ namespace MvE_SQL_test
             this.label8.Size = new System.Drawing.Size(61, 13);
             this.label8.TabIndex = 27;
             this.label8.Text = "Weight unit";
-            this.label8.Click += new System.EventHandler(this.label8_Click);
             // 
             // txtDrawingNumber
             // 
@@ -267,7 +261,6 @@ namespace MvE_SQL_test
             this.label9.Size = new System.Drawing.Size(84, 13);
             this.label9.TabIndex = 29;
             this.label9.Text = "Drawing number";
-            this.label9.Click += new System.EventHandler(this.label9_Click);
             // 
             // label10
             // 
@@ -277,7 +270,6 @@ namespace MvE_SQL_test
             this.label10.Size = new System.Drawing.Size(85, 13);
             this.label10.TabIndex = 31;
             this.label10.Text = "Drawing revision";
-            this.label10.Click += new System.EventHandler(this.label10_Click);
             // 
             // txtDrawingRevision
             // 
@@ -301,13 +293,34 @@ namespace MvE_SQL_test
             this.label11.Size = new System.Drawing.Size(48, 13);
             this.label11.TabIndex = 33;
             this.label11.Text = "Revision";
-            this.label11.Click += new System.EventHandler(this.label11_Click);
+            // 
+            // label12
+            // 
+            this.label12.AutoSize = true;
+            this.label12.Location = new System.Drawing.Point(11, 344);
+            this.label12.Name = "label12";
+            this.label12.Size = new System.Drawing.Size(59, 13);
+            this.label12.TabIndex = 35;
+            this.label12.Text = "Traceabilty";
+            // 
+            // cmbTrace
+            // 
+            this.cmbTrace.FormattingEnabled = true;
+            this.cmbTrace.Items.AddRange(new object[] {
+            "First In First Out",
+            "Full traceability"});
+            this.cmbTrace.Location = new System.Drawing.Point(105, 341);
+            this.cmbTrace.Name = "cmbTrace";
+            this.cmbTrace.Size = new System.Drawing.Size(234, 21);
+            this.cmbTrace.TabIndex = 36;
             // 
             // NewPart
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(387, 508);
+            this.Controls.Add(this.cmbTrace);
+            this.Controls.Add(this.label12);
             this.Controls.Add(this.countRevision);
             this.Controls.Add(this.label11);
             this.Controls.Add(this.txtDrawingRevision);
@@ -371,5 +384,7 @@ namespace MvE_SQL_test
         private System.Windows.Forms.NumericUpDown txtDrawingRevision;
         private System.Windows.Forms.NumericUpDown countRevision;
         private System.Windows.Forms.Label label11;
+        private System.Windows.Forms.Label label12;
+        private System.Windows.Forms.ComboBox cmbTrace;
     }
 }

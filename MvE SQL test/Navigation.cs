@@ -72,5 +72,12 @@ namespace MvE_SQL_test
             frm.Show();
 
         }
+
+        private void btnNewSupplier_Click(object sender, EventArgs e)
+        {
+            Form frm = new NewSupplier();
+            frm.Show();
+
+        }
     }
 }

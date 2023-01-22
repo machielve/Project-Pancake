@@ -7,6 +7,8 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using MySql.Data;
+using MySql.Data.MySqlClient;
 
 namespace MvE_SQL_test
 {
@@ -15,6 +17,103 @@ namespace MvE_SQL_test
         public ManagerStock()
         {
             InitializeComponent();
+        }
+
+        public void RefreshStock()
+        {
+            // Create the connection.
+            string connectionstring = Properties.Settings.Default.connString;
+            using (MySqlConnection connection = new MySqlConnection(connectionstring))
+            {
+                // mysql string Stock
+                const string mysqlString10 = "SELECT * FROM Victoriam.T_STOCK";
+                using (MySqlCommand mysqlcommand = new MySqlCommand(mysqlString10, connection))
+                {
+                    try
+                    {
+                        connection.Open();
+
+                        using (MySqlDataReader dr = mysqlcommand.ExecuteReader())
+                        {
+                            DataTable dt = new DataTable();
+                            dt.Load(dr);
+                            this.dgvStock.DataSource = dt;
+                            dr.Close();
+                        }
+                    }
+                    catch
+                    {
+                        MessageBox.Show("Stock could not be loaded");
+                    }
+                    finally
+                    {
+                        connection.Close();
+                    }
+                }
+
+                // mysql string StockIn
+                const string mysqlString20 = "SELECT * FROM Victoriam.T_PARTIN";
+                using (MySqlCommand mysqlcommand = new MySqlCommand(mysqlString20, connection))
+                {
+                    try
+                    {
+                        connection.Open();
+
+                        using (MySqlDataReader dr = mysqlcommand.ExecuteReader())
+                        {
+                            DataTable dt = new DataTable();
+                            dt.Load(dr);
+                            this.dgvStockIn.DataSource = dt;
+                            dr.Close();
+                        }
+                    }
+                    catch
+                    {
+                        MessageBox.Show("Stock in could not be loaded");
+                    }
+                    finally
+                    {
+                        connection.Close();
+                    }
+                }
+
+                // mysql string Stockout
+                const string mysqlString30 = "SELECT * FROM Victoriam.T_PARTOUT";
+                using (MySqlCommand mysqlcommand = new MySqlCommand(mysqlString30, connection))
+                {
+                    try
+                    {
+                        connection.Open();
+
+                        using (MySqlDataReader dr = mysqlcommand.ExecuteReader())
+                        {
+                            DataTable dt = new DataTable();
+                            dt.Load(dr);
+                            this.dgvStockOut.DataSource = dt;
+                            dr.Close();
+                        }
+                    }
+                    catch
+                    {
+                        MessageBox.Show("Stock out could not be loaded");
+                    }
+                    finally
+                    {
+                        connection.Close();
+                    }
+                }
+            }
+
+        }
+
+        private void btnFinnish_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
+
+        private void btnLoadStock_Click(object sender, EventArgs e)
+        {
+            RefreshStock();
         }
     }
 }

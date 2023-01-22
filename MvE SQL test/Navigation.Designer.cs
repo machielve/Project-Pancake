@@ -48,6 +48,7 @@ namespace MvE_SQL_test
             this.tabAssembly = new System.Windows.Forms.TabPage();
             this.tabPart = new System.Windows.Forms.TabPage();
             this.button1 = new System.Windows.Forms.Button();
+            this.btnNewSupplier = new System.Windows.Forms.Button();
             this.Managers.SuspendLayout();
             this.GeneralSettings.SuspendLayout();
             this.SuspendLayout();
@@ -243,11 +244,22 @@ namespace MvE_SQL_test
             this.button1.UseVisualStyleBackColor = true;
             this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
+            // btnNewSupplier
+            // 
+            this.btnNewSupplier.Location = new System.Drawing.Point(15, 588);
+            this.btnNewSupplier.Name = "btnNewSupplier";
+            this.btnNewSupplier.Size = new System.Drawing.Size(124, 23);
+            this.btnNewSupplier.TabIndex = 12;
+            this.btnNewSupplier.Text = "New supplier";
+            this.btnNewSupplier.UseVisualStyleBackColor = true;
+            this.btnNewSupplier.Click += new System.EventHandler(this.btnNewSupplier_Click);
+            // 
             // Navigation
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1484, 861);
+            this.Controls.Add(this.btnNewSupplier);
             this.Controls.Add(this.Managers);
             this.Controls.Add(this.button1);
             this.Controls.Add(this.btnStockManager);
@@ -290,6 +302,7 @@ namespace MvE_SQL_test
         private System.Windows.Forms.TextBox txtIPIntern;
         private System.Windows.Forms.RadioButton rdbIPAdres2;
         private System.Windows.Forms.RadioButton rdbIPAdres1;
+        private System.Windows.Forms.Button btnNewSupplier;
     }
 }
 

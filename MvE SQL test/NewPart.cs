@@ -163,6 +163,8 @@ namespace MvE_SQL_test
             }
 
 
+
+
         }
 
         private void btnNewUnit_Click(object sender, EventArgs e)
@@ -177,6 +179,7 @@ namespace MvE_SQL_test
             int PartWeightU = Convert.ToInt32(cmbWeightUnit.SelectedValue);
             string PartDNumber = txtDrawingNumber.Text;
             int PartDRev = Convert.ToInt32(txtDrawingRevision.Text);
+            string PartTrace = cmbTrace.SelectedItem.ToString();
 
             // Create the connection.
             string connectionstring = Properties.Settings.Default.connString;
@@ -218,6 +221,9 @@ namespace MvE_SQL_test
                     msqlcommand.Parameters.Add(new MySqlParameter("PartDrawngRev", MySqlDbType.Int32));
                     msqlcommand.Parameters["PartDrawngRev"].Value = PartDRev;
 
+                    msqlcommand.Parameters.Add(new MySqlParameter("PartTrace", MySqlDbType.VarChar));
+                    msqlcommand.Parameters["PartTrace"].Value = PartTrace;
+
                     msqlcommand.Parameters.Add(new MySqlParameter("PartID", MySqlDbType.Int32));
                     msqlcommand.Parameters["PartID"].Direction = ParameterDirection.Output;
 
@@ -250,59 +256,6 @@ namespace MvE_SQL_test
             this.ClearForm();
         }
 
-        private void label2_Click(object sender, EventArgs e)
-        {
 
-        }
-
-        private void label10_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void label9_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void label8_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void label7_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void label6_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void label5_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void label3_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void label4_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void label11_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void label1_Click(object sender, EventArgs e)
-        {
-
-        }
     }
 }
