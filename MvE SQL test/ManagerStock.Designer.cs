@@ -34,8 +34,9 @@ namespace MvE_SQL_test
             this.btnFinnish = new System.Windows.Forms.Button();
             this.dgvStockIn = new System.Windows.Forms.DataGridView();
             this.dgvStockOut = new System.Windows.Forms.DataGridView();
-            this.button1 = new System.Windows.Forms.Button();
-            this.button2 = new System.Windows.Forms.Button();
+            this.btnStockIn = new System.Windows.Forms.Button();
+            this.btnStockOut = new System.Windows.Forms.Button();
+            this.btnReceiveStock = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dgvStock)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgvStockIn)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgvStockOut)).BeginInit();
@@ -94,31 +95,41 @@ namespace MvE_SQL_test
             this.dgvStockOut.Size = new System.Drawing.Size(1310, 150);
             this.dgvStockOut.TabIndex = 11;
             // 
-            // button1
+            // btnStockIn
             // 
-            this.button1.Location = new System.Drawing.Point(12, 340);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(133, 23);
-            this.button1.TabIndex = 12;
-            this.button1.Text = "Add stock";
-            this.button1.UseVisualStyleBackColor = true;
+            this.btnStockIn.Location = new System.Drawing.Point(12, 340);
+            this.btnStockIn.Name = "btnStockIn";
+            this.btnStockIn.Size = new System.Drawing.Size(133, 23);
+            this.btnStockIn.TabIndex = 12;
+            this.btnStockIn.Text = "Buy stock";
+            this.btnStockIn.UseVisualStyleBackColor = true;
             // 
-            // button2
+            // btnStockOut
             // 
-            this.button2.Location = new System.Drawing.Point(12, 550);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(133, 23);
-            this.button2.TabIndex = 13;
-            this.button2.Text = "Remove stock";
-            this.button2.UseVisualStyleBackColor = true;
+            this.btnStockOut.Location = new System.Drawing.Point(12, 550);
+            this.btnStockOut.Name = "btnStockOut";
+            this.btnStockOut.Size = new System.Drawing.Size(133, 23);
+            this.btnStockOut.TabIndex = 13;
+            this.btnStockOut.Text = "Remove stock";
+            this.btnStockOut.UseVisualStyleBackColor = true;
+            // 
+            // btnReceiveStock
+            // 
+            this.btnReceiveStock.Location = new System.Drawing.Point(12, 369);
+            this.btnReceiveStock.Name = "btnReceiveStock";
+            this.btnReceiveStock.Size = new System.Drawing.Size(133, 23);
+            this.btnReceiveStock.TabIndex = 14;
+            this.btnReceiveStock.Text = "Receive purchase";
+            this.btnReceiveStock.UseVisualStyleBackColor = true;
             // 
             // ManagerStock
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1484, 811);
-            this.Controls.Add(this.button2);
-            this.Controls.Add(this.button1);
+            this.Controls.Add(this.btnReceiveStock);
+            this.Controls.Add(this.btnStockOut);
+            this.Controls.Add(this.btnStockIn);
             this.Controls.Add(this.dgvStockOut);
             this.Controls.Add(this.dgvStockIn);
             this.Controls.Add(this.btnFinnish);
@@ -141,7 +152,8 @@ namespace MvE_SQL_test
         private System.Windows.Forms.Button btnFinnish;
         private System.Windows.Forms.DataGridView dgvStockIn;
         private System.Windows.Forms.DataGridView dgvStockOut;
-        private System.Windows.Forms.Button button1;
-        private System.Windows.Forms.Button button2;
+        private System.Windows.Forms.Button btnStockIn;
+        private System.Windows.Forms.Button btnStockOut;
+        private System.Windows.Forms.Button btnReceiveStock;
     }
 }
