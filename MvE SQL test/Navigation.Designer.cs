@@ -39,15 +39,15 @@ namespace MvE_SQL_test
             this.btnStockManager = new System.Windows.Forms.Button();
             this.Managers = new System.Windows.Forms.TabControl();
             this.GeneralSettings = new System.Windows.Forms.TabPage();
+            this.rdbIPAdres2 = new System.Windows.Forms.RadioButton();
+            this.rdbIPAdres1 = new System.Windows.Forms.RadioButton();
+            this.txtIPAdres = new System.Windows.Forms.TextBox();
+            this.txtIPExtern = new System.Windows.Forms.TextBox();
+            this.txtIPIntern = new System.Windows.Forms.TextBox();
             this.tabProject = new System.Windows.Forms.TabPage();
             this.tabAssembly = new System.Windows.Forms.TabPage();
             this.tabPart = new System.Windows.Forms.TabPage();
             this.button1 = new System.Windows.Forms.Button();
-            this.txtIPIntern = new System.Windows.Forms.TextBox();
-            this.txtIPExtern = new System.Windows.Forms.TextBox();
-            this.txtIPAdres = new System.Windows.Forms.TextBox();
-            this.rdbIPAdres1 = new System.Windows.Forms.RadioButton();
-            this.rdbIPAdres2 = new System.Windows.Forms.RadioButton();
             this.Managers.SuspendLayout();
             this.GeneralSettings.SuspendLayout();
             this.SuspendLayout();
@@ -128,6 +128,7 @@ namespace MvE_SQL_test
             this.btnStockManager.TabIndex = 9;
             this.btnStockManager.Text = "Stock manager";
             this.btnStockManager.UseVisualStyleBackColor = true;
+            this.btnStockManager.Click += new System.EventHandler(this.btnStockManager_Click);
             // 
             // Managers
             // 
@@ -157,7 +158,50 @@ namespace MvE_SQL_test
             this.GeneralSettings.TabIndex = 3;
             this.GeneralSettings.Text = "General settings";
             this.GeneralSettings.UseVisualStyleBackColor = true;
-            this.GeneralSettings.Click += new System.EventHandler(this.tabPage1_Click);
+            // 
+            // rdbIPAdres2
+            // 
+            this.rdbIPAdres2.AutoSize = true;
+            this.rdbIPAdres2.Location = new System.Drawing.Point(6, 37);
+            this.rdbIPAdres2.Name = "rdbIPAdres2";
+            this.rdbIPAdres2.Size = new System.Drawing.Size(119, 17);
+            this.rdbIPAdres2.TabIndex = 4;
+            this.rdbIPAdres2.Text = "External connection";
+            this.rdbIPAdres2.UseVisualStyleBackColor = true;
+            // 
+            // rdbIPAdres1
+            // 
+            this.rdbIPAdres1.AutoSize = true;
+            this.rdbIPAdres1.Location = new System.Drawing.Point(6, 8);
+            this.rdbIPAdres1.Name = "rdbIPAdres1";
+            this.rdbIPAdres1.Size = new System.Drawing.Size(116, 17);
+            this.rdbIPAdres1.TabIndex = 3;
+            this.rdbIPAdres1.Text = "Internal connection";
+            this.rdbIPAdres1.UseVisualStyleBackColor = true;
+            // 
+            // txtIPAdres
+            // 
+            this.txtIPAdres.Location = new System.Drawing.Point(145, 123);
+            this.txtIPAdres.Name = "txtIPAdres";
+            this.txtIPAdres.ReadOnly = true;
+            this.txtIPAdres.Size = new System.Drawing.Size(108, 20);
+            this.txtIPAdres.TabIndex = 2;
+            // 
+            // txtIPExtern
+            // 
+            this.txtIPExtern.Location = new System.Drawing.Point(145, 36);
+            this.txtIPExtern.Name = "txtIPExtern";
+            this.txtIPExtern.Size = new System.Drawing.Size(109, 20);
+            this.txtIPExtern.TabIndex = 1;
+            this.txtIPExtern.Text = "84.87.205.42";
+            // 
+            // txtIPIntern
+            // 
+            this.txtIPIntern.Location = new System.Drawing.Point(145, 7);
+            this.txtIPIntern.Name = "txtIPIntern";
+            this.txtIPIntern.Size = new System.Drawing.Size(109, 20);
+            this.txtIPIntern.TabIndex = 0;
+            this.txtIPIntern.Text = "192.168.2.61";
             // 
             // tabProject
             // 
@@ -198,50 +242,6 @@ namespace MvE_SQL_test
             this.button1.Text = "Material manager";
             this.button1.UseVisualStyleBackColor = true;
             this.button1.Click += new System.EventHandler(this.button1_Click);
-            // 
-            // txtIPIntern
-            // 
-            this.txtIPIntern.Location = new System.Drawing.Point(145, 7);
-            this.txtIPIntern.Name = "txtIPIntern";
-            this.txtIPIntern.Size = new System.Drawing.Size(109, 20);
-            this.txtIPIntern.TabIndex = 0;
-            this.txtIPIntern.Text = "192.168.2.61";
-            // 
-            // txtIPExtern
-            // 
-            this.txtIPExtern.Location = new System.Drawing.Point(145, 36);
-            this.txtIPExtern.Name = "txtIPExtern";
-            this.txtIPExtern.Size = new System.Drawing.Size(109, 20);
-            this.txtIPExtern.TabIndex = 1;
-            this.txtIPExtern.Text = "84.87.205.42";
-            // 
-            // txtIPAdres
-            // 
-            this.txtIPAdres.Location = new System.Drawing.Point(145, 123);
-            this.txtIPAdres.Name = "txtIPAdres";
-            this.txtIPAdres.ReadOnly = true;
-            this.txtIPAdres.Size = new System.Drawing.Size(108, 20);
-            this.txtIPAdres.TabIndex = 2;
-            // 
-            // rdbIPAdres1
-            // 
-            this.rdbIPAdres1.AutoSize = true;
-            this.rdbIPAdres1.Location = new System.Drawing.Point(6, 8);
-            this.rdbIPAdres1.Name = "rdbIPAdres1";
-            this.rdbIPAdres1.Size = new System.Drawing.Size(116, 17);
-            this.rdbIPAdres1.TabIndex = 3;
-            this.rdbIPAdres1.Text = "Internal connection";
-            this.rdbIPAdres1.UseVisualStyleBackColor = true;
-            // 
-            // rdbIPAdres2
-            // 
-            this.rdbIPAdres2.AutoSize = true;
-            this.rdbIPAdres2.Location = new System.Drawing.Point(6, 37);
-            this.rdbIPAdres2.Name = "rdbIPAdres2";
-            this.rdbIPAdres2.Size = new System.Drawing.Size(119, 17);
-            this.rdbIPAdres2.TabIndex = 4;
-            this.rdbIPAdres2.Text = "External connection";
-            this.rdbIPAdres2.UseVisualStyleBackColor = true;
             // 
             // Navigation
             // 

@@ -65,8 +65,11 @@ namespace MvE_SQL_test
 
         }
 
-        private void tabPage1_Click(object sender, EventArgs e)
+
+        private void btnStockManager_Click(object sender, EventArgs e)
         {
+            Form frm = new ManagerStock();
+            frm.Show();
 
         }
     }
