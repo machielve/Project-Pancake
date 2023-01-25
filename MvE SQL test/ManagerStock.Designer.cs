@@ -103,6 +103,7 @@ namespace MvE_SQL_test
             this.btnStockIn.TabIndex = 12;
             this.btnStockIn.Text = "Buy stock";
             this.btnStockIn.UseVisualStyleBackColor = true;
+            this.btnStockIn.Click += new System.EventHandler(this.btnStockIn_Click);
             // 
             // btnStockOut
             // 
@@ -121,6 +122,7 @@ namespace MvE_SQL_test
             this.btnReceiveStock.TabIndex = 14;
             this.btnReceiveStock.Text = "Receive purchase";
             this.btnReceiveStock.UseVisualStyleBackColor = true;
+            this.btnReceiveStock.Click += new System.EventHandler(this.btnReceiveStock_Click);
             // 
             // ManagerStock
             // 

@@ -163,8 +163,6 @@ namespace MvE_SQL_test
             }
 
 
-
-
         }
 
         private void btnNewUnit_Click(object sender, EventArgs e)

@@ -115,5 +115,17 @@ namespace MvE_SQL_test
         {
             RefreshStock();
         }
+
+        private void btnReceiveStock_Click(object sender, EventArgs e)
+        {
+            
+        }
+
+        private void btnStockIn_Click(object sender, EventArgs e)
+        {
+            Form frm = new NewPartIn();
+            frm.Show();
+
+        }
     }
 }
