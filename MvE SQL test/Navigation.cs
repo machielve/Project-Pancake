@@ -7,6 +7,8 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using MySql.Data;
+using MySql.Data.MySqlClient;
 
 namespace MvE_SQL_test
 {
@@ -23,18 +25,15 @@ namespace MvE_SQL_test
         }
 
 
-
         private void btnExit_Click_1(object sender, EventArgs e)
         {
             this.Close();
 
         }
 
-        private void btnAddUnit_Click(object sender, EventArgs e)
-        {
-            Form frm = new NewUnit();
-            frm.Show();
-        }
+
+
+        
 
         private void btnProjectManager_Click(object sender, EventArgs e)
         {   
@@ -58,14 +57,6 @@ namespace MvE_SQL_test
 
         }
 
-        private void button1_Click(object sender, EventArgs e)
-        {
-            Form frm = new NewMaterial();
-            frm.Show();
-
-        }
-
-
         private void btnStockManager_Click(object sender, EventArgs e)
         {
             Form frm = new ManagerStock();
@@ -73,10 +64,167 @@ namespace MvE_SQL_test
 
         }
 
+        private void btnOperationManager_Click(object sender, EventArgs e)
+        {
+
+        }
+
+
+
+
+
+
+
+
+
+        public void RefreshMaterial()
+        {
+            // Create the connection.
+            string connectionstring = Properties.Settings.Default.connString;
+            using (MySqlConnection connection = new MySqlConnection(connectionstring))
+            {
+                // mysql string
+                const string mysqlString = "SELECT * FROM Victoriam.T_MATERIAL";
+
+                using (MySqlCommand mysqlcommand = new MySqlCommand(mysqlString, connection))
+                {
+                    try
+                    {
+                        connection.Open();
+
+                        using (MySqlDataReader dr = mysqlcommand.ExecuteReader())
+                        {
+                            DataTable dt = new DataTable();
+                            dt.Load(dr);
+                            this.dgvMaterials.DataSource = dt;
+                            dr.Close();
+                        }
+                    }
+                    catch
+                    {
+                        MessageBox.Show("Materials could not be loaded");
+                    }
+                }
+            }
+
+        }
+        private void btnNewMaterial_Click(object sender, EventArgs e)
+        {
+            Form frm = new NewMaterial();
+            frm.FormClosing += new FormClosingEventHandler(this.NewMaterial_Formclosing);
+            frm.Show();
+
+        }
+        public void NewMaterial_Formclosing(object sender, EventArgs e)
+        {
+            RefreshMaterial();
+        }
+        private void btnLoadMaterials_Click(object sender, EventArgs e)
+        {
+            RefreshMaterial();
+
+        }
+
+
+
+
+
+
+
+        public void RefreshSuppliers()
+        {
+            // Create the connection.
+            string connectionstring = Properties.Settings.Default.connString;
+            using (MySqlConnection connection = new MySqlConnection(connectionstring))
+            {
+                // mysql string
+                const string mysqlString = "SELECT * FROM Victoriam.T_SUPPLIER";
+
+                using (MySqlCommand mysqlcommand = new MySqlCommand(mysqlString, connection))
+                {
+                    try
+                    {
+                        connection.Open();
+
+                        using (MySqlDataReader dr = mysqlcommand.ExecuteReader())
+                        {
+                            DataTable dt = new DataTable();
+                            dt.Load(dr);
+                            this.dgvSuppliers.DataSource = dt;
+                            dr.Close();
+                        }
+                    }
+                    catch
+                    {
+                        MessageBox.Show("Suppliers could not be loaded");
+                    }
+                }
+            }
+        }
         private void btnNewSupplier_Click(object sender, EventArgs e)
         {
             Form frm = new NewSupplier();
+            frm.FormClosing += new FormClosingEventHandler(this.NewSupplier_Formclosing);
             frm.Show();
+
+        }
+        public void NewSupplier_Formclosing(object sender, EventArgs e)
+        {
+            RefreshSuppliers();
+        }
+        private void btnLoadSuppliers_Click(object sender, EventArgs e)
+        {
+            RefreshSuppliers();
+
+        }
+
+
+
+
+
+        public void RefreshUnits()
+        {
+            // Create the connection.
+            string connectionstring = Properties.Settings.Default.connString;
+            using (MySqlConnection connection = new MySqlConnection(connectionstring))
+            {
+                // mysql string
+                const string mysqlString = "SELECT * FROM Victoriam.T_UNIT";
+
+                using (MySqlCommand mysqlcommand = new MySqlCommand(mysqlString, connection))
+                {
+                    try
+                    {
+                        connection.Open();
+
+                        using (MySqlDataReader dr = mysqlcommand.ExecuteReader())
+                        {
+                            DataTable dt = new DataTable();
+                            dt.Load(dr);
+                            this.dgvUnits.DataSource = dt;
+                            dr.Close();
+                        }
+                    }
+                    catch
+                    {
+                        MessageBox.Show("Units could not be loaded");
+                    }
+                }
+            }
+        }
+        private void btnAddUnit_Click(object sender, EventArgs e)
+        {
+            Form frm = new NewUnit();
+            frm.FormClosing += new FormClosingEventHandler(this.NewUnit_Formclosing);
+            frm.Show();
+        }
+        public void NewUnit_Formclosing(object sender, EventArgs e)
+        {
+            RefreshUnits();
+        }
+        private void btnLoadUnits_Click(object sender, EventArgs e)
+        {
+            RefreshUnits();
 
         }
     }

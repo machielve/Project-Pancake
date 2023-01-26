@@ -47,10 +47,25 @@ namespace MvE_SQL_test
             this.tabProject = new System.Windows.Forms.TabPage();
             this.tabAssembly = new System.Windows.Forms.TabPage();
             this.tabPart = new System.Windows.Forms.TabPage();
-            this.button1 = new System.Windows.Forms.Button();
+            this.tabPage1 = new System.Windows.Forms.TabPage();
+            this.btnLoadSuppliers = new System.Windows.Forms.Button();
+            this.dgvSuppliers = new System.Windows.Forms.DataGridView();
             this.btnNewSupplier = new System.Windows.Forms.Button();
+            this.tabPage2 = new System.Windows.Forms.TabPage();
+            this.btnLoadMaterials = new System.Windows.Forms.Button();
+            this.dgvMaterials = new System.Windows.Forms.DataGridView();
+            this.btnNewMaterial = new System.Windows.Forms.Button();
+            this.tabPage3 = new System.Windows.Forms.TabPage();
+            this.btnLoadUnits = new System.Windows.Forms.Button();
+            this.dgvUnits = new System.Windows.Forms.DataGridView();
             this.Managers.SuspendLayout();
             this.GeneralSettings.SuspendLayout();
+            this.tabPage1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvSuppliers)).BeginInit();
+            this.tabPage2.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvMaterials)).BeginInit();
+            this.tabPage3.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvUnits)).BeginInit();
             this.SuspendLayout();
             // 
             // label1
@@ -74,11 +89,11 @@ namespace MvE_SQL_test
             // 
             // btnAddUnit
             // 
-            this.btnAddUnit.Location = new System.Drawing.Point(15, 646);
+            this.btnAddUnit.Location = new System.Drawing.Point(6, 35);
             this.btnAddUnit.Name = "btnAddUnit";
             this.btnAddUnit.Size = new System.Drawing.Size(124, 23);
             this.btnAddUnit.TabIndex = 4;
-            this.btnAddUnit.Text = "Unit manager";
+            this.btnAddUnit.Text = "New unit";
             this.btnAddUnit.UseVisualStyleBackColor = true;
             this.btnAddUnit.Click += new System.EventHandler(this.btnAddUnit_Click);
             // 
@@ -120,6 +135,7 @@ namespace MvE_SQL_test
             this.btnOperationManager.TabIndex = 8;
             this.btnOperationManager.Text = "Operations manager";
             this.btnOperationManager.UseVisualStyleBackColor = true;
+            this.btnOperationManager.Click += new System.EventHandler(this.btnOperationManager_Click);
             // 
             // btnStockManager
             // 
@@ -137,6 +153,9 @@ namespace MvE_SQL_test
             this.Managers.Controls.Add(this.tabProject);
             this.Managers.Controls.Add(this.tabAssembly);
             this.Managers.Controls.Add(this.tabPart);
+            this.Managers.Controls.Add(this.tabPage1);
+            this.Managers.Controls.Add(this.tabPage2);
+            this.Managers.Controls.Add(this.tabPage3);
             this.Managers.Location = new System.Drawing.Point(162, 10);
             this.Managers.MaximumSize = new System.Drawing.Size(5000, 5000);
             this.Managers.MinimumSize = new System.Drawing.Size(1181, 771);
@@ -234,19 +253,43 @@ namespace MvE_SQL_test
             this.tabPart.Text = "Part manager";
             this.tabPart.UseVisualStyleBackColor = true;
             // 
-            // button1
+            // tabPage1
             // 
-            this.button1.Location = new System.Drawing.Point(15, 617);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(124, 23);
-            this.button1.TabIndex = 11;
-            this.button1.Text = "Material manager";
-            this.button1.UseVisualStyleBackColor = true;
-            this.button1.Click += new System.EventHandler(this.button1_Click);
+            this.tabPage1.Controls.Add(this.btnLoadSuppliers);
+            this.tabPage1.Controls.Add(this.dgvSuppliers);
+            this.tabPage1.Controls.Add(this.btnNewSupplier);
+            this.tabPage1.Location = new System.Drawing.Point(4, 22);
+            this.tabPage1.Name = "tabPage1";
+            this.tabPage1.Padding = new System.Windows.Forms.Padding(3);
+            this.tabPage1.Size = new System.Drawing.Size(1302, 814);
+            this.tabPage1.TabIndex = 4;
+            this.tabPage1.Text = "Suppliers";
+            this.tabPage1.UseVisualStyleBackColor = true;
+            // 
+            // btnLoadSuppliers
+            // 
+            this.btnLoadSuppliers.Location = new System.Drawing.Point(6, 5);
+            this.btnLoadSuppliers.Name = "btnLoadSuppliers";
+            this.btnLoadSuppliers.Size = new System.Drawing.Size(124, 23);
+            this.btnLoadSuppliers.TabIndex = 14;
+            this.btnLoadSuppliers.Text = "Load suppliers";
+            this.btnLoadSuppliers.UseVisualStyleBackColor = true;
+            this.btnLoadSuppliers.Click += new System.EventHandler(this.btnLoadSuppliers_Click);
+            // 
+            // dgvSuppliers
+            // 
+            this.dgvSuppliers.AllowUserToAddRows = false;
+            this.dgvSuppliers.AllowUserToDeleteRows = false;
+            this.dgvSuppliers.AllowUserToOrderColumns = true;
+            this.dgvSuppliers.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvSuppliers.Location = new System.Drawing.Point(137, 7);
+            this.dgvSuppliers.Name = "dgvSuppliers";
+            this.dgvSuppliers.Size = new System.Drawing.Size(1144, 696);
+            this.dgvSuppliers.TabIndex = 13;
             // 
             // btnNewSupplier
             // 
-            this.btnNewSupplier.Location = new System.Drawing.Point(15, 588);
+            this.btnNewSupplier.Location = new System.Drawing.Point(6, 34);
             this.btnNewSupplier.Name = "btnNewSupplier";
             this.btnNewSupplier.Size = new System.Drawing.Size(124, 23);
             this.btnNewSupplier.TabIndex = 12;
@@ -254,20 +297,95 @@ namespace MvE_SQL_test
             this.btnNewSupplier.UseVisualStyleBackColor = true;
             this.btnNewSupplier.Click += new System.EventHandler(this.btnNewSupplier_Click);
             // 
+            // tabPage2
+            // 
+            this.tabPage2.Controls.Add(this.btnLoadMaterials);
+            this.tabPage2.Controls.Add(this.dgvMaterials);
+            this.tabPage2.Controls.Add(this.btnNewMaterial);
+            this.tabPage2.Location = new System.Drawing.Point(4, 22);
+            this.tabPage2.Name = "tabPage2";
+            this.tabPage2.Padding = new System.Windows.Forms.Padding(3);
+            this.tabPage2.Size = new System.Drawing.Size(1302, 814);
+            this.tabPage2.TabIndex = 5;
+            this.tabPage2.Text = "Materials";
+            this.tabPage2.UseVisualStyleBackColor = true;
+            // 
+            // btnLoadMaterials
+            // 
+            this.btnLoadMaterials.Location = new System.Drawing.Point(6, 6);
+            this.btnLoadMaterials.Name = "btnLoadMaterials";
+            this.btnLoadMaterials.Size = new System.Drawing.Size(124, 23);
+            this.btnLoadMaterials.TabIndex = 13;
+            this.btnLoadMaterials.Text = "Load materials";
+            this.btnLoadMaterials.UseVisualStyleBackColor = true;
+            this.btnLoadMaterials.Click += new System.EventHandler(this.btnLoadMaterials_Click);
+            // 
+            // dgvMaterials
+            // 
+            this.dgvMaterials.AllowUserToAddRows = false;
+            this.dgvMaterials.AllowUserToDeleteRows = false;
+            this.dgvMaterials.AllowUserToOrderColumns = true;
+            this.dgvMaterials.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvMaterials.Location = new System.Drawing.Point(136, 6);
+            this.dgvMaterials.Name = "dgvMaterials";
+            this.dgvMaterials.Size = new System.Drawing.Size(1144, 696);
+            this.dgvMaterials.TabIndex = 12;
+            // 
+            // btnNewMaterial
+            // 
+            this.btnNewMaterial.Location = new System.Drawing.Point(6, 35);
+            this.btnNewMaterial.Name = "btnNewMaterial";
+            this.btnNewMaterial.Size = new System.Drawing.Size(124, 23);
+            this.btnNewMaterial.TabIndex = 11;
+            this.btnNewMaterial.Text = "New material";
+            this.btnNewMaterial.UseVisualStyleBackColor = true;
+            this.btnNewMaterial.Click += new System.EventHandler(this.btnNewMaterial_Click);
+            // 
+            // tabPage3
+            // 
+            this.tabPage3.Controls.Add(this.dgvUnits);
+            this.tabPage3.Controls.Add(this.btnLoadUnits);
+            this.tabPage3.Controls.Add(this.btnAddUnit);
+            this.tabPage3.Location = new System.Drawing.Point(4, 22);
+            this.tabPage3.Name = "tabPage3";
+            this.tabPage3.Padding = new System.Windows.Forms.Padding(3);
+            this.tabPage3.Size = new System.Drawing.Size(1302, 814);
+            this.tabPage3.TabIndex = 6;
+            this.tabPage3.Text = "Units";
+            this.tabPage3.UseVisualStyleBackColor = true;
+            // 
+            // btnLoadUnits
+            // 
+            this.btnLoadUnits.Location = new System.Drawing.Point(6, 6);
+            this.btnLoadUnits.Name = "btnLoadUnits";
+            this.btnLoadUnits.Size = new System.Drawing.Size(124, 23);
+            this.btnLoadUnits.TabIndex = 5;
+            this.btnLoadUnits.Text = "Load units";
+            this.btnLoadUnits.UseVisualStyleBackColor = true;
+            this.btnLoadUnits.Click += new System.EventHandler(this.btnLoadUnits_Click);
+            // 
+            // dgvUnits
+            // 
+            this.dgvUnits.AllowUserToAddRows = false;
+            this.dgvUnits.AllowUserToDeleteRows = false;
+            this.dgvUnits.AllowUserToOrderColumns = true;
+            this.dgvUnits.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvUnits.Location = new System.Drawing.Point(136, 6);
+            this.dgvUnits.Name = "dgvUnits";
+            this.dgvUnits.Size = new System.Drawing.Size(1144, 696);
+            this.dgvUnits.TabIndex = 13;
+            // 
             // Navigation
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1484, 861);
-            this.Controls.Add(this.btnNewSupplier);
             this.Controls.Add(this.Managers);
-            this.Controls.Add(this.button1);
             this.Controls.Add(this.btnStockManager);
             this.Controls.Add(this.btnOperationManager);
             this.Controls.Add(this.btnPartManager);
             this.Controls.Add(this.btnAssemblyManager);
             this.Controls.Add(this.btnProjectManager);
-            this.Controls.Add(this.btnAddUnit);
             this.Controls.Add(this.btnExit);
             this.Controls.Add(this.label1);
             this.Name = "Navigation";
@@ -277,6 +395,12 @@ namespace MvE_SQL_test
             this.Managers.ResumeLayout(false);
             this.GeneralSettings.ResumeLayout(false);
             this.GeneralSettings.PerformLayout();
+            this.tabPage1.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.dgvSuppliers)).EndInit();
+            this.tabPage2.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.dgvMaterials)).EndInit();
+            this.tabPage3.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.dgvUnits)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -294,7 +418,7 @@ namespace MvE_SQL_test
         private System.Windows.Forms.TabControl Managers;
         private System.Windows.Forms.TabPage tabProject;
         private System.Windows.Forms.TabPage tabAssembly;
-        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button btnNewMaterial;
         private System.Windows.Forms.TabPage tabPart;
         private System.Windows.Forms.TabPage GeneralSettings;
         private System.Windows.Forms.TextBox txtIPAdres;
@@ -303,6 +427,15 @@ namespace MvE_SQL_test
         private System.Windows.Forms.RadioButton rdbIPAdres2;
         private System.Windows.Forms.RadioButton rdbIPAdres1;
         private System.Windows.Forms.Button btnNewSupplier;
+        private System.Windows.Forms.TabPage tabPage1;
+        private System.Windows.Forms.Button btnLoadSuppliers;
+        private System.Windows.Forms.DataGridView dgvSuppliers;
+        private System.Windows.Forms.TabPage tabPage2;
+        private System.Windows.Forms.Button btnLoadMaterials;
+        private System.Windows.Forms.DataGridView dgvMaterials;
+        private System.Windows.Forms.TabPage tabPage3;
+        private System.Windows.Forms.DataGridView dgvUnits;
+        private System.Windows.Forms.Button btnLoadUnits;
     }
 }
 
