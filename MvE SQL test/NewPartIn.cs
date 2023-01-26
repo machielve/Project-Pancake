@@ -31,7 +31,7 @@ namespace MvE_SQL_test
             using (MySqlConnection connection = new MySqlConnection(connectionstring))
             {
                 // mysql string parts
-                const string mysqlString = "SELECT Part_id, Name FROM Victoriam.T_PART";
+                const string mysqlString = "SELECT Part_id, Name FROM Victoriam.T_PART WHERE PartType <> 2";
                 using (MySqlCommand mysqlcommand = new MySqlCommand(mysqlString, connection))
                 {
                     try
@@ -93,7 +93,62 @@ namespace MvE_SQL_test
             }
         }
 
+        private void btnAddStock_Click(object sender, EventArgs e)
+        {
+            decimal Quantity = countQuantity.Value;
+            int PartID = Convert.ToInt32(cmbPart.SelectedValue);
+            int SupplierID = Convert.ToInt32(cmbSupplier.SelectedValue);
+            string PONumber = txtPONumber.Text;
+            string SerialNumber = txtSerialNumber.Text;
+            decimal TPrice = countPrice.Value;
 
+            // Create the connection.
+            string connectionstring = Properties.Settings.Default.connString;
+            using (MySqlConnection connection = new MySqlConnection(connectionstring))
+            {
+                using (MySqlCommand msqlcommand = new MySqlCommand("uspNewPartIn", connection))
+                {
+                    msqlcommand.CommandType = CommandType.StoredProcedure;
 
+                    msqlcommand.Parameters.Add(new MySqlParameter("InQuantity", MySqlDbType.Decimal));
+                    msqlcommand.Parameters["InQuantity"].Scale = 2;
+                    msqlcommand.Parameters["InQuantity"].Precision = 10;
+                    msqlcommand.Parameters["InQuantity"].Value = Quantity;
+
+                    msqlcommand.Parameters.Add(new MySqlParameter("InPartID", MySqlDbType.Int32));
+                    msqlcommand.Parameters["InPartID"].Value = PartID;
+
+                    msqlcommand.Parameters.Add(new MySqlParameter("InSupplierID", MySqlDbType.Int32));
+                    msqlcommand.Parameters["InSupplierID"].Value = SupplierID;
+
+                    msqlcommand.Parameters.Add(new MySqlParameter("InPONumber", MySqlDbType.VarChar));
+                    msqlcommand.Parameters["InPONumber"].Value = PONumber;
+
+                    msqlcommand.Parameters.Add(new MySqlParameter("InSerialNumber", MySqlDbType.VarChar));
+                    msqlcommand.Parameters["InSerialNumber"].Value = SerialNumber;
+
+                    msqlcommand.Parameters.Add(new MySqlParameter("InTPrice", MySqlDbType.Decimal));
+                    msqlcommand.Parameters["InTPrice"].Scale = 2;
+                    msqlcommand.Parameters["InTPrice"].Precision = 10;
+                    msqlcommand.Parameters["InTPrice"].Value = TPrice;
+
+                    try
+                    {
+                        connection.Open(); 
+                        msqlcommand.ExecuteNonQuery();
+                    }
+                    catch
+                    {
+                        MessageBox.Show("Parts could not be added");
+                    }
+                    finally
+                    {
+                        connection.Close();
+                    }
+                }
+            }
+            this.Close();
+
+        }
     }
 }

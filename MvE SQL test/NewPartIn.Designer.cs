@@ -41,7 +41,8 @@ namespace MvE_SQL_test
             this.txtPONumber = new System.Windows.Forms.TextBox();
             this.label5 = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
-            this.textBox2 = new System.Windows.Forms.TextBox();
+            this.txtSerialNumber = new System.Windows.Forms.TextBox();
+            this.btnAddStockIn = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.countQuantity)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.countPrice)).BeginInit();
             this.SuspendLayout();
@@ -130,6 +131,7 @@ namespace MvE_SQL_test
             this.txtPONumber.Name = "txtPONumber";
             this.txtPONumber.Size = new System.Drawing.Size(234, 20);
             this.txtPONumber.TabIndex = 12;
+            this.txtPONumber.Text = "-";
             // 
             // label5
             // 
@@ -149,21 +151,33 @@ namespace MvE_SQL_test
             this.label6.TabIndex = 15;
             this.label6.Text = "Serial numbers";
             // 
-            // textBox2
+            // txtSerialNumber
             // 
-            this.textBox2.Location = new System.Drawing.Point(105, 150);
-            this.textBox2.Multiline = true;
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(234, 135);
-            this.textBox2.TabIndex = 14;
+            this.txtSerialNumber.Location = new System.Drawing.Point(105, 150);
+            this.txtSerialNumber.Multiline = true;
+            this.txtSerialNumber.Name = "txtSerialNumber";
+            this.txtSerialNumber.Size = new System.Drawing.Size(234, 135);
+            this.txtSerialNumber.TabIndex = 14;
+            this.txtSerialNumber.Text = "-";
+            // 
+            // btnAddStockIn
+            // 
+            this.btnAddStockIn.Location = new System.Drawing.Point(105, 380);
+            this.btnAddStockIn.Name = "btnAddStockIn";
+            this.btnAddStockIn.Size = new System.Drawing.Size(146, 23);
+            this.btnAddStockIn.TabIndex = 16;
+            this.btnAddStockIn.Text = "Add stock";
+            this.btnAddStockIn.UseVisualStyleBackColor = true;
+            this.btnAddStockIn.Click += new System.EventHandler(this.btnAddStock_Click);
             // 
             // NewPartIn
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(387, 508);
+            this.Controls.Add(this.btnAddStockIn);
             this.Controls.Add(this.label6);
-            this.Controls.Add(this.textBox2);
+            this.Controls.Add(this.txtSerialNumber);
             this.Controls.Add(this.label5);
             this.Controls.Add(this.txtPONumber);
             this.Controls.Add(this.btnFinnish);
@@ -199,6 +213,7 @@ namespace MvE_SQL_test
         private System.Windows.Forms.TextBox txtPONumber;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Label label6;
-        private System.Windows.Forms.TextBox textBox2;
+        private System.Windows.Forms.TextBox txtSerialNumber;
+        private System.Windows.Forms.Button btnAddStockIn;
     }
 }

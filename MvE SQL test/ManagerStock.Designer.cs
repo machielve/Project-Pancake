@@ -37,6 +37,7 @@ namespace MvE_SQL_test
             this.btnStockIn = new System.Windows.Forms.Button();
             this.btnStockOut = new System.Windows.Forms.Button();
             this.btnReceiveStock = new System.Windows.Forms.Button();
+            this.btnCreatePart = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dgvStock)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgvStockIn)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgvStockOut)).BeginInit();
@@ -124,11 +125,21 @@ namespace MvE_SQL_test
             this.btnReceiveStock.UseVisualStyleBackColor = true;
             this.btnReceiveStock.Click += new System.EventHandler(this.btnReceiveStock_Click);
             // 
+            // btnCreatePart
+            // 
+            this.btnCreatePart.Location = new System.Drawing.Point(12, 398);
+            this.btnCreatePart.Name = "btnCreatePart";
+            this.btnCreatePart.Size = new System.Drawing.Size(133, 23);
+            this.btnCreatePart.TabIndex = 15;
+            this.btnCreatePart.Text = "Make part";
+            this.btnCreatePart.UseVisualStyleBackColor = true;
+            // 
             // ManagerStock
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1484, 811);
+            this.Controls.Add(this.btnCreatePart);
             this.Controls.Add(this.btnReceiveStock);
             this.Controls.Add(this.btnStockOut);
             this.Controls.Add(this.btnStockIn);
@@ -140,6 +151,7 @@ namespace MvE_SQL_test
             this.Name = "ManagerStock";
             this.Text = "Stock manager";
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
+            this.Load += new System.EventHandler(this.ManagerStock_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dgvStock)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgvStockIn)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgvStockOut)).EndInit();
@@ -157,5 +169,6 @@ namespace MvE_SQL_test
         private System.Windows.Forms.Button btnStockIn;
         private System.Windows.Forms.Button btnStockOut;
         private System.Windows.Forms.Button btnReceiveStock;
+        private System.Windows.Forms.Button btnCreatePart;
     }
 }

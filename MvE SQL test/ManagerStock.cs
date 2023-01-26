@@ -19,6 +19,75 @@ namespace MvE_SQL_test
             InitializeComponent();
         }
 
+        public void RefreshPartIN()
+        {
+            // Create the connection.
+            string connectionstring = Properties.Settings.Default.connString;
+            using (MySqlConnection connection = new MySqlConnection(connectionstring))
+            {
+                // mysql string StockIn
+                const string mysqlString20 = "SELECT * FROM Victoriam.T_PARTIN";
+                using (MySqlCommand mysqlcommand = new MySqlCommand(mysqlString20, connection))
+                {
+                    try
+                    {
+                        connection.Open();
+
+                        using (MySqlDataReader dr = mysqlcommand.ExecuteReader())
+                        {
+                            DataTable dt = new DataTable();
+                            dt.Load(dr);
+                            this.dgvStockIn.DataSource = dt;
+                            dr.Close();
+                        }
+                    }
+                    catch
+                    {
+                        MessageBox.Show("Stock in could not be loaded");
+                    }
+                    finally
+                    {
+                        connection.Close();
+                    }
+                }
+            }
+        }
+
+        public void RefreshPartOUT()
+        {
+            // Create the connection.
+            string connectionstring = Properties.Settings.Default.connString;
+            using (MySqlConnection connection = new MySqlConnection(connectionstring))
+            {
+                // mysql string Stockout
+                const string mysqlString30 = "SELECT * FROM Victoriam.T_PARTOUT";
+                using (MySqlCommand mysqlcommand = new MySqlCommand(mysqlString30, connection))
+                {
+                    try
+                    {
+                        connection.Open();
+
+                        using (MySqlDataReader dr = mysqlcommand.ExecuteReader())
+                        {
+                            DataTable dt = new DataTable();
+                            dt.Load(dr);
+                            this.dgvStockOut.DataSource = dt;
+                            dr.Close();
+                        }
+                    }
+                    catch
+                    {
+                        MessageBox.Show("Stock out could not be loaded");
+                    }
+                    finally
+                    {
+                        connection.Close();
+                    }
+                }
+            }
+        }
+
+
         public void RefreshStock()
         {
             // Create the connection.
@@ -51,57 +120,7 @@ namespace MvE_SQL_test
                     }
                 }
 
-                // mysql string StockIn
-                const string mysqlString20 = "SELECT * FROM Victoriam.T_PARTIN";
-                using (MySqlCommand mysqlcommand = new MySqlCommand(mysqlString20, connection))
-                {
-                    try
-                    {
-                        connection.Open();
-
-                        using (MySqlDataReader dr = mysqlcommand.ExecuteReader())
-                        {
-                            DataTable dt = new DataTable();
-                            dt.Load(dr);
-                            this.dgvStockIn.DataSource = dt;
-                            dr.Close();
-                        }
-                    }
-                    catch
-                    {
-                        MessageBox.Show("Stock in could not be loaded");
-                    }
-                    finally
-                    {
-                        connection.Close();
-                    }
-                }
-
-                // mysql string Stockout
-                const string mysqlString30 = "SELECT * FROM Victoriam.T_PARTOUT";
-                using (MySqlCommand mysqlcommand = new MySqlCommand(mysqlString30, connection))
-                {
-                    try
-                    {
-                        connection.Open();
-
-                        using (MySqlDataReader dr = mysqlcommand.ExecuteReader())
-                        {
-                            DataTable dt = new DataTable();
-                            dt.Load(dr);
-                            this.dgvStockOut.DataSource = dt;
-                            dr.Close();
-                        }
-                    }
-                    catch
-                    {
-                        MessageBox.Show("Stock out could not be loaded");
-                    }
-                    finally
-                    {
-                        connection.Close();
-                    }
-                }
+                
             }
 
         }
@@ -124,7 +143,24 @@ namespace MvE_SQL_test
         private void btnStockIn_Click(object sender, EventArgs e)
         {
             Form frm = new NewPartIn();
+            frm.FormClosing += new FormClosingEventHandler(this.NewPartIn_Formclosing);
             frm.Show();
+
+        }
+
+        public void NewPartIn_Formclosing(object sender, EventArgs e)
+        {
+
+            RefreshPartIN();
+
+        }
+
+        private void ManagerStock_Load(object sender, EventArgs e)
+        {
+
+            RefreshStock();
+            RefreshPartIN();
+            RefreshPartOUT();
 
         }
     }
