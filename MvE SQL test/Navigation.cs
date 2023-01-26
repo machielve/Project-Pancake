@@ -24,6 +24,7 @@ namespace MvE_SQL_test
             RefreshUnits();
             RefreshMaterial();
             RefreshSuppliers();
+            RefreshOperatons();
 
         }
 
@@ -45,21 +46,18 @@ namespace MvE_SQL_test
             frm.Show();
 
         }
-
         private void btnAssemblyManager_Click(object sender, EventArgs e)
         {
             Form frm = new ManagerAssembly();
             frm.Show();
 
         }
-
         private void btnPartManager_Click(object sender, EventArgs e)
         {
             Form frm = new ManagerPart();
             frm.Show();
 
         }
-
         private void btnStockManager_Click(object sender, EventArgs e)
         {
             Form frm = new ManagerStock();
@@ -67,10 +65,7 @@ namespace MvE_SQL_test
 
         }
 
-        private void btnOperationManager_Click(object sender, EventArgs e)
-        {
 
-        }
 
 
 
@@ -231,6 +226,57 @@ namespace MvE_SQL_test
         private void btnLoadUnits_Click(object sender, EventArgs e)
         {
             RefreshUnits();
+
+        }
+
+
+
+
+
+        public void RefreshOperatons()
+        {
+            // Create the connection.
+            string connectionstring = Properties.Settings.Default.connString;
+            using (MySqlConnection connection = new MySqlConnection(connectionstring))
+            {
+                // mysql string
+                const string mysqlString = "SELECT * FROM Victoriam.T_OPERATION";
+
+                using (MySqlCommand mysqlcommand = new MySqlCommand(mysqlString, connection))
+                {
+                    try
+                    {
+                        connection.Open();
+
+                        using (MySqlDataReader dr = mysqlcommand.ExecuteReader())
+                        {
+                            DataTable dt = new DataTable();
+                            dt.Load(dr);
+                            dt.DefaultView.Sort = ("Name ASC");
+                            this.dgvOperations.DataSource = dt;
+                            dr.Close();
+                        }
+                    }
+                    catch
+                    {
+                        MessageBox.Show("Operatins could not be loaded");
+                    }
+                }
+            }
+        }
+        private void btnNewOperation_Click(object sender, EventArgs e)
+        {
+            Form frm = new NewOperation();
+            frm.FormClosing += new FormClosingEventHandler(this.NewOperation_Formclosing);
+            frm.Show();
+        }
+        public void NewOperation_Formclosing(object sender, EventArgs e)
+        {
+            RefreshOperatons();
+        }
+        private void btnLoadOperations_Click(object sender, EventArgs e)
+        {
+            RefreshOperatons();
 
         }
     }

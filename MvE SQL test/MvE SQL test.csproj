@@ -153,6 +153,12 @@
     <Compile Include="NewMaterial.Designer.cs">
       <DependentUpon>NewMaterial.cs</DependentUpon>
     </Compile>
+    <Compile Include="NewOperation.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="NewOperation.Designer.cs">
+      <DependentUpon>NewOperation.cs</DependentUpon>
+    </Compile>
     <Compile Include="NewPart.cs">
       <SubType>Form</SubType>
     </Compile>
