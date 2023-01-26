@@ -37,9 +37,8 @@ namespace MvE_SQL_test
             this.dgvSuppliers = new System.Windows.Forms.DataGridView();
             this.label2 = new System.Windows.Forms.Label();
             this.btnAddSupplier = new System.Windows.Forms.Button();
-            this.btnLoadSuppliers = new System.Windows.Forms.Button();
             this.txtPartID = new System.Windows.Forms.TextBox();
-            this.button1 = new System.Windows.Forms.Button();
+            this.btnRemoveSupplier = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dgvParts)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgvSuppliers)).BeginInit();
             this.SuspendLayout();
@@ -55,6 +54,7 @@ namespace MvE_SQL_test
             this.dgvParts.Name = "dgvParts";
             this.dgvParts.Size = new System.Drawing.Size(1310, 490);
             this.dgvParts.TabIndex = 0;
+            this.dgvParts.SelectionChanged += new System.EventHandler(this.dgvPart_SelectionChanged);
             // 
             // label1
             // 
@@ -87,7 +87,7 @@ namespace MvE_SQL_test
             // 
             // btnNewPart
             // 
-            this.btnNewPart.Location = new System.Drawing.Point(13, 96);
+            this.btnNewPart.Location = new System.Drawing.Point(13, 67);
             this.btnNewPart.Name = "btnNewPart";
             this.btnNewPart.Size = new System.Drawing.Size(133, 23);
             this.btnNewPart.TabIndex = 10;
@@ -124,16 +124,6 @@ namespace MvE_SQL_test
             this.btnAddSupplier.UseVisualStyleBackColor = true;
             this.btnAddSupplier.Click += new System.EventHandler(this.btnAddSupplier_Click);
             // 
-            // btnLoadSuppliers
-            // 
-            this.btnLoadSuppliers.Location = new System.Drawing.Point(13, 67);
-            this.btnLoadSuppliers.Name = "btnLoadSuppliers";
-            this.btnLoadSuppliers.Size = new System.Drawing.Size(133, 23);
-            this.btnLoadSuppliers.TabIndex = 14;
-            this.btnLoadSuppliers.Text = "Load suppliers";
-            this.btnLoadSuppliers.UseVisualStyleBackColor = true;
-            this.btnLoadSuppliers.Click += new System.EventHandler(this.btnLoadSuppliers_Click);
-            // 
             // txtPartID
             // 
             this.txtPartID.Location = new System.Drawing.Point(165, 548);
@@ -142,24 +132,23 @@ namespace MvE_SQL_test
             this.txtPartID.Size = new System.Drawing.Size(100, 20);
             this.txtPartID.TabIndex = 15;
             // 
-            // button1
+            // btnRemoveSupplier
             // 
-            this.button1.Location = new System.Drawing.Point(13, 616);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(133, 23);
-            this.button1.TabIndex = 16;
-            this.button1.Text = "Remove supplier";
-            this.button1.UseVisualStyleBackColor = true;
-            this.button1.Click += new System.EventHandler(this.button1_Click);
+            this.btnRemoveSupplier.Location = new System.Drawing.Point(13, 616);
+            this.btnRemoveSupplier.Name = "btnRemoveSupplier";
+            this.btnRemoveSupplier.Size = new System.Drawing.Size(133, 23);
+            this.btnRemoveSupplier.TabIndex = 16;
+            this.btnRemoveSupplier.Text = "Remove supplier";
+            this.btnRemoveSupplier.UseVisualStyleBackColor = true;
+            this.btnRemoveSupplier.Click += new System.EventHandler(this.btnRemoveSupplier_Click);
             // 
-            // PartManager
+            // ManagerPart
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1484, 811);
-            this.Controls.Add(this.button1);
+            this.Controls.Add(this.btnRemoveSupplier);
             this.Controls.Add(this.txtPartID);
-            this.Controls.Add(this.btnLoadSuppliers);
             this.Controls.Add(this.btnAddSupplier);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.dgvSuppliers);
@@ -168,7 +157,7 @@ namespace MvE_SQL_test
             this.Controls.Add(this.btnFinnish);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.dgvParts);
-            this.Name = "PartManager";
+            this.Name = "ManagerPart";
             this.Text = "Part manager";
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             ((System.ComponentModel.ISupportInitialize)(this.dgvParts)).EndInit();
@@ -188,8 +177,7 @@ namespace MvE_SQL_test
         private System.Windows.Forms.DataGridView dgvSuppliers;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Button btnAddSupplier;
-        private System.Windows.Forms.Button btnLoadSuppliers;
         private System.Windows.Forms.TextBox txtPartID;
-        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button btnRemoveSupplier;
     }
 }

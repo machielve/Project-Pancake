@@ -15,7 +15,13 @@ namespace MvE_SQL_test
     public partial class ManagerPart : Form
     {
 
+        public ManagerPart()
+        {
+            InitializeComponent();
+        }
+
         public static string PartID = "";
+
         public void PartRefresh()
         {
             // Create the connection.
@@ -35,6 +41,7 @@ namespace MvE_SQL_test
                         {
                             DataTable dt = new DataTable();
                             dt.Load(dr);
+                            dt.DefaultView.Sort = ("Name ASC");                            
                             this.dgvParts.DataSource = dt;
                             dr.Close();
                         }
@@ -48,17 +55,17 @@ namespace MvE_SQL_test
 
         }
         
-        public void TotalRefresh()
+        public void SupplierRefresh()
         {
 
             string AssemblyId = (txtPartID.Text);
 
-            if (dgvParts.SelectedRows.Count == 0)
+            if (AssemblyId == "")
             {
                 MessageBox.Show("No part selected");
             }
 
-            else if (dgvParts.SelectedRows.Count == 1)
+            else 
             {
                 // Create the connection.
                 string connectionstring = Properties.Settings.Default.connString;
@@ -102,38 +109,35 @@ namespace MvE_SQL_test
                 }
             }
 
-            else if (dgvParts.SelectedRows.Count > 1)
-            {
-                MessageBox.Show("More than one part selected. Please select one part");
-            }
-
-
         }
-        
-        public ManagerPart()
-        {
-            InitializeComponent();
-        }
+
 
         private void btnFinnish_Click(object sender, EventArgs e)
         {
             this.Close();
         }
 
+
+
+
         private void btnLoadParts_Click(object sender, EventArgs e)
         {
-            PartRefresh();
-            
+            PartRefresh();            
         }
-
         private void btnNewPart_Click(object sender, EventArgs e)
         {
             Form frm = new NewPart();
             frm.FormClosing += new FormClosingEventHandler(this.NewPart_Formclosing);
             frm.Show();
         }
+        private void NewPart_Formclosing(object sender, EventArgs e)
+        {
+            PartRefresh();
+        }
 
-        private void btnLoadSuppliers_Click(object sender, EventArgs e)
+
+
+        public void dgvPart_SelectionChanged(object sender, EventArgs e)
         {
             Int32 selectedrowindex = dgvParts.SelectedCells[0].RowIndex;
             DataGridViewRow SelectedRow = dgvParts.Rows[selectedrowindex];
@@ -141,15 +145,11 @@ namespace MvE_SQL_test
 
             txtPartID.Text = PartID;
 
-
-            TotalRefresh();
-        }
-
-        private void NewPart_Formclosing(object sender, EventArgs e)
-        {
-            PartRefresh();
+            SupplierRefresh();
 
         }
+
+        
 
         private void btnAddSupplier_Click(object sender, EventArgs e)
         {
@@ -164,14 +164,12 @@ namespace MvE_SQL_test
             frm.Show();
 
         }
-
         public void NewPartSUpplier_Formclosing(object sender, EventArgs e)
         {
-            TotalRefresh();
+            SupplierRefresh();
 
         }
-
-        private void button1_Click(object sender, EventArgs e)
+        private void btnRemoveSupplier_Click(object sender, EventArgs e)
         {
             Int32 selectedrowindex = dgvSuppliers.SelectedCells[0].RowIndex;
             DataGridViewRow SelectedRow = dgvSuppliers.Rows[selectedrowindex];
@@ -212,7 +210,7 @@ namespace MvE_SQL_test
                 MessageBox.Show("More than one supplier selected. Please select one supplier");
             }
 
-            TotalRefresh();
+            SupplierRefresh();
         }
     }
 }

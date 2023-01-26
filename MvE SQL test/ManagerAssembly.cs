@@ -119,7 +119,6 @@ namespace MvE_SQL_test
 
 
         }
-
         public void Assemblyupdate()
         {
             string AssemblyId = txtAssemblyID.Text;
@@ -280,24 +279,33 @@ namespace MvE_SQL_test
            
         }
 
+        private void AssemblyManager_Load(object sender, EventArgs e)
+        {
+            AssemblyRefresh();
+
+        }
+
+
+
         private void btnFinnish_Click(object sender, EventArgs e)
         {
             this.Close();
         }
 
+
+
+
         private void btnLoadAssemblies_Click(object sender, EventArgs e)
         {
             AssemblyRefresh();
         }
-
         private void btnNewAssembly_Click(object sender, EventArgs e)
         {
             Form frm = new NewAssembly();
             
             frm.Show();
         }              
-
-        private void btnSeeDetails_Click(object sender, EventArgs e)
+        public void dgvAssemblies_SelectionChanged(object sender, EventArgs e)
         {
             Int32 selectedrowindex = dgvAssemblies.SelectedCells[0].RowIndex;
             DataGridViewRow SelectedRow = dgvAssemblies.Rows[selectedrowindex];
@@ -308,7 +316,6 @@ namespace MvE_SQL_test
 
             TotalRefresh();
         }
-
         private void btnAssemblyLock_Click(object sender, EventArgs e)
         {
             string AssemblyId = txtAssemblyID.Text;
@@ -376,109 +383,7 @@ namespace MvE_SQL_test
             TotalRefresh();
             AssemblyRefresh();
 
-        }              
-        
-        public void btnAddPart_Click(object sender, EventArgs e)
-        {
-            string AssemblyId = txtAssemblyID.Text;
-
-            AssemblyID = AssemblyId;
-
-            Form frm = new NewAssemblyDetailPart();
-            frm.FormClosing += new FormClosingEventHandler(this.NewAssemblyDetailPart_Formclosing);
-            frm.Show();
-
         }
-
-        private void btnRemovePart_Click(object sender, EventArgs e)
-        {
-            Int32 selectedrowindex = dgvAssemblyParts.SelectedCells[0].RowIndex;
-            DataGridViewRow SelectedRow = dgvAssemblyParts.Rows[selectedrowindex];
-            string AssemblyPartId = Convert.ToString(SelectedRow.Cells["Assemblydetailpart_id"].Value);
-
-            if (dgvAssemblyParts.SelectedRows.Count == 0)
-            {
-                MessageBox.Show("No part selected");
-            }
-
-            else if (dgvAssemblyParts.SelectedRows.Count == 1)
-            {
-                // Create the connection.
-                string connectionstring = Properties.Settings.Default.connString;
-                using (MySqlConnection connection = new MySqlConnection(connectionstring))
-                {
-                    // mysql string parts
-                    const string mysqlString1 = "DELETE FROM Victoriam.T_ASSEMBLYDETAILPART WHERE Assemblydetailpart_id = ";
-                    string mysqlString = mysqlString1 + AssemblyPartId;
-                    using (MySqlCommand mysqlcommand = new MySqlCommand(mysqlString, connection))
-                    {
-                        try
-                        {
-                            connection.Open();
-                            mysqlcommand.ExecuteNonQuery();
-                        }
-                        catch
-                        {
-                            MessageBox.Show("Part could not be removed");
-                        }
-                    }                   
-
-                }
-            }
-
-            else if (dgvAssemblyParts.SelectedRows.Count > 1)
-            {
-                MessageBox.Show("More than one part selected. Please select one part");
-            }
-
-            TotalRefresh();
-
-        }
-
-        private void btnRemoveOperation_Click(object sender, EventArgs e)
-        {
-            Int32 selectedrowindex = dgvAssemblyOps.SelectedCells[0].RowIndex;
-            DataGridViewRow SelectedRow = dgvAssemblyOps.Rows[selectedrowindex];
-            string AssemblyOpsId = Convert.ToString(SelectedRow.Cells["Assemblydetailoperation_id"].Value);
-
-            if (dgvAssemblyOps.SelectedRows.Count == 0)
-            {
-                MessageBox.Show("No operation selected");
-            }
-
-            else if (dgvAssemblyOps.SelectedRows.Count == 1)
-            {
-                // Create the connection.
-                string connectionstring = Properties.Settings.Default.connString;
-                using (MySqlConnection connection = new MySqlConnection(connectionstring))
-                {
-                    // mysql string parts
-                    const string mysqlString1 = "DELETE FROM Victoriam.T_ASSEMBLYDETAILOPERATION WHERE Assemblydetailoperation_id = ";
-                    string mysqlString = mysqlString1 + AssemblyOpsId;
-                    using (MySqlCommand mysqlcommand = new MySqlCommand(mysqlString, connection))
-                    {
-                        try
-                        {
-                            connection.Open();
-                            mysqlcommand.ExecuteNonQuery();
-                        }
-                        catch
-                        {
-                            MessageBox.Show("Operation could not be removed");
-                        }
-                    }
-
-                }
-            }
-
-            else if (dgvAssemblyOps.SelectedRows.Count > 1)
-            {
-                MessageBox.Show("More than one operation selected. Please select one operation");
-            }
-
-            TotalRefresh();
-        }
-
         private void btnAssemblyUnlock_Click(object sender, EventArgs e)
         {
             string AssemblyId = txtAssemblyID.Text;
@@ -547,7 +452,125 @@ namespace MvE_SQL_test
             AssemblyRefresh();
 
         }
+        private void btnUpdateAssembly_Click(object sender, EventArgs e)
+        {
+            Assemblyupdate();
 
+            TotalRefresh();
+            AssemblyRefresh();
+
+        }
+
+
+
+
+
+        public void btnAddPart_Click(object sender, EventArgs e)
+        {
+            string AssemblyId = txtAssemblyID.Text;
+
+            AssemblyID = AssemblyId;
+
+            Form frm = new NewAssemblyDetailPart();
+            frm.FormClosing += new FormClosingEventHandler(this.NewAssemblyDetailPart_Formclosing);
+            frm.Show();
+
+        }
+        private void btnRemovePart_Click(object sender, EventArgs e)
+        {
+            Int32 selectedrowindex = dgvAssemblyParts.SelectedCells[0].RowIndex;
+            DataGridViewRow SelectedRow = dgvAssemblyParts.Rows[selectedrowindex];
+            string AssemblyPartId = Convert.ToString(SelectedRow.Cells["Assemblydetailpart_id"].Value);
+
+            if (dgvAssemblyParts.SelectedRows.Count == 0)
+            {
+                MessageBox.Show("No part selected");
+            }
+
+            else if (dgvAssemblyParts.SelectedRows.Count == 1)
+            {
+                // Create the connection.
+                string connectionstring = Properties.Settings.Default.connString;
+                using (MySqlConnection connection = new MySqlConnection(connectionstring))
+                {
+                    // mysql string parts
+                    const string mysqlString1 = "DELETE FROM Victoriam.T_ASSEMBLYDETAILPART WHERE Assemblydetailpart_id = ";
+                    string mysqlString = mysqlString1 + AssemblyPartId;
+                    using (MySqlCommand mysqlcommand = new MySqlCommand(mysqlString, connection))
+                    {
+                        try
+                        {
+                            connection.Open();
+                            mysqlcommand.ExecuteNonQuery();
+                        }
+                        catch
+                        {
+                            MessageBox.Show("Part could not be removed");
+                        }
+                    }                   
+
+                }
+            }
+
+            else if (dgvAssemblyParts.SelectedRows.Count > 1)
+            {
+                MessageBox.Show("More than one part selected. Please select one part");
+            }
+
+            TotalRefresh();
+
+        }
+        public void NewAssemblyDetailPart_Formclosing(object sender, EventArgs e)
+        {
+            AssemblyRefresh();
+            TotalRefresh();
+
+        }
+
+
+        private void btnRemoveOperation_Click(object sender, EventArgs e)
+        {
+            Int32 selectedrowindex = dgvAssemblyOps.SelectedCells[0].RowIndex;
+            DataGridViewRow SelectedRow = dgvAssemblyOps.Rows[selectedrowindex];
+            string AssemblyOpsId = Convert.ToString(SelectedRow.Cells["Assemblydetailoperation_id"].Value);
+
+            if (dgvAssemblyOps.SelectedRows.Count == 0)
+            {
+                MessageBox.Show("No operation selected");
+            }
+
+            else if (dgvAssemblyOps.SelectedRows.Count == 1)
+            {
+                // Create the connection.
+                string connectionstring = Properties.Settings.Default.connString;
+                using (MySqlConnection connection = new MySqlConnection(connectionstring))
+                {
+                    // mysql string parts
+                    const string mysqlString1 = "DELETE FROM Victoriam.T_ASSEMBLYDETAILOPERATION WHERE Assemblydetailoperation_id = ";
+                    string mysqlString = mysqlString1 + AssemblyOpsId;
+                    using (MySqlCommand mysqlcommand = new MySqlCommand(mysqlString, connection))
+                    {
+                        try
+                        {
+                            connection.Open();
+                            mysqlcommand.ExecuteNonQuery();
+                        }
+                        catch
+                        {
+                            MessageBox.Show("Operation could not be removed");
+                        }
+                    }
+
+                }
+            }
+
+            else if (dgvAssemblyOps.SelectedRows.Count > 1)
+            {
+                MessageBox.Show("More than one operation selected. Please select one operation");
+            }
+
+            TotalRefresh();
+        }    
         private void btnAddOperation_Click(object sender, EventArgs e)
         {
             string AssemblyId = txtAssemblyID.Text;
@@ -559,46 +582,17 @@ namespace MvE_SQL_test
             frm.Show();
 
         }
-
-        private void AssemblyManager_Load(object sender, EventArgs e)
-        {
-            AssemblyRefresh();
-
-        }
-
-        public void NewAssemblyDetailPart_Formclosing(object sender, EventArgs e)
-        {           
-            AssemblyRefresh();
-            TotalRefresh();
-
-        }
-
         public void NewAssemblyDetailOperation_Formclosing(object sender, EventArgs e)
         {
             AssemblyRefresh();
             TotalRefresh();
 
         }
-        public void LinkPart_Formclosing(object sender, EventArgs e)
-        {
-            AssemblyRefresh();
-            TotalRefresh();
 
-        }
 
-        private void btnUpdateAssembly_Click(object sender, EventArgs e)
-        {
-            Assemblyupdate();
 
-            TotalRefresh();
-            AssemblyRefresh();
 
-        }
 
-        private void btnCreatePart_Click(object sender, EventArgs e)
-        {
-
-        }
 
         private void btnLinkPart_Click(object sender, EventArgs e)
         {
@@ -611,5 +605,22 @@ namespace MvE_SQL_test
             frm.Show();
 
         }
+        public void LinkPart_Formclosing(object sender, EventArgs e)
+        {
+            AssemblyRefresh();
+            TotalRefresh();
+
+        }        
+
+
+
+
+
+        private void btnCreatePart_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        
     }
 }

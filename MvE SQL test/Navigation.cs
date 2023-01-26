@@ -21,6 +21,9 @@ namespace MvE_SQL_test
 
         private void Navigation_Load(object sender, EventArgs e)
         {
+            RefreshUnits();
+            RefreshMaterial();
+            RefreshSuppliers();
 
         }
 
@@ -96,6 +99,7 @@ namespace MvE_SQL_test
                         {
                             DataTable dt = new DataTable();
                             dt.Load(dr);
+                            dt.DefaultView.Sort = ("Name ASC");
                             this.dgvMaterials.DataSource = dt;
                             dr.Close();
                         }
@@ -150,6 +154,7 @@ namespace MvE_SQL_test
                         {
                             DataTable dt = new DataTable();
                             dt.Load(dr);
+                            dt.DefaultView.Sort = ("Name ASC");
                             this.dgvSuppliers.DataSource = dt;
                             dr.Close();
                         }
@@ -201,6 +206,7 @@ namespace MvE_SQL_test
                         {
                             DataTable dt = new DataTable();
                             dt.Load(dr);
+                            dt.DefaultView.Sort = ("uGroup ASC");
                             this.dgvUnits.DataSource = dt;
                             dr.Close();
                         }

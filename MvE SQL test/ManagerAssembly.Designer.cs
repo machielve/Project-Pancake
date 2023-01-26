@@ -33,7 +33,6 @@ namespace MvE_SQL_test
             this.btnLoadAssemblies = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
             this.btnFinnish = new System.Windows.Forms.Button();
-            this.btnSeeDetails = new System.Windows.Forms.Button();
             this.btnNewAssembly = new System.Windows.Forms.Button();
             this.dgvAssemblyParts = new System.Windows.Forms.DataGridView();
             this.label2 = new System.Windows.Forms.Label();
@@ -64,6 +63,7 @@ namespace MvE_SQL_test
             this.dgvAssemblies.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.AutoSizeToAllHeaders;
             this.dgvAssemblies.Size = new System.Drawing.Size(1310, 271);
             this.dgvAssemblies.TabIndex = 0;
+            this.dgvAssemblies.SelectionChanged += new System.EventHandler(this.dgvAssemblies_SelectionChanged);
             // 
             // btnLoadAssemblies
             // 
@@ -93,16 +93,6 @@ namespace MvE_SQL_test
             this.btnFinnish.Text = "Finnish";
             this.btnFinnish.UseVisualStyleBackColor = true;
             this.btnFinnish.Click += new System.EventHandler(this.btnFinnish_Click);
-            // 
-            // btnSeeDetails
-            // 
-            this.btnSeeDetails.Location = new System.Drawing.Point(11, 141);
-            this.btnSeeDetails.Name = "btnSeeDetails";
-            this.btnSeeDetails.Size = new System.Drawing.Size(133, 23);
-            this.btnSeeDetails.TabIndex = 8;
-            this.btnSeeDetails.Text = "See details";
-            this.btnSeeDetails.UseVisualStyleBackColor = true;
-            this.btnSeeDetails.Click += new System.EventHandler(this.btnSeeDetails_Click);
             // 
             // btnNewAssembly
             // 
@@ -252,7 +242,7 @@ namespace MvE_SQL_test
             this.btnLinkPart.UseVisualStyleBackColor = true;
             this.btnLinkPart.Click += new System.EventHandler(this.btnLinkPart_Click);
             // 
-            // AssemblyManager
+            // ManagerAssembly
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -272,12 +262,11 @@ namespace MvE_SQL_test
             this.Controls.Add(this.label2);
             this.Controls.Add(this.dgvAssemblyParts);
             this.Controls.Add(this.btnNewAssembly);
-            this.Controls.Add(this.btnSeeDetails);
             this.Controls.Add(this.btnFinnish);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.btnLoadAssemblies);
             this.Controls.Add(this.dgvAssemblies);
-            this.Name = "AssemblyManager";
+            this.Name = "ManagerAssembly";
             this.Text = " Assembly manager";
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             this.Load += new System.EventHandler(this.AssemblyManager_Load);
@@ -295,7 +284,6 @@ namespace MvE_SQL_test
         private System.Windows.Forms.Button btnLoadAssemblies;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Button btnFinnish;
-        private System.Windows.Forms.Button btnSeeDetails;
         private System.Windows.Forms.Button btnNewAssembly;
         private System.Windows.Forms.DataGridView dgvAssemblyParts;
         private System.Windows.Forms.Label label2;
