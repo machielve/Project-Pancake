@@ -123,6 +123,12 @@
     <Compile Include="LinkPart.Designer.cs">
       <DependentUpon>LinkPart.cs</DependentUpon>
     </Compile>
+    <Compile Include="ManagerJobOrders.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ManagerJobOrders.Designer.cs">
+      <DependentUpon>ManagerJobOrders.cs</DependentUpon>
+    </Compile>
     <Compile Include="ManagerStock.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -232,6 +238,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="LinkPart.resx">
       <DependentUpon>LinkPart.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ManagerJobOrders.resx">
+      <DependentUpon>ManagerJobOrders.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="ManagerStock.resx">
       <DependentUpon>ManagerStock.cs</DependentUpon>

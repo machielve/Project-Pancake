@@ -64,6 +64,12 @@ namespace MvE_SQL_test
             frm.Show();
 
         }
+        private void btnJobOrderManager_Click(object sender, EventArgs e)
+        {
+            Form frm = new ManagerJobOrders();
+            frm.Show();
+
+        }
 
 
 
@@ -279,5 +285,7 @@ namespace MvE_SQL_test
             RefreshOperatons();
 
         }
+
+        
     }
 }

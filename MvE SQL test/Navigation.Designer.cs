@@ -43,32 +43,32 @@ namespace MvE_SQL_test
             this.txtIPAdres = new System.Windows.Forms.TextBox();
             this.txtIPExtern = new System.Windows.Forms.TextBox();
             this.txtIPIntern = new System.Windows.Forms.TextBox();
-            this.tabSuppliers = new System.Windows.Forms.TabPage();
-            this.btnLoadSuppliers = new System.Windows.Forms.Button();
-            this.dgvSuppliers = new System.Windows.Forms.DataGridView();
-            this.btnNewSupplier = new System.Windows.Forms.Button();
-            this.tabMaterials = new System.Windows.Forms.TabPage();
-            this.btnLoadMaterials = new System.Windows.Forms.Button();
-            this.dgvMaterials = new System.Windows.Forms.DataGridView();
-            this.btnNewMaterial = new System.Windows.Forms.Button();
-            this.tabUnits = new System.Windows.Forms.TabPage();
-            this.dgvUnits = new System.Windows.Forms.DataGridView();
-            this.btnLoadUnits = new System.Windows.Forms.Button();
             this.tabOperations = new System.Windows.Forms.TabPage();
             this.dgvOperations = new System.Windows.Forms.DataGridView();
             this.btnLoadOperations = new System.Windows.Forms.Button();
             this.btnNewOperation = new System.Windows.Forms.Button();
+            this.tabMaterials = new System.Windows.Forms.TabPage();
+            this.btnLoadMaterials = new System.Windows.Forms.Button();
+            this.dgvMaterials = new System.Windows.Forms.DataGridView();
+            this.btnNewMaterial = new System.Windows.Forms.Button();
+            this.tabSuppliers = new System.Windows.Forms.TabPage();
+            this.btnLoadSuppliers = new System.Windows.Forms.Button();
+            this.dgvSuppliers = new System.Windows.Forms.DataGridView();
+            this.btnNewSupplier = new System.Windows.Forms.Button();
+            this.tabUnits = new System.Windows.Forms.TabPage();
+            this.dgvUnits = new System.Windows.Forms.DataGridView();
+            this.btnLoadUnits = new System.Windows.Forms.Button();
             this.btnJobOrderManager = new System.Windows.Forms.Button();
             this.Managers.SuspendLayout();
             this.GeneralSettings.SuspendLayout();
-            this.tabSuppliers.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dgvSuppliers)).BeginInit();
-            this.tabMaterials.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dgvMaterials)).BeginInit();
-            this.tabUnits.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dgvUnits)).BeginInit();
             this.tabOperations.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvOperations)).BeginInit();
+            this.tabMaterials.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvMaterials)).BeginInit();
+            this.tabSuppliers.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvSuppliers)).BeginInit();
+            this.tabUnits.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvUnits)).BeginInit();
             this.SuspendLayout();
             // 
             // label1
@@ -214,49 +214,49 @@ namespace MvE_SQL_test
             this.txtIPIntern.TabIndex = 0;
             this.txtIPIntern.Text = "192.168.2.61";
             // 
-            // tabSuppliers
+            // tabOperations
             // 
-            this.tabSuppliers.Controls.Add(this.btnLoadSuppliers);
-            this.tabSuppliers.Controls.Add(this.dgvSuppliers);
-            this.tabSuppliers.Controls.Add(this.btnNewSupplier);
-            this.tabSuppliers.Location = new System.Drawing.Point(4, 22);
-            this.tabSuppliers.Name = "tabSuppliers";
-            this.tabSuppliers.Padding = new System.Windows.Forms.Padding(3);
-            this.tabSuppliers.Size = new System.Drawing.Size(1302, 814);
-            this.tabSuppliers.TabIndex = 4;
-            this.tabSuppliers.Text = "Suppliers";
-            this.tabSuppliers.UseVisualStyleBackColor = true;
+            this.tabOperations.Controls.Add(this.dgvOperations);
+            this.tabOperations.Controls.Add(this.btnLoadOperations);
+            this.tabOperations.Controls.Add(this.btnNewOperation);
+            this.tabOperations.Location = new System.Drawing.Point(4, 22);
+            this.tabOperations.Name = "tabOperations";
+            this.tabOperations.Padding = new System.Windows.Forms.Padding(3);
+            this.tabOperations.Size = new System.Drawing.Size(1302, 814);
+            this.tabOperations.TabIndex = 7;
+            this.tabOperations.Text = "Operations";
+            this.tabOperations.UseVisualStyleBackColor = true;
             // 
-            // btnLoadSuppliers
+            // dgvOperations
             // 
-            this.btnLoadSuppliers.Location = new System.Drawing.Point(6, 5);
-            this.btnLoadSuppliers.Name = "btnLoadSuppliers";
-            this.btnLoadSuppliers.Size = new System.Drawing.Size(124, 23);
-            this.btnLoadSuppliers.TabIndex = 14;
-            this.btnLoadSuppliers.Text = "Load suppliers";
-            this.btnLoadSuppliers.UseVisualStyleBackColor = true;
-            this.btnLoadSuppliers.Click += new System.EventHandler(this.btnLoadSuppliers_Click);
+            this.dgvOperations.AllowUserToAddRows = false;
+            this.dgvOperations.AllowUserToDeleteRows = false;
+            this.dgvOperations.AllowUserToOrderColumns = true;
+            this.dgvOperations.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvOperations.Location = new System.Drawing.Point(136, 6);
+            this.dgvOperations.Name = "dgvOperations";
+            this.dgvOperations.Size = new System.Drawing.Size(1144, 696);
+            this.dgvOperations.TabIndex = 16;
             // 
-            // dgvSuppliers
+            // btnLoadOperations
             // 
-            this.dgvSuppliers.AllowUserToAddRows = false;
-            this.dgvSuppliers.AllowUserToDeleteRows = false;
-            this.dgvSuppliers.AllowUserToOrderColumns = true;
-            this.dgvSuppliers.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvSuppliers.Location = new System.Drawing.Point(137, 7);
-            this.dgvSuppliers.Name = "dgvSuppliers";
-            this.dgvSuppliers.Size = new System.Drawing.Size(1144, 696);
-            this.dgvSuppliers.TabIndex = 13;
+            this.btnLoadOperations.Location = new System.Drawing.Point(6, 6);
+            this.btnLoadOperations.Name = "btnLoadOperations";
+            this.btnLoadOperations.Size = new System.Drawing.Size(124, 23);
+            this.btnLoadOperations.TabIndex = 15;
+            this.btnLoadOperations.Text = "Load operations";
+            this.btnLoadOperations.UseVisualStyleBackColor = true;
+            this.btnLoadOperations.Click += new System.EventHandler(this.btnLoadOperations_Click);
             // 
-            // btnNewSupplier
+            // btnNewOperation
             // 
-            this.btnNewSupplier.Location = new System.Drawing.Point(6, 34);
-            this.btnNewSupplier.Name = "btnNewSupplier";
-            this.btnNewSupplier.Size = new System.Drawing.Size(124, 23);
-            this.btnNewSupplier.TabIndex = 12;
-            this.btnNewSupplier.Text = "New supplier";
-            this.btnNewSupplier.UseVisualStyleBackColor = true;
-            this.btnNewSupplier.Click += new System.EventHandler(this.btnNewSupplier_Click);
+            this.btnNewOperation.Location = new System.Drawing.Point(6, 35);
+            this.btnNewOperation.Name = "btnNewOperation";
+            this.btnNewOperation.Size = new System.Drawing.Size(124, 23);
+            this.btnNewOperation.TabIndex = 14;
+            this.btnNewOperation.Text = "New operation";
+            this.btnNewOperation.UseVisualStyleBackColor = true;
+            this.btnNewOperation.Click += new System.EventHandler(this.btnNewOperation_Click);
             // 
             // tabMaterials
             // 
@@ -302,6 +302,50 @@ namespace MvE_SQL_test
             this.btnNewMaterial.UseVisualStyleBackColor = true;
             this.btnNewMaterial.Click += new System.EventHandler(this.btnNewMaterial_Click);
             // 
+            // tabSuppliers
+            // 
+            this.tabSuppliers.Controls.Add(this.btnLoadSuppliers);
+            this.tabSuppliers.Controls.Add(this.dgvSuppliers);
+            this.tabSuppliers.Controls.Add(this.btnNewSupplier);
+            this.tabSuppliers.Location = new System.Drawing.Point(4, 22);
+            this.tabSuppliers.Name = "tabSuppliers";
+            this.tabSuppliers.Padding = new System.Windows.Forms.Padding(3);
+            this.tabSuppliers.Size = new System.Drawing.Size(1302, 814);
+            this.tabSuppliers.TabIndex = 4;
+            this.tabSuppliers.Text = "Suppliers";
+            this.tabSuppliers.UseVisualStyleBackColor = true;
+            // 
+            // btnLoadSuppliers
+            // 
+            this.btnLoadSuppliers.Location = new System.Drawing.Point(6, 5);
+            this.btnLoadSuppliers.Name = "btnLoadSuppliers";
+            this.btnLoadSuppliers.Size = new System.Drawing.Size(124, 23);
+            this.btnLoadSuppliers.TabIndex = 14;
+            this.btnLoadSuppliers.Text = "Load suppliers";
+            this.btnLoadSuppliers.UseVisualStyleBackColor = true;
+            this.btnLoadSuppliers.Click += new System.EventHandler(this.btnLoadSuppliers_Click);
+            // 
+            // dgvSuppliers
+            // 
+            this.dgvSuppliers.AllowUserToAddRows = false;
+            this.dgvSuppliers.AllowUserToDeleteRows = false;
+            this.dgvSuppliers.AllowUserToOrderColumns = true;
+            this.dgvSuppliers.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvSuppliers.Location = new System.Drawing.Point(137, 7);
+            this.dgvSuppliers.Name = "dgvSuppliers";
+            this.dgvSuppliers.Size = new System.Drawing.Size(1144, 696);
+            this.dgvSuppliers.TabIndex = 13;
+            // 
+            // btnNewSupplier
+            // 
+            this.btnNewSupplier.Location = new System.Drawing.Point(6, 34);
+            this.btnNewSupplier.Name = "btnNewSupplier";
+            this.btnNewSupplier.Size = new System.Drawing.Size(124, 23);
+            this.btnNewSupplier.TabIndex = 12;
+            this.btnNewSupplier.Text = "New supplier";
+            this.btnNewSupplier.UseVisualStyleBackColor = true;
+            this.btnNewSupplier.Click += new System.EventHandler(this.btnNewSupplier_Click);
+            // 
             // tabUnits
             // 
             this.tabUnits.Controls.Add(this.dgvUnits);
@@ -336,50 +380,6 @@ namespace MvE_SQL_test
             this.btnLoadUnits.UseVisualStyleBackColor = true;
             this.btnLoadUnits.Click += new System.EventHandler(this.btnLoadUnits_Click);
             // 
-            // tabOperations
-            // 
-            this.tabOperations.Controls.Add(this.dgvOperations);
-            this.tabOperations.Controls.Add(this.btnLoadOperations);
-            this.tabOperations.Controls.Add(this.btnNewOperation);
-            this.tabOperations.Location = new System.Drawing.Point(4, 22);
-            this.tabOperations.Name = "tabOperations";
-            this.tabOperations.Padding = new System.Windows.Forms.Padding(3);
-            this.tabOperations.Size = new System.Drawing.Size(1302, 814);
-            this.tabOperations.TabIndex = 7;
-            this.tabOperations.Text = "Operations";
-            this.tabOperations.UseVisualStyleBackColor = true;
-            // 
-            // dgvOperations
-            // 
-            this.dgvOperations.AllowUserToAddRows = false;
-            this.dgvOperations.AllowUserToDeleteRows = false;
-            this.dgvOperations.AllowUserToOrderColumns = true;
-            this.dgvOperations.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvOperations.Location = new System.Drawing.Point(136, 6);
-            this.dgvOperations.Name = "dgvOperations";
-            this.dgvOperations.Size = new System.Drawing.Size(1144, 696);
-            this.dgvOperations.TabIndex = 16;
-            // 
-            // btnLoadOperations
-            // 
-            this.btnLoadOperations.Location = new System.Drawing.Point(6, 6);
-            this.btnLoadOperations.Name = "btnLoadOperations";
-            this.btnLoadOperations.Size = new System.Drawing.Size(124, 23);
-            this.btnLoadOperations.TabIndex = 15;
-            this.btnLoadOperations.Text = "Load operations";
-            this.btnLoadOperations.UseVisualStyleBackColor = true;
-            this.btnLoadOperations.Click += new System.EventHandler(this.btnLoadOperations_Click);
-            // 
-            // btnNewOperation
-            // 
-            this.btnNewOperation.Location = new System.Drawing.Point(6, 35);
-            this.btnNewOperation.Name = "btnNewOperation";
-            this.btnNewOperation.Size = new System.Drawing.Size(124, 23);
-            this.btnNewOperation.TabIndex = 14;
-            this.btnNewOperation.Text = "New operation";
-            this.btnNewOperation.UseVisualStyleBackColor = true;
-            this.btnNewOperation.Click += new System.EventHandler(this.btnNewOperation_Click);
-            // 
             // btnJobOrderManager
             // 
             this.btnJobOrderManager.Location = new System.Drawing.Point(15, 66);
@@ -388,6 +388,7 @@ namespace MvE_SQL_test
             this.btnJobOrderManager.TabIndex = 11;
             this.btnJobOrderManager.Text = "Job order manager";
             this.btnJobOrderManager.UseVisualStyleBackColor = true;
+            this.btnJobOrderManager.Click += new System.EventHandler(this.btnJobOrderManager_Click);
             // 
             // Navigation
             // 
@@ -409,14 +410,14 @@ namespace MvE_SQL_test
             this.Managers.ResumeLayout(false);
             this.GeneralSettings.ResumeLayout(false);
             this.GeneralSettings.PerformLayout();
-            this.tabSuppliers.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.dgvSuppliers)).EndInit();
-            this.tabMaterials.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.dgvMaterials)).EndInit();
-            this.tabUnits.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.dgvUnits)).EndInit();
             this.tabOperations.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dgvOperations)).EndInit();
+            this.tabMaterials.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.dgvMaterials)).EndInit();
+            this.tabSuppliers.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.dgvSuppliers)).EndInit();
+            this.tabUnits.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.dgvUnits)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
