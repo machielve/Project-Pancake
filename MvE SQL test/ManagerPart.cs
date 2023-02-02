@@ -50,6 +50,11 @@ namespace MvE_SQL_test
                     {
                         MessageBox.Show("Parts could not be loaded");
                     }
+                    finally
+                    {
+                        connection.Close();
+                        dgvParts.AutoResizeColumns();
+                    }
                 }
             }
 
@@ -103,6 +108,7 @@ namespace MvE_SQL_test
                         finally
                         {
                             connection.Close();
+                            dgvSuppliers.AutoResizeColumns();
                         }
                     }
 

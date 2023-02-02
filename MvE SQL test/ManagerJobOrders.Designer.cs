@@ -64,6 +64,7 @@ namespace MvE_SQL_test
             this.btnLoadJobOrders.TabIndex = 10;
             this.btnLoadJobOrders.Text = "Load job orders";
             this.btnLoadJobOrders.UseVisualStyleBackColor = true;
+            this.btnLoadJobOrders.Click += new System.EventHandler(this.btnLoadJobOrders_Click);
             // 
             // ManagerJobOrders
             // 
@@ -76,6 +77,7 @@ namespace MvE_SQL_test
             this.Name = "ManagerJobOrders";
             this.Text = "Job order manager";
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
+            this.Load += new System.EventHandler(this.ManagerJobOrders_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dgvJobOrders)).EndInit();
             this.ResumeLayout(false);
 
