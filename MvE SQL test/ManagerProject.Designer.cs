@@ -56,6 +56,7 @@ namespace MvE_SQL_test
             // 
             this.dgvProject.AllowUserToAddRows = false;
             this.dgvProject.AllowUserToDeleteRows = false;
+            this.dgvProject.BackgroundColor = System.Drawing.SystemColors.Control;
             this.dgvProject.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvProject.Location = new System.Drawing.Point(165, 38);
             this.dgvProject.Name = "dgvProject";
@@ -107,6 +108,7 @@ namespace MvE_SQL_test
             // 
             this.dgvJobOrders.AllowUserToAddRows = false;
             this.dgvJobOrders.AllowUserToDeleteRows = false;
+            this.dgvJobOrders.BackgroundColor = System.Drawing.SystemColors.Control;
             this.dgvJobOrders.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvJobOrders.Location = new System.Drawing.Point(165, 292);
             this.dgvJobOrders.Name = "dgvJobOrders";
@@ -145,6 +147,7 @@ namespace MvE_SQL_test
             // 
             this.dgvJobOrderParts.AllowUserToAddRows = false;
             this.dgvJobOrderParts.AllowUserToDeleteRows = false;
+            this.dgvJobOrderParts.BackgroundColor = System.Drawing.SystemColors.Control;
             this.dgvJobOrderParts.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvJobOrderParts.Location = new System.Drawing.Point(165, 466);
             this.dgvJobOrderParts.Name = "dgvJobOrderParts";
@@ -165,6 +168,7 @@ namespace MvE_SQL_test
             // 
             this.dgvJobOrderOperations.AllowUserToAddRows = false;
             this.dgvJobOrderOperations.AllowUserToDeleteRows = false;
+            this.dgvJobOrderOperations.BackgroundColor = System.Drawing.SystemColors.Control;
             this.dgvJobOrderOperations.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvJobOrderOperations.Location = new System.Drawing.Point(165, 608);
             this.dgvJobOrderOperations.Name = "dgvJobOrderOperations";
@@ -217,7 +221,7 @@ namespace MvE_SQL_test
             this.txtProjectID.Size = new System.Drawing.Size(100, 20);
             this.txtProjectID.TabIndex = 16;
             // 
-            // ProjectManager
+            // ManagerProject
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -239,7 +243,7 @@ namespace MvE_SQL_test
             this.Controls.Add(this.btnFinnish);
             this.Controls.Add(this.btnNewProject);
             this.Controls.Add(this.dgvProject);
-            this.Name = "ProjectManager";
+            this.Name = "ManagerProject";
             this.Text = "Project manager";
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             ((System.ComponentModel.ISupportInitialize)(this.dgvProject)).EndInit();

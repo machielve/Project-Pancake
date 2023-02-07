@@ -47,6 +47,7 @@ namespace MvE_SQL_test
             // 
             this.dgvParts.AllowUserToAddRows = false;
             this.dgvParts.AllowUserToDeleteRows = false;
+            this.dgvParts.BackgroundColor = System.Drawing.SystemColors.Control;
             this.dgvParts.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvParts.Location = new System.Drawing.Point(165, 38);
             this.dgvParts.MaximumSize = new System.Drawing.Size(1500, 490);
@@ -99,6 +100,7 @@ namespace MvE_SQL_test
             // 
             this.dgvSuppliers.AllowUserToAddRows = false;
             this.dgvSuppliers.AllowUserToDeleteRows = false;
+            this.dgvSuppliers.BackgroundColor = System.Drawing.SystemColors.Control;
             this.dgvSuppliers.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvSuppliers.Location = new System.Drawing.Point(165, 587);
             this.dgvSuppliers.Name = "dgvSuppliers";

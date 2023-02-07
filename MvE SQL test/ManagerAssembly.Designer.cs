@@ -57,6 +57,7 @@ namespace MvE_SQL_test
             // 
             this.dgvAssemblies.AllowUserToAddRows = false;
             this.dgvAssemblies.AllowUserToDeleteRows = false;
+            this.dgvAssemblies.BackgroundColor = System.Drawing.SystemColors.Control;
             this.dgvAssemblies.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvAssemblies.Location = new System.Drawing.Point(165, 38);
             this.dgvAssemblies.Name = "dgvAssemblies";
@@ -108,6 +109,7 @@ namespace MvE_SQL_test
             // 
             this.dgvAssemblyParts.AllowUserToAddRows = false;
             this.dgvAssemblyParts.AllowUserToDeleteRows = false;
+            this.dgvAssemblyParts.BackgroundColor = System.Drawing.SystemColors.Control;
             this.dgvAssemblyParts.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvAssemblyParts.Location = new System.Drawing.Point(165, 385);
             this.dgvAssemblyParts.Name = "dgvAssemblyParts";
@@ -128,6 +130,7 @@ namespace MvE_SQL_test
             // 
             this.dgvAssemblyOps.AllowUserToAddRows = false;
             this.dgvAssemblyOps.AllowUserToDeleteRows = false;
+            this.dgvAssemblyOps.BackgroundColor = System.Drawing.SystemColors.Control;
             this.dgvAssemblyOps.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvAssemblyOps.Location = new System.Drawing.Point(165, 620);
             this.dgvAssemblyOps.Name = "dgvAssemblyOps";
@@ -246,6 +249,7 @@ namespace MvE_SQL_test
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackColor = System.Drawing.SystemColors.Control;
             this.ClientSize = new System.Drawing.Size(1484, 861);
             this.Controls.Add(this.btnLinkPart);
             this.Controls.Add(this.btnUpdateAssembly);

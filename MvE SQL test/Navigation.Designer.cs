@@ -232,6 +232,7 @@ namespace MvE_SQL_test
             this.dgvOperations.AllowUserToAddRows = false;
             this.dgvOperations.AllowUserToDeleteRows = false;
             this.dgvOperations.AllowUserToOrderColumns = true;
+            this.dgvOperations.BackgroundColor = System.Drawing.SystemColors.Control;
             this.dgvOperations.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvOperations.Location = new System.Drawing.Point(136, 6);
             this.dgvOperations.Name = "dgvOperations";
@@ -286,6 +287,7 @@ namespace MvE_SQL_test
             this.dgvMaterials.AllowUserToAddRows = false;
             this.dgvMaterials.AllowUserToDeleteRows = false;
             this.dgvMaterials.AllowUserToOrderColumns = true;
+            this.dgvMaterials.BackgroundColor = System.Drawing.SystemColors.Control;
             this.dgvMaterials.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvMaterials.Location = new System.Drawing.Point(136, 6);
             this.dgvMaterials.Name = "dgvMaterials";
@@ -330,6 +332,7 @@ namespace MvE_SQL_test
             this.dgvSuppliers.AllowUserToAddRows = false;
             this.dgvSuppliers.AllowUserToDeleteRows = false;
             this.dgvSuppliers.AllowUserToOrderColumns = true;
+            this.dgvSuppliers.BackgroundColor = System.Drawing.SystemColors.Control;
             this.dgvSuppliers.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvSuppliers.Location = new System.Drawing.Point(137, 7);
             this.dgvSuppliers.Name = "dgvSuppliers";
@@ -364,6 +367,7 @@ namespace MvE_SQL_test
             this.dgvUnits.AllowUserToAddRows = false;
             this.dgvUnits.AllowUserToDeleteRows = false;
             this.dgvUnits.AllowUserToOrderColumns = true;
+            this.dgvUnits.BackgroundColor = System.Drawing.SystemColors.Control;
             this.dgvUnits.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvUnits.Location = new System.Drawing.Point(136, 6);
             this.dgvUnits.Name = "dgvUnits";
@@ -404,7 +408,7 @@ namespace MvE_SQL_test
             this.Controls.Add(this.btnExit);
             this.Controls.Add(this.label1);
             this.Name = "Navigation";
-            this.Text = "Welcome";
+            this.Text = "Welcome to Zebra ERP";
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             this.Load += new System.EventHandler(this.Navigation_Load);
             this.Managers.ResumeLayout(false);

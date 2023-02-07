@@ -48,6 +48,11 @@ namespace MvE_SQL_test
                     {
                         MessageBox.Show("Assemblies could not be loaded");
                     }
+                    finally
+                    {
+                        connection.Close();
+                        dgvAssemblies.AutoResizeColumns();
+                    }
                 }
             }
 
