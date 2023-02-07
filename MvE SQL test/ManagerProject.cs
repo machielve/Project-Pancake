@@ -189,7 +189,6 @@ namespace MvE_SQL_test
         private void txtSeeContent_Click(object sender, EventArgs e)
         {
             LoadContent();
-
         }
 
         public void txtAddPart_Click(object sender, EventArgs e)

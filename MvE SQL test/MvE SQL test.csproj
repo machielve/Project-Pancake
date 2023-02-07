@@ -257,6 +257,9 @@
     <EmbeddedResource Include="NewMaterial.resx">
       <DependentUpon>NewMaterial.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="NewOperation.resx">
+      <DependentUpon>NewOperation.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="NewPart.resx">
       <DependentUpon>NewPart.cs</DependentUpon>
     </EmbeddedResource>
