@@ -99,6 +99,12 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="DetailPart.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="DetailPart.Designer.cs">
+      <DependentUpon>DetailPart.cs</DependentUpon>
+    </Compile>
     <Compile Include="ManagerAssembly.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -233,6 +239,9 @@
     <Compile Include="UpdatePart.Designer.cs">
       <DependentUpon>UpdatePart.cs</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="DetailPart.resx">
+      <DependentUpon>DetailPart.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="ManagerAssembly.resx">
       <DependentUpon>ManagerAssembly.cs</DependentUpon>
     </EmbeddedResource>
