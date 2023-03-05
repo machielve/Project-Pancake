@@ -117,12 +117,6 @@
     <Compile Include="CreatePart.Designer.cs">
       <DependentUpon>CreatePart.cs</DependentUpon>
     </Compile>
-    <Compile Include="DetailsPart.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="DetailsPart.Designer.cs">
-      <DependentUpon>DetailsPart.cs</DependentUpon>
-    </Compile>
     <Compile Include="LinkPart.cs">
       <SubType>Form</SubType>
     </Compile>
