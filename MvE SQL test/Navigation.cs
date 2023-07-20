@@ -28,6 +28,14 @@ namespace MvE_SQL_test
 
         }
 
+        private void btnConnectSQL_Click(object sender, EventArgs e)
+        {
+            
+
+
+        }
+
+
 
         private void btnExit_Click_1(object sender, EventArgs e)
         {
@@ -36,8 +44,24 @@ namespace MvE_SQL_test
         }
 
 
+        private void rdbIPAdres1_CheckedChanged(object sender, EventArgs e)
+        {
+            if (rdbIPAdres1.Checked) //If checked == true
+            {
+                txtIPAdres.Text = txtIPIntern.Text;
+                //example
+            }
 
-        
+        }
+        private void rdbIPAdres2_CheckedChanged(object sender, EventArgs e)
+        {
+            if (rdbIPAdres2.Checked) //If checked == true
+            {
+                txtIPAdres.Text = txtIPExtern.Text;
+                //example
+            }
+        }
+
 
         private void btnProjectManager_Click(object sender, EventArgs e)
         {   

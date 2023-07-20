@@ -153,11 +153,34 @@ namespace MvE_SQL_test
                     }
                 }
 
+                // mysql string traceabiliy
+                const string mysqlString5 = "SELECT traceability_id, Description FROM Victoriam.T_TRACEABILITY";
+                using (MySqlCommand mysqlcommand = new MySqlCommand(mysqlString5, connection))
+                {
+                    try
+                    {
+                        connection.Open();
+                        using (MySqlDataReader dr = mysqlcommand.ExecuteReader())
+                        {
+                            DataTable dt = new DataTable();
+                            dt.Load(dr);
+                            cmbTrace.DataSource = dt;
+                            cmbTrace.DisplayMember = "Description";
+                            cmbTrace.ValueMember = "traceability_id";
 
-
-
-
-
+                            dr.Close();
+                        }
+                        connection.Close();
+                    }
+                    catch
+                    {
+                        MessageBox.Show("traceability could not be loaded");
+                    }
+                    finally
+                    {
+                        connection.Close();
+                    }
+                }
 
 
             }
@@ -177,7 +200,7 @@ namespace MvE_SQL_test
             int PartWeightU = Convert.ToInt32(cmbWeightUnit.SelectedValue);
             string PartDNumber = txtDrawingNumber.Text;
             int PartDRev = Convert.ToInt32(txtDrawingRevision.Text);
-            string PartTrace = cmbTrace.SelectedItem.ToString();
+            int PartTrace = Convert.ToInt32(cmbTrace.SelectedValue);
 
             // Create the connection.
             string connectionstring = Properties.Settings.Default.connString;
