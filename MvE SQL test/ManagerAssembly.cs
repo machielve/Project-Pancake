@@ -27,7 +27,7 @@ namespace MvE_SQL_test
         {
             
             // Create the connection.
-            string connectionstring = Properties.Settings.Default.connString;
+            string connectionstring = ConnString;
             using (MySqlConnection connection = new MySqlConnection(connectionstring))
             {
                 // mysql string
@@ -72,7 +72,7 @@ namespace MvE_SQL_test
             else 
             {
                 // Create the connection.
-                string connectionstring = Properties.Settings.Default.connString;
+                string connectionstring = ConnString;
                 using (MySqlConnection connection = new MySqlConnection(connectionstring))
                 {
                     // mysql string parts
@@ -139,7 +139,7 @@ namespace MvE_SQL_test
             else
             {
                 // Create the connection.
-                string connectionstring = Properties.Settings.Default.connString;
+                string connectionstring = ConnString;
                 using (MySqlConnection connection = new MySqlConnection(connectionstring))
                 {
                     decimal TotalCostprice = 0;
@@ -292,8 +292,6 @@ namespace MvE_SQL_test
 
         }
 
-
-
         private void btnFinnish_Click(object sender, EventArgs e)
         {
             this.Close();
@@ -308,8 +306,9 @@ namespace MvE_SQL_test
         }
         private void btnNewAssembly_Click(object sender, EventArgs e)
         {
+            string connectionstring = ConnString; 
             Form frm = new NewAssembly();
-            
+            NewAssembly.ConnString = connectionstring;
             frm.Show();
         }              
         public void dgvAssemblies_SelectionChanged(object sender, EventArgs e)
@@ -335,7 +334,7 @@ namespace MvE_SQL_test
             else 
             {
                 // Create the connection.
-                string connectionstring = Properties.Settings.Default.connString;
+                string connectionstring = ConnString;
                 using (MySqlConnection connection = new MySqlConnection(connectionstring))
                 {
                     // mysql string assembly
@@ -403,7 +402,7 @@ namespace MvE_SQL_test
             else
             {
                 // Create the connection.
-                string connectionstring = Properties.Settings.Default.connString;
+                string connectionstring = ConnString;
                 using (MySqlConnection connection = new MySqlConnection(connectionstring))
                 {
                     // mysql string assembly
@@ -475,10 +474,10 @@ namespace MvE_SQL_test
         public void btnAddPart_Click(object sender, EventArgs e)
         {
             string AssemblyId = txtAssemblyID.Text;
-
             AssemblyID = AssemblyId;
-
+            string connectionstring = ConnString; 
             Form frm = new NewAssemblyDetailPart();
+            NewAssemblyDetailPart.ConnString = connectionstring;
             frm.FormClosing += new FormClosingEventHandler(this.NewAssemblyDetailPart_Formclosing);
             frm.Show();
 
@@ -497,7 +496,7 @@ namespace MvE_SQL_test
             else if (dgvAssemblyParts.SelectedRows.Count == 1)
             {
                 // Create the connection.
-                string connectionstring = Properties.Settings.Default.connString;
+                string connectionstring = ConnString;
                 using (MySqlConnection connection = new MySqlConnection(connectionstring))
                 {
                     // mysql string parts
@@ -549,7 +548,7 @@ namespace MvE_SQL_test
             else if (dgvAssemblyOps.SelectedRows.Count == 1)
             {
                 // Create the connection.
-                string connectionstring = Properties.Settings.Default.connString;
+                string connectionstring = ConnString;
                 using (MySqlConnection connection = new MySqlConnection(connectionstring))
                 {
                     // mysql string parts
@@ -581,10 +580,10 @@ namespace MvE_SQL_test
         private void btnAddOperation_Click(object sender, EventArgs e)
         {
             string AssemblyId = txtAssemblyID.Text;
-
             AssemblyID = AssemblyId;
-
+            string connectionstring = ConnString; 
             Form frm = new NewAssemblyDetailOps();
+            NewAssemblyDetailOps.ConnString = connectionstring;
             frm.FormClosing += new FormClosingEventHandler(this.NewAssemblyDetailOperation_Formclosing);
             frm.Show();
 
@@ -604,10 +603,10 @@ namespace MvE_SQL_test
         private void btnLinkPart_Click(object sender, EventArgs e)
         {
             string AssemblyId = txtAssemblyID.Text;
-
             AssemblyID = AssemblyId;
-
+            string connectionstring = ConnString; 
             Form frm = new LinkPart();
+            LinkPart.ConnString = connectionstring;
             frm.FormClosing += new FormClosingEventHandler(this.LinkPart_Formclosing);
             frm.Show();
 

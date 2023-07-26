@@ -14,10 +14,19 @@ namespace MvE_SQL_test
 {
     public partial class NewPartSupplier : Form
     {
+        
+
+        public NewPartSupplier()
+        {
+            InitializeComponent();
+        }
+
+        public static string ConnString { get; set; }
+
         public void RefreshSuppliers()
         {
             // Create the connection.
-            string connectionstring = Properties.Settings.Default.connString;
+            string connectionstring = ConnString;
             using (MySqlConnection connection = new MySqlConnection(connectionstring))
             {
                 // mysql string types
@@ -47,11 +56,6 @@ namespace MvE_SQL_test
             }
         }
 
-        public NewPartSupplier()
-        {
-            InitializeComponent();
-        }
-
         private void btnFinnish_Click(object sender, EventArgs e)
         {
             this.Close();
@@ -76,7 +80,7 @@ namespace MvE_SQL_test
             int SupplierID = Convert.ToInt32(cmbSupplier.SelectedValue.ToString());
 
             // Create the connection.
-            string connectionstring = Properties.Settings.Default.connString;
+            string connectionstring = ConnString;
             using (MySqlConnection connection = new MySqlConnection(connectionstring))
             {
 
@@ -126,7 +130,9 @@ namespace MvE_SQL_test
 
         private void btnCreateSupplier_Click(object sender, EventArgs e)
         {
+            string connectionstring = ConnString; 
             Form frm = new NewSupplier();
+            NewSupplier.ConnString = connectionstring;
             frm.FormClosing += new FormClosingEventHandler(this.NewSupplier_Formclosing);
             frm.Show();
         }

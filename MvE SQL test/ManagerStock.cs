@@ -24,7 +24,7 @@ namespace MvE_SQL_test
         public void RefreshPartIN()
         {
             // Create the connection.
-            string connectionstring = Properties.Settings.Default.connString;
+            string connectionstring = ConnString;
             using (MySqlConnection connection = new MySqlConnection(connectionstring))
             {
                 // mysql string StockIn
@@ -58,7 +58,7 @@ namespace MvE_SQL_test
         public void RefreshPartOUT()
         {
             // Create the connection.
-            string connectionstring = Properties.Settings.Default.connString;
+            string connectionstring = ConnString;
             using (MySqlConnection connection = new MySqlConnection(connectionstring))
             {
                 // mysql string Stockout
@@ -93,7 +93,7 @@ namespace MvE_SQL_test
         public void RefreshStock()
         {
             // Create the connection.
-            string connectionstring = Properties.Settings.Default.connString;
+            string connectionstring = ConnString;
             using (MySqlConnection connection = new MySqlConnection(connectionstring))
             {
                 // mysql string Stock
@@ -144,7 +144,9 @@ namespace MvE_SQL_test
 
         private void btnStockIn_Click(object sender, EventArgs e)
         {
+            string connectionstring = ConnString; 
             Form frm = new NewPartIn();
+            NewPartIn.ConnString = connectionstring;
             frm.FormClosing += new FormClosingEventHandler(this.NewPartIn_Formclosing);
             frm.Show();
 

@@ -24,6 +24,8 @@ namespace MvE_SQL_test
             this.Close();
         }
 
+        public static string ConnString { get; set; }
+
         private void NewProjectDetailPart_Load(object sender, EventArgs e)
         {
 

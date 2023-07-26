@@ -20,6 +20,9 @@ namespace MvE_SQL_test
         {
             InitializeComponent();
         }
+
+        public static string ConnString { get; set; }
+
         private bool IsProjectNameValid()
         {
             if (txtProjectName.Text == "")
@@ -43,7 +46,7 @@ namespace MvE_SQL_test
             if (IsProjectNameValid())
             {
                 //Create connection
-                string connectionstring = Properties.Settings.Default.connString;
+                string connectionstring = ConnString;
                 using (MySqlConnection connection = new MySqlConnection(connectionstring))
                 {
                     using (MySqlCommand msqlcommand = new MySqlCommand("uspNewProject", connection))
@@ -82,9 +85,6 @@ namespace MvE_SQL_test
                 }
             }
         }
-
-
-
 
     }
 }

@@ -29,7 +29,7 @@ namespace MvE_SQL_test
         public void RefreshJobOrders()
         {
             // Create the connection.
-            string connectionstring = Properties.Settings.Default.connString;
+            string connectionstring = ConnString;
             using (MySqlConnection connection = new MySqlConnection(connectionstring))
             {
                 // mysql string

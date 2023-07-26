@@ -27,7 +27,7 @@ namespace MvE_SQL_test
         public void PartRefresh()
         {
             // Create the connection.
-            string connectionstring = Properties.Settings.Default.connString;
+            string connectionstring = ConnString;
             using (MySqlConnection connection = new MySqlConnection(connectionstring))
             {
                 // mysql string
@@ -75,7 +75,7 @@ namespace MvE_SQL_test
             else 
             {
                 // Create the connection.
-                string connectionstring = Properties.Settings.Default.connString;
+                string connectionstring = ConnString;
                 using (MySqlConnection connection = new MySqlConnection(connectionstring))
                 {
                     // mysql string parts
@@ -134,7 +134,9 @@ namespace MvE_SQL_test
         }
         private void btnNewPart_Click(object sender, EventArgs e)
         {
+            string connectionstring = ConnString; 
             Form frm = new NewPart();
+            NewPart.ConnString = connectionstring;
             frm.FormClosing += new FormClosingEventHandler(this.NewPart_Formclosing);
             frm.Show();
         }
@@ -167,7 +169,9 @@ namespace MvE_SQL_test
             string PartId = Convert.ToString(SelectedRow.Cells["Part_id"].Value);
             PartID = PartId;
 
+            string connectionstring = ConnString; 
             Form frm = new NewPartSupplier();
+            NewPartSupplier.ConnString = connectionstring;
             frm.FormClosing += new FormClosingEventHandler(this.NewPartSUpplier_Formclosing);
             frm.Show();
 
@@ -191,7 +195,7 @@ namespace MvE_SQL_test
             else if (dgvSuppliers.SelectedRows.Count == 1)
             {
                 // Create the connection.
-                string connectionstring = Properties.Settings.Default.connString;
+                string connectionstring = ConnString;
                 using (MySqlConnection connection = new MySqlConnection(connectionstring))
                 {
                     // mysql string parts

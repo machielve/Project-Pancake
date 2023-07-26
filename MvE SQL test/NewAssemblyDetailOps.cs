@@ -19,6 +19,8 @@ namespace MvE_SQL_test
             InitializeComponent();
         }
 
+        public static string ConnString { get; set; }
+
 
         private void btnFinnish_Click(object sender, EventArgs e)
         {
@@ -29,7 +31,7 @@ namespace MvE_SQL_test
         {
             txtAssemblyID.Text = ManagerAssembly.AssemblyID;
             // Create the connection.
-            string connectionstring = Properties.Settings.Default.connString;
+            string connectionstring = ConnString;
             using (MySqlConnection connection = new MySqlConnection(connectionstring))
             {
                 // mysql string parts
@@ -67,7 +69,7 @@ namespace MvE_SQL_test
             string Opsname = cmbOps.Text;
 
             // Create the connection.
-            string connectionstring = Properties.Settings.Default.connString;
+            string connectionstring = ConnString;
             using (MySqlConnection connection = new MySqlConnection(connectionstring))
             {
                 decimal cost=0;

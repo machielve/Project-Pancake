@@ -100,17 +100,6 @@ namespace MvE_SQL_test
             }
         }
 
-        private void btnFinnish_Click(object sender, EventArgs e)
-        {
-            this.Close();
-        }
-
-        private void btnNewProject_Click(object sender, EventArgs e)
-        {
-            Form frm = new NewProject();
-            frm.Show();
-        }
-
         private void btnLoadProjects_Click(object sender, EventArgs e)
         {
             // Create the connection.
@@ -124,7 +113,7 @@ namespace MvE_SQL_test
                 {
                     try
                     {
-                        connection.Open();                        
+                        connection.Open();
 
                         using (MySqlDataReader dr = mysqlcommand.ExecuteReader())
                         {
@@ -141,6 +130,24 @@ namespace MvE_SQL_test
                 }
             }
         }
+
+        private void btnFinnish_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
+
+
+
+
+        private void btnNewProject_Click(object sender, EventArgs e)
+        {
+            string connectionstring = ConnString; 
+            Form frm = new NewProject();
+            NewProject.ConnString = connectionstring;
+            frm.Show();
+        }
+
+        
 
         private void btnSeeDetails_Click(object sender, EventArgs e)
         {
@@ -193,11 +200,15 @@ namespace MvE_SQL_test
             LoadContent();
         }
 
+
+
+
         public void txtAddPart_Click(object sender, EventArgs e)
         {
             string DetailID = txtDetailID.Text;
-
+            string connectionstring = ConnString; 
             Form frm = new NewJobOrderPart();
+            NewJobOrderPart.ConnString = connectionstring;
             frm.FormClosing += new FormClosingEventHandler(this.NewProjectDetailPart_Formclosing);
             frm.Show();
         }

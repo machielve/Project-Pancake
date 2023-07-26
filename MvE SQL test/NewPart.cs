@@ -25,6 +25,8 @@ namespace MvE_SQL_test
             this.parsedUnitID = 0;
         }
 
+        public static string ConnString { get; set; }
+
         public NewPart()
         {
             InitializeComponent();
@@ -38,7 +40,7 @@ namespace MvE_SQL_test
         private void NewPart_Load(object sender, EventArgs e)
         {
             // Create the connection.
-            string connectionstring = Properties.Settings.Default.connString;
+            string connectionstring = ConnString;
             using (MySqlConnection connection = new MySqlConnection(connectionstring))
             {
                 // mysql string types
@@ -203,7 +205,7 @@ namespace MvE_SQL_test
             int PartTrace = Convert.ToInt32(cmbTrace.SelectedValue);
 
             // Create the connection.
-            string connectionstring = Properties.Settings.Default.connString;
+            string connectionstring = ConnString;
             using (MySqlConnection connection = new MySqlConnection(connectionstring))
             {
                 using (MySqlCommand msqlcommand = new MySqlCommand("uspNewPart", connection))

@@ -20,11 +20,13 @@ namespace MvE_SQL_test
             InitializeComponent();
         }
 
+        public static string ConnString { get; set; }
+
         private void NewAssemblyDetailPart_Load(object sender, EventArgs e)
         {
             txtAssemblyID.Text = ManagerAssembly.AssemblyID;
             // Create the connection.
-            string connectionstring = Properties.Settings.Default.connString;
+            string connectionstring = ConnString;
             using (MySqlConnection connection = new MySqlConnection(connectionstring))
             {
                 // mysql string parts
@@ -59,7 +61,7 @@ namespace MvE_SQL_test
         {
             string PartID = cmbPart.ValueMember;
             // Create the connection.
-            string connectionstring = Properties.Settings.Default.connString;
+            string connectionstring = ConnString;
             using (MySqlConnection connection = new MySqlConnection(connectionstring))
             {
                 // mysql string drawing
@@ -109,7 +111,7 @@ namespace MvE_SQL_test
             int PartDRev = Convert.ToInt32(txtDrawingRevision.Value);
 
             // Create the connection.
-            string connectionstring = Properties.Settings.Default.connString;
+            string connectionstring = ConnString;
             using (MySqlConnection connection = new MySqlConnection(connectionstring))
             {
                 decimal cost = 0;
