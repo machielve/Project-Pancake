@@ -21,9 +21,9 @@ namespace MvE_SQL_test
         }
 
         public static string PartID = "";
-
         public static string ConnString { get; set; }
 
+        
         public void PartRefresh()
         {
             // Create the connection.
@@ -54,14 +54,13 @@ namespace MvE_SQL_test
                     }
                     finally
                     {
-                        connection.Close();
+                        // connection.Close();
                         dgvParts.AutoResizeColumns();
                     }
                 }
             }
 
-        }
-        
+        }        
         public void SupplierRefresh()
         {
 
