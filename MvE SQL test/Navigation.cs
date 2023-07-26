@@ -19,6 +19,12 @@ namespace MvE_SQL_test
             InitializeComponent();
         }
 
+        private void btnExit_Click_1(object sender, EventArgs e)
+        {
+            this.Close();
+
+        }
+
         private void Navigation_Load(object sender, EventArgs e)
         {
             RefreshUnits();
@@ -28,21 +34,7 @@ namespace MvE_SQL_test
 
         }
 
-        private void btnConnectSQL_Click(object sender, EventArgs e)
-        {
-            
-
-
-        }
-
-
-
-        private void btnExit_Click_1(object sender, EventArgs e)
-        {
-            this.Close();
-
-        }
-
+        
 
         private void rdbIPAdres1_CheckedChanged(object sender, EventArgs e)
         {
@@ -60,6 +52,42 @@ namespace MvE_SQL_test
                 txtIPAdres.Text = txtIPExtern.Text;
                 //example
             }
+        }
+        private void btnConnectSQL_Click(object sender, EventArgs e)
+        {
+            if (txtIPAdres.Text != "")
+            {
+                // Create the connection.
+                string connectionstring =   "server=" + txtIPAdres.Text + ";user id=" + txtUserName.Text + ";persistsecurityinfo=True;database=" + txtDatabse.Text +
+                                            ";password=" + txtPassword.Text;
+
+                using (MySqlConnection connection = new MySqlConnection(connectionstring))
+                {
+                    try
+                    {
+                        connection.Open();
+                        ConnectedBox.Checked = true;
+                        MessageBox.Show("Connected to database");
+                        return;
+                    }
+                    catch 
+                    {
+                        MessageBox.Show("Could not connect to database");
+                        ConnectedBox.Checked = false;
+                        return;
+                    }
+                }
+
+            }
+
+            else
+            {
+                MessageBox.Show("No IP adres selected");
+                ConnectedBox.Checked = false;
+            }
+
+
+
         }
 
 

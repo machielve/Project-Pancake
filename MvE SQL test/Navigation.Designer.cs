@@ -38,6 +38,14 @@ namespace MvE_SQL_test
             this.btnStockManager = new System.Windows.Forms.Button();
             this.Managers = new System.Windows.Forms.TabControl();
             this.GeneralSettings = new System.Windows.Forms.TabPage();
+            this.btnConnectSQL = new System.Windows.Forms.Button();
+            this.label5 = new System.Windows.Forms.Label();
+            this.txtDatabse = new System.Windows.Forms.TextBox();
+            this.label4 = new System.Windows.Forms.Label();
+            this.label3 = new System.Windows.Forms.Label();
+            this.txtPassword = new System.Windows.Forms.TextBox();
+            this.label2 = new System.Windows.Forms.Label();
+            this.txtUserName = new System.Windows.Forms.TextBox();
             this.rdbIPAdres2 = new System.Windows.Forms.RadioButton();
             this.rdbIPAdres1 = new System.Windows.Forms.RadioButton();
             this.txtIPAdres = new System.Windows.Forms.TextBox();
@@ -59,14 +67,7 @@ namespace MvE_SQL_test
             this.dgvUnits = new System.Windows.Forms.DataGridView();
             this.btnLoadUnits = new System.Windows.Forms.Button();
             this.btnJobOrderManager = new System.Windows.Forms.Button();
-            this.txtUserName = new System.Windows.Forms.TextBox();
-            this.label2 = new System.Windows.Forms.Label();
-            this.label3 = new System.Windows.Forms.Label();
-            this.txtPassword = new System.Windows.Forms.TextBox();
-            this.label4 = new System.Windows.Forms.Label();
-            this.label5 = new System.Windows.Forms.Label();
-            this.txtDatabse = new System.Windows.Forms.TextBox();
-            this.btnConnectSQL = new System.Windows.Forms.Button();
+            this.ConnectedBox = new System.Windows.Forms.CheckBox();
             this.Managers.SuspendLayout();
             this.GeneralSettings.SuspendLayout();
             this.tabOperations.SuspendLayout();
@@ -165,6 +166,7 @@ namespace MvE_SQL_test
             // 
             // GeneralSettings
             // 
+            this.GeneralSettings.Controls.Add(this.ConnectedBox);
             this.GeneralSettings.Controls.Add(this.btnConnectSQL);
             this.GeneralSettings.Controls.Add(this.label5);
             this.GeneralSettings.Controls.Add(this.txtDatabse);
@@ -185,6 +187,77 @@ namespace MvE_SQL_test
             this.GeneralSettings.TabIndex = 3;
             this.GeneralSettings.Text = "General settings";
             this.GeneralSettings.UseVisualStyleBackColor = true;
+            // 
+            // btnConnectSQL
+            // 
+            this.btnConnectSQL.Location = new System.Drawing.Point(70, 181);
+            this.btnConnectSQL.Name = "btnConnectSQL";
+            this.btnConnectSQL.Size = new System.Drawing.Size(184, 23);
+            this.btnConnectSQL.TabIndex = 12;
+            this.btnConnectSQL.Text = "Connect";
+            this.btnConnectSQL.UseVisualStyleBackColor = true;
+            this.btnConnectSQL.Click += new System.EventHandler(this.btnConnectSQL_Click);
+            // 
+            // label5
+            // 
+            this.label5.AutoSize = true;
+            this.label5.Location = new System.Drawing.Point(67, 100);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(53, 13);
+            this.label5.TabIndex = 11;
+            this.label5.Text = "Database";
+            // 
+            // txtDatabse
+            // 
+            this.txtDatabse.Location = new System.Drawing.Point(145, 94);
+            this.txtDatabse.Name = "txtDatabse";
+            this.txtDatabse.Size = new System.Drawing.Size(109, 20);
+            this.txtDatabse.TabIndex = 10;
+            this.txtDatabse.Text = "Victoriam";
+            // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.Location = new System.Drawing.Point(67, 68);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(51, 13);
+            this.label4.TabIndex = 9;
+            this.label4.Text = "IP adress";
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Location = new System.Drawing.Point(67, 155);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(53, 13);
+            this.label3.TabIndex = 8;
+            this.label3.Text = "Password";
+            // 
+            // txtPassword
+            // 
+            this.txtPassword.Location = new System.Drawing.Point(145, 152);
+            this.txtPassword.Name = "txtPassword";
+            this.txtPassword.PasswordChar = '*';
+            this.txtPassword.Size = new System.Drawing.Size(109, 20);
+            this.txtPassword.TabIndex = 7;
+            this.txtPassword.Text = "Welkom#2017";
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Location = new System.Drawing.Point(67, 126);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(58, 13);
+            this.label2.TabIndex = 6;
+            this.label2.Text = "User name";
+            // 
+            // txtUserName
+            // 
+            this.txtUserName.Location = new System.Drawing.Point(145, 123);
+            this.txtUserName.Name = "txtUserName";
+            this.txtUserName.Size = new System.Drawing.Size(109, 20);
+            this.txtUserName.TabIndex = 5;
+            this.txtUserName.Text = "machiel";
             // 
             // rdbIPAdres2
             // 
@@ -412,76 +485,16 @@ namespace MvE_SQL_test
             this.btnJobOrderManager.UseVisualStyleBackColor = true;
             this.btnJobOrderManager.Click += new System.EventHandler(this.btnJobOrderManager_Click);
             // 
-            // txtUserName
+            // ConnectedBox
             // 
-            this.txtUserName.Location = new System.Drawing.Point(145, 123);
-            this.txtUserName.Name = "txtUserName";
-            this.txtUserName.Size = new System.Drawing.Size(109, 20);
-            this.txtUserName.TabIndex = 5;
-            this.txtUserName.Text = "machiel";
-            // 
-            // label2
-            // 
-            this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(67, 126);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(58, 13);
-            this.label2.TabIndex = 6;
-            this.label2.Text = "User name";
-            // 
-            // label3
-            // 
-            this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(67, 155);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(53, 13);
-            this.label3.TabIndex = 8;
-            this.label3.Text = "Password";
-            // 
-            // txtPassword
-            // 
-            this.txtPassword.Location = new System.Drawing.Point(145, 152);
-            this.txtPassword.Name = "txtPassword";
-            this.txtPassword.PasswordChar = '*';
-            this.txtPassword.Size = new System.Drawing.Size(109, 20);
-            this.txtPassword.TabIndex = 7;
-            this.txtPassword.Text = "Knalgeit1@";
-            // 
-            // label4
-            // 
-            this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(67, 68);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(51, 13);
-            this.label4.TabIndex = 9;
-            this.label4.Text = "IP adress";
-            // 
-            // label5
-            // 
-            this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(67, 100);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(53, 13);
-            this.label5.TabIndex = 11;
-            this.label5.Text = "Database";
-            // 
-            // txtDatabse
-            // 
-            this.txtDatabse.Location = new System.Drawing.Point(145, 94);
-            this.txtDatabse.Name = "txtDatabse";
-            this.txtDatabse.Size = new System.Drawing.Size(109, 20);
-            this.txtDatabse.TabIndex = 10;
-            this.txtDatabse.Text = "Victoriam";
-            // 
-            // btnConnectSQL
-            // 
-            this.btnConnectSQL.Location = new System.Drawing.Point(70, 181);
-            this.btnConnectSQL.Name = "btnConnectSQL";
-            this.btnConnectSQL.Size = new System.Drawing.Size(184, 23);
-            this.btnConnectSQL.TabIndex = 12;
-            this.btnConnectSQL.Text = "Connect";
-            this.btnConnectSQL.UseVisualStyleBackColor = true;
-            this.btnConnectSQL.Click += new System.EventHandler(this.btnConnectSQL_Click);
+            this.ConnectedBox.AutoCheck = false;
+            this.ConnectedBox.AutoSize = true;
+            this.ConnectedBox.Location = new System.Drawing.Point(145, 211);
+            this.ConnectedBox.Name = "ConnectedBox";
+            this.ConnectedBox.Size = new System.Drawing.Size(78, 17);
+            this.ConnectedBox.TabIndex = 13;
+            this.ConnectedBox.Text = "Connected";
+            this.ConnectedBox.UseVisualStyleBackColor = true;
             // 
             // Navigation
             // 
@@ -555,6 +568,7 @@ namespace MvE_SQL_test
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.TextBox txtDatabse;
         private System.Windows.Forms.Button btnConnectSQL;
+        private System.Windows.Forms.CheckBox ConnectedBox;
     }
 }
 
