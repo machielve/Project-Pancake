@@ -141,7 +141,7 @@ namespace MvE_SQL_test
         public void RefreshMaterial()
         {
             // Create the connection.
-            string connectionstring = Properties.Settings.Default.connString;
+            string connectionstring = ConnectorString();
             using (MySqlConnection connection = new MySqlConnection(connectionstring))
             {
                 // mysql string
@@ -196,7 +196,7 @@ namespace MvE_SQL_test
         public void RefreshSuppliers()
         {
             // Create the connection.
-            string connectionstring = Properties.Settings.Default.connString;
+            string connectionstring = ConnectorString();
             using (MySqlConnection connection = new MySqlConnection(connectionstring))
             {
                 // mysql string
@@ -248,7 +248,7 @@ namespace MvE_SQL_test
         public void RefreshUnits()
         {
             // Create the connection.
-            string connectionstring = Properties.Settings.Default.connString;
+            string connectionstring = ConnectorString();
             using (MySqlConnection connection = new MySqlConnection(connectionstring))
             {
                 // mysql string
@@ -299,7 +299,7 @@ namespace MvE_SQL_test
         public void RefreshOperatons()
         {
             // Create the connection.
-            string connectionstring = Properties.Settings.Default.connString;
+            string connectionstring = ConnectorString();
             using (MySqlConnection connection = new MySqlConnection(connectionstring))
             {
                 // mysql string
