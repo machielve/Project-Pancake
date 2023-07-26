@@ -23,9 +23,40 @@ namespace MvE_SQL_test
 
         public static string ConnString { get; set; }
 
-        private void btnFinnish_Click(object sender, EventArgs e)
+        private void NewOperation_Load(object sender, EventArgs e)
         {
-            this.Close();
+            // Create the connection.
+            string connectionstring = ConnString;
+            using (MySqlConnection connection = new MySqlConnection(connectionstring))
+            {
+                // mysql string units
+                const string mysqlString4 = "SELECT * FROM Victoriam.T_UNIT";
+                using (MySqlCommand mysqlcommand = new MySqlCommand(mysqlString4, connection))
+                {
+                    try
+                    {
+                        connection.Open();
+                        using (MySqlDataReader dr = mysqlcommand.ExecuteReader())
+                        {
+                            DataTable dt = new DataTable();
+                            dt.Load(dr);
+                            cmbWeightUnit.DataSource = dt;
+                            cmbWeightUnit.DisplayMember = "Name";
+                            cmbWeightUnit.ValueMember = "Unit_id";
+
+                            dr.Close();
+                        }
+                        connection.Close();
+                    }
+                    catch
+                    {
+                        MessageBox.Show("Operation units could not be loaded");
+                    }
+                }
+
+            }
+
+
         }
 
         private bool IsNameValid()
@@ -41,6 +72,15 @@ namespace MvE_SQL_test
             }
         }
 
+
+
+
+
+        private void btnFinnish_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
+
         private void btnAddAnotherOperation_Click(object sender, EventArgs e)
         {
                 txtOperationName.Clear();
@@ -52,19 +92,27 @@ namespace MvE_SQL_test
         {
             if (IsNameValid())
             {
+                decimal OperationPrice = Convert.ToDecimal(numericUpDown1.Value);
+                int OperationUnit = Convert.ToInt32(cmbWeightUnit.SelectedValue);
+
                 // Create the connection.
-                string connectionstring = Properties.Settings.Default.connString;
+                string connectionstring = ConnString;
                 using (MySqlConnection connection = new MySqlConnection(connectionstring))
                 {
                     using (MySqlCommand msqlcommand = new MySqlCommand("uspNewOperation", connection))
                     {
                         msqlcommand.CommandType = CommandType.StoredProcedure;
 
+                        msqlcommand.Parameters.Add(new MySqlParameter("OperationPrice", MySqlDbType.Decimal));
+                        msqlcommand.Parameters["OperationPrice"].Scale = 2;
+                        msqlcommand.Parameters["OperationPrice"].Precision = 10;
+                        msqlcommand.Parameters["OperationPrice"].Value = OperationPrice;
+
                         msqlcommand.Parameters.Add(new MySqlParameter("OperationName", MySqlDbType.Text));
                         msqlcommand.Parameters["OperationName"].Value = txtOperationName.Text;
 
                         msqlcommand.Parameters.Add(new MySqlParameter("OperationUnit", MySqlDbType.Int32));
-                        msqlcommand.Parameters["OperationUnit"].Value = 8;
+                        msqlcommand.Parameters["OperationUnit"].Value = OperationUnit;
 
                         msqlcommand.Parameters.Add(new MySqlParameter("MaterialModification", MySqlDbType.Text));
                         msqlcommand.Parameters["MaterialModification"].Value = txtMatMod.Text;                        

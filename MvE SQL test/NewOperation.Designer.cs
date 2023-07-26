@@ -38,6 +38,11 @@ namespace MvE_SQL_test
             this.btnFinnish = new System.Windows.Forms.Button();
             this.label2 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
+            this.cmbWeightUnit = new System.Windows.Forms.ComboBox();
+            this.label8 = new System.Windows.Forms.Label();
+            this.label7 = new System.Windows.Forms.Label();
+            this.numericUpDown1 = new System.Windows.Forms.NumericUpDown();
+            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown1)).BeginInit();
             this.SuspendLayout();
             // 
             // txtMatMod
@@ -55,7 +60,7 @@ namespace MvE_SQL_test
             // 
             // btnAddAnotherOperation
             // 
-            this.btnAddAnotherOperation.Location = new System.Drawing.Point(203, 179);
+            this.btnAddAnotherOperation.Location = new System.Drawing.Point(203, 239);
             this.btnAddAnotherOperation.Name = "btnAddAnotherOperation";
             this.btnAddAnotherOperation.Size = new System.Drawing.Size(139, 23);
             this.btnAddAnotherOperation.TabIndex = 15;
@@ -65,7 +70,7 @@ namespace MvE_SQL_test
             // 
             // btnNewOperation
             // 
-            this.btnNewOperation.Location = new System.Drawing.Point(108, 118);
+            this.btnNewOperation.Location = new System.Drawing.Point(108, 178);
             this.btnNewOperation.Name = "btnNewOperation";
             this.btnNewOperation.Size = new System.Drawing.Size(234, 23);
             this.btnNewOperation.TabIndex = 14;
@@ -75,17 +80,17 @@ namespace MvE_SQL_test
             // 
             // txtOperationID
             // 
-            this.txtOperationID.Location = new System.Drawing.Point(108, 72);
+            this.txtOperationID.Location = new System.Drawing.Point(124, 126);
             this.txtOperationID.Name = "txtOperationID";
             this.txtOperationID.ReadOnly = true;
-            this.txtOperationID.Size = new System.Drawing.Size(234, 20);
+            this.txtOperationID.Size = new System.Drawing.Size(218, 20);
             this.txtOperationID.TabIndex = 13;
             // 
             // txtOperationName
             // 
-            this.txtOperationName.Location = new System.Drawing.Point(108, 20);
+            this.txtOperationName.Location = new System.Drawing.Point(124, 20);
             this.txtOperationName.Name = "txtOperationName";
-            this.txtOperationName.Size = new System.Drawing.Size(234, 20);
+            this.txtOperationName.Size = new System.Drawing.Size(218, 20);
             this.txtOperationName.TabIndex = 12;
             // 
             // label1
@@ -99,7 +104,7 @@ namespace MvE_SQL_test
             // 
             // btnFinnish
             // 
-            this.btnFinnish.Location = new System.Drawing.Point(15, 179);
+            this.btnFinnish.Location = new System.Drawing.Point(15, 239);
             this.btnFinnish.Name = "btnFinnish";
             this.btnFinnish.Size = new System.Drawing.Size(146, 23);
             this.btnFinnish.TabIndex = 10;
@@ -119,17 +124,55 @@ namespace MvE_SQL_test
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(12, 75);
+            this.label3.Location = new System.Drawing.Point(12, 129);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(67, 13);
             this.label3.TabIndex = 18;
             this.label3.Text = "Operation ID";
             // 
+            // cmbWeightUnit
+            // 
+            this.cmbWeightUnit.FormattingEnabled = true;
+            this.cmbWeightUnit.Location = new System.Drawing.Point(124, 73);
+            this.cmbWeightUnit.Name = "cmbWeightUnit";
+            this.cmbWeightUnit.Size = new System.Drawing.Size(218, 21);
+            this.cmbWeightUnit.TabIndex = 30;
+            // 
+            // label8
+            // 
+            this.label8.AutoSize = true;
+            this.label8.Location = new System.Drawing.Point(12, 76);
+            this.label8.Name = "label8";
+            this.label8.Size = new System.Drawing.Size(73, 13);
+            this.label8.TabIndex = 29;
+            this.label8.Text = "Operation unit";
+            // 
+            // label7
+            // 
+            this.label7.AutoSize = true;
+            this.label7.Location = new System.Drawing.Point(12, 102);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(67, 13);
+            this.label7.TabIndex = 32;
+            this.label7.Text = "Price per unt";
+            // 
+            // numericUpDown1
+            // 
+            this.numericUpDown1.DecimalPlaces = 2;
+            this.numericUpDown1.Location = new System.Drawing.Point(124, 100);
+            this.numericUpDown1.Name = "numericUpDown1";
+            this.numericUpDown1.Size = new System.Drawing.Size(218, 20);
+            this.numericUpDown1.TabIndex = 31;
+            // 
             // NewOperation
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(384, 211);
+            this.ClientSize = new System.Drawing.Size(384, 278);
+            this.Controls.Add(this.label7);
+            this.Controls.Add(this.numericUpDown1);
+            this.Controls.Add(this.cmbWeightUnit);
+            this.Controls.Add(this.label8);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.txtMatMod);
@@ -141,6 +184,8 @@ namespace MvE_SQL_test
             this.Controls.Add(this.btnFinnish);
             this.Name = "NewOperation";
             this.Text = "New Operation";
+            this.Load += new System.EventHandler(this.NewOperation_Load);
+            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -157,5 +202,9 @@ namespace MvE_SQL_test
         private System.Windows.Forms.Button btnFinnish;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.ComboBox cmbWeightUnit;
+        private System.Windows.Forms.Label label8;
+        private System.Windows.Forms.Label label7;
+        private System.Windows.Forms.NumericUpDown numericUpDown1;
     }
 }
