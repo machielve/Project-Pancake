@@ -97,33 +97,42 @@ namespace MvE_SQL_test
 
 
         private void btnProjectManager_Click(object sender, EventArgs e)
-        {   
-
+        {
+            string connectionstring = ConnectorString();
             Form frm = new ManagerProject();
+            ManagerProject.ConnString = connectionstring;
             frm.Show();
 
         }
         private void btnAssemblyManager_Click(object sender, EventArgs e)
         {
+            string connectionstring = ConnectorString(); 
             Form frm = new ManagerAssembly();
+            ManagerAssembly.ConnString = connectionstring;
             frm.Show();
 
         }
         private void btnPartManager_Click(object sender, EventArgs e)
         {
+            string connectionstring = ConnectorString(); 
             Form frm = new ManagerPart();
+            ManagerPart.ConnString = connectionstring;
             frm.Show();
 
         }
         private void btnStockManager_Click(object sender, EventArgs e)
         {
+            string connectionstring = ConnectorString(); 
             Form frm = new ManagerStock();
+            ManagerStock.ConnString = connectionstring;
             frm.Show();
 
         }
         private void btnJobOrderManager_Click(object sender, EventArgs e)
         {
+            string connectionstring = ConnectorString(); 
             Form frm = new ManagerJobOrders();
+            ManagerJobOrders.ConnString = connectionstring;
             frm.Show();
 
         }
@@ -172,7 +181,9 @@ namespace MvE_SQL_test
         }
         private void btnNewMaterial_Click(object sender, EventArgs e)
         {
+            string connectionstring = ConnectorString(); 
             Form frm = new NewMaterial();
+            NewMaterial.ConnString = connectionstring;
             frm.FormClosing += new FormClosingEventHandler(this.NewMaterial_Formclosing);
             frm.Show();
 
@@ -186,10 +197,6 @@ namespace MvE_SQL_test
             RefreshMaterial();
 
         }
-
-
-
-
 
 
 
@@ -226,7 +233,9 @@ namespace MvE_SQL_test
         }
         private void btnNewSupplier_Click(object sender, EventArgs e)
         {
+            string connectionstring = ConnectorString(); 
             Form frm = new NewSupplier();
+            NewSupplier.ConnString = connectionstring;
             frm.FormClosing += new FormClosingEventHandler(this.NewSupplier_Formclosing);
             frm.Show();
 
@@ -240,9 +249,6 @@ namespace MvE_SQL_test
             RefreshSuppliers();
 
         }
-
-
-
 
 
         public void RefreshUnits()
@@ -278,7 +284,9 @@ namespace MvE_SQL_test
         }
         private void btnAddUnit_Click(object sender, EventArgs e)
         {
+            string connectionstring = ConnectorString(); 
             Form frm = new NewUnit();
+            NewUnit.ConnString = connectionstring;
             frm.FormClosing += new FormClosingEventHandler(this.NewUnit_Formclosing);
             frm.Show();
         }
@@ -329,7 +337,9 @@ namespace MvE_SQL_test
         }
         private void btnNewOperation_Click(object sender, EventArgs e)
         {
+            string connectionstring = ConnectorString(); 
             Form frm = new NewOperation();
+            NewOperation.ConnString = connectionstring;
             frm.FormClosing += new FormClosingEventHandler(this.NewOperation_Formclosing);
             frm.Show();
         }

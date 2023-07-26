@@ -19,6 +19,8 @@ namespace MvE_SQL_test
             InitializeComponent();
         }
 
+        public static string ConnString { get; set; }
+
         public void RefreshPartIN()
         {
             // Create the connection.

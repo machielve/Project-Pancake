@@ -32,6 +32,8 @@ namespace MvE_SQL_test
             }
         }
 
+        public static string ConnString { get; set; }
+
         private void ClearForm()
         {
             txtUnitName.Clear();

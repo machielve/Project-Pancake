@@ -21,6 +21,8 @@ namespace MvE_SQL_test
 
         public static string AssemblyID = "";
 
+        public static string ConnString { get; set; }
+
         public void AssemblyRefresh()
         {
             

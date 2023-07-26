@@ -21,6 +21,8 @@ namespace MvE_SQL_test
             InitializeComponent();
         }
 
+        public static string ConnString { get; set; }
+
         private void btnFinnish_Click(object sender, EventArgs e)
         {
             this.Close();

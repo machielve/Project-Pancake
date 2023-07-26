@@ -20,6 +20,7 @@ namespace MvE_SQL_test
             txtMaterialID.Clear();
             this.parsedMaterialID = 0;
         }
+        public static string ConnString { get; set; }
 
         private int parsedMaterialID;
 

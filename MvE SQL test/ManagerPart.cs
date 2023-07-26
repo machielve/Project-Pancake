@@ -22,6 +22,8 @@ namespace MvE_SQL_test
 
         public static string PartID = "";
 
+        public static string ConnString { get; set; }
+
         public void PartRefresh()
         {
             // Create the connection.
