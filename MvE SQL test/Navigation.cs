@@ -19,12 +19,6 @@ namespace MvE_SQL_test
             InitializeComponent();
         }
 
-        private void btnExit_Click_1(object sender, EventArgs e)
-        {
-            this.Close();
-
-        }
-
         private void Navigation_Load(object sender, EventArgs e)
         {
             RefreshUnits();
@@ -34,34 +28,29 @@ namespace MvE_SQL_test
 
         }
 
-        
-
-        private void rdbIPAdres1_CheckedChanged(object sender, EventArgs e)
+        private void btnExit_Click_1(object sender, EventArgs e)
         {
-            if (rdbIPAdres1.Checked) //If checked == true
-            {
-                txtIPAdres.Text = txtIPIntern.Text;
-                //example
-            }
+            this.Close();
 
         }
-        private void rdbIPAdres2_CheckedChanged(object sender, EventArgs e)
+
+        public string ConnectorString()
         {
-            if (rdbIPAdres2.Checked) //If checked == true
-            {
-                txtIPAdres.Text = txtIPExtern.Text;
-                //example
-            }
+            string ConnString = "server=" + txtIPAdres.Text + ";user id=" + txtUserName.Text + ";persistsecurityinfo=True;database=" + txtDatabse.Text + ";password=" + txtPassword.Text;
+
+            return ConnString;
         }
+
+
+
+
         private void btnConnectSQL_Click(object sender, EventArgs e)
         {
+            string connectionstring = ConnectorString();
+
             if (txtIPAdres.Text != "")
             {
-                // Create the connection.
-                string connectionstring =   "server=" + txtIPAdres.Text + ";user id=" + txtUserName.Text + ";persistsecurityinfo=True;database=" + txtDatabse.Text +
-                                            ";password=" + txtPassword.Text;
-
-                using (MySqlConnection connection = new MySqlConnection(connectionstring))
+               using (MySqlConnection connection = new MySqlConnection(connectionstring))
                 {
                     try
                     {
@@ -86,9 +75,25 @@ namespace MvE_SQL_test
                 ConnectedBox.Checked = false;
             }
 
-
+        }
+        private void rdbIPAdres1_CheckedChanged(object sender, EventArgs e)
+        {
+            if (rdbIPAdres1.Checked) //If checked == true
+            {
+                txtIPAdres.Text = txtIPIntern.Text;
+                //example
+            }
 
         }
+        private void rdbIPAdres2_CheckedChanged(object sender, EventArgs e)
+        {
+            if (rdbIPAdres2.Checked) //If checked == true
+            {
+                txtIPAdres.Text = txtIPExtern.Text;
+                //example
+            }
+        }
+        
 
 
         private void btnProjectManager_Click(object sender, EventArgs e)
