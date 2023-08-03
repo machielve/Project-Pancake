@@ -12,25 +12,25 @@ using MySql.Data.MySqlClient;
 
 namespace MvE_SQL_test
 {
-    public partial class NewPartSupplier : Form
+    public partial class NewPartRelation : Form
     {
         
 
-        public NewPartSupplier()
+        public NewPartRelation()
         {
             InitializeComponent();
         }
 
         public static string ConnString { get; set; }
 
-        public void RefreshSuppliers()
+        public void RefreshRelations()
         {
             // Create the connection.
             string connectionstring = ConnString;
             using (MySqlConnection connection = new MySqlConnection(connectionstring))
             {
                 // mysql string types
-                const string mysqlString = "SELECT Supplier_id, Name FROM Victoriam.T_SUPPLIER";
+                const string mysqlString = "SELECT Relation_id, Name FROM Victoriam.T_RELATION";
                 using (MySqlCommand mysqlcommand = new MySqlCommand(mysqlString, connection))
                 {
                     try
@@ -40,9 +40,9 @@ namespace MvE_SQL_test
                         {
                             DataTable dt = new DataTable();
                             dt.Load(dr);
-                            cmbSupplier.DataSource = dt;
-                            cmbSupplier.DisplayMember = "Name";
-                            cmbSupplier.ValueMember = "Supplier_id";
+                            cmbRelation.DataSource = dt;
+                            cmbRelation.DisplayMember = "Name";
+                            cmbRelation.ValueMember = "Relation_id";
 
                             dr.Close();
                         }
@@ -50,7 +50,7 @@ namespace MvE_SQL_test
                     }
                     catch
                     {
-                        MessageBox.Show("Suppliers could not be loaded");
+                        MessageBox.Show("Relations could not be loaded");
                     }
                 }
             }
@@ -61,11 +61,11 @@ namespace MvE_SQL_test
             this.Close();
         }
 
-        private void NewPartSupplier_Load(object sender, EventArgs e)
+        private void NewPartRelation_Load(object sender, EventArgs e)
         {
             txtPartID.Text = ManagerPart.PartID;
 
-            RefreshSuppliers();
+            RefreshRelations();
             
         }
 
@@ -77,22 +77,22 @@ namespace MvE_SQL_test
             decimal unitprice = pricetotal / totalquant;
 
             int PartID = Convert.ToInt32(txtPartID.Text);
-            int SupplierID = Convert.ToInt32(cmbSupplier.SelectedValue.ToString());
+            int RelationID = Convert.ToInt32(cmbRelation.SelectedValue.ToString());
 
             // Create the connection.
             string connectionstring = ConnString;
             using (MySqlConnection connection = new MySqlConnection(connectionstring))
             {
 
-                using (MySqlCommand msqlcommand = new MySqlCommand("uspNewPartSupplier", connection))
+                using (MySqlCommand msqlcommand = new MySqlCommand("uspNewPartRelation", connection))
                 {
                     msqlcommand.CommandType = CommandType.StoredProcedure;
 
                     msqlcommand.Parameters.Add(new MySqlParameter("nPart", MySqlDbType.Int32));
                     msqlcommand.Parameters["nPart"].Value = PartID;
 
-                    msqlcommand.Parameters.Add(new MySqlParameter("nSupplier", MySqlDbType.Int32));
-                    msqlcommand.Parameters["nSupplier"].Value = SupplierID;
+                    msqlcommand.Parameters.Add(new MySqlParameter("nRelation", MySqlDbType.Int32));
+                    msqlcommand.Parameters["nRelation"].Value = RelationID;
 
                     msqlcommand.Parameters.Add(new MySqlParameter("nPrice", MySqlDbType.Decimal));
                     msqlcommand.Parameters["nPrice"].Precision = 10;
@@ -122,22 +122,22 @@ namespace MvE_SQL_test
 
         }
 
-        public void NewSupplier_Formclosing(object sender, EventArgs e)
+        public void NewRelation_Formclosing(object sender, EventArgs e)
         {
-            RefreshSuppliers();
+            RefreshRelations();
 
         }
 
         private void btnCreateSupplier_Click(object sender, EventArgs e)
         {
             string connectionstring = ConnString; 
-            Form frm = new NewSupplier();
-            NewSupplier.ConnString = connectionstring;
-            frm.FormClosing += new FormClosingEventHandler(this.NewSupplier_Formclosing);
+            Form frm = new NewRelation();
+            NewRelation.ConnString = connectionstring;
+            frm.FormClosing += new FormClosingEventHandler(this.NewRelation_Formclosing);
             frm.Show();
         }
 
-        private void btnAddAnotherSupplier_Click(object sender, EventArgs e)
+        private void btnAddAnotherRelation_Click(object sender, EventArgs e)
         {
             txtPartID.Clear();
 

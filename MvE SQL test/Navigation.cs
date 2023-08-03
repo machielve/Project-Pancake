@@ -23,7 +23,7 @@ namespace MvE_SQL_test
         {
             RefreshUnits();
             RefreshMaterial();
-            RefreshSuppliers();
+            RefreshRelations();
             RefreshOperatons();
 
         }
@@ -199,15 +199,14 @@ namespace MvE_SQL_test
         }
 
 
-
-        public void RefreshSuppliers()
+        public void RefreshRelations()
         {
             // Create the connection.
             string connectionstring = ConnectorString();
             using (MySqlConnection connection = new MySqlConnection(connectionstring))
             {
                 // mysql string
-                const string mysqlString = "SELECT * FROM Victoriam.T_SUPPLIER";
+                const string mysqlString = "SELECT * FROM Victoriam.T_RELATION";
 
                 using (MySqlCommand mysqlcommand = new MySqlCommand(mysqlString, connection))
                 {
@@ -220,33 +219,33 @@ namespace MvE_SQL_test
                             DataTable dt = new DataTable();
                             dt.Load(dr);
                             dt.DefaultView.Sort = ("Name ASC");
-                            this.dgvSuppliers.DataSource = dt;
+                            this.dgvRelations.DataSource = dt;
                             dr.Close();
                         }
                     }
                     catch
                     {
-                        MessageBox.Show("Suppliers could not be loaded");
+                        MessageBox.Show("Relations could not be loaded");
                     }
                 }
             }
         }
-        private void btnNewSupplier_Click(object sender, EventArgs e)
+        private void btnNewRelation_Click(object sender, EventArgs e)
         {
             string connectionstring = ConnectorString(); 
-            Form frm = new NewSupplier();
-            NewSupplier.ConnString = connectionstring;
-            frm.FormClosing += new FormClosingEventHandler(this.NewSupplier_Formclosing);
+            Form frm = new NewRelation();
+            NewRelation.ConnString = connectionstring;
+            frm.FormClosing += new FormClosingEventHandler(this.NewRelation_Formclosing);
             frm.Show();
 
         }
-        public void NewSupplier_Formclosing(object sender, EventArgs e)
+        public void NewRelation_Formclosing(object sender, EventArgs e)
         {
-            RefreshSuppliers();
+            RefreshRelations();
         }
-        private void btnLoadSuppliers_Click(object sender, EventArgs e)
+        private void btnLoadRelations_Click(object sender, EventArgs e)
         {
-            RefreshSuppliers();
+            RefreshRelations();
 
         }
 
@@ -299,9 +298,6 @@ namespace MvE_SQL_test
             RefreshUnits();
 
         }
-
-
-
 
 
         public void RefreshOperatons()

@@ -61,7 +61,7 @@ namespace MvE_SQL_test
             }
 
         }        
-        public void SupplierRefresh()
+        public void RelationRefresh()
         {
 
             string AssemblyId = (txtPartID.Text);
@@ -78,13 +78,13 @@ namespace MvE_SQL_test
                 using (MySqlConnection connection = new MySqlConnection(connectionstring))
                 {
                     // mysql string parts
-                    string mysqlString1 = "SELECT PartSupplier_id, " +
+                    string mysqlString1 = "SELECT PartRelation_id, " +
                                                     "T_PART.Name, " +
-                                                    "T_SUPPLIER.Name, " +
+                                                    "T_RELATION.Name, " +
                                                     "Price ";
-                    string mysqlString2 = "FROM Victoriam.T_PARTSUPPLIER "; 
-                    string mysqlString3 = "LEFT JOIN Victoriam.T_PART ON Victoriam.T_PARTSUPPLIER.Part=Victoriam.T_PART.Part_id ";
-                    string mysqlString4 = "LEFT JOIN Victoriam.T_SUPPLIER ON Victoriam.T_PARTSUPPLIER.Supplier= Victoriam.T_SUPPLIER.Supplier_id ";
+                    string mysqlString2 = "FROM Victoriam.T_PARTRELATION "; 
+                    string mysqlString3 = "LEFT JOIN Victoriam.T_PART ON Victoriam.T_PARTRELATION.Part=Victoriam.T_PART.Part_id ";
+                    string mysqlString4 = "LEFT JOIN Victoriam.T_SUPPLIER ON Victoriam.T_PARTRELATION.Relation= Victoriam.T_RELATION.Relation_id ";
 
                     string mysqlString10 = "WHERE Part = ";
 
@@ -98,18 +98,18 @@ namespace MvE_SQL_test
                             {
                                 DataTable dt = new DataTable();
                                 dt.Load(dr);
-                                this.dgvSuppliers.DataSource = dt;
+                                this.dgvRelations.DataSource = dt;
                                 dr.Close();
                             }
                         }
                         catch
                         {
-                            MessageBox.Show("Suppliers could not be loaded");
+                            MessageBox.Show("Relations could not be loaded");
                         }
                         finally
                         {
                             connection.Close();
-                            dgvSuppliers.AutoResizeColumns();
+                            dgvRelations.AutoResizeColumns();
                         }
                     }
 
@@ -154,13 +154,13 @@ namespace MvE_SQL_test
 
             txtPartID.Text = PartID;
 
-            SupplierRefresh();
+            RelationRefresh();
 
         }
 
         
 
-        private void btnAddSupplier_Click(object sender, EventArgs e)
+        private void btnAddRelation_Click(object sender, EventArgs e)
         {
 
             Int32 selectedrowindex = dgvParts.SelectedCells[0].RowIndex;
@@ -169,36 +169,36 @@ namespace MvE_SQL_test
             PartID = PartId;
 
             string connectionstring = ConnString; 
-            Form frm = new NewPartSupplier();
-            NewPartSupplier.ConnString = connectionstring;
-            frm.FormClosing += new FormClosingEventHandler(this.NewPartSUpplier_Formclosing);
+            Form frm = new NewPartRelation();
+            NewPartRelation.ConnString = connectionstring;
+            frm.FormClosing += new FormClosingEventHandler(this.NewPartRelation_Formclosing);
             frm.Show();
 
         }
-        public void NewPartSUpplier_Formclosing(object sender, EventArgs e)
+        public void NewPartRelation_Formclosing(object sender, EventArgs e)
         {
-            SupplierRefresh();
+            RelationRefresh();
 
         }
-        private void btnRemoveSupplier_Click(object sender, EventArgs e)
+        private void btnRemoveRelation_Click(object sender, EventArgs e)
         {
-            Int32 selectedrowindex = dgvSuppliers.SelectedCells[0].RowIndex;
-            DataGridViewRow SelectedRow = dgvSuppliers.Rows[selectedrowindex];
-            string AssemblyOpsId = Convert.ToString(SelectedRow.Cells["PartSupplier_id"].Value);
+            Int32 selectedrowindex = dgvRelations.SelectedCells[0].RowIndex;
+            DataGridViewRow SelectedRow = dgvRelations.Rows[selectedrowindex];
+            string AssemblyOpsId = Convert.ToString(SelectedRow.Cells["PartRelation_id"].Value);
 
-            if (dgvSuppliers.SelectedRows.Count == 0)
+            if (dgvRelations.SelectedRows.Count == 0)
             {
-                MessageBox.Show("No supplier selected");
+                MessageBox.Show("No relation selected");
             }
 
-            else if (dgvSuppliers.SelectedRows.Count == 1)
+            else if (dgvRelations.SelectedRows.Count == 1)
             {
                 // Create the connection.
                 string connectionstring = ConnString;
                 using (MySqlConnection connection = new MySqlConnection(connectionstring))
                 {
                     // mysql string parts
-                    const string mysqlString1 = "DELETE FROM Victoriam.T_PARTSUPPLIER WHERE PartSupplier_id = ";
+                    const string mysqlString1 = "DELETE FROM Victoriam.T_PARTRELATION WHERE PartRelation_id = ";
                     string mysqlString = mysqlString1 + AssemblyOpsId;
                     using (MySqlCommand mysqlcommand = new MySqlCommand(mysqlString, connection))
                     {
@@ -209,19 +209,19 @@ namespace MvE_SQL_test
                         }
                         catch
                         {
-                            MessageBox.Show("Supplier could not be removed");
+                            MessageBox.Show("Relation could not be removed");
                         }
                     }
 
                 }
             }
 
-            else if (dgvSuppliers.SelectedRows.Count > 1)
+            else if (dgvRelations.SelectedRows.Count > 1)
             {
-                MessageBox.Show("More than one supplier selected. Please select one supplier");
+                MessageBox.Show("More than one relation selected. Please select one relation");
             }
 
-            SupplierRefresh();
+            RelationRefresh();
         }
     }
 }

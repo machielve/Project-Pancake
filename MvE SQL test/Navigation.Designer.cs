@@ -38,6 +38,7 @@ namespace MvE_SQL_test
             this.btnStockManager = new System.Windows.Forms.Button();
             this.Managers = new System.Windows.Forms.TabControl();
             this.GeneralSettings = new System.Windows.Forms.TabPage();
+            this.ConnectedBox = new System.Windows.Forms.CheckBox();
             this.btnConnectSQL = new System.Windows.Forms.Button();
             this.label5 = new System.Windows.Forms.Label();
             this.txtDatabse = new System.Windows.Forms.TextBox();
@@ -59,23 +60,22 @@ namespace MvE_SQL_test
             this.btnLoadMaterials = new System.Windows.Forms.Button();
             this.dgvMaterials = new System.Windows.Forms.DataGridView();
             this.btnNewMaterial = new System.Windows.Forms.Button();
-            this.tabSuppliers = new System.Windows.Forms.TabPage();
-            this.btnLoadSuppliers = new System.Windows.Forms.Button();
-            this.dgvSuppliers = new System.Windows.Forms.DataGridView();
-            this.btnNewSupplier = new System.Windows.Forms.Button();
+            this.tabRelations = new System.Windows.Forms.TabPage();
+            this.btnLoadRelations = new System.Windows.Forms.Button();
+            this.dgvRelations = new System.Windows.Forms.DataGridView();
+            this.btnNewRelation = new System.Windows.Forms.Button();
             this.tabUnits = new System.Windows.Forms.TabPage();
             this.dgvUnits = new System.Windows.Forms.DataGridView();
             this.btnLoadUnits = new System.Windows.Forms.Button();
             this.btnJobOrderManager = new System.Windows.Forms.Button();
-            this.ConnectedBox = new System.Windows.Forms.CheckBox();
             this.Managers.SuspendLayout();
             this.GeneralSettings.SuspendLayout();
             this.tabOperations.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvOperations)).BeginInit();
             this.tabMaterials.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvMaterials)).BeginInit();
-            this.tabSuppliers.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dgvSuppliers)).BeginInit();
+            this.tabRelations.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvRelations)).BeginInit();
             this.tabUnits.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvUnits)).BeginInit();
             this.SuspendLayout();
@@ -154,7 +154,7 @@ namespace MvE_SQL_test
             this.Managers.Controls.Add(this.GeneralSettings);
             this.Managers.Controls.Add(this.tabOperations);
             this.Managers.Controls.Add(this.tabMaterials);
-            this.Managers.Controls.Add(this.tabSuppliers);
+            this.Managers.Controls.Add(this.tabRelations);
             this.Managers.Controls.Add(this.tabUnits);
             this.Managers.Location = new System.Drawing.Point(162, 10);
             this.Managers.MaximumSize = new System.Drawing.Size(5000, 5000);
@@ -187,6 +187,17 @@ namespace MvE_SQL_test
             this.GeneralSettings.TabIndex = 3;
             this.GeneralSettings.Text = "General settings";
             this.GeneralSettings.UseVisualStyleBackColor = true;
+            // 
+            // ConnectedBox
+            // 
+            this.ConnectedBox.AutoCheck = false;
+            this.ConnectedBox.AutoSize = true;
+            this.ConnectedBox.Location = new System.Drawing.Point(145, 211);
+            this.ConnectedBox.Name = "ConnectedBox";
+            this.ConnectedBox.Size = new System.Drawing.Size(78, 17);
+            this.ConnectedBox.TabIndex = 13;
+            this.ConnectedBox.Text = "Connected";
+            this.ConnectedBox.UseVisualStyleBackColor = true;
             // 
             // btnConnectSQL
             // 
@@ -395,50 +406,50 @@ namespace MvE_SQL_test
             this.btnNewMaterial.UseVisualStyleBackColor = true;
             this.btnNewMaterial.Click += new System.EventHandler(this.btnNewMaterial_Click);
             // 
-            // tabSuppliers
+            // tabRelations
             // 
-            this.tabSuppliers.Controls.Add(this.btnLoadSuppliers);
-            this.tabSuppliers.Controls.Add(this.dgvSuppliers);
-            this.tabSuppliers.Controls.Add(this.btnNewSupplier);
-            this.tabSuppliers.Location = new System.Drawing.Point(4, 22);
-            this.tabSuppliers.Name = "tabSuppliers";
-            this.tabSuppliers.Padding = new System.Windows.Forms.Padding(3);
-            this.tabSuppliers.Size = new System.Drawing.Size(1302, 814);
-            this.tabSuppliers.TabIndex = 4;
-            this.tabSuppliers.Text = "Suppliers";
-            this.tabSuppliers.UseVisualStyleBackColor = true;
+            this.tabRelations.Controls.Add(this.btnLoadRelations);
+            this.tabRelations.Controls.Add(this.dgvRelations);
+            this.tabRelations.Controls.Add(this.btnNewRelation);
+            this.tabRelations.Location = new System.Drawing.Point(4, 22);
+            this.tabRelations.Name = "tabRelations";
+            this.tabRelations.Padding = new System.Windows.Forms.Padding(3);
+            this.tabRelations.Size = new System.Drawing.Size(1302, 814);
+            this.tabRelations.TabIndex = 4;
+            this.tabRelations.Text = "Relations";
+            this.tabRelations.UseVisualStyleBackColor = true;
             // 
-            // btnLoadSuppliers
+            // btnLoadRelations
             // 
-            this.btnLoadSuppliers.Location = new System.Drawing.Point(6, 5);
-            this.btnLoadSuppliers.Name = "btnLoadSuppliers";
-            this.btnLoadSuppliers.Size = new System.Drawing.Size(124, 23);
-            this.btnLoadSuppliers.TabIndex = 14;
-            this.btnLoadSuppliers.Text = "Load suppliers";
-            this.btnLoadSuppliers.UseVisualStyleBackColor = true;
-            this.btnLoadSuppliers.Click += new System.EventHandler(this.btnLoadSuppliers_Click);
+            this.btnLoadRelations.Location = new System.Drawing.Point(6, 5);
+            this.btnLoadRelations.Name = "btnLoadRelations";
+            this.btnLoadRelations.Size = new System.Drawing.Size(124, 23);
+            this.btnLoadRelations.TabIndex = 14;
+            this.btnLoadRelations.Text = "Load relations";
+            this.btnLoadRelations.UseVisualStyleBackColor = true;
+            this.btnLoadRelations.Click += new System.EventHandler(this.btnLoadRelations_Click);
             // 
-            // dgvSuppliers
+            // dgvRelations
             // 
-            this.dgvSuppliers.AllowUserToAddRows = false;
-            this.dgvSuppliers.AllowUserToDeleteRows = false;
-            this.dgvSuppliers.AllowUserToOrderColumns = true;
-            this.dgvSuppliers.BackgroundColor = System.Drawing.SystemColors.Control;
-            this.dgvSuppliers.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvSuppliers.Location = new System.Drawing.Point(137, 7);
-            this.dgvSuppliers.Name = "dgvSuppliers";
-            this.dgvSuppliers.Size = new System.Drawing.Size(1144, 696);
-            this.dgvSuppliers.TabIndex = 13;
+            this.dgvRelations.AllowUserToAddRows = false;
+            this.dgvRelations.AllowUserToDeleteRows = false;
+            this.dgvRelations.AllowUserToOrderColumns = true;
+            this.dgvRelations.BackgroundColor = System.Drawing.SystemColors.Control;
+            this.dgvRelations.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvRelations.Location = new System.Drawing.Point(137, 7);
+            this.dgvRelations.Name = "dgvRelations";
+            this.dgvRelations.Size = new System.Drawing.Size(1144, 696);
+            this.dgvRelations.TabIndex = 13;
             // 
-            // btnNewSupplier
+            // btnNewRelation
             // 
-            this.btnNewSupplier.Location = new System.Drawing.Point(6, 34);
-            this.btnNewSupplier.Name = "btnNewSupplier";
-            this.btnNewSupplier.Size = new System.Drawing.Size(124, 23);
-            this.btnNewSupplier.TabIndex = 12;
-            this.btnNewSupplier.Text = "New supplier";
-            this.btnNewSupplier.UseVisualStyleBackColor = true;
-            this.btnNewSupplier.Click += new System.EventHandler(this.btnNewSupplier_Click);
+            this.btnNewRelation.Location = new System.Drawing.Point(6, 34);
+            this.btnNewRelation.Name = "btnNewRelation";
+            this.btnNewRelation.Size = new System.Drawing.Size(124, 23);
+            this.btnNewRelation.TabIndex = 12;
+            this.btnNewRelation.Text = "New relation";
+            this.btnNewRelation.UseVisualStyleBackColor = true;
+            this.btnNewRelation.Click += new System.EventHandler(this.btnNewRelation_Click);
             // 
             // tabUnits
             // 
@@ -485,17 +496,6 @@ namespace MvE_SQL_test
             this.btnJobOrderManager.UseVisualStyleBackColor = true;
             this.btnJobOrderManager.Click += new System.EventHandler(this.btnJobOrderManager_Click);
             // 
-            // ConnectedBox
-            // 
-            this.ConnectedBox.AutoCheck = false;
-            this.ConnectedBox.AutoSize = true;
-            this.ConnectedBox.Location = new System.Drawing.Point(145, 211);
-            this.ConnectedBox.Name = "ConnectedBox";
-            this.ConnectedBox.Size = new System.Drawing.Size(78, 17);
-            this.ConnectedBox.TabIndex = 13;
-            this.ConnectedBox.Text = "Connected";
-            this.ConnectedBox.UseVisualStyleBackColor = true;
-            // 
             // Navigation
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -520,8 +520,8 @@ namespace MvE_SQL_test
             ((System.ComponentModel.ISupportInitialize)(this.dgvOperations)).EndInit();
             this.tabMaterials.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dgvMaterials)).EndInit();
-            this.tabSuppliers.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.dgvSuppliers)).EndInit();
+            this.tabRelations.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.dgvRelations)).EndInit();
             this.tabUnits.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dgvUnits)).EndInit();
             this.ResumeLayout(false);
@@ -545,10 +545,10 @@ namespace MvE_SQL_test
         private System.Windows.Forms.TextBox txtIPIntern;
         private System.Windows.Forms.RadioButton rdbIPAdres2;
         private System.Windows.Forms.RadioButton rdbIPAdres1;
-        private System.Windows.Forms.Button btnNewSupplier;
-        private System.Windows.Forms.TabPage tabSuppliers;
-        private System.Windows.Forms.Button btnLoadSuppliers;
-        private System.Windows.Forms.DataGridView dgvSuppliers;
+        private System.Windows.Forms.Button btnNewRelation;
+        private System.Windows.Forms.TabPage tabRelations;
+        private System.Windows.Forms.Button btnLoadRelations;
+        private System.Windows.Forms.DataGridView dgvRelations;
         private System.Windows.Forms.TabPage tabMaterials;
         private System.Windows.Forms.Button btnLoadMaterials;
         private System.Windows.Forms.DataGridView dgvMaterials;

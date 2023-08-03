@@ -12,11 +12,11 @@ using MySql.Data.MySqlClient;
 
 namespace MvE_SQL_test
 {
-    public partial class NewSupplier : Form
+    public partial class NewRelation : Form
     {
-        private int parsedSupplierID;
+        private int parsedRelationID;
 
-        public NewSupplier()
+        public NewRelation()
         {
             InitializeComponent();
         }
@@ -24,7 +24,7 @@ namespace MvE_SQL_test
 
         private bool IsNameValid()
         {
-            if (txtSupplierName.Text == "")
+            if (txtRelationName.Text == "")
             {
                 MessageBox.Show("Please enter a name.");
                 return false;
@@ -40,7 +40,7 @@ namespace MvE_SQL_test
             this.Close();
         }
 
-        private void btnNewSupplier_Click(object sender, EventArgs e)
+        private void btnNewRelation_Click(object sender, EventArgs e)
         {
             if (IsNameValid())
             {
@@ -48,15 +48,15 @@ namespace MvE_SQL_test
                 string connectionstring = ConnString;
                 using (MySqlConnection connection = new MySqlConnection(connectionstring))
                 {
-                    using (MySqlCommand msqlcommand = new MySqlCommand("uspNewSupplier", connection))
+                    using (MySqlCommand msqlcommand = new MySqlCommand("uspNewRelation", connection))
                     {
                         msqlcommand.CommandType = CommandType.StoredProcedure;
 
-                        msqlcommand.Parameters.Add(new MySqlParameter("SupplierName", MySqlDbType.Text));
-                        msqlcommand.Parameters["SupplierName"].Value = txtSupplierName.Text;
+                        msqlcommand.Parameters.Add(new MySqlParameter("RelationName", MySqlDbType.Text));
+                        msqlcommand.Parameters["RelationName"].Value = txtRelationName.Text;
 
-                        msqlcommand.Parameters.Add(new MySqlParameter("SupplierID", MySqlDbType.Int32));
-                        msqlcommand.Parameters["SupplierID"].Direction = ParameterDirection.Output;
+                        msqlcommand.Parameters.Add(new MySqlParameter("RelationID", MySqlDbType.Int32));
+                        msqlcommand.Parameters["RelationID"].Direction = ParameterDirection.Output;
 
                         try
                         {
@@ -64,8 +64,8 @@ namespace MvE_SQL_test
 
                             msqlcommand.ExecuteNonQuery();
 
-                            this.parsedSupplierID = (int)msqlcommand.Parameters["SupplierID"].Value;
-                            this.txtSupplierID.Text = Convert.ToString(parsedSupplierID);
+                            this.parsedRelationID = (int)msqlcommand.Parameters["RelationID"].Value;
+                            this.txtRelationID.Text = Convert.ToString(parsedRelationID);
 
                         }
 
@@ -73,7 +73,7 @@ namespace MvE_SQL_test
                         {
                             MessageBox.Show("error " + ex.Number + " has occurd " + ex.Message);
 
-                            MessageBox.Show("Supplier ID was not returned. Supplier could not be created.");
+                            MessageBox.Show("Relation ID was not returned. Relation could not be created.");
                         }
 
                         finally
@@ -88,10 +88,10 @@ namespace MvE_SQL_test
 
         }
 
-        private void btnAddAnotherSupplier_Click(object sender, EventArgs e)
+        private void btnAddAnotherRelation_Click(object sender, EventArgs e)
         {
-            txtSupplierID.Clear();
-            txtSupplierName.Clear();
+            txtRelationID.Clear();
+            txtRelationName.Clear();
         }
     }
 }

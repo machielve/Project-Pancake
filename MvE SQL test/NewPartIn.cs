@@ -61,8 +61,8 @@ namespace MvE_SQL_test
                         connection.Close();
                     }
                 }
-                // mysql string Suppliers
-                const string mysqlString10 = "SELECT Supplier_id, Name FROM Victoriam.T_SUPPLIER";
+                // mysql string Relations
+                const string mysqlString10 = "SELECT Relation_id, Name FROM Victoriam.T_RELATION";
                 using (MySqlCommand mysqlcommand = new MySqlCommand(mysqlString10, connection))
                 {
                     try
@@ -72,9 +72,9 @@ namespace MvE_SQL_test
                         {
                             DataTable dt = new DataTable();
                             dt.Load(dr);
-                            cmbSupplier.DataSource = dt;
-                            cmbSupplier.DisplayMember = "Name";
-                            cmbSupplier.ValueMember = "Supplier_id";
+                            cmbRelation.DataSource = dt;
+                            cmbRelation.DisplayMember = "Name";
+                            cmbRelation.ValueMember = "Relation_id";
 
                             dr.Close();
                         }
@@ -82,7 +82,7 @@ namespace MvE_SQL_test
                     }
                     catch
                     {
-                        MessageBox.Show("Suppliers could not be loaded");
+                        MessageBox.Show("Relations could not be loaded");
                     }
                     finally
                     {
@@ -99,7 +99,7 @@ namespace MvE_SQL_test
         {
             decimal Quantity = countQuantity.Value;
             int PartID = Convert.ToInt32(cmbPart.SelectedValue);
-            int SupplierID = Convert.ToInt32(cmbSupplier.SelectedValue);
+            int RelationID = Convert.ToInt32(cmbRelation.SelectedValue);
             string PONumber = txtPONumber.Text;
             string SerialNumber = txtSerialNumber.Text;
             decimal TPrice = countPrice.Value;
@@ -120,8 +120,8 @@ namespace MvE_SQL_test
                     msqlcommand.Parameters.Add(new MySqlParameter("InPartID", MySqlDbType.Int32));
                     msqlcommand.Parameters["InPartID"].Value = PartID;
 
-                    msqlcommand.Parameters.Add(new MySqlParameter("InSupplierID", MySqlDbType.Int32));
-                    msqlcommand.Parameters["InSupplierID"].Value = SupplierID;
+                    msqlcommand.Parameters.Add(new MySqlParameter("InRelationID", MySqlDbType.Int32));
+                    msqlcommand.Parameters["InRelationID"].Value = RelationID;
 
                     msqlcommand.Parameters.Add(new MySqlParameter("InPONumber", MySqlDbType.VarChar));
                     msqlcommand.Parameters["InPONumber"].Value = PONumber;

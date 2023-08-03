@@ -205,11 +205,11 @@
     <Compile Include="NewPartIn.Designer.cs">
       <DependentUpon>NewPartIn.cs</DependentUpon>
     </Compile>
-    <Compile Include="NewPartSupplie.cs">
+    <Compile Include="NewPartRelation.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="NewPartSupplie.Designer.cs">
-      <DependentUpon>NewPartSupplie.cs</DependentUpon>
+    <Compile Include="NewPartRelation.Designer.cs">
+      <DependentUpon>NewPartRelation.cs</DependentUpon>
     </Compile>
     <Compile Include="NewProject.cs">
       <SubType>Form</SubType>
@@ -223,11 +223,11 @@
     <Compile Include="NewJobOrderPart.Designer.cs">
       <DependentUpon>NewJobOrderPart.cs</DependentUpon>
     </Compile>
-    <Compile Include="NewSupplier.cs">
+    <Compile Include="NewRelation.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="NewSupplier.Designer.cs">
-      <DependentUpon>NewSupplier.cs</DependentUpon>
+    <Compile Include="NewRelation.Designer.cs">
+      <DependentUpon>NewRelation.cs</DependentUpon>
     </Compile>
     <Compile Include="NewUnit.cs">
       <SubType>Form</SubType>
@@ -297,8 +297,8 @@
     <EmbeddedResource Include="NewPartIn.resx">
       <DependentUpon>NewPartIn.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="NewPartSupplie.resx">
-      <DependentUpon>NewPartSupplie.cs</DependentUpon>
+    <EmbeddedResource Include="NewPartRelation.resx">
+      <DependentUpon>NewPartRelation.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="NewProject.resx">
       <DependentUpon>NewProject.cs</DependentUpon>
@@ -306,8 +306,8 @@
     <EmbeddedResource Include="NewJobOrderPart.resx">
       <DependentUpon>NewJobOrderPart.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="NewSupplier.resx">
-      <DependentUpon>NewSupplier.cs</DependentUpon>
+    <EmbeddedResource Include="NewRelation.resx">
+      <DependentUpon>NewRelation.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="NewUnit.resx">
       <DependentUpon>NewUnit.cs</DependentUpon>

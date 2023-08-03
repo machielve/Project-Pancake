@@ -32,7 +32,7 @@ namespace MvE_SQL_test
             this.cmbPart = new System.Windows.Forms.ComboBox();
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
-            this.cmbSupplier = new System.Windows.Forms.ComboBox();
+            this.cmbRelation = new System.Windows.Forms.ComboBox();
             this.countQuantity = new System.Windows.Forms.NumericUpDown();
             this.label3 = new System.Windows.Forms.Label();
             this.countPrice = new System.Windows.Forms.NumericUpDown();
@@ -71,15 +71,15 @@ namespace MvE_SQL_test
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(45, 13);
             this.label2.TabIndex = 3;
-            this.label2.Text = "Supplier";
+            this.label2.Text = "Relation";
             // 
-            // cmbSupplier
+            // cmbRelation
             // 
-            this.cmbSupplier.FormattingEnabled = true;
-            this.cmbSupplier.Location = new System.Drawing.Point(105, 44);
-            this.cmbSupplier.Name = "cmbSupplier";
-            this.cmbSupplier.Size = new System.Drawing.Size(234, 21);
-            this.cmbSupplier.TabIndex = 2;
+            this.cmbRelation.FormattingEnabled = true;
+            this.cmbRelation.Location = new System.Drawing.Point(105, 44);
+            this.cmbRelation.Name = "cmbRelation";
+            this.cmbRelation.Size = new System.Drawing.Size(234, 21);
+            this.cmbRelation.TabIndex = 2;
             // 
             // countQuantity
             // 
@@ -186,7 +186,7 @@ namespace MvE_SQL_test
             this.Controls.Add(this.label3);
             this.Controls.Add(this.countQuantity);
             this.Controls.Add(this.label2);
-            this.Controls.Add(this.cmbSupplier);
+            this.Controls.Add(this.cmbRelation);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.cmbPart);
             this.Name = "NewPartIn";
@@ -204,7 +204,7 @@ namespace MvE_SQL_test
         private System.Windows.Forms.ComboBox cmbPart;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.ComboBox cmbSupplier;
+        private System.Windows.Forms.ComboBox cmbRelation;
         private System.Windows.Forms.NumericUpDown countQuantity;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.NumericUpDown countPrice;
