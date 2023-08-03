@@ -41,15 +41,20 @@ namespace MvE_SQL_test
             this.dgvJobOrderParts = new System.Windows.Forms.DataGridView();
             this.label4 = new System.Windows.Forms.Label();
             this.dgvJobOrderOperations = new System.Windows.Forms.DataGridView();
-            this.txtSeeContent = new System.Windows.Forms.Button();
-            this.txtAddPart = new System.Windows.Forms.Button();
-            this.txtAddOperation = new System.Windows.Forms.Button();
+            this.btnSeeContent = new System.Windows.Forms.Button();
+            this.btnAddPart = new System.Windows.Forms.Button();
+            this.btnAddOperation = new System.Windows.Forms.Button();
             this.txtDetailID = new System.Windows.Forms.TextBox();
             this.txtProjectID = new System.Windows.Forms.TextBox();
+            this.btnCreateJobOrder = new System.Windows.Forms.Button();
+            this.dgvProjectAssemblies = new System.Windows.Forms.DataGridView();
+            this.label5 = new System.Windows.Forms.Label();
+            this.btnAddAssembly = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dgvProject)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgvJobOrders)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgvJobOrderParts)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgvJobOrderOperations)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvProjectAssemblies)).BeginInit();
             this.SuspendLayout();
             // 
             // dgvProject
@@ -61,12 +66,12 @@ namespace MvE_SQL_test
             this.dgvProject.Location = new System.Drawing.Point(165, 38);
             this.dgvProject.Name = "dgvProject";
             this.dgvProject.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.AutoSizeToAllHeaders;
-            this.dgvProject.Size = new System.Drawing.Size(1028, 191);
+            this.dgvProject.Size = new System.Drawing.Size(1028, 200);
             this.dgvProject.TabIndex = 0;
             // 
             // btnNewProject
             // 
-            this.btnNewProject.Location = new System.Drawing.Point(12, 206);
+            this.btnNewProject.Location = new System.Drawing.Point(12, 215);
             this.btnNewProject.Name = "btnNewProject";
             this.btnNewProject.Size = new System.Drawing.Size(133, 23);
             this.btnNewProject.TabIndex = 1;
@@ -76,7 +81,7 @@ namespace MvE_SQL_test
             // 
             // btnFinnish
             // 
-            this.btnFinnish.Location = new System.Drawing.Point(12, 758);
+            this.btnFinnish.Location = new System.Drawing.Point(12, 829);
             this.btnFinnish.Name = "btnFinnish";
             this.btnFinnish.Size = new System.Drawing.Size(133, 23);
             this.btnFinnish.TabIndex = 2;
@@ -86,11 +91,11 @@ namespace MvE_SQL_test
             // 
             // btnSeeDetails
             // 
-            this.btnSeeDetails.Location = new System.Drawing.Point(12, 67);
+            this.btnSeeDetails.Location = new System.Drawing.Point(12, 96);
             this.btnSeeDetails.Name = "btnSeeDetails";
             this.btnSeeDetails.Size = new System.Drawing.Size(133, 23);
             this.btnSeeDetails.TabIndex = 3;
-            this.btnSeeDetails.Text = "See linked job oders";
+            this.btnSeeDetails.Text = "See project details";
             this.btnSeeDetails.UseVisualStyleBackColor = true;
             this.btnSeeDetails.Click += new System.EventHandler(this.btnSeeDetails_Click);
             // 
@@ -110,10 +115,10 @@ namespace MvE_SQL_test
             this.dgvJobOrders.AllowUserToDeleteRows = false;
             this.dgvJobOrders.BackgroundColor = System.Drawing.SystemColors.Control;
             this.dgvJobOrders.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvJobOrders.Location = new System.Drawing.Point(165, 292);
+            this.dgvJobOrders.Location = new System.Drawing.Point(165, 547);
             this.dgvJobOrders.Name = "dgvJobOrders";
             this.dgvJobOrders.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.AutoSizeToAllHeaders;
-            this.dgvJobOrders.Size = new System.Drawing.Size(1028, 114);
+            this.dgvJobOrders.Size = new System.Drawing.Size(1028, 100);
             this.dgvJobOrders.TabIndex = 5;
             // 
             // label1
@@ -128,7 +133,7 @@ namespace MvE_SQL_test
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(165, 269);
+            this.label2.Location = new System.Drawing.Point(165, 524);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(56, 13);
             this.label2.TabIndex = 7;
@@ -137,7 +142,7 @@ namespace MvE_SQL_test
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(165, 450);
+            this.label3.Location = new System.Drawing.Point(165, 650);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(77, 13);
             this.label3.TabIndex = 9;
@@ -149,16 +154,16 @@ namespace MvE_SQL_test
             this.dgvJobOrderParts.AllowUserToDeleteRows = false;
             this.dgvJobOrderParts.BackgroundColor = System.Drawing.SystemColors.Control;
             this.dgvJobOrderParts.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvJobOrderParts.Location = new System.Drawing.Point(165, 466);
+            this.dgvJobOrderParts.Location = new System.Drawing.Point(165, 666);
             this.dgvJobOrderParts.Name = "dgvJobOrderParts";
             this.dgvJobOrderParts.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.AutoSizeToAllHeaders;
-            this.dgvJobOrderParts.Size = new System.Drawing.Size(1028, 114);
+            this.dgvJobOrderParts.Size = new System.Drawing.Size(1028, 70);
             this.dgvJobOrderParts.TabIndex = 8;
             // 
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(165, 592);
+            this.label4.Location = new System.Drawing.Point(165, 739);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(103, 13);
             this.label4.TabIndex = 11;
@@ -170,44 +175,44 @@ namespace MvE_SQL_test
             this.dgvJobOrderOperations.AllowUserToDeleteRows = false;
             this.dgvJobOrderOperations.BackgroundColor = System.Drawing.SystemColors.Control;
             this.dgvJobOrderOperations.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvJobOrderOperations.Location = new System.Drawing.Point(165, 608);
+            this.dgvJobOrderOperations.Location = new System.Drawing.Point(165, 755);
             this.dgvJobOrderOperations.Name = "dgvJobOrderOperations";
             this.dgvJobOrderOperations.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.AutoSizeToAllHeaders;
-            this.dgvJobOrderOperations.Size = new System.Drawing.Size(1028, 114);
+            this.dgvJobOrderOperations.Size = new System.Drawing.Size(1028, 70);
             this.dgvJobOrderOperations.TabIndex = 10;
             // 
-            // txtSeeContent
+            // btnSeeContent
             // 
-            this.txtSeeContent.Location = new System.Drawing.Point(12, 292);
-            this.txtSeeContent.Name = "txtSeeContent";
-            this.txtSeeContent.Size = new System.Drawing.Size(133, 23);
-            this.txtSeeContent.TabIndex = 12;
-            this.txtSeeContent.Text = "See detail content";
-            this.txtSeeContent.UseVisualStyleBackColor = true;
-            this.txtSeeContent.Click += new System.EventHandler(this.txtSeeContent_Click);
+            this.btnSeeContent.Location = new System.Drawing.Point(12, 547);
+            this.btnSeeContent.Name = "btnSeeContent";
+            this.btnSeeContent.Size = new System.Drawing.Size(133, 23);
+            this.btnSeeContent.TabIndex = 12;
+            this.btnSeeContent.Text = "See job order content";
+            this.btnSeeContent.UseVisualStyleBackColor = true;
+            this.btnSeeContent.Click += new System.EventHandler(this.txtSeeContent_Click);
             // 
-            // txtAddPart
+            // btnAddPart
             // 
-            this.txtAddPart.Location = new System.Drawing.Point(12, 466);
-            this.txtAddPart.Name = "txtAddPart";
-            this.txtAddPart.Size = new System.Drawing.Size(133, 23);
-            this.txtAddPart.TabIndex = 13;
-            this.txtAddPart.Text = "Add part";
-            this.txtAddPart.UseVisualStyleBackColor = true;
-            this.txtAddPart.Click += new System.EventHandler(this.txtAddPart_Click);
+            this.btnAddPart.Location = new System.Drawing.Point(12, 666);
+            this.btnAddPart.Name = "btnAddPart";
+            this.btnAddPart.Size = new System.Drawing.Size(133, 23);
+            this.btnAddPart.TabIndex = 13;
+            this.btnAddPart.Text = "Add part";
+            this.btnAddPart.UseVisualStyleBackColor = true;
+            this.btnAddPart.Click += new System.EventHandler(this.txtAddPart_Click);
             // 
-            // txtAddOperation
+            // btnAddOperation
             // 
-            this.txtAddOperation.Location = new System.Drawing.Point(12, 608);
-            this.txtAddOperation.Name = "txtAddOperation";
-            this.txtAddOperation.Size = new System.Drawing.Size(133, 23);
-            this.txtAddOperation.TabIndex = 14;
-            this.txtAddOperation.Text = "Add operation";
-            this.txtAddOperation.UseVisualStyleBackColor = true;
+            this.btnAddOperation.Location = new System.Drawing.Point(12, 755);
+            this.btnAddOperation.Name = "btnAddOperation";
+            this.btnAddOperation.Size = new System.Drawing.Size(133, 23);
+            this.btnAddOperation.TabIndex = 14;
+            this.btnAddOperation.Text = "Add operation";
+            this.btnAddOperation.UseVisualStyleBackColor = true;
             // 
             // txtDetailID
             // 
-            this.txtDetailID.Location = new System.Drawing.Point(244, 266);
+            this.txtDetailID.Location = new System.Drawing.Point(265, 521);
             this.txtDetailID.Name = "txtDetailID";
             this.txtDetailID.ReadOnly = true;
             this.txtDetailID.Size = new System.Drawing.Size(100, 20);
@@ -221,16 +226,60 @@ namespace MvE_SQL_test
             this.txtProjectID.Size = new System.Drawing.Size(100, 20);
             this.txtProjectID.TabIndex = 16;
             // 
+            // btnCreateJobOrder
+            // 
+            this.btnCreateJobOrder.Location = new System.Drawing.Point(12, 415);
+            this.btnCreateJobOrder.Name = "btnCreateJobOrder";
+            this.btnCreateJobOrder.Size = new System.Drawing.Size(133, 23);
+            this.btnCreateJobOrder.TabIndex = 19;
+            this.btnCreateJobOrder.Text = "Create job order";
+            this.btnCreateJobOrder.UseVisualStyleBackColor = true;
+            this.btnCreateJobOrder.Click += new System.EventHandler(this.btnCreateJobOrder_Click);
+            // 
+            // dgvProjectAssemblies
+            // 
+            this.dgvProjectAssemblies.AllowUserToAddRows = false;
+            this.dgvProjectAssemblies.AllowUserToDeleteRows = false;
+            this.dgvProjectAssemblies.BackgroundColor = System.Drawing.SystemColors.Control;
+            this.dgvProjectAssemblies.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvProjectAssemblies.Location = new System.Drawing.Point(165, 415);
+            this.dgvProjectAssemblies.Name = "dgvProjectAssemblies";
+            this.dgvProjectAssemblies.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.AutoSizeToAllHeaders;
+            this.dgvProjectAssemblies.Size = new System.Drawing.Size(1028, 100);
+            this.dgvProjectAssemblies.TabIndex = 17;
+            // 
+            // label5
+            // 
+            this.label5.AutoSize = true;
+            this.label5.Location = new System.Drawing.Point(165, 392);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(94, 13);
+            this.label5.TabIndex = 18;
+            this.label5.Text = "Project assemblies";
+            // 
+            // btnAddAssembly
+            // 
+            this.btnAddAssembly.Location = new System.Drawing.Point(12, 125);
+            this.btnAddAssembly.Name = "btnAddAssembly";
+            this.btnAddAssembly.Size = new System.Drawing.Size(133, 23);
+            this.btnAddAssembly.TabIndex = 20;
+            this.btnAddAssembly.Text = "Add assembly";
+            this.btnAddAssembly.UseVisualStyleBackColor = true;
+            // 
             // ManagerProject
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1260, 793);
+            this.ClientSize = new System.Drawing.Size(1260, 864);
+            this.Controls.Add(this.btnAddAssembly);
+            this.Controls.Add(this.btnCreateJobOrder);
+            this.Controls.Add(this.label5);
+            this.Controls.Add(this.dgvProjectAssemblies);
             this.Controls.Add(this.txtProjectID);
             this.Controls.Add(this.txtDetailID);
-            this.Controls.Add(this.txtAddOperation);
-            this.Controls.Add(this.txtAddPart);
-            this.Controls.Add(this.txtSeeContent);
+            this.Controls.Add(this.btnAddOperation);
+            this.Controls.Add(this.btnAddPart);
+            this.Controls.Add(this.btnSeeContent);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.dgvJobOrderOperations);
             this.Controls.Add(this.label3);
@@ -250,6 +299,7 @@ namespace MvE_SQL_test
             ((System.ComponentModel.ISupportInitialize)(this.dgvJobOrders)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgvJobOrderParts)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgvJobOrderOperations)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvProjectAssemblies)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -269,10 +319,14 @@ namespace MvE_SQL_test
         private System.Windows.Forms.DataGridView dgvJobOrderParts;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.DataGridView dgvJobOrderOperations;
-        private System.Windows.Forms.Button txtSeeContent;
-        private System.Windows.Forms.Button txtAddPart;
-        private System.Windows.Forms.Button txtAddOperation;
+        private System.Windows.Forms.Button btnSeeContent;
+        private System.Windows.Forms.Button btnAddPart;
+        private System.Windows.Forms.Button btnAddOperation;
         private System.Windows.Forms.TextBox txtDetailID;
         private System.Windows.Forms.TextBox txtProjectID;
+        private System.Windows.Forms.Button btnCreateJobOrder;
+        private System.Windows.Forms.DataGridView dgvProjectAssemblies;
+        private System.Windows.Forms.Label label5;
+        private System.Windows.Forms.Button btnAddAssembly;
     }
 }

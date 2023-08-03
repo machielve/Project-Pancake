@@ -83,8 +83,8 @@ namespace MvE_SQL_test
                                                     "T_RELATION.Name, " +
                                                     "Price ";
                     string mysqlString2 = "FROM Victoriam.T_PARTRELATION "; 
-                    string mysqlString3 = "LEFT JOIN Victoriam.T_PART ON Victoriam.T_PARTRELATION.Part=Victoriam.T_PART.Part_id ";
-                    string mysqlString4 = "LEFT JOIN Victoriam.T_SUPPLIER ON Victoriam.T_PARTRELATION.Relation= Victoriam.T_RELATION.Relation_id ";
+                    string mysqlString3 = "LEFT JOIN Victoriam.T_PART       ON Victoriam.T_PARTRELATION.Part        =Victoriam.T_PART.Part_id ";
+                    string mysqlString4 = "LEFT JOIN Victoriam.T_RELATION   ON Victoriam.T_PARTRELATION.Relation    =Victoriam.T_RELATION.Relation_id ";
 
                     string mysqlString10 = "WHERE Part = ";
 

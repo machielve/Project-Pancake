@@ -20,13 +20,14 @@ namespace MvE_SQL_test
         }
 
         public static string ProjectID = "";
-
+        public static string AssemblyID = "";
         public static string DetailID = "";
 
         public static string ConnString { get; set;  }
 
         private void LoadContent()
         {
+
             Int32 selectedrowindex = dgvJobOrders.SelectedCells[0].RowIndex;
             DataGridViewRow SelectedRow = dgvJobOrders.Rows[selectedrowindex];
             string DetailtId = Convert.ToString(SelectedRow.Cells["JobOrder_id"].Value);
@@ -164,7 +165,7 @@ namespace MvE_SQL_test
 
             else 
             {
-                // Create the connection.
+                // Create the connection job orders
                 string connectionstring = ConnString;
                 using (MySqlConnection connection = new MySqlConnection(connectionstring))
                 {
@@ -190,8 +191,40 @@ namespace MvE_SQL_test
                             MessageBox.Show("Job orders could not be loaded");
                         }
                     }
-                }                   
+                }
+                
+                // Create the connection project assemblies                
+                using (MySqlConnection connection = new MySqlConnection(connectionstring))
+                {
+                    // mysql string
+                    const string mysqlString1 = "SELECT * FROM Victoriam.T_PROJECTASSEMBLY WHERE Project = ";
+                    string mysqlString = mysqlString1 + ProjectId;
+                    using (MySqlCommand mysqlcommand = new MySqlCommand(mysqlString, connection))
+                    {
+                        try
+                        {
+                            connection.Open();
+
+                            using (MySqlDataReader dr = mysqlcommand.ExecuteReader())
+                            {
+                                DataTable dt = new DataTable();
+                                dt.Load(dr);
+                                this.dgvProjectAssemblies.DataSource = dt;
+                                dr.Close();
+                            }
+                        }
+                        catch
+                        {
+                            MessageBox.Show("Assemblies could not be loaded");
+                        }
+                    }
+                }
             }
+
+        }
+
+        private void btnCreateJobOrder_Click(object sender, EventArgs e)
+        {
 
         }
 
@@ -217,5 +250,7 @@ namespace MvE_SQL_test
         {
 
         }
+
+
     }
 }
