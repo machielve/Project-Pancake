@@ -216,6 +216,16 @@ namespace MvE_SQL_test
 
         private void BtnAddAssembly_Click(object sender, EventArgs e)
         {
+            string ProjectID = txtProjectID.Text;
+            string connectionstring = ConnString;
+            Form frm = new NewProjectAssembly();
+            NewProjectAssembly.ConnString = connectionstring;
+            frm.FormClosing += new FormClosingEventHandler(this.NewProjectAssembly_Formclosing);
+            frm.Show();
+
+        }
+        public void NewProjectAssembly_Formclosing(object sender, EventArgs e)
+        {
 
         }
         private void BtnCreateJobOrder_Click(object sender, EventArgs e)
@@ -251,10 +261,10 @@ namespace MvE_SQL_test
             string connectionstring = ConnString; 
             Form frm = new NewJobOrderPart();
             NewJobOrderPart.ConnString = connectionstring;
-            frm.FormClosing += new FormClosingEventHandler(this.NewProjectDetailPart_Formclosing);
+            frm.FormClosing += new FormClosingEventHandler(this.NewJobOrderPart_Formclosing);
             frm.Show();
         }
-        public void NewProjectDetailPart_Formclosing(object sender, EventArgs e)
+        public void NewJobOrderPart_Formclosing(object sender, EventArgs e)
         {
 
         }

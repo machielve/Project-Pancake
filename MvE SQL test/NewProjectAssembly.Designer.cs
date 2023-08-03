@@ -88,6 +88,7 @@ namespace MvE_SQL_test
             this.BtnFinnish.TabIndex = 17;
             this.BtnFinnish.Text = "Cancel";
             this.BtnFinnish.UseVisualStyleBackColor = true;
+            this.BtnFinnish.Click += new System.EventHandler(this.BtnFinnish_Click);
             // 
             // NewProjectAssembly
             // 
@@ -102,6 +103,7 @@ namespace MvE_SQL_test
             this.Controls.Add(this.BtnFinnish);
             this.Name = "NewProjectAssembly";
             this.Text = "New project assembly";
+            this.Load += new System.EventHandler(this.NewProjectAssembly_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 

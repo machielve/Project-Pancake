@@ -61,11 +61,11 @@ namespace MvE_SQL_test
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(20, 9);
+            this.label1.Location = new System.Drawing.Point(20, 12);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(82, 13);
+            this.label1.Size = new System.Drawing.Size(65, 13);
             this.label1.TabIndex = 12;
-            this.label1.Text = "Project detail ID";
+            this.label1.Text = "Job order ID";
             // 
             // countPart
             // 
@@ -115,7 +115,7 @@ namespace MvE_SQL_test
             this.BtnAddPart.Text = "Add part";
             this.BtnAddPart.UseVisualStyleBackColor = true;
             // 
-            // NewProjectDetailPart
+            // NewJobOrderPart
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -128,8 +128,8 @@ namespace MvE_SQL_test
             this.Controls.Add(this.txtProjectDetailID);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.BtnFinnish);
-            this.Name = "NewProjectDetailPart";
-            this.Text = "New Project Detail Part";
+            this.Name = "NewJobOrderPart";
+            this.Text = "New job order part";
             this.Load += new System.EventHandler(this.NewProjectDetailPart_Load);
             ((System.ComponentModel.ISupportInitialize)(this.countPart)).EndInit();
             this.ResumeLayout(false);
