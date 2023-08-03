@@ -209,6 +209,7 @@ namespace MvE_SQL_test
             this.BtnAddOperation.TabIndex = 14;
             this.BtnAddOperation.Text = "Add operation";
             this.BtnAddOperation.UseVisualStyleBackColor = true;
+            this.BtnAddOperation.Click += new System.EventHandler(this.BtnAddOperation_Click);
             // 
             // txtDetailID
             // 
@@ -265,6 +266,7 @@ namespace MvE_SQL_test
             this.BtnAddAssembly.TabIndex = 20;
             this.BtnAddAssembly.Text = "Add assembly";
             this.BtnAddAssembly.UseVisualStyleBackColor = true;
+            this.BtnAddAssembly.Click += new System.EventHandler(this.BtnAddAssembly_Click);
             // 
             // ManagerProject
             // 

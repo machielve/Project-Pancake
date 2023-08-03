@@ -223,6 +223,12 @@
     <Compile Include="NewJobOrderPart.Designer.cs">
       <DependentUpon>NewJobOrderPart.cs</DependentUpon>
     </Compile>
+    <Compile Include="NewProjectAssembly.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="NewProjectAssembly.Designer.cs">
+      <DependentUpon>NewProjectAssembly.cs</DependentUpon>
+    </Compile>
     <Compile Include="NewRelation.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -305,6 +311,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="NewJobOrderPart.resx">
       <DependentUpon>NewJobOrderPart.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="NewProjectAssembly.resx">
+      <DependentUpon>NewProjectAssembly.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="NewRelation.resx">
       <DependentUpon>NewRelation.cs</DependentUpon>

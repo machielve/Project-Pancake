@@ -131,24 +131,13 @@ namespace MvE_SQL_test
                 }
             }
         }
-
-        private void BtnFinnish_Click(object sender, EventArgs e)
-        {
-            this.Close();
-        }
-
-
-
-
         private void BtnNewProject_Click(object sender, EventArgs e)
         {
-            string connectionstring = ConnString; 
+            string connectionstring = ConnString;
             Form frm = new NewProject();
             NewProject.ConnString = connectionstring;
             frm.Show();
         }
-
-        
 
         private void BtnSeeDetails_Click(object sender, EventArgs e)
         {
@@ -163,7 +152,7 @@ namespace MvE_SQL_test
                 MessageBox.Show("No project selected");
             }
 
-            else 
+            else
             {
                 // Create the connection job orders
                 string connectionstring = ConnString;
@@ -192,7 +181,7 @@ namespace MvE_SQL_test
                         }
                     }
                 }
-                
+
                 // Create the connection project assemblies                
                 using (MySqlConnection connection = new MySqlConnection(connectionstring))
                 {
@@ -223,18 +212,38 @@ namespace MvE_SQL_test
 
         }
 
+
+
+        private void BtnAddAssembly_Click(object sender, EventArgs e)
+        {
+
+        }
         private void BtnCreateJobOrder_Click(object sender, EventArgs e)
         {
 
         }
 
-        private void BtnSeeContent_Click(object sender, EventArgs e)
+
+
+        private void BtnFinnish_Click(object sender, EventArgs e)
         {
-            LoadContent();
+            this.Close();
         }
 
 
 
+
+        
+
+        
+
+        
+        
+
+        private void BtnSeeContent_Click(object sender, EventArgs e)
+        {
+            LoadContent();
+        }
 
         public void BtnAddPart_Click(object sender, EventArgs e)
         {
@@ -245,12 +254,14 @@ namespace MvE_SQL_test
             frm.FormClosing += new FormClosingEventHandler(this.NewProjectDetailPart_Formclosing);
             frm.Show();
         }
-
         public void NewProjectDetailPart_Formclosing(object sender, EventArgs e)
         {
 
         }
 
+        private void BtnAddOperation_Click(object sender, EventArgs e)
+        {
 
+        }
     }
 }
