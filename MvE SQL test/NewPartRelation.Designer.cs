@@ -31,16 +31,16 @@ namespace MvE_SQL_test
         {
             this.cmbRelation = new System.Windows.Forms.ComboBox();
             this.label3 = new System.Windows.Forms.Label();
-            this.btnAddAnotherRelation = new System.Windows.Forms.Button();
-            this.btnNewRelation = new System.Windows.Forms.Button();
+            this.BtnAddAnotherRelation = new System.Windows.Forms.Button();
+            this.BtnNewRelation = new System.Windows.Forms.Button();
             this.txtPartID = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
-            this.btnFinnish = new System.Windows.Forms.Button();
+            this.BtnFinnish = new System.Windows.Forms.Button();
             this.countPrice = new System.Windows.Forms.NumericUpDown();
             this.CountQuantity = new System.Windows.Forms.NumericUpDown();
             this.label1 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
-            this.btnCreateRelation = new System.Windows.Forms.Button();
+            this.BtnCreateRelation = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.countPrice)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.CountQuantity)).BeginInit();
             this.SuspendLayout();
@@ -67,25 +67,25 @@ namespace MvE_SQL_test
             this.label3.TabIndex = 17;
             this.label3.Text = "Relation";
             // 
-            // btnAddAnotherRelation
+            // BtnAddAnotherRelation
             // 
-            this.btnAddAnotherRelation.Location = new System.Drawing.Point(196, 203);
-            this.btnAddAnotherRelation.Name = "btnAddAnotherRelation";
-            this.btnAddAnotherRelation.Size = new System.Drawing.Size(146, 23);
-            this.btnAddAnotherRelation.TabIndex = 16;
-            this.btnAddAnotherRelation.Text = "Add another relation";
-            this.btnAddAnotherRelation.UseVisualStyleBackColor = true;
-            this.btnAddAnotherRelation.Click += new System.EventHandler(this.btnAddAnotherRelation_Click);
+            this.BtnAddAnotherRelation.Location = new System.Drawing.Point(196, 203);
+            this.BtnAddAnotherRelation.Name = "BtnAddAnotherRelation";
+            this.BtnAddAnotherRelation.Size = new System.Drawing.Size(146, 23);
+            this.BtnAddAnotherRelation.TabIndex = 16;
+            this.BtnAddAnotherRelation.Text = "Add another relation";
+            this.BtnAddAnotherRelation.UseVisualStyleBackColor = true;
+            this.BtnAddAnotherRelation.Click += new System.EventHandler(this.BtnAddAnotherRelation_Click);
             // 
-            // btnNewRelation
+            // BtnNewRelation
             // 
-            this.btnNewRelation.Location = new System.Drawing.Point(108, 131);
-            this.btnNewRelation.Name = "btnNewRelation";
-            this.btnNewRelation.Size = new System.Drawing.Size(234, 23);
-            this.btnNewRelation.TabIndex = 15;
-            this.btnNewRelation.Text = "Add new relation";
-            this.btnNewRelation.UseVisualStyleBackColor = true;
-            this.btnNewRelation.Click += new System.EventHandler(this.btnNewSupplier_Click);
+            this.BtnNewRelation.Location = new System.Drawing.Point(108, 131);
+            this.BtnNewRelation.Name = "BtnNewRelation";
+            this.BtnNewRelation.Size = new System.Drawing.Size(234, 23);
+            this.BtnNewRelation.TabIndex = 15;
+            this.BtnNewRelation.Text = "Add new relation";
+            this.BtnNewRelation.UseVisualStyleBackColor = true;
+            this.BtnNewRelation.Click += new System.EventHandler(this.BtnNewSupplier_Click);
             // 
             // txtPartID
             // 
@@ -104,15 +104,15 @@ namespace MvE_SQL_test
             this.label2.TabIndex = 13;
             this.label2.Text = "Part ID";
             // 
-            // btnFinnish
+            // BtnFinnish
             // 
-            this.btnFinnish.Location = new System.Drawing.Point(15, 203);
-            this.btnFinnish.Name = "btnFinnish";
-            this.btnFinnish.Size = new System.Drawing.Size(146, 23);
-            this.btnFinnish.TabIndex = 10;
-            this.btnFinnish.Text = "Finnish";
-            this.btnFinnish.UseVisualStyleBackColor = true;
-            this.btnFinnish.Click += new System.EventHandler(this.btnFinnish_Click);
+            this.BtnFinnish.Location = new System.Drawing.Point(15, 203);
+            this.BtnFinnish.Name = "BtnFinnish";
+            this.BtnFinnish.Size = new System.Drawing.Size(146, 23);
+            this.BtnFinnish.TabIndex = 10;
+            this.BtnFinnish.Text = "Finnish";
+            this.BtnFinnish.UseVisualStyleBackColor = true;
+            this.BtnFinnish.Click += new System.EventHandler(this.BtnFinnish_Click);
             // 
             // countPrice
             // 
@@ -162,33 +162,33 @@ namespace MvE_SQL_test
             this.label4.TabIndex = 22;
             this.label4.Text = "Quantity";
             // 
-            // btnCreateRelation
+            // BtnCreateRelation
             // 
-            this.btnCreateRelation.Location = new System.Drawing.Point(196, 174);
-            this.btnCreateRelation.Name = "btnCreateRelation";
-            this.btnCreateRelation.Size = new System.Drawing.Size(146, 23);
-            this.btnCreateRelation.TabIndex = 23;
-            this.btnCreateRelation.Text = "Create new relation";
-            this.btnCreateRelation.UseVisualStyleBackColor = true;
-            this.btnCreateRelation.Click += new System.EventHandler(this.btnCreateSupplier_Click);
+            this.BtnCreateRelation.Location = new System.Drawing.Point(196, 174);
+            this.BtnCreateRelation.Name = "BtnCreateRelation";
+            this.BtnCreateRelation.Size = new System.Drawing.Size(146, 23);
+            this.BtnCreateRelation.TabIndex = 23;
+            this.BtnCreateRelation.Text = "Create new relation";
+            this.BtnCreateRelation.UseVisualStyleBackColor = true;
+            this.BtnCreateRelation.Click += new System.EventHandler(this.BtnCreateSupplier_Click);
             // 
             // NewPartRelation
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(384, 263);
-            this.Controls.Add(this.btnCreateRelation);
+            this.Controls.Add(this.BtnCreateRelation);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.CountQuantity);
             this.Controls.Add(this.countPrice);
             this.Controls.Add(this.cmbRelation);
             this.Controls.Add(this.label3);
-            this.Controls.Add(this.btnAddAnotherRelation);
-            this.Controls.Add(this.btnNewRelation);
+            this.Controls.Add(this.BtnAddAnotherRelation);
+            this.Controls.Add(this.BtnNewRelation);
             this.Controls.Add(this.txtPartID);
             this.Controls.Add(this.label2);
-            this.Controls.Add(this.btnFinnish);
+            this.Controls.Add(this.BtnFinnish);
             this.Name = "NewPartRelation";
             this.Text = "New part relation";
             this.Load += new System.EventHandler(this.NewPartRelation_Load);
@@ -203,15 +203,15 @@ namespace MvE_SQL_test
 
         private System.Windows.Forms.ComboBox cmbRelation;
         private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.Button btnAddAnotherRelation;
-        private System.Windows.Forms.Button btnNewRelation;
+        private System.Windows.Forms.Button BtnAddAnotherRelation;
+        private System.Windows.Forms.Button BtnNewRelation;
         private System.Windows.Forms.TextBox txtPartID;
         private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.Button btnFinnish;
+        private System.Windows.Forms.Button BtnFinnish;
         private System.Windows.Forms.NumericUpDown countPrice;
         private System.Windows.Forms.NumericUpDown CountQuantity;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.Button btnCreateRelation;
+        private System.Windows.Forms.Button BtnCreateRelation;
     }
 }

@@ -96,12 +96,12 @@ namespace MvE_SQL_test
 
         }
 
-        private void btnFinnish_Click(object sender, EventArgs e)
+        private void BtnFinnish_Click(object sender, EventArgs e)
         {
             this.Close();
         }
 
-        private void btnAddPart_Click(object sender, EventArgs e)
+        private void BtnAddPart_Click(object sender, EventArgs e)
         {
             int AssemblyID = Convert.ToInt32(txtAssemblyID.Text);
             int PartID = Convert.ToInt32(cmbPart.SelectedValue.ToString());

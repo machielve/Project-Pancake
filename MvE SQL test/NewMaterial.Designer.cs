@@ -31,9 +31,9 @@ namespace MvE_SQL_test
         {
             this.txtMaterialName = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
-            this.btnFinnish = new System.Windows.Forms.Button();
-            this.btnNewMaterial = new System.Windows.Forms.Button();
-            this.btnAddAnotherUnit = new System.Windows.Forms.Button();
+            this.BtnFinnish = new System.Windows.Forms.Button();
+            this.BtnNewMaterial = new System.Windows.Forms.Button();
+            this.BtnAddAnotherUnit = new System.Windows.Forms.Button();
             this.txtMaterialID = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
             this.SuspendLayout();
@@ -54,35 +54,35 @@ namespace MvE_SQL_test
             this.label1.TabIndex = 3;
             this.label1.Text = "Material name";
             // 
-            // btnFinnish
+            // BtnFinnish
             // 
-            this.btnFinnish.Location = new System.Drawing.Point(15, 179);
-            this.btnFinnish.Name = "btnFinnish";
-            this.btnFinnish.Size = new System.Drawing.Size(146, 23);
-            this.btnFinnish.TabIndex = 5;
-            this.btnFinnish.Text = "Finnish";
-            this.btnFinnish.UseVisualStyleBackColor = true;
-            this.btnFinnish.Click += new System.EventHandler(this.btnFinnish_Click);
+            this.BtnFinnish.Location = new System.Drawing.Point(15, 179);
+            this.BtnFinnish.Name = "BtnFinnish";
+            this.BtnFinnish.Size = new System.Drawing.Size(146, 23);
+            this.BtnFinnish.TabIndex = 5;
+            this.BtnFinnish.Text = "Finnish";
+            this.BtnFinnish.UseVisualStyleBackColor = true;
+            this.BtnFinnish.Click += new System.EventHandler(this.BtnFinnish_Click);
             // 
-            // btnNewMaterial
+            // BtnNewMaterial
             // 
-            this.btnNewMaterial.Location = new System.Drawing.Point(108, 118);
-            this.btnNewMaterial.Name = "btnNewMaterial";
-            this.btnNewMaterial.Size = new System.Drawing.Size(234, 23);
-            this.btnNewMaterial.TabIndex = 6;
-            this.btnNewMaterial.Text = "Add new material";
-            this.btnNewMaterial.UseVisualStyleBackColor = true;
-            this.btnNewMaterial.Click += new System.EventHandler(this.btnNewMaterial_Click);
+            this.BtnNewMaterial.Location = new System.Drawing.Point(108, 118);
+            this.BtnNewMaterial.Name = "BtnNewMaterial";
+            this.BtnNewMaterial.Size = new System.Drawing.Size(234, 23);
+            this.BtnNewMaterial.TabIndex = 6;
+            this.BtnNewMaterial.Text = "Add new material";
+            this.BtnNewMaterial.UseVisualStyleBackColor = true;
+            this.BtnNewMaterial.Click += new System.EventHandler(this.BtnNewMaterial_Click);
             // 
-            // btnAddAnotherUnit
+            // BtnAddAnotherUnit
             // 
-            this.btnAddAnotherUnit.Location = new System.Drawing.Point(203, 179);
-            this.btnAddAnotherUnit.Name = "btnAddAnotherUnit";
-            this.btnAddAnotherUnit.Size = new System.Drawing.Size(139, 23);
-            this.btnAddAnotherUnit.TabIndex = 9;
-            this.btnAddAnotherUnit.Text = "Add another unit";
-            this.btnAddAnotherUnit.UseVisualStyleBackColor = true;
-            this.btnAddAnotherUnit.Click += new System.EventHandler(this.btnAddAnotherUnit_Click);
+            this.BtnAddAnotherUnit.Location = new System.Drawing.Point(203, 179);
+            this.BtnAddAnotherUnit.Name = "BtnAddAnotherUnit";
+            this.BtnAddAnotherUnit.Size = new System.Drawing.Size(139, 23);
+            this.BtnAddAnotherUnit.TabIndex = 9;
+            this.BtnAddAnotherUnit.Text = "Add another unit";
+            this.BtnAddAnotherUnit.UseVisualStyleBackColor = true;
+            this.BtnAddAnotherUnit.Click += new System.EventHandler(this.BtnAddAnotherUnit_Click);
             // 
             // txtMaterialID
             // 
@@ -106,11 +106,11 @@ namespace MvE_SQL_test
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(384, 211);
-            this.Controls.Add(this.btnAddAnotherUnit);
+            this.Controls.Add(this.BtnAddAnotherUnit);
             this.Controls.Add(this.txtMaterialID);
             this.Controls.Add(this.label2);
-            this.Controls.Add(this.btnNewMaterial);
-            this.Controls.Add(this.btnFinnish);
+            this.Controls.Add(this.BtnNewMaterial);
+            this.Controls.Add(this.BtnFinnish);
             this.Controls.Add(this.txtMaterialName);
             this.Controls.Add(this.label1);
             this.Name = "NewMaterial";
@@ -124,9 +124,9 @@ namespace MvE_SQL_test
 
         private System.Windows.Forms.TextBox txtMaterialName;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.Button btnFinnish;
-        private System.Windows.Forms.Button btnNewMaterial;
-        private System.Windows.Forms.Button btnAddAnotherUnit;
+        private System.Windows.Forms.Button BtnFinnish;
+        private System.Windows.Forms.Button BtnNewMaterial;
+        private System.Windows.Forms.Button BtnAddAnotherUnit;
         private System.Windows.Forms.TextBox txtMaterialID;
         private System.Windows.Forms.Label label2;
     }

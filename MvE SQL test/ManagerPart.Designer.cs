@@ -29,33 +29,33 @@ namespace MvE_SQL_test
         /// </summary>
         private void InitializeComponent()
         {
-            this.dgvParts = new System.Windows.Forms.DataGridView();
+            this.DgvParts = new System.Windows.Forms.DataGridView();
             this.label1 = new System.Windows.Forms.Label();
-            this.btnFinnish = new System.Windows.Forms.Button();
-            this.btnLoadParts = new System.Windows.Forms.Button();
-            this.btnNewPart = new System.Windows.Forms.Button();
-            this.dgvRelations = new System.Windows.Forms.DataGridView();
+            this.BtnFinnish = new System.Windows.Forms.Button();
+            this.BtnLoadParts = new System.Windows.Forms.Button();
+            this.BtnNewPart = new System.Windows.Forms.Button();
+            this.DgvRelations = new System.Windows.Forms.DataGridView();
             this.label2 = new System.Windows.Forms.Label();
-            this.btnAddRelation = new System.Windows.Forms.Button();
+            this.BtnAddRelation = new System.Windows.Forms.Button();
             this.txtPartID = new System.Windows.Forms.TextBox();
-            this.btnRemoveRelation = new System.Windows.Forms.Button();
-            ((System.ComponentModel.ISupportInitialize)(this.dgvParts)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dgvRelations)).BeginInit();
+            this.BtnRemoveRelation = new System.Windows.Forms.Button();
+            ((System.ComponentModel.ISupportInitialize)(this.DgvParts)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.DgvRelations)).BeginInit();
             this.SuspendLayout();
             // 
-            // dgvParts
+            // DgvParts
             // 
-            this.dgvParts.AllowUserToAddRows = false;
-            this.dgvParts.AllowUserToDeleteRows = false;
-            this.dgvParts.BackgroundColor = System.Drawing.SystemColors.Control;
-            this.dgvParts.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvParts.Location = new System.Drawing.Point(165, 38);
-            this.dgvParts.MaximumSize = new System.Drawing.Size(1500, 490);
-            this.dgvParts.MinimumSize = new System.Drawing.Size(900, 490);
-            this.dgvParts.Name = "dgvParts";
-            this.dgvParts.Size = new System.Drawing.Size(1310, 490);
-            this.dgvParts.TabIndex = 0;
-            this.dgvParts.SelectionChanged += new System.EventHandler(this.dgvPart_SelectionChanged);
+            this.DgvParts.AllowUserToAddRows = false;
+            this.DgvParts.AllowUserToDeleteRows = false;
+            this.DgvParts.BackgroundColor = System.Drawing.SystemColors.Control;
+            this.DgvParts.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.DgvParts.Location = new System.Drawing.Point(165, 38);
+            this.DgvParts.MaximumSize = new System.Drawing.Size(1500, 490);
+            this.DgvParts.MinimumSize = new System.Drawing.Size(900, 490);
+            this.DgvParts.Name = "DgvParts";
+            this.DgvParts.Size = new System.Drawing.Size(1310, 490);
+            this.DgvParts.TabIndex = 0;
+            this.DgvParts.SelectionChanged += new System.EventHandler(this.DgvPart_SelectionChanged);
             // 
             // label1
             // 
@@ -66,46 +66,46 @@ namespace MvE_SQL_test
             this.label1.TabIndex = 1;
             this.label1.Text = "Parts";
             // 
-            // btnFinnish
+            // BtnFinnish
             // 
-            this.btnFinnish.Location = new System.Drawing.Point(13, 668);
-            this.btnFinnish.Name = "btnFinnish";
-            this.btnFinnish.Size = new System.Drawing.Size(133, 23);
-            this.btnFinnish.TabIndex = 8;
-            this.btnFinnish.Text = "Finnish";
-            this.btnFinnish.UseVisualStyleBackColor = true;
-            this.btnFinnish.Click += new System.EventHandler(this.btnFinnish_Click);
+            this.BtnFinnish.Location = new System.Drawing.Point(13, 668);
+            this.BtnFinnish.Name = "BtnFinnish";
+            this.BtnFinnish.Size = new System.Drawing.Size(133, 23);
+            this.BtnFinnish.TabIndex = 8;
+            this.BtnFinnish.Text = "Finnish";
+            this.BtnFinnish.UseVisualStyleBackColor = true;
+            this.BtnFinnish.Click += new System.EventHandler(this.BtnFinnish_Click);
             // 
-            // btnLoadParts
+            // BtnLoadParts
             // 
-            this.btnLoadParts.Location = new System.Drawing.Point(13, 38);
-            this.btnLoadParts.Name = "btnLoadParts";
-            this.btnLoadParts.Size = new System.Drawing.Size(133, 23);
-            this.btnLoadParts.TabIndex = 9;
-            this.btnLoadParts.Text = "Load parts";
-            this.btnLoadParts.UseVisualStyleBackColor = true;
-            this.btnLoadParts.Click += new System.EventHandler(this.btnLoadParts_Click);
+            this.BtnLoadParts.Location = new System.Drawing.Point(13, 38);
+            this.BtnLoadParts.Name = "BtnLoadParts";
+            this.BtnLoadParts.Size = new System.Drawing.Size(133, 23);
+            this.BtnLoadParts.TabIndex = 9;
+            this.BtnLoadParts.Text = "Load parts";
+            this.BtnLoadParts.UseVisualStyleBackColor = true;
+            this.BtnLoadParts.Click += new System.EventHandler(this.BtnLoadParts_Click);
             // 
-            // btnNewPart
+            // BtnNewPart
             // 
-            this.btnNewPart.Location = new System.Drawing.Point(13, 67);
-            this.btnNewPart.Name = "btnNewPart";
-            this.btnNewPart.Size = new System.Drawing.Size(133, 23);
-            this.btnNewPart.TabIndex = 10;
-            this.btnNewPart.Text = "New part";
-            this.btnNewPart.UseVisualStyleBackColor = true;
-            this.btnNewPart.Click += new System.EventHandler(this.btnNewPart_Click);
+            this.BtnNewPart.Location = new System.Drawing.Point(13, 67);
+            this.BtnNewPart.Name = "BtnNewPart";
+            this.BtnNewPart.Size = new System.Drawing.Size(133, 23);
+            this.BtnNewPart.TabIndex = 10;
+            this.BtnNewPart.Text = "New part";
+            this.BtnNewPart.UseVisualStyleBackColor = true;
+            this.BtnNewPart.Click += new System.EventHandler(this.BtnNewPart_Click);
             // 
-            // dgvRelations
+            // DgvRelations
             // 
-            this.dgvRelations.AllowUserToAddRows = false;
-            this.dgvRelations.AllowUserToDeleteRows = false;
-            this.dgvRelations.BackgroundColor = System.Drawing.SystemColors.Control;
-            this.dgvRelations.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvRelations.Location = new System.Drawing.Point(165, 587);
-            this.dgvRelations.Name = "dgvRelations";
-            this.dgvRelations.Size = new System.Drawing.Size(1310, 104);
-            this.dgvRelations.TabIndex = 11;
+            this.DgvRelations.AllowUserToAddRows = false;
+            this.DgvRelations.AllowUserToDeleteRows = false;
+            this.DgvRelations.BackgroundColor = System.Drawing.SystemColors.Control;
+            this.DgvRelations.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.DgvRelations.Location = new System.Drawing.Point(165, 587);
+            this.DgvRelations.Name = "DgvRelations";
+            this.DgvRelations.Size = new System.Drawing.Size(1310, 104);
+            this.DgvRelations.TabIndex = 11;
             // 
             // label2
             // 
@@ -116,15 +116,15 @@ namespace MvE_SQL_test
             this.label2.TabIndex = 12;
             this.label2.Text = "Relations";
             // 
-            // btnAddRelation
+            // BtnAddRelation
             // 
-            this.btnAddRelation.Location = new System.Drawing.Point(13, 587);
-            this.btnAddRelation.Name = "btnAddRelation";
-            this.btnAddRelation.Size = new System.Drawing.Size(133, 23);
-            this.btnAddRelation.TabIndex = 13;
-            this.btnAddRelation.Text = "Add Relation";
-            this.btnAddRelation.UseVisualStyleBackColor = true;
-            this.btnAddRelation.Click += new System.EventHandler(this.btnAddRelation_Click);
+            this.BtnAddRelation.Location = new System.Drawing.Point(13, 587);
+            this.BtnAddRelation.Name = "BtnAddRelation";
+            this.BtnAddRelation.Size = new System.Drawing.Size(133, 23);
+            this.BtnAddRelation.TabIndex = 13;
+            this.BtnAddRelation.Text = "Add Relation";
+            this.BtnAddRelation.UseVisualStyleBackColor = true;
+            this.BtnAddRelation.Click += new System.EventHandler(this.BtnAddRelation_Click);
             // 
             // txtPartID
             // 
@@ -134,36 +134,36 @@ namespace MvE_SQL_test
             this.txtPartID.Size = new System.Drawing.Size(100, 20);
             this.txtPartID.TabIndex = 15;
             // 
-            // btnRemoveRelation
+            // BtnRemoveRelation
             // 
-            this.btnRemoveRelation.Location = new System.Drawing.Point(13, 616);
-            this.btnRemoveRelation.Name = "btnRemoveRelation";
-            this.btnRemoveRelation.Size = new System.Drawing.Size(133, 23);
-            this.btnRemoveRelation.TabIndex = 16;
-            this.btnRemoveRelation.Text = "Remove relation";
-            this.btnRemoveRelation.UseVisualStyleBackColor = true;
-            this.btnRemoveRelation.Click += new System.EventHandler(this.btnRemoveRelation_Click);
+            this.BtnRemoveRelation.Location = new System.Drawing.Point(13, 616);
+            this.BtnRemoveRelation.Name = "BtnRemoveRelation";
+            this.BtnRemoveRelation.Size = new System.Drawing.Size(133, 23);
+            this.BtnRemoveRelation.TabIndex = 16;
+            this.BtnRemoveRelation.Text = "Remove relation";
+            this.BtnRemoveRelation.UseVisualStyleBackColor = true;
+            this.BtnRemoveRelation.Click += new System.EventHandler(this.BtnRemoveRelation_Click);
             // 
             // ManagerPart
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1484, 811);
-            this.Controls.Add(this.btnRemoveRelation);
+            this.Controls.Add(this.BtnRemoveRelation);
             this.Controls.Add(this.txtPartID);
-            this.Controls.Add(this.btnAddRelation);
+            this.Controls.Add(this.BtnAddRelation);
             this.Controls.Add(this.label2);
-            this.Controls.Add(this.dgvRelations);
-            this.Controls.Add(this.btnNewPart);
-            this.Controls.Add(this.btnLoadParts);
-            this.Controls.Add(this.btnFinnish);
+            this.Controls.Add(this.DgvRelations);
+            this.Controls.Add(this.BtnNewPart);
+            this.Controls.Add(this.BtnLoadParts);
+            this.Controls.Add(this.BtnFinnish);
             this.Controls.Add(this.label1);
-            this.Controls.Add(this.dgvParts);
+            this.Controls.Add(this.DgvParts);
             this.Name = "ManagerPart";
             this.Text = "Part manager";
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
-            ((System.ComponentModel.ISupportInitialize)(this.dgvParts)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dgvRelations)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.DgvParts)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.DgvRelations)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -171,15 +171,15 @@ namespace MvE_SQL_test
 
         #endregion
 
-        private System.Windows.Forms.DataGridView dgvParts;
+        private System.Windows.Forms.DataGridView DgvParts;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.Button btnFinnish;
-        private System.Windows.Forms.Button btnLoadParts;
-        private System.Windows.Forms.Button btnNewPart;
-        private System.Windows.Forms.DataGridView dgvRelations;
+        private System.Windows.Forms.Button BtnFinnish;
+        private System.Windows.Forms.Button BtnLoadParts;
+        private System.Windows.Forms.Button BtnNewPart;
+        private System.Windows.Forms.DataGridView DgvRelations;
         private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.Button btnAddRelation;
+        private System.Windows.Forms.Button BtnAddRelation;
         private System.Windows.Forms.TextBox txtPartID;
-        private System.Windows.Forms.Button btnRemoveRelation;
+        private System.Windows.Forms.Button BtnRemoveRelation;
     }
 }

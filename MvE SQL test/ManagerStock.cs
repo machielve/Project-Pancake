@@ -39,7 +39,7 @@ namespace MvE_SQL_test
                         {
                             DataTable dt = new DataTable();
                             dt.Load(dr);
-                            this.dgvStockIn.DataSource = dt;
+                            this.DgvStockIn.DataSource = dt;
                             dr.Close();
                         }
                     }
@@ -73,7 +73,7 @@ namespace MvE_SQL_test
                         {
                             DataTable dt = new DataTable();
                             dt.Load(dr);
-                            this.dgvStockOut.DataSource = dt;
+                            this.DgvStockOut.DataSource = dt;
                             dr.Close();
                         }
                     }
@@ -108,7 +108,7 @@ namespace MvE_SQL_test
                         {
                             DataTable dt = new DataTable();
                             dt.Load(dr);
-                            this.dgvStock.DataSource = dt;
+                            this.DgvStock.DataSource = dt;
                             dr.Close();
                         }
                     }
@@ -127,22 +127,22 @@ namespace MvE_SQL_test
 
         }
 
-        private void btnFinnish_Click(object sender, EventArgs e)
+        private void BtnFinnish_Click(object sender, EventArgs e)
         {
             this.Close();
         }
 
-        private void btnLoadStock_Click(object sender, EventArgs e)
+        private void BtnLoadStock_Click(object sender, EventArgs e)
         {
             RefreshStock();
         }
 
-        private void btnReceiveStock_Click(object sender, EventArgs e)
+        private void BtnReceiveStock_Click(object sender, EventArgs e)
         {
             
         }
 
-        private void btnStockIn_Click(object sender, EventArgs e)
+        private void BtnStockIn_Click(object sender, EventArgs e)
         {
             string connectionstring = ConnString; 
             Form frm = new NewPartIn();

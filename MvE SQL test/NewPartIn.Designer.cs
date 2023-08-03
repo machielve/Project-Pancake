@@ -37,12 +37,12 @@ namespace MvE_SQL_test
             this.label3 = new System.Windows.Forms.Label();
             this.countPrice = new System.Windows.Forms.NumericUpDown();
             this.label4 = new System.Windows.Forms.Label();
-            this.btnFinnish = new System.Windows.Forms.Button();
+            this.BtnFinnish = new System.Windows.Forms.Button();
             this.txtPONumber = new System.Windows.Forms.TextBox();
             this.label5 = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
             this.txtSerialNumber = new System.Windows.Forms.TextBox();
-            this.btnAddStockIn = new System.Windows.Forms.Button();
+            this.BtnAddStockIn = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.countQuantity)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.countPrice)).BeginInit();
             this.SuspendLayout();
@@ -115,15 +115,15 @@ namespace MvE_SQL_test
             this.label4.TabIndex = 7;
             this.label4.Text = "Price";
             // 
-            // btnFinnish
+            // BtnFinnish
             // 
-            this.btnFinnish.Location = new System.Drawing.Point(12, 473);
-            this.btnFinnish.Name = "btnFinnish";
-            this.btnFinnish.Size = new System.Drawing.Size(146, 23);
-            this.btnFinnish.TabIndex = 11;
-            this.btnFinnish.Text = "Finnish";
-            this.btnFinnish.UseVisualStyleBackColor = true;
-            this.btnFinnish.Click += new System.EventHandler(this.btnFinnish_Click);
+            this.BtnFinnish.Location = new System.Drawing.Point(12, 473);
+            this.BtnFinnish.Name = "BtnFinnish";
+            this.BtnFinnish.Size = new System.Drawing.Size(146, 23);
+            this.BtnFinnish.TabIndex = 11;
+            this.BtnFinnish.Text = "Finnish";
+            this.BtnFinnish.UseVisualStyleBackColor = true;
+            this.BtnFinnish.Click += new System.EventHandler(this.BtnFinnish_Click);
             // 
             // txtPONumber
             // 
@@ -160,27 +160,27 @@ namespace MvE_SQL_test
             this.txtSerialNumber.TabIndex = 14;
             this.txtSerialNumber.Text = "-";
             // 
-            // btnAddStockIn
+            // BtnAddStockIn
             // 
-            this.btnAddStockIn.Location = new System.Drawing.Point(105, 380);
-            this.btnAddStockIn.Name = "btnAddStockIn";
-            this.btnAddStockIn.Size = new System.Drawing.Size(146, 23);
-            this.btnAddStockIn.TabIndex = 16;
-            this.btnAddStockIn.Text = "Add stock";
-            this.btnAddStockIn.UseVisualStyleBackColor = true;
-            this.btnAddStockIn.Click += new System.EventHandler(this.btnAddStock_Click);
+            this.BtnAddStockIn.Location = new System.Drawing.Point(105, 380);
+            this.BtnAddStockIn.Name = "BtnAddStockIn";
+            this.BtnAddStockIn.Size = new System.Drawing.Size(146, 23);
+            this.BtnAddStockIn.TabIndex = 16;
+            this.BtnAddStockIn.Text = "Add stock";
+            this.BtnAddStockIn.UseVisualStyleBackColor = true;
+            this.BtnAddStockIn.Click += new System.EventHandler(this.BtnAddStock_Click);
             // 
             // NewPartIn
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(387, 508);
-            this.Controls.Add(this.btnAddStockIn);
+            this.Controls.Add(this.BtnAddStockIn);
             this.Controls.Add(this.label6);
             this.Controls.Add(this.txtSerialNumber);
             this.Controls.Add(this.label5);
             this.Controls.Add(this.txtPONumber);
-            this.Controls.Add(this.btnFinnish);
+            this.Controls.Add(this.BtnFinnish);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.countPrice);
             this.Controls.Add(this.label3);
@@ -209,11 +209,11 @@ namespace MvE_SQL_test
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.NumericUpDown countPrice;
         private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.Button btnFinnish;
+        private System.Windows.Forms.Button BtnFinnish;
         private System.Windows.Forms.TextBox txtPONumber;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.TextBox txtSerialNumber;
-        private System.Windows.Forms.Button btnAddStockIn;
+        private System.Windows.Forms.Button BtnAddStockIn;
     }
 }

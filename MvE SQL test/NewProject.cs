@@ -36,12 +36,12 @@ namespace MvE_SQL_test
             }
         }
 
-        private void btnFinnish_Click(object sender, EventArgs e)
+        private void BtnFinnish_Click(object sender, EventArgs e)
         {
             this.Close();
         }
 
-        private void btnNewProject_Click(object sender, EventArgs e)
+        private void BtnNewProject_Click(object sender, EventArgs e)
         {
             if (IsProjectNameValid())
             {

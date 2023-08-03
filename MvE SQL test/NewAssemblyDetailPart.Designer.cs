@@ -29,11 +29,11 @@ namespace MvE_SQL_test
         /// </summary>
         private void InitializeComponent()
         {
-            this.btnFinnish = new System.Windows.Forms.Button();
+            this.BtnFinnish = new System.Windows.Forms.Button();
             this.cmbPart = new System.Windows.Forms.ComboBox();
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
-            this.btnAddPart = new System.Windows.Forms.Button();
+            this.BtnAddPart = new System.Windows.Forms.Button();
             this.countPart = new System.Windows.Forms.NumericUpDown();
             this.label3 = new System.Windows.Forms.Label();
             this.txtAssemblyID = new System.Windows.Forms.TextBox();
@@ -45,15 +45,15 @@ namespace MvE_SQL_test
             ((System.ComponentModel.ISupportInitialize)(this.txtDrawingRevision)).BeginInit();
             this.SuspendLayout();
             // 
-            // btnFinnish
+            // BtnFinnish
             // 
-            this.btnFinnish.Location = new System.Drawing.Point(185, 206);
-            this.btnFinnish.Name = "btnFinnish";
-            this.btnFinnish.Size = new System.Drawing.Size(133, 23);
-            this.btnFinnish.TabIndex = 8;
-            this.btnFinnish.Text = "Cancel";
-            this.btnFinnish.UseVisualStyleBackColor = true;
-            this.btnFinnish.Click += new System.EventHandler(this.btnFinnish_Click);
+            this.BtnFinnish.Location = new System.Drawing.Point(185, 206);
+            this.BtnFinnish.Name = "BtnFinnish";
+            this.BtnFinnish.Size = new System.Drawing.Size(133, 23);
+            this.BtnFinnish.TabIndex = 8;
+            this.BtnFinnish.Text = "Cancel";
+            this.BtnFinnish.UseVisualStyleBackColor = true;
+            this.BtnFinnish.Click += new System.EventHandler(this.BtnFinnish_Click);
             // 
             // cmbPart
             // 
@@ -82,15 +82,15 @@ namespace MvE_SQL_test
             this.label2.TabIndex = 12;
             this.label2.Text = "Quantity";
             // 
-            // btnAddPart
+            // BtnAddPart
             // 
-            this.btnAddPart.Location = new System.Drawing.Point(12, 206);
-            this.btnAddPart.Name = "btnAddPart";
-            this.btnAddPart.Size = new System.Drawing.Size(133, 23);
-            this.btnAddPart.TabIndex = 13;
-            this.btnAddPart.Text = "Add part";
-            this.btnAddPart.UseVisualStyleBackColor = true;
-            this.btnAddPart.Click += new System.EventHandler(this.btnAddPart_Click);
+            this.BtnAddPart.Location = new System.Drawing.Point(12, 206);
+            this.BtnAddPart.Name = "BtnAddPart";
+            this.BtnAddPart.Size = new System.Drawing.Size(133, 23);
+            this.BtnAddPart.TabIndex = 13;
+            this.BtnAddPart.Text = "Add part";
+            this.BtnAddPart.UseVisualStyleBackColor = true;
+            this.BtnAddPart.Click += new System.EventHandler(this.BtnAddPart_Click);
             // 
             // countPart
             // 
@@ -161,11 +161,11 @@ namespace MvE_SQL_test
             this.Controls.Add(this.txtAssemblyID);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.countPart);
-            this.Controls.Add(this.btnAddPart);
+            this.Controls.Add(this.BtnAddPart);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.cmbPart);
-            this.Controls.Add(this.btnFinnish);
+            this.Controls.Add(this.BtnFinnish);
             this.Name = "NewAssemblyDetailPart";
             this.Text = "New assembly part";
             this.Load += new System.EventHandler(this.NewAssemblyDetailPart_Load);
@@ -179,11 +179,11 @@ namespace MvE_SQL_test
 
         #endregion
 
-        private System.Windows.Forms.Button btnFinnish;
+        private System.Windows.Forms.Button BtnFinnish;
         private System.Windows.Forms.ComboBox cmbPart;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.Button btnAddPart;
+        private System.Windows.Forms.Button BtnAddPart;
         private System.Windows.Forms.NumericUpDown countPart;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.TextBox txtAssemblyID;

@@ -29,64 +29,64 @@ namespace MvE_SQL_test
         /// </summary>
         private void InitializeComponent()
         {
-            this.btnFinnish = new System.Windows.Forms.Button();
-            this.dgvJobOrders = new System.Windows.Forms.DataGridView();
-            this.btnLoadJobOrders = new System.Windows.Forms.Button();
-            ((System.ComponentModel.ISupportInitialize)(this.dgvJobOrders)).BeginInit();
+            this.BtnFinnish = new System.Windows.Forms.Button();
+            this.DgvJobOrders = new System.Windows.Forms.DataGridView();
+            this.BtnLoadJobOrders = new System.Windows.Forms.Button();
+            ((System.ComponentModel.ISupportInitialize)(this.DgvJobOrders)).BeginInit();
             this.SuspendLayout();
             // 
-            // btnFinnish
+            // BtnFinnish
             // 
-            this.btnFinnish.Location = new System.Drawing.Point(12, 707);
-            this.btnFinnish.Name = "btnFinnish";
-            this.btnFinnish.Size = new System.Drawing.Size(133, 23);
-            this.btnFinnish.TabIndex = 8;
-            this.btnFinnish.Text = "Finnish";
-            this.btnFinnish.UseVisualStyleBackColor = true;
-            this.btnFinnish.Click += new System.EventHandler(this.btnFinnish_Click);
+            this.BtnFinnish.Location = new System.Drawing.Point(12, 707);
+            this.BtnFinnish.Name = "BtnFinnish";
+            this.BtnFinnish.Size = new System.Drawing.Size(133, 23);
+            this.BtnFinnish.TabIndex = 8;
+            this.BtnFinnish.Text = "Finnish";
+            this.BtnFinnish.UseVisualStyleBackColor = true;
+            this.BtnFinnish.Click += new System.EventHandler(this.BtnFinnish_Click);
             // 
-            // dgvJobOrders
+            // DgvJobOrders
             // 
-            this.dgvJobOrders.AllowUserToAddRows = false;
-            this.dgvJobOrders.AllowUserToDeleteRows = false;
-            this.dgvJobOrders.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvJobOrders.Location = new System.Drawing.Point(165, 38);
-            this.dgvJobOrders.Name = "dgvJobOrders";
-            this.dgvJobOrders.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.AutoSizeToAllHeaders;
-            this.dgvJobOrders.Size = new System.Drawing.Size(1310, 409);
-            this.dgvJobOrders.TabIndex = 9;
+            this.DgvJobOrders.AllowUserToAddRows = false;
+            this.DgvJobOrders.AllowUserToDeleteRows = false;
+            this.DgvJobOrders.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.DgvJobOrders.Location = new System.Drawing.Point(165, 38);
+            this.DgvJobOrders.Name = "DgvJobOrders";
+            this.DgvJobOrders.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.AutoSizeToAllHeaders;
+            this.DgvJobOrders.Size = new System.Drawing.Size(1310, 409);
+            this.DgvJobOrders.TabIndex = 9;
             // 
-            // btnLoadJobOrders
+            // BtnLoadJobOrders
             // 
-            this.btnLoadJobOrders.Location = new System.Drawing.Point(12, 38);
-            this.btnLoadJobOrders.Name = "btnLoadJobOrders";
-            this.btnLoadJobOrders.Size = new System.Drawing.Size(133, 23);
-            this.btnLoadJobOrders.TabIndex = 10;
-            this.btnLoadJobOrders.Text = "Load job orders";
-            this.btnLoadJobOrders.UseVisualStyleBackColor = true;
-            this.btnLoadJobOrders.Click += new System.EventHandler(this.btnLoadJobOrders_Click);
+            this.BtnLoadJobOrders.Location = new System.Drawing.Point(12, 38);
+            this.BtnLoadJobOrders.Name = "BtnLoadJobOrders";
+            this.BtnLoadJobOrders.Size = new System.Drawing.Size(133, 23);
+            this.BtnLoadJobOrders.TabIndex = 10;
+            this.BtnLoadJobOrders.Text = "Load job orders";
+            this.BtnLoadJobOrders.UseVisualStyleBackColor = true;
+            this.BtnLoadJobOrders.Click += new System.EventHandler(this.BtnLoadJobOrders_Click);
             // 
             // ManagerJobOrders
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1484, 861);
-            this.Controls.Add(this.btnLoadJobOrders);
-            this.Controls.Add(this.dgvJobOrders);
-            this.Controls.Add(this.btnFinnish);
+            this.Controls.Add(this.BtnLoadJobOrders);
+            this.Controls.Add(this.DgvJobOrders);
+            this.Controls.Add(this.BtnFinnish);
             this.Name = "ManagerJobOrders";
             this.Text = "Job order manager";
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             this.Load += new System.EventHandler(this.ManagerJobOrders_Load);
-            ((System.ComponentModel.ISupportInitialize)(this.dgvJobOrders)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.DgvJobOrders)).EndInit();
             this.ResumeLayout(false);
 
         }
 
         #endregion
 
-        private System.Windows.Forms.Button btnFinnish;
-        private System.Windows.Forms.DataGridView dgvJobOrders;
-        private System.Windows.Forms.Button btnLoadJobOrders;
+        private System.Windows.Forms.Button BtnFinnish;
+        private System.Windows.Forms.DataGridView DgvJobOrders;
+        private System.Windows.Forms.Button BtnLoadJobOrders;
     }
 }

@@ -29,8 +29,8 @@ namespace MvE_SQL_test
         /// </summary>
         private void InitializeComponent()
         {
-            this.btnFinnish = new System.Windows.Forms.Button();
-            this.btnNewProject = new System.Windows.Forms.Button();
+            this.BtnFinnish = new System.Windows.Forms.Button();
+            this.BtnNewProject = new System.Windows.Forms.Button();
             this.txtProjectID = new System.Windows.Forms.TextBox();
             this.txtProjectName = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
@@ -39,25 +39,25 @@ namespace MvE_SQL_test
             this.label3 = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
-            // btnFinnish
+            // BtnFinnish
             // 
-            this.btnFinnish.Location = new System.Drawing.Point(15, 180);
-            this.btnFinnish.Name = "btnFinnish";
-            this.btnFinnish.Size = new System.Drawing.Size(146, 23);
-            this.btnFinnish.TabIndex = 1;
-            this.btnFinnish.Text = "Finnish";
-            this.btnFinnish.UseVisualStyleBackColor = true;
-            this.btnFinnish.Click += new System.EventHandler(this.btnFinnish_Click);
+            this.BtnFinnish.Location = new System.Drawing.Point(15, 180);
+            this.BtnFinnish.Name = "BtnFinnish";
+            this.BtnFinnish.Size = new System.Drawing.Size(146, 23);
+            this.BtnFinnish.TabIndex = 1;
+            this.BtnFinnish.Text = "Finnish";
+            this.BtnFinnish.UseVisualStyleBackColor = true;
+            this.BtnFinnish.Click += new System.EventHandler(this.BtnFinnish_Click);
             // 
-            // btnNewProject
+            // BtnNewProject
             // 
-            this.btnNewProject.Location = new System.Drawing.Point(108, 151);
-            this.btnNewProject.Name = "btnNewProject";
-            this.btnNewProject.Size = new System.Drawing.Size(234, 23);
-            this.btnNewProject.TabIndex = 6;
-            this.btnNewProject.Text = "Add new project";
-            this.btnNewProject.UseVisualStyleBackColor = true;
-            this.btnNewProject.Click += new System.EventHandler(this.btnNewProject_Click);
+            this.BtnNewProject.Location = new System.Drawing.Point(108, 151);
+            this.BtnNewProject.Name = "BtnNewProject";
+            this.BtnNewProject.Size = new System.Drawing.Size(234, 23);
+            this.BtnNewProject.TabIndex = 6;
+            this.BtnNewProject.Text = "Add new project";
+            this.BtnNewProject.UseVisualStyleBackColor = true;
+            this.BtnNewProject.Click += new System.EventHandler(this.BtnNewProject_Click);
             // 
             // txtProjectID
             // 
@@ -121,8 +121,8 @@ namespace MvE_SQL_test
             this.Controls.Add(this.label1);
             this.Controls.Add(this.txtProjectName);
             this.Controls.Add(this.txtProjectID);
-            this.Controls.Add(this.btnNewProject);
-            this.Controls.Add(this.btnFinnish);
+            this.Controls.Add(this.BtnNewProject);
+            this.Controls.Add(this.BtnFinnish);
             this.Name = "NewProject";
             this.Text = "New project";
             this.ResumeLayout(false);
@@ -132,8 +132,8 @@ namespace MvE_SQL_test
 
         #endregion
 
-        private System.Windows.Forms.Button btnFinnish;
-        private System.Windows.Forms.Button btnNewProject;
+        private System.Windows.Forms.Button BtnFinnish;
+        private System.Windows.Forms.Button BtnNewProject;
         private System.Windows.Forms.TextBox txtProjectID;
         private System.Windows.Forms.TextBox txtProjectName;
         private System.Windows.Forms.Label label1;

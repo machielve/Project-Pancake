@@ -31,13 +31,13 @@ namespace MvE_SQL_test
         {
             this.cmbPartType = new System.Windows.Forms.ComboBox();
             this.label3 = new System.Windows.Forms.Label();
-            this.btnAddAnotherUnit = new System.Windows.Forms.Button();
-            this.btnNewUnit = new System.Windows.Forms.Button();
+            this.BtnAddAnotherUnit = new System.Windows.Forms.Button();
+            this.BtnNewUnit = new System.Windows.Forms.Button();
             this.txtUnitID = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
             this.txtPartName = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
-            this.btnFinnish = new System.Windows.Forms.Button();
+            this.BtnFinnish = new System.Windows.Forms.Button();
             this.txtPartMemo = new System.Windows.Forms.TextBox();
             this.label4 = new System.Windows.Forms.Label();
             this.cmbPartUnit = new System.Windows.Forms.ComboBox();
@@ -83,25 +83,25 @@ namespace MvE_SQL_test
             this.label3.TabIndex = 17;
             this.label3.Text = "Part type";
             // 
-            // btnAddAnotherUnit
+            // BtnAddAnotherUnit
             // 
-            this.btnAddAnotherUnit.Location = new System.Drawing.Point(200, 473);
-            this.btnAddAnotherUnit.Name = "btnAddAnotherUnit";
-            this.btnAddAnotherUnit.Size = new System.Drawing.Size(139, 23);
-            this.btnAddAnotherUnit.TabIndex = 16;
-            this.btnAddAnotherUnit.Text = "Add another part";
-            this.btnAddAnotherUnit.UseVisualStyleBackColor = true;
-            this.btnAddAnotherUnit.Click += new System.EventHandler(this.btnAddAnotherUnit_Click);
+            this.BtnAddAnotherUnit.Location = new System.Drawing.Point(200, 473);
+            this.BtnAddAnotherUnit.Name = "BtnAddAnotherUnit";
+            this.BtnAddAnotherUnit.Size = new System.Drawing.Size(139, 23);
+            this.BtnAddAnotherUnit.TabIndex = 16;
+            this.BtnAddAnotherUnit.Text = "Add another part";
+            this.BtnAddAnotherUnit.UseVisualStyleBackColor = true;
+            this.BtnAddAnotherUnit.Click += new System.EventHandler(this.BtnAddAnotherUnit_Click);
             // 
-            // btnNewUnit
+            // BtnNewUnit
             // 
-            this.btnNewUnit.Location = new System.Drawing.Point(105, 404);
-            this.btnNewUnit.Name = "btnNewUnit";
-            this.btnNewUnit.Size = new System.Drawing.Size(234, 23);
-            this.btnNewUnit.TabIndex = 15;
-            this.btnNewUnit.Text = "Add new part";
-            this.btnNewUnit.UseVisualStyleBackColor = true;
-            this.btnNewUnit.Click += new System.EventHandler(this.btnNewUnit_Click);
+            this.BtnNewUnit.Location = new System.Drawing.Point(105, 404);
+            this.BtnNewUnit.Name = "BtnNewUnit";
+            this.BtnNewUnit.Size = new System.Drawing.Size(234, 23);
+            this.BtnNewUnit.TabIndex = 15;
+            this.BtnNewUnit.Text = "Add new part";
+            this.BtnNewUnit.UseVisualStyleBackColor = true;
+            this.BtnNewUnit.Click += new System.EventHandler(this.BtnNewUnit_Click);
             // 
             // txtUnitID
             // 
@@ -136,15 +136,15 @@ namespace MvE_SQL_test
             this.label1.TabIndex = 11;
             this.label1.Text = "Part name";
             // 
-            // btnFinnish
+            // BtnFinnish
             // 
-            this.btnFinnish.Location = new System.Drawing.Point(12, 473);
-            this.btnFinnish.Name = "btnFinnish";
-            this.btnFinnish.Size = new System.Drawing.Size(146, 23);
-            this.btnFinnish.TabIndex = 10;
-            this.btnFinnish.Text = "Finnish";
-            this.btnFinnish.UseVisualStyleBackColor = true;
-            this.btnFinnish.Click += new System.EventHandler(this.btnFinnish_Click);
+            this.BtnFinnish.Location = new System.Drawing.Point(12, 473);
+            this.BtnFinnish.Name = "BtnFinnish";
+            this.BtnFinnish.Size = new System.Drawing.Size(146, 23);
+            this.BtnFinnish.TabIndex = 10;
+            this.BtnFinnish.Text = "Finnish";
+            this.BtnFinnish.UseVisualStyleBackColor = true;
+            this.BtnFinnish.Click += new System.EventHandler(this.BtnFinnish_Click);
             // 
             // txtPartMemo
             // 
@@ -339,13 +339,13 @@ namespace MvE_SQL_test
             this.Controls.Add(this.label4);
             this.Controls.Add(this.cmbPartType);
             this.Controls.Add(this.label3);
-            this.Controls.Add(this.btnAddAnotherUnit);
-            this.Controls.Add(this.btnNewUnit);
+            this.Controls.Add(this.BtnAddAnotherUnit);
+            this.Controls.Add(this.BtnNewUnit);
             this.Controls.Add(this.txtUnitID);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.txtPartName);
             this.Controls.Add(this.label1);
-            this.Controls.Add(this.btnFinnish);
+            this.Controls.Add(this.BtnFinnish);
             this.Name = "NewPart";
             this.Text = "New Part";
             this.Load += new System.EventHandler(this.NewPart_Load);
@@ -361,13 +361,13 @@ namespace MvE_SQL_test
 
         private System.Windows.Forms.ComboBox cmbPartType;
         private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.Button btnAddAnotherUnit;
-        private System.Windows.Forms.Button btnNewUnit;
+        private System.Windows.Forms.Button BtnAddAnotherUnit;
+        private System.Windows.Forms.Button BtnNewUnit;
         private System.Windows.Forms.TextBox txtUnitID;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.TextBox txtPartName;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.Button btnFinnish;
+        private System.Windows.Forms.Button BtnFinnish;
         private System.Windows.Forms.TextBox txtPartMemo;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.ComboBox cmbPartUnit;

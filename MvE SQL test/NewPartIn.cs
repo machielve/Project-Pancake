@@ -21,7 +21,7 @@ namespace MvE_SQL_test
 
         public static string ConnString { get; set; }
 
-        private void btnFinnish_Click(object sender, EventArgs e)
+        private void BtnFinnish_Click(object sender, EventArgs e)
         {
             this.Close();
         }
@@ -95,7 +95,7 @@ namespace MvE_SQL_test
             }
         }
 
-        private void btnAddStock_Click(object sender, EventArgs e)
+        private void BtnAddStock_Click(object sender, EventArgs e)
         {
             decimal Quantity = countQuantity.Value;
             int PartID = Convert.ToInt32(cmbPart.SelectedValue);

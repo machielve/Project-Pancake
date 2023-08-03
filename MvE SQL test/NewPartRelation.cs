@@ -56,7 +56,7 @@ namespace MvE_SQL_test
             }
         }
 
-        private void btnFinnish_Click(object sender, EventArgs e)
+        private void BtnFinnish_Click(object sender, EventArgs e)
         {
             this.Close();
         }
@@ -69,7 +69,7 @@ namespace MvE_SQL_test
             
         }
 
-        private void btnNewSupplier_Click(object sender, EventArgs e)
+        private void BtnNewSupplier_Click(object sender, EventArgs e)
         {
             decimal pricetotal = Convert.ToDecimal(countPrice.Value);
             decimal totalquant = Convert.ToDecimal(CountQuantity.Value);
@@ -128,7 +128,7 @@ namespace MvE_SQL_test
 
         }
 
-        private void btnCreateSupplier_Click(object sender, EventArgs e)
+        private void BtnCreateSupplier_Click(object sender, EventArgs e)
         {
             string connectionstring = ConnString; 
             Form frm = new NewRelation();
@@ -137,7 +137,7 @@ namespace MvE_SQL_test
             frm.Show();
         }
 
-        private void btnAddAnotherRelation_Click(object sender, EventArgs e)
+        private void BtnAddAnotherRelation_Click(object sender, EventArgs e)
         {
             txtPartID.Clear();
 

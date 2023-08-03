@@ -46,12 +46,12 @@ namespace MvE_SQL_test
             InitializeComponent();
         }
 
-        private void btnFinnish_Click(object sender, EventArgs e)
+        private void BtnFinnish_Click(object sender, EventArgs e)
         {
             this.Close();
         }
 
-        private void btnNewUnit_Click(object sender, EventArgs e)
+        private void BtnNewUnit_Click(object sender, EventArgs e)
         {
             if (IsUnitNameValid())
             {
@@ -103,7 +103,7 @@ namespace MvE_SQL_test
 
         }
 
-        private void btnAddAnotherUnit_Click(object sender, EventArgs e)
+        private void BtnAddAnotherUnit_Click(object sender, EventArgs e)
         {
             this.ClearForm();
         }

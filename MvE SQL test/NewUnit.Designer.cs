@@ -29,28 +29,28 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            this.btnFinnish = new System.Windows.Forms.Button();
+            this.BtnFinnish = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
             this.txtUnitName = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
             this.txtUnitID = new System.Windows.Forms.TextBox();
-            this.btnNewUnit = new System.Windows.Forms.Button();
-            this.btnAddAnotherMaterial = new System.Windows.Forms.Button();
+            this.BtnNewUnit = new System.Windows.Forms.Button();
+            this.BtnAddAnotherMaterial = new System.Windows.Forms.Button();
             this.label3 = new System.Windows.Forms.Label();
             this.txtUnitGroup = new System.Windows.Forms.ComboBox();
             this.tUNITBindingSource1 = new System.Windows.Forms.BindingSource(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.tUNITBindingSource1)).BeginInit();
             this.SuspendLayout();
             // 
-            // btnFinnish
+            // BtnFinnish
             // 
-            this.btnFinnish.Location = new System.Drawing.Point(15, 179);
-            this.btnFinnish.Name = "btnFinnish";
-            this.btnFinnish.Size = new System.Drawing.Size(146, 23);
-            this.btnFinnish.TabIndex = 0;
-            this.btnFinnish.Text = "Finnish";
-            this.btnFinnish.UseVisualStyleBackColor = true;
-            this.btnFinnish.Click += new System.EventHandler(this.btnFinnish_Click);
+            this.BtnFinnish.Location = new System.Drawing.Point(15, 179);
+            this.BtnFinnish.Name = "BtnFinnish";
+            this.BtnFinnish.Size = new System.Drawing.Size(146, 23);
+            this.BtnFinnish.TabIndex = 0;
+            this.BtnFinnish.Text = "Finnish";
+            this.BtnFinnish.UseVisualStyleBackColor = true;
+            this.BtnFinnish.Click += new System.EventHandler(this.BtnFinnish_Click);
             // 
             // label1
             // 
@@ -85,25 +85,25 @@
             this.txtUnitID.Size = new System.Drawing.Size(234, 20);
             this.txtUnitID.TabIndex = 4;
             // 
-            // btnNewUnit
+            // BtnNewUnit
             // 
-            this.btnNewUnit.Location = new System.Drawing.Point(108, 118);
-            this.btnNewUnit.Name = "btnNewUnit";
-            this.btnNewUnit.Size = new System.Drawing.Size(234, 23);
-            this.btnNewUnit.TabIndex = 5;
-            this.btnNewUnit.Text = "Add new unit";
-            this.btnNewUnit.UseVisualStyleBackColor = true;
-            this.btnNewUnit.Click += new System.EventHandler(this.btnNewUnit_Click);
+            this.BtnNewUnit.Location = new System.Drawing.Point(108, 118);
+            this.BtnNewUnit.Name = "BtnNewUnit";
+            this.BtnNewUnit.Size = new System.Drawing.Size(234, 23);
+            this.BtnNewUnit.TabIndex = 5;
+            this.BtnNewUnit.Text = "Add new unit";
+            this.BtnNewUnit.UseVisualStyleBackColor = true;
+            this.BtnNewUnit.Click += new System.EventHandler(this.BtnNewUnit_Click);
             // 
-            // btnAddAnotherMaterial
+            // BtnAddAnotherMaterial
             // 
-            this.btnAddAnotherMaterial.Location = new System.Drawing.Point(203, 179);
-            this.btnAddAnotherMaterial.Name = "btnAddAnotherMaterial";
-            this.btnAddAnotherMaterial.Size = new System.Drawing.Size(139, 23);
-            this.btnAddAnotherMaterial.TabIndex = 6;
-            this.btnAddAnotherMaterial.Text = "Add another material";
-            this.btnAddAnotherMaterial.UseVisualStyleBackColor = true;
-            this.btnAddAnotherMaterial.Click += new System.EventHandler(this.btnAddAnotherUnit_Click);
+            this.BtnAddAnotherMaterial.Location = new System.Drawing.Point(203, 179);
+            this.BtnAddAnotherMaterial.Name = "BtnAddAnotherMaterial";
+            this.BtnAddAnotherMaterial.Size = new System.Drawing.Size(139, 23);
+            this.BtnAddAnotherMaterial.TabIndex = 6;
+            this.BtnAddAnotherMaterial.Text = "Add another material";
+            this.BtnAddAnotherMaterial.UseVisualStyleBackColor = true;
+            this.BtnAddAnotherMaterial.Click += new System.EventHandler(this.BtnAddAnotherUnit_Click);
             // 
             // label3
             // 
@@ -134,13 +134,13 @@
             this.ClientSize = new System.Drawing.Size(384, 211);
             this.Controls.Add(this.txtUnitGroup);
             this.Controls.Add(this.label3);
-            this.Controls.Add(this.btnAddAnotherMaterial);
-            this.Controls.Add(this.btnNewUnit);
+            this.Controls.Add(this.BtnAddAnotherMaterial);
+            this.Controls.Add(this.BtnNewUnit);
             this.Controls.Add(this.txtUnitID);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.txtUnitName);
             this.Controls.Add(this.label1);
-            this.Controls.Add(this.btnFinnish);
+            this.Controls.Add(this.BtnFinnish);
             this.Name = "NewUnit";
             this.Text = "New Unit";
             ((System.ComponentModel.ISupportInitialize)(this.tUNITBindingSource1)).EndInit();
@@ -151,13 +151,13 @@
 
         #endregion
 
-        private System.Windows.Forms.Button btnFinnish;
+        private System.Windows.Forms.Button BtnFinnish;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.TextBox txtUnitName;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.TextBox txtUnitID;
-        private System.Windows.Forms.Button btnNewUnit;
-        private System.Windows.Forms.Button btnAddAnotherMaterial;
+        private System.Windows.Forms.Button BtnNewUnit;
+        private System.Windows.Forms.Button BtnAddAnotherMaterial;
         private System.Windows.Forms.BindingSource tUNITBindingSource;
         private System.Windows.Forms.BindingSource tUNITBindingSource1;
         private System.Windows.Forms.Label label3;

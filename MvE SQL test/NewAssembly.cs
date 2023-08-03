@@ -35,19 +35,19 @@ namespace MvE_SQL_test
             InitializeComponent();
         }
 
-        private void btnFinnish_Click(object sender, EventArgs e)
+        private void BtnFinnish_Click(object sender, EventArgs e)
         {
             this.Close();
         }
 
-        private void btnAddAnotherAssembly_Click(object sender, EventArgs e)
+        private void BtnAddAnotherAssembly_Click(object sender, EventArgs e)
         {
             txtAssemblyName.Clear();
             txtAssemblyID.Clear();
             this.parsedAssemblyID = 0;
         }
 
-        private void btnNewAssembly_Click(object sender, EventArgs e)
+        private void BtnNewAssembly_Click(object sender, EventArgs e)
         {
             if (IsAssemblyNameValid())
             {

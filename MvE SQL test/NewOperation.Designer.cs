@@ -30,12 +30,12 @@ namespace MvE_SQL_test
         private void InitializeComponent()
         {
             this.txtMatMod = new System.Windows.Forms.ComboBox();
-            this.btnAddAnotherOperation = new System.Windows.Forms.Button();
-            this.btnNewOperation = new System.Windows.Forms.Button();
+            this.BtnAddAnotherOperation = new System.Windows.Forms.Button();
+            this.BtnNewOperation = new System.Windows.Forms.Button();
             this.txtOperationID = new System.Windows.Forms.TextBox();
             this.txtOperationName = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
-            this.btnFinnish = new System.Windows.Forms.Button();
+            this.BtnFinnish = new System.Windows.Forms.Button();
             this.label2 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.cmbWeightUnit = new System.Windows.Forms.ComboBox();
@@ -58,25 +58,25 @@ namespace MvE_SQL_test
             this.txtMatMod.Size = new System.Drawing.Size(218, 21);
             this.txtMatMod.TabIndex = 16;
             // 
-            // btnAddAnotherOperation
+            // BtnAddAnotherOperation
             // 
-            this.btnAddAnotherOperation.Location = new System.Drawing.Point(203, 239);
-            this.btnAddAnotherOperation.Name = "btnAddAnotherOperation";
-            this.btnAddAnotherOperation.Size = new System.Drawing.Size(139, 23);
-            this.btnAddAnotherOperation.TabIndex = 15;
-            this.btnAddAnotherOperation.Text = "Add another operation";
-            this.btnAddAnotherOperation.UseVisualStyleBackColor = true;
-            this.btnAddAnotherOperation.Click += new System.EventHandler(this.btnAddAnotherOperation_Click);
+            this.BtnAddAnotherOperation.Location = new System.Drawing.Point(203, 239);
+            this.BtnAddAnotherOperation.Name = "BtnAddAnotherOperation";
+            this.BtnAddAnotherOperation.Size = new System.Drawing.Size(139, 23);
+            this.BtnAddAnotherOperation.TabIndex = 15;
+            this.BtnAddAnotherOperation.Text = "Add another operation";
+            this.BtnAddAnotherOperation.UseVisualStyleBackColor = true;
+            this.BtnAddAnotherOperation.Click += new System.EventHandler(this.BtnAddAnotherOperation_Click);
             // 
-            // btnNewOperation
+            // BtnNewOperation
             // 
-            this.btnNewOperation.Location = new System.Drawing.Point(108, 178);
-            this.btnNewOperation.Name = "btnNewOperation";
-            this.btnNewOperation.Size = new System.Drawing.Size(234, 23);
-            this.btnNewOperation.TabIndex = 14;
-            this.btnNewOperation.Text = "Add new operation";
-            this.btnNewOperation.UseVisualStyleBackColor = true;
-            this.btnNewOperation.Click += new System.EventHandler(this.btnNewOperation_Click);
+            this.BtnNewOperation.Location = new System.Drawing.Point(108, 178);
+            this.BtnNewOperation.Name = "BtnNewOperation";
+            this.BtnNewOperation.Size = new System.Drawing.Size(234, 23);
+            this.BtnNewOperation.TabIndex = 14;
+            this.BtnNewOperation.Text = "Add new operation";
+            this.BtnNewOperation.UseVisualStyleBackColor = true;
+            this.BtnNewOperation.Click += new System.EventHandler(this.BtnNewOperation_Click);
             // 
             // txtOperationID
             // 
@@ -102,15 +102,15 @@ namespace MvE_SQL_test
             this.label1.TabIndex = 11;
             this.label1.Text = "Operation name";
             // 
-            // btnFinnish
+            // BtnFinnish
             // 
-            this.btnFinnish.Location = new System.Drawing.Point(15, 239);
-            this.btnFinnish.Name = "btnFinnish";
-            this.btnFinnish.Size = new System.Drawing.Size(146, 23);
-            this.btnFinnish.TabIndex = 10;
-            this.btnFinnish.Text = "Finnish";
-            this.btnFinnish.UseVisualStyleBackColor = true;
-            this.btnFinnish.Click += new System.EventHandler(this.btnFinnish_Click);
+            this.BtnFinnish.Location = new System.Drawing.Point(15, 239);
+            this.BtnFinnish.Name = "BtnFinnish";
+            this.BtnFinnish.Size = new System.Drawing.Size(146, 23);
+            this.BtnFinnish.TabIndex = 10;
+            this.BtnFinnish.Text = "Finnish";
+            this.BtnFinnish.UseVisualStyleBackColor = true;
+            this.BtnFinnish.Click += new System.EventHandler(this.BtnFinnish_Click);
             // 
             // label2
             // 
@@ -176,12 +176,12 @@ namespace MvE_SQL_test
             this.Controls.Add(this.label3);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.txtMatMod);
-            this.Controls.Add(this.btnAddAnotherOperation);
-            this.Controls.Add(this.btnNewOperation);
+            this.Controls.Add(this.BtnAddAnotherOperation);
+            this.Controls.Add(this.BtnNewOperation);
             this.Controls.Add(this.txtOperationID);
             this.Controls.Add(this.txtOperationName);
             this.Controls.Add(this.label1);
-            this.Controls.Add(this.btnFinnish);
+            this.Controls.Add(this.BtnFinnish);
             this.Name = "NewOperation";
             this.Text = "New Operation";
             this.Load += new System.EventHandler(this.NewOperation_Load);
@@ -194,12 +194,12 @@ namespace MvE_SQL_test
         #endregion
 
         private System.Windows.Forms.ComboBox txtMatMod;
-        private System.Windows.Forms.Button btnAddAnotherOperation;
-        private System.Windows.Forms.Button btnNewOperation;
+        private System.Windows.Forms.Button BtnAddAnotherOperation;
+        private System.Windows.Forms.Button BtnNewOperation;
         private System.Windows.Forms.TextBox txtOperationID;
         private System.Windows.Forms.TextBox txtOperationName;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.Button btnFinnish;
+        private System.Windows.Forms.Button BtnFinnish;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.ComboBox cmbWeightUnit;

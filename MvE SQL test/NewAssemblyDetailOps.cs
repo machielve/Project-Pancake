@@ -22,7 +22,7 @@ namespace MvE_SQL_test
         public static string ConnString { get; set; }
 
 
-        private void btnFinnish_Click(object sender, EventArgs e)
+        private void BtnFinnish_Click(object sender, EventArgs e)
         {
             this.Close();
         }
@@ -61,7 +61,7 @@ namespace MvE_SQL_test
 
         }
 
-        private void btnAddOperation_Click(object sender, EventArgs e)
+        private void BtnAddOperation_Click(object sender, EventArgs e)
         {
             int AssemblyID = Convert.ToInt32(txtAssemblyID.Text);
             int OpsID = Convert.ToInt32(cmbOps.SelectedValue.ToString());

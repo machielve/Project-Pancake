@@ -29,44 +29,44 @@ namespace MvE_SQL_test
         /// </summary>
         private void InitializeComponent()
         {
-            this.btnFinnish = new System.Windows.Forms.Button();
-            this.btnNewAssembly = new System.Windows.Forms.Button();
-            this.btnAddAnotherAssembly = new System.Windows.Forms.Button();
+            this.BtnFinnish = new System.Windows.Forms.Button();
+            this.BtnNewAssembly = new System.Windows.Forms.Button();
+            this.BtnAddAnotherAssembly = new System.Windows.Forms.Button();
             this.txtAssemblyName = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.txtAssemblyID = new System.Windows.Forms.TextBox();
             this.SuspendLayout();
             // 
-            // btnFinnish
+            // BtnFinnish
             // 
-            this.btnFinnish.Location = new System.Drawing.Point(15, 179);
-            this.btnFinnish.Name = "btnFinnish";
-            this.btnFinnish.Size = new System.Drawing.Size(146, 23);
-            this.btnFinnish.TabIndex = 1;
-            this.btnFinnish.Text = "Finnish";
-            this.btnFinnish.UseVisualStyleBackColor = true;
-            this.btnFinnish.Click += new System.EventHandler(this.btnFinnish_Click);
+            this.BtnFinnish.Location = new System.Drawing.Point(15, 179);
+            this.BtnFinnish.Name = "BtnFinnish";
+            this.BtnFinnish.Size = new System.Drawing.Size(146, 23);
+            this.BtnFinnish.TabIndex = 1;
+            this.BtnFinnish.Text = "Finnish";
+            this.BtnFinnish.UseVisualStyleBackColor = true;
+            this.BtnFinnish.Click += new System.EventHandler(this.BtnFinnish_Click);
             // 
-            // btnNewAssembly
+            // BtnNewAssembly
             // 
-            this.btnNewAssembly.Location = new System.Drawing.Point(108, 118);
-            this.btnNewAssembly.Name = "btnNewAssembly";
-            this.btnNewAssembly.Size = new System.Drawing.Size(234, 23);
-            this.btnNewAssembly.TabIndex = 6;
-            this.btnNewAssembly.Text = "Add new assembly";
-            this.btnNewAssembly.UseVisualStyleBackColor = true;
-            this.btnNewAssembly.Click += new System.EventHandler(this.btnNewAssembly_Click);
+            this.BtnNewAssembly.Location = new System.Drawing.Point(108, 118);
+            this.BtnNewAssembly.Name = "BtnNewAssembly";
+            this.BtnNewAssembly.Size = new System.Drawing.Size(234, 23);
+            this.BtnNewAssembly.TabIndex = 6;
+            this.BtnNewAssembly.Text = "Add new assembly";
+            this.BtnNewAssembly.UseVisualStyleBackColor = true;
+            this.BtnNewAssembly.Click += new System.EventHandler(this.BtnNewAssembly_Click);
             // 
-            // btnAddAnotherAssembly
+            // BtnAddAnotherAssembly
             // 
-            this.btnAddAnotherAssembly.Location = new System.Drawing.Point(203, 179);
-            this.btnAddAnotherAssembly.Name = "btnAddAnotherAssembly";
-            this.btnAddAnotherAssembly.Size = new System.Drawing.Size(139, 23);
-            this.btnAddAnotherAssembly.TabIndex = 7;
-            this.btnAddAnotherAssembly.Text = "Add another assembly";
-            this.btnAddAnotherAssembly.UseVisualStyleBackColor = true;
-            this.btnAddAnotherAssembly.Click += new System.EventHandler(this.btnAddAnotherAssembly_Click);
+            this.BtnAddAnotherAssembly.Location = new System.Drawing.Point(203, 179);
+            this.BtnAddAnotherAssembly.Name = "BtnAddAnotherAssembly";
+            this.BtnAddAnotherAssembly.Size = new System.Drawing.Size(139, 23);
+            this.BtnAddAnotherAssembly.TabIndex = 7;
+            this.BtnAddAnotherAssembly.Text = "Add another assembly";
+            this.BtnAddAnotherAssembly.UseVisualStyleBackColor = true;
+            this.BtnAddAnotherAssembly.Click += new System.EventHandler(this.BtnAddAnotherAssembly_Click);
             // 
             // txtAssemblyName
             // 
@@ -110,9 +110,9 @@ namespace MvE_SQL_test
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.txtAssemblyName);
-            this.Controls.Add(this.btnAddAnotherAssembly);
-            this.Controls.Add(this.btnNewAssembly);
-            this.Controls.Add(this.btnFinnish);
+            this.Controls.Add(this.BtnAddAnotherAssembly);
+            this.Controls.Add(this.BtnNewAssembly);
+            this.Controls.Add(this.BtnFinnish);
             this.Name = "NewAssembly";
             this.Text = "New Assembly";
             this.ResumeLayout(false);
@@ -122,9 +122,9 @@ namespace MvE_SQL_test
 
         #endregion
 
-        private System.Windows.Forms.Button btnFinnish;
-        private System.Windows.Forms.Button btnNewAssembly;
-        private System.Windows.Forms.Button btnAddAnotherAssembly;
+        private System.Windows.Forms.Button BtnFinnish;
+        private System.Windows.Forms.Button BtnNewAssembly;
+        private System.Windows.Forms.Button BtnAddAnotherAssembly;
         private System.Windows.Forms.TextBox txtAssemblyName;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label2;

@@ -76,19 +76,19 @@ namespace MvE_SQL_test
 
 
 
-        private void btnFinnish_Click(object sender, EventArgs e)
+        private void BtnFinnish_Click(object sender, EventArgs e)
         {
             this.Close();
         }
 
-        private void btnAddAnotherOperation_Click(object sender, EventArgs e)
+        private void BtnAddAnotherOperation_Click(object sender, EventArgs e)
         {
                 txtOperationName.Clear();
                 txtOperationID.Clear();
                 this.parsedOperationID = 0;
         }
 
-        private void btnNewOperation_Click(object sender, EventArgs e)
+        private void BtnNewOperation_Click(object sender, EventArgs e)
         {
             if (IsNameValid())
             {

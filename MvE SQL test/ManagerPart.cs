@@ -44,7 +44,7 @@ namespace MvE_SQL_test
                             DataTable dt = new DataTable();
                             dt.Load(dr);
                             dt.DefaultView.Sort = ("Name ASC");                            
-                            this.dgvParts.DataSource = dt;
+                            this.DgvParts.DataSource = dt;
                             dr.Close();
                         }
                     }
@@ -55,7 +55,7 @@ namespace MvE_SQL_test
                     finally
                     {
                         // connection.Close();
-                        dgvParts.AutoResizeColumns();
+                        DgvParts.AutoResizeColumns();
                     }
                 }
             }
@@ -98,7 +98,7 @@ namespace MvE_SQL_test
                             {
                                 DataTable dt = new DataTable();
                                 dt.Load(dr);
-                                this.dgvRelations.DataSource = dt;
+                                this.DgvRelations.DataSource = dt;
                                 dr.Close();
                             }
                         }
@@ -109,7 +109,7 @@ namespace MvE_SQL_test
                         finally
                         {
                             connection.Close();
-                            dgvRelations.AutoResizeColumns();
+                            DgvRelations.AutoResizeColumns();
                         }
                     }
 
@@ -119,7 +119,7 @@ namespace MvE_SQL_test
         }
 
 
-        private void btnFinnish_Click(object sender, EventArgs e)
+        private void BtnFinnish_Click(object sender, EventArgs e)
         {
             this.Close();
         }
@@ -127,11 +127,11 @@ namespace MvE_SQL_test
 
 
 
-        private void btnLoadParts_Click(object sender, EventArgs e)
+        private void BtnLoadParts_Click(object sender, EventArgs e)
         {
             PartRefresh();            
         }
-        private void btnNewPart_Click(object sender, EventArgs e)
+        private void BtnNewPart_Click(object sender, EventArgs e)
         {
             string connectionstring = ConnString; 
             Form frm = new NewPart();
@@ -146,10 +146,10 @@ namespace MvE_SQL_test
 
 
 
-        public void dgvPart_SelectionChanged(object sender, EventArgs e)
+        public void DgvPart_SelectionChanged(object sender, EventArgs e)
         {
-            Int32 selectedrowindex = dgvParts.SelectedCells[0].RowIndex;
-            DataGridViewRow SelectedRow = dgvParts.Rows[selectedrowindex];
+            Int32 selectedrowindex = DgvParts.SelectedCells[0].RowIndex;
+            DataGridViewRow SelectedRow = DgvParts.Rows[selectedrowindex];
             string PartID = Convert.ToString(SelectedRow.Cells["Part_id"].Value);
 
             txtPartID.Text = PartID;
@@ -160,11 +160,11 @@ namespace MvE_SQL_test
 
         
 
-        private void btnAddRelation_Click(object sender, EventArgs e)
+        private void BtnAddRelation_Click(object sender, EventArgs e)
         {
 
-            Int32 selectedrowindex = dgvParts.SelectedCells[0].RowIndex;
-            DataGridViewRow SelectedRow = dgvParts.Rows[selectedrowindex];
+            Int32 selectedrowindex = DgvParts.SelectedCells[0].RowIndex;
+            DataGridViewRow SelectedRow = DgvParts.Rows[selectedrowindex];
             string PartId = Convert.ToString(SelectedRow.Cells["Part_id"].Value);
             PartID = PartId;
 
@@ -180,18 +180,18 @@ namespace MvE_SQL_test
             RelationRefresh();
 
         }
-        private void btnRemoveRelation_Click(object sender, EventArgs e)
+        private void BtnRemoveRelation_Click(object sender, EventArgs e)
         {
-            Int32 selectedrowindex = dgvRelations.SelectedCells[0].RowIndex;
-            DataGridViewRow SelectedRow = dgvRelations.Rows[selectedrowindex];
+            Int32 selectedrowindex = DgvRelations.SelectedCells[0].RowIndex;
+            DataGridViewRow SelectedRow = DgvRelations.Rows[selectedrowindex];
             string AssemblyOpsId = Convert.ToString(SelectedRow.Cells["PartRelation_id"].Value);
 
-            if (dgvRelations.SelectedRows.Count == 0)
+            if (DgvRelations.SelectedRows.Count == 0)
             {
                 MessageBox.Show("No relation selected");
             }
 
-            else if (dgvRelations.SelectedRows.Count == 1)
+            else if (DgvRelations.SelectedRows.Count == 1)
             {
                 // Create the connection.
                 string connectionstring = ConnString;
@@ -216,7 +216,7 @@ namespace MvE_SQL_test
                 }
             }
 
-            else if (dgvRelations.SelectedRows.Count > 1)
+            else if (DgvRelations.SelectedRows.Count > 1)
             {
                 MessageBox.Show("More than one relation selected. Please select one relation");
             }

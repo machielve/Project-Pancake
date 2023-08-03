@@ -35,12 +35,12 @@ namespace MvE_SQL_test
             }
         }
 
-        private void btnFinnish_Click(object sender, EventArgs e)
+        private void BtnFinnish_Click(object sender, EventArgs e)
         {
             this.Close();
         }
 
-        private void btnNewRelation_Click(object sender, EventArgs e)
+        private void BtnNewRelation_Click(object sender, EventArgs e)
         {
             if (IsNameValid())
             {
@@ -88,7 +88,7 @@ namespace MvE_SQL_test
 
         }
 
-        private void btnAddAnotherRelation_Click(object sender, EventArgs e)
+        private void BtnAddAnotherRelation_Click(object sender, EventArgs e)
         {
             txtRelationID.Clear();
             txtRelationName.Clear();

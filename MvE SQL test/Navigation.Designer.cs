@@ -30,16 +30,16 @@ namespace MvE_SQL_test
         private void InitializeComponent()
         {
             this.label1 = new System.Windows.Forms.Label();
-            this.btnExit = new System.Windows.Forms.Button();
-            this.btnAddUnit = new System.Windows.Forms.Button();
-            this.btnProjectManager = new System.Windows.Forms.Button();
-            this.btnAssemblyManager = new System.Windows.Forms.Button();
-            this.btnPartManager = new System.Windows.Forms.Button();
-            this.btnStockManager = new System.Windows.Forms.Button();
+            this.BtnExit = new System.Windows.Forms.Button();
+            this.BtnAddUnit = new System.Windows.Forms.Button();
+            this.BtnProjectManager = new System.Windows.Forms.Button();
+            this.BtnAssemblyManager = new System.Windows.Forms.Button();
+            this.BtnPartManager = new System.Windows.Forms.Button();
+            this.BtnStockManager = new System.Windows.Forms.Button();
             this.Managers = new System.Windows.Forms.TabControl();
             this.GeneralSettings = new System.Windows.Forms.TabPage();
             this.ConnectedBox = new System.Windows.Forms.CheckBox();
-            this.btnConnectSQL = new System.Windows.Forms.Button();
+            this.BtnConnectSQL = new System.Windows.Forms.Button();
             this.label5 = new System.Windows.Forms.Label();
             this.txtDatabse = new System.Windows.Forms.TextBox();
             this.label4 = new System.Windows.Forms.Label();
@@ -47,37 +47,37 @@ namespace MvE_SQL_test
             this.txtPassword = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
             this.txtUserName = new System.Windows.Forms.TextBox();
-            this.rdbIPAdres2 = new System.Windows.Forms.RadioButton();
-            this.rdbIPAdres1 = new System.Windows.Forms.RadioButton();
+            this.RdbIPAdres2 = new System.Windows.Forms.RadioButton();
+            this.RdbIPAdres1 = new System.Windows.Forms.RadioButton();
             this.txtIPAdres = new System.Windows.Forms.TextBox();
             this.txtIPExtern = new System.Windows.Forms.TextBox();
             this.txtIPIntern = new System.Windows.Forms.TextBox();
             this.tabOperations = new System.Windows.Forms.TabPage();
-            this.dgvOperations = new System.Windows.Forms.DataGridView();
-            this.btnLoadOperations = new System.Windows.Forms.Button();
-            this.btnNewOperation = new System.Windows.Forms.Button();
+            this.DgvOperations = new System.Windows.Forms.DataGridView();
+            this.BtnLoadOperations = new System.Windows.Forms.Button();
+            this.BtnNewOperation = new System.Windows.Forms.Button();
             this.tabMaterials = new System.Windows.Forms.TabPage();
-            this.btnLoadMaterials = new System.Windows.Forms.Button();
-            this.dgvMaterials = new System.Windows.Forms.DataGridView();
-            this.btnNewMaterial = new System.Windows.Forms.Button();
+            this.BtnLoadMaterials = new System.Windows.Forms.Button();
+            this.DgvMaterials = new System.Windows.Forms.DataGridView();
+            this.BtnNewMaterial = new System.Windows.Forms.Button();
             this.tabRelations = new System.Windows.Forms.TabPage();
-            this.btnLoadRelations = new System.Windows.Forms.Button();
-            this.dgvRelations = new System.Windows.Forms.DataGridView();
-            this.btnNewRelation = new System.Windows.Forms.Button();
+            this.BtnLoadRelations = new System.Windows.Forms.Button();
+            this.DgvRelations = new System.Windows.Forms.DataGridView();
+            this.BtnNewRelation = new System.Windows.Forms.Button();
             this.tabUnits = new System.Windows.Forms.TabPage();
-            this.dgvUnits = new System.Windows.Forms.DataGridView();
-            this.btnLoadUnits = new System.Windows.Forms.Button();
-            this.btnJobOrderManager = new System.Windows.Forms.Button();
+            this.DgvUnits = new System.Windows.Forms.DataGridView();
+            this.BtnLoadUnits = new System.Windows.Forms.Button();
+            this.BtnJobOrderManager = new System.Windows.Forms.Button();
             this.Managers.SuspendLayout();
             this.GeneralSettings.SuspendLayout();
             this.tabOperations.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dgvOperations)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.DgvOperations)).BeginInit();
             this.tabMaterials.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dgvMaterials)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.DgvMaterials)).BeginInit();
             this.tabRelations.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dgvRelations)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.DgvRelations)).BeginInit();
             this.tabUnits.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dgvUnits)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.DgvUnits)).BeginInit();
             this.SuspendLayout();
             // 
             // label1
@@ -89,65 +89,65 @@ namespace MvE_SQL_test
             this.label1.TabIndex = 2;
             this.label1.Text = "What do you want to do?";
             // 
-            // btnExit
+            // BtnExit
             // 
-            this.btnExit.Location = new System.Drawing.Point(15, 756);
-            this.btnExit.Name = "btnExit";
-            this.btnExit.Size = new System.Drawing.Size(124, 23);
-            this.btnExit.TabIndex = 3;
-            this.btnExit.Text = "Exit";
-            this.btnExit.UseVisualStyleBackColor = true;
-            this.btnExit.Click += new System.EventHandler(this.btnExit_Click_1);
+            this.BtnExit.Location = new System.Drawing.Point(15, 756);
+            this.BtnExit.Name = "BtnExit";
+            this.BtnExit.Size = new System.Drawing.Size(124, 23);
+            this.BtnExit.TabIndex = 3;
+            this.BtnExit.Text = "Exit";
+            this.BtnExit.UseVisualStyleBackColor = true;
+            this.BtnExit.Click += new System.EventHandler(this.BtnExit_Click_1);
             // 
-            // btnAddUnit
+            // BtnAddUnit
             // 
-            this.btnAddUnit.Location = new System.Drawing.Point(6, 35);
-            this.btnAddUnit.Name = "btnAddUnit";
-            this.btnAddUnit.Size = new System.Drawing.Size(124, 23);
-            this.btnAddUnit.TabIndex = 4;
-            this.btnAddUnit.Text = "New unit";
-            this.btnAddUnit.UseVisualStyleBackColor = true;
-            this.btnAddUnit.Click += new System.EventHandler(this.btnAddUnit_Click);
+            this.BtnAddUnit.Location = new System.Drawing.Point(6, 35);
+            this.BtnAddUnit.Name = "BtnAddUnit";
+            this.BtnAddUnit.Size = new System.Drawing.Size(124, 23);
+            this.BtnAddUnit.TabIndex = 4;
+            this.BtnAddUnit.Text = "New unit";
+            this.BtnAddUnit.UseVisualStyleBackColor = true;
+            this.BtnAddUnit.Click += new System.EventHandler(this.BtnAddUnit_Click);
             // 
-            // btnProjectManager
+            // BtnProjectManager
             // 
-            this.btnProjectManager.Location = new System.Drawing.Point(15, 37);
-            this.btnProjectManager.Name = "btnProjectManager";
-            this.btnProjectManager.Size = new System.Drawing.Size(124, 23);
-            this.btnProjectManager.TabIndex = 5;
-            this.btnProjectManager.Text = "Project manager";
-            this.btnProjectManager.UseVisualStyleBackColor = true;
-            this.btnProjectManager.Click += new System.EventHandler(this.btnProjectManager_Click);
+            this.BtnProjectManager.Location = new System.Drawing.Point(15, 37);
+            this.BtnProjectManager.Name = "BtnProjectManager";
+            this.BtnProjectManager.Size = new System.Drawing.Size(124, 23);
+            this.BtnProjectManager.TabIndex = 5;
+            this.BtnProjectManager.Text = "Project manager";
+            this.BtnProjectManager.UseVisualStyleBackColor = true;
+            this.BtnProjectManager.Click += new System.EventHandler(this.BtnProjectManager_Click);
             // 
-            // btnAssemblyManager
+            // BtnAssemblyManager
             // 
-            this.btnAssemblyManager.Location = new System.Drawing.Point(15, 95);
-            this.btnAssemblyManager.Name = "btnAssemblyManager";
-            this.btnAssemblyManager.Size = new System.Drawing.Size(124, 23);
-            this.btnAssemblyManager.TabIndex = 6;
-            this.btnAssemblyManager.Text = "Assembly manager";
-            this.btnAssemblyManager.UseVisualStyleBackColor = true;
-            this.btnAssemblyManager.Click += new System.EventHandler(this.btnAssemblyManager_Click);
+            this.BtnAssemblyManager.Location = new System.Drawing.Point(15, 95);
+            this.BtnAssemblyManager.Name = "BtnAssemblyManager";
+            this.BtnAssemblyManager.Size = new System.Drawing.Size(124, 23);
+            this.BtnAssemblyManager.TabIndex = 6;
+            this.BtnAssemblyManager.Text = "Assembly manager";
+            this.BtnAssemblyManager.UseVisualStyleBackColor = true;
+            this.BtnAssemblyManager.Click += new System.EventHandler(this.BtnAssemblyManager_Click);
             // 
-            // btnPartManager
+            // BtnPartManager
             // 
-            this.btnPartManager.Location = new System.Drawing.Point(15, 124);
-            this.btnPartManager.Name = "btnPartManager";
-            this.btnPartManager.Size = new System.Drawing.Size(124, 23);
-            this.btnPartManager.TabIndex = 7;
-            this.btnPartManager.Text = "Part manager";
-            this.btnPartManager.UseVisualStyleBackColor = true;
-            this.btnPartManager.Click += new System.EventHandler(this.btnPartManager_Click);
+            this.BtnPartManager.Location = new System.Drawing.Point(15, 124);
+            this.BtnPartManager.Name = "BtnPartManager";
+            this.BtnPartManager.Size = new System.Drawing.Size(124, 23);
+            this.BtnPartManager.TabIndex = 7;
+            this.BtnPartManager.Text = "Part manager";
+            this.BtnPartManager.UseVisualStyleBackColor = true;
+            this.BtnPartManager.Click += new System.EventHandler(this.BtnPartManager_Click);
             // 
-            // btnStockManager
+            // BtnStockManager
             // 
-            this.btnStockManager.Location = new System.Drawing.Point(15, 153);
-            this.btnStockManager.Name = "btnStockManager";
-            this.btnStockManager.Size = new System.Drawing.Size(124, 23);
-            this.btnStockManager.TabIndex = 9;
-            this.btnStockManager.Text = "Stock manager";
-            this.btnStockManager.UseVisualStyleBackColor = true;
-            this.btnStockManager.Click += new System.EventHandler(this.btnStockManager_Click);
+            this.BtnStockManager.Location = new System.Drawing.Point(15, 153);
+            this.BtnStockManager.Name = "BtnStockManager";
+            this.BtnStockManager.Size = new System.Drawing.Size(124, 23);
+            this.BtnStockManager.TabIndex = 9;
+            this.BtnStockManager.Text = "Stock manager";
+            this.BtnStockManager.UseVisualStyleBackColor = true;
+            this.BtnStockManager.Click += new System.EventHandler(this.BtnStockManager_Click);
             // 
             // Managers
             // 
@@ -167,7 +167,7 @@ namespace MvE_SQL_test
             // GeneralSettings
             // 
             this.GeneralSettings.Controls.Add(this.ConnectedBox);
-            this.GeneralSettings.Controls.Add(this.btnConnectSQL);
+            this.GeneralSettings.Controls.Add(this.BtnConnectSQL);
             this.GeneralSettings.Controls.Add(this.label5);
             this.GeneralSettings.Controls.Add(this.txtDatabse);
             this.GeneralSettings.Controls.Add(this.label4);
@@ -175,8 +175,8 @@ namespace MvE_SQL_test
             this.GeneralSettings.Controls.Add(this.txtPassword);
             this.GeneralSettings.Controls.Add(this.label2);
             this.GeneralSettings.Controls.Add(this.txtUserName);
-            this.GeneralSettings.Controls.Add(this.rdbIPAdres2);
-            this.GeneralSettings.Controls.Add(this.rdbIPAdres1);
+            this.GeneralSettings.Controls.Add(this.RdbIPAdres2);
+            this.GeneralSettings.Controls.Add(this.RdbIPAdres1);
             this.GeneralSettings.Controls.Add(this.txtIPAdres);
             this.GeneralSettings.Controls.Add(this.txtIPExtern);
             this.GeneralSettings.Controls.Add(this.txtIPIntern);
@@ -199,15 +199,15 @@ namespace MvE_SQL_test
             this.ConnectedBox.Text = "Connected";
             this.ConnectedBox.UseVisualStyleBackColor = true;
             // 
-            // btnConnectSQL
+            // BtnConnectSQL
             // 
-            this.btnConnectSQL.Location = new System.Drawing.Point(70, 181);
-            this.btnConnectSQL.Name = "btnConnectSQL";
-            this.btnConnectSQL.Size = new System.Drawing.Size(184, 23);
-            this.btnConnectSQL.TabIndex = 12;
-            this.btnConnectSQL.Text = "Connect";
-            this.btnConnectSQL.UseVisualStyleBackColor = true;
-            this.btnConnectSQL.Click += new System.EventHandler(this.btnConnectSQL_Click);
+            this.BtnConnectSQL.Location = new System.Drawing.Point(70, 181);
+            this.BtnConnectSQL.Name = "BtnConnectSQL";
+            this.BtnConnectSQL.Size = new System.Drawing.Size(184, 23);
+            this.BtnConnectSQL.TabIndex = 12;
+            this.BtnConnectSQL.Text = "Connect";
+            this.BtnConnectSQL.UseVisualStyleBackColor = true;
+            this.BtnConnectSQL.Click += new System.EventHandler(this.BtnConnectSQL_Click);
             // 
             // label5
             // 
@@ -270,27 +270,27 @@ namespace MvE_SQL_test
             this.txtUserName.TabIndex = 5;
             this.txtUserName.Text = "machiel";
             // 
-            // rdbIPAdres2
+            // RdbIPAdres2
             // 
-            this.rdbIPAdres2.AutoSize = true;
-            this.rdbIPAdres2.Location = new System.Drawing.Point(6, 37);
-            this.rdbIPAdres2.Name = "rdbIPAdres2";
-            this.rdbIPAdres2.Size = new System.Drawing.Size(119, 17);
-            this.rdbIPAdres2.TabIndex = 4;
-            this.rdbIPAdres2.Text = "External connection";
-            this.rdbIPAdres2.UseVisualStyleBackColor = true;
-            this.rdbIPAdres2.Click += new System.EventHandler(this.rdbIPAdres2_CheckedChanged);
+            this.RdbIPAdres2.AutoSize = true;
+            this.RdbIPAdres2.Location = new System.Drawing.Point(6, 37);
+            this.RdbIPAdres2.Name = "RdbIPAdres2";
+            this.RdbIPAdres2.Size = new System.Drawing.Size(119, 17);
+            this.RdbIPAdres2.TabIndex = 4;
+            this.RdbIPAdres2.Text = "External connection";
+            this.RdbIPAdres2.UseVisualStyleBackColor = true;
+            this.RdbIPAdres2.Click += new System.EventHandler(this.RdbIPAdres2_CheckedChanged);
             // 
-            // rdbIPAdres1
+            // RdbIPAdres1
             // 
-            this.rdbIPAdres1.AutoSize = true;
-            this.rdbIPAdres1.Location = new System.Drawing.Point(6, 8);
-            this.rdbIPAdres1.Name = "rdbIPAdres1";
-            this.rdbIPAdres1.Size = new System.Drawing.Size(116, 17);
-            this.rdbIPAdres1.TabIndex = 3;
-            this.rdbIPAdres1.Text = "Internal connection";
-            this.rdbIPAdres1.UseVisualStyleBackColor = true;
-            this.rdbIPAdres1.Click += new System.EventHandler(this.rdbIPAdres1_CheckedChanged);
+            this.RdbIPAdres1.AutoSize = true;
+            this.RdbIPAdres1.Location = new System.Drawing.Point(6, 8);
+            this.RdbIPAdres1.Name = "RdbIPAdres1";
+            this.RdbIPAdres1.Size = new System.Drawing.Size(116, 17);
+            this.RdbIPAdres1.TabIndex = 3;
+            this.RdbIPAdres1.Text = "Internal connection";
+            this.RdbIPAdres1.UseVisualStyleBackColor = true;
+            this.RdbIPAdres1.Click += new System.EventHandler(this.RdbIPAdres1_CheckedChanged);
             // 
             // txtIPAdres
             // 
@@ -318,9 +318,9 @@ namespace MvE_SQL_test
             // 
             // tabOperations
             // 
-            this.tabOperations.Controls.Add(this.dgvOperations);
-            this.tabOperations.Controls.Add(this.btnLoadOperations);
-            this.tabOperations.Controls.Add(this.btnNewOperation);
+            this.tabOperations.Controls.Add(this.DgvOperations);
+            this.tabOperations.Controls.Add(this.BtnLoadOperations);
+            this.tabOperations.Controls.Add(this.BtnNewOperation);
             this.tabOperations.Location = new System.Drawing.Point(4, 22);
             this.tabOperations.Name = "tabOperations";
             this.tabOperations.Padding = new System.Windows.Forms.Padding(3);
@@ -329,43 +329,43 @@ namespace MvE_SQL_test
             this.tabOperations.Text = "Operations";
             this.tabOperations.UseVisualStyleBackColor = true;
             // 
-            // dgvOperations
+            // DgvOperations
             // 
-            this.dgvOperations.AllowUserToAddRows = false;
-            this.dgvOperations.AllowUserToDeleteRows = false;
-            this.dgvOperations.AllowUserToOrderColumns = true;
-            this.dgvOperations.BackgroundColor = System.Drawing.SystemColors.Control;
-            this.dgvOperations.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvOperations.Location = new System.Drawing.Point(136, 6);
-            this.dgvOperations.Name = "dgvOperations";
-            this.dgvOperations.Size = new System.Drawing.Size(1144, 696);
-            this.dgvOperations.TabIndex = 16;
+            this.DgvOperations.AllowUserToAddRows = false;
+            this.DgvOperations.AllowUserToDeleteRows = false;
+            this.DgvOperations.AllowUserToOrderColumns = true;
+            this.DgvOperations.BackgroundColor = System.Drawing.SystemColors.Control;
+            this.DgvOperations.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.DgvOperations.Location = new System.Drawing.Point(136, 6);
+            this.DgvOperations.Name = "DgvOperations";
+            this.DgvOperations.Size = new System.Drawing.Size(1144, 696);
+            this.DgvOperations.TabIndex = 16;
             // 
-            // btnLoadOperations
+            // BtnLoadOperations
             // 
-            this.btnLoadOperations.Location = new System.Drawing.Point(6, 6);
-            this.btnLoadOperations.Name = "btnLoadOperations";
-            this.btnLoadOperations.Size = new System.Drawing.Size(124, 23);
-            this.btnLoadOperations.TabIndex = 15;
-            this.btnLoadOperations.Text = "Load operations";
-            this.btnLoadOperations.UseVisualStyleBackColor = true;
-            this.btnLoadOperations.Click += new System.EventHandler(this.btnLoadOperations_Click);
+            this.BtnLoadOperations.Location = new System.Drawing.Point(6, 6);
+            this.BtnLoadOperations.Name = "BtnLoadOperations";
+            this.BtnLoadOperations.Size = new System.Drawing.Size(124, 23);
+            this.BtnLoadOperations.TabIndex = 15;
+            this.BtnLoadOperations.Text = "Load operations";
+            this.BtnLoadOperations.UseVisualStyleBackColor = true;
+            this.BtnLoadOperations.Click += new System.EventHandler(this.BtnLoadOperations_Click);
             // 
-            // btnNewOperation
+            // BtnNewOperation
             // 
-            this.btnNewOperation.Location = new System.Drawing.Point(6, 35);
-            this.btnNewOperation.Name = "btnNewOperation";
-            this.btnNewOperation.Size = new System.Drawing.Size(124, 23);
-            this.btnNewOperation.TabIndex = 14;
-            this.btnNewOperation.Text = "New operation";
-            this.btnNewOperation.UseVisualStyleBackColor = true;
-            this.btnNewOperation.Click += new System.EventHandler(this.btnNewOperation_Click);
+            this.BtnNewOperation.Location = new System.Drawing.Point(6, 35);
+            this.BtnNewOperation.Name = "BtnNewOperation";
+            this.BtnNewOperation.Size = new System.Drawing.Size(124, 23);
+            this.BtnNewOperation.TabIndex = 14;
+            this.BtnNewOperation.Text = "New operation";
+            this.BtnNewOperation.UseVisualStyleBackColor = true;
+            this.BtnNewOperation.Click += new System.EventHandler(this.BtnNewOperation_Click);
             // 
             // tabMaterials
             // 
-            this.tabMaterials.Controls.Add(this.btnLoadMaterials);
-            this.tabMaterials.Controls.Add(this.dgvMaterials);
-            this.tabMaterials.Controls.Add(this.btnNewMaterial);
+            this.tabMaterials.Controls.Add(this.BtnLoadMaterials);
+            this.tabMaterials.Controls.Add(this.DgvMaterials);
+            this.tabMaterials.Controls.Add(this.BtnNewMaterial);
             this.tabMaterials.Location = new System.Drawing.Point(4, 22);
             this.tabMaterials.Name = "tabMaterials";
             this.tabMaterials.Padding = new System.Windows.Forms.Padding(3);
@@ -374,43 +374,43 @@ namespace MvE_SQL_test
             this.tabMaterials.Text = "Materials";
             this.tabMaterials.UseVisualStyleBackColor = true;
             // 
-            // btnLoadMaterials
+            // BtnLoadMaterials
             // 
-            this.btnLoadMaterials.Location = new System.Drawing.Point(6, 6);
-            this.btnLoadMaterials.Name = "btnLoadMaterials";
-            this.btnLoadMaterials.Size = new System.Drawing.Size(124, 23);
-            this.btnLoadMaterials.TabIndex = 13;
-            this.btnLoadMaterials.Text = "Load materials";
-            this.btnLoadMaterials.UseVisualStyleBackColor = true;
-            this.btnLoadMaterials.Click += new System.EventHandler(this.btnLoadMaterials_Click);
+            this.BtnLoadMaterials.Location = new System.Drawing.Point(6, 6);
+            this.BtnLoadMaterials.Name = "BtnLoadMaterials";
+            this.BtnLoadMaterials.Size = new System.Drawing.Size(124, 23);
+            this.BtnLoadMaterials.TabIndex = 13;
+            this.BtnLoadMaterials.Text = "Load materials";
+            this.BtnLoadMaterials.UseVisualStyleBackColor = true;
+            this.BtnLoadMaterials.Click += new System.EventHandler(this.BtnLoadMaterials_Click);
             // 
-            // dgvMaterials
+            // DgvMaterials
             // 
-            this.dgvMaterials.AllowUserToAddRows = false;
-            this.dgvMaterials.AllowUserToDeleteRows = false;
-            this.dgvMaterials.AllowUserToOrderColumns = true;
-            this.dgvMaterials.BackgroundColor = System.Drawing.SystemColors.Control;
-            this.dgvMaterials.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvMaterials.Location = new System.Drawing.Point(136, 6);
-            this.dgvMaterials.Name = "dgvMaterials";
-            this.dgvMaterials.Size = new System.Drawing.Size(1144, 696);
-            this.dgvMaterials.TabIndex = 12;
+            this.DgvMaterials.AllowUserToAddRows = false;
+            this.DgvMaterials.AllowUserToDeleteRows = false;
+            this.DgvMaterials.AllowUserToOrderColumns = true;
+            this.DgvMaterials.BackgroundColor = System.Drawing.SystemColors.Control;
+            this.DgvMaterials.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.DgvMaterials.Location = new System.Drawing.Point(136, 6);
+            this.DgvMaterials.Name = "DgvMaterials";
+            this.DgvMaterials.Size = new System.Drawing.Size(1144, 696);
+            this.DgvMaterials.TabIndex = 12;
             // 
-            // btnNewMaterial
+            // BtnNewMaterial
             // 
-            this.btnNewMaterial.Location = new System.Drawing.Point(6, 35);
-            this.btnNewMaterial.Name = "btnNewMaterial";
-            this.btnNewMaterial.Size = new System.Drawing.Size(124, 23);
-            this.btnNewMaterial.TabIndex = 11;
-            this.btnNewMaterial.Text = "New material";
-            this.btnNewMaterial.UseVisualStyleBackColor = true;
-            this.btnNewMaterial.Click += new System.EventHandler(this.btnNewMaterial_Click);
+            this.BtnNewMaterial.Location = new System.Drawing.Point(6, 35);
+            this.BtnNewMaterial.Name = "BtnNewMaterial";
+            this.BtnNewMaterial.Size = new System.Drawing.Size(124, 23);
+            this.BtnNewMaterial.TabIndex = 11;
+            this.BtnNewMaterial.Text = "New material";
+            this.BtnNewMaterial.UseVisualStyleBackColor = true;
+            this.BtnNewMaterial.Click += new System.EventHandler(this.BtnNewMaterial_Click);
             // 
             // tabRelations
             // 
-            this.tabRelations.Controls.Add(this.btnLoadRelations);
-            this.tabRelations.Controls.Add(this.dgvRelations);
-            this.tabRelations.Controls.Add(this.btnNewRelation);
+            this.tabRelations.Controls.Add(this.BtnLoadRelations);
+            this.tabRelations.Controls.Add(this.DgvRelations);
+            this.tabRelations.Controls.Add(this.BtnNewRelation);
             this.tabRelations.Location = new System.Drawing.Point(4, 22);
             this.tabRelations.Name = "tabRelations";
             this.tabRelations.Padding = new System.Windows.Forms.Padding(3);
@@ -419,43 +419,43 @@ namespace MvE_SQL_test
             this.tabRelations.Text = "Relations";
             this.tabRelations.UseVisualStyleBackColor = true;
             // 
-            // btnLoadRelations
+            // BtnLoadRelations
             // 
-            this.btnLoadRelations.Location = new System.Drawing.Point(6, 5);
-            this.btnLoadRelations.Name = "btnLoadRelations";
-            this.btnLoadRelations.Size = new System.Drawing.Size(124, 23);
-            this.btnLoadRelations.TabIndex = 14;
-            this.btnLoadRelations.Text = "Load relations";
-            this.btnLoadRelations.UseVisualStyleBackColor = true;
-            this.btnLoadRelations.Click += new System.EventHandler(this.btnLoadRelations_Click);
+            this.BtnLoadRelations.Location = new System.Drawing.Point(6, 5);
+            this.BtnLoadRelations.Name = "BtnLoadRelations";
+            this.BtnLoadRelations.Size = new System.Drawing.Size(124, 23);
+            this.BtnLoadRelations.TabIndex = 14;
+            this.BtnLoadRelations.Text = "Load relations";
+            this.BtnLoadRelations.UseVisualStyleBackColor = true;
+            this.BtnLoadRelations.Click += new System.EventHandler(this.BtnLoadRelations_Click);
             // 
-            // dgvRelations
+            // DgvRelations
             // 
-            this.dgvRelations.AllowUserToAddRows = false;
-            this.dgvRelations.AllowUserToDeleteRows = false;
-            this.dgvRelations.AllowUserToOrderColumns = true;
-            this.dgvRelations.BackgroundColor = System.Drawing.SystemColors.Control;
-            this.dgvRelations.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvRelations.Location = new System.Drawing.Point(137, 7);
-            this.dgvRelations.Name = "dgvRelations";
-            this.dgvRelations.Size = new System.Drawing.Size(1144, 696);
-            this.dgvRelations.TabIndex = 13;
+            this.DgvRelations.AllowUserToAddRows = false;
+            this.DgvRelations.AllowUserToDeleteRows = false;
+            this.DgvRelations.AllowUserToOrderColumns = true;
+            this.DgvRelations.BackgroundColor = System.Drawing.SystemColors.Control;
+            this.DgvRelations.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.DgvRelations.Location = new System.Drawing.Point(137, 7);
+            this.DgvRelations.Name = "DgvRelations";
+            this.DgvRelations.Size = new System.Drawing.Size(1144, 696);
+            this.DgvRelations.TabIndex = 13;
             // 
-            // btnNewRelation
+            // BtnNewRelation
             // 
-            this.btnNewRelation.Location = new System.Drawing.Point(6, 34);
-            this.btnNewRelation.Name = "btnNewRelation";
-            this.btnNewRelation.Size = new System.Drawing.Size(124, 23);
-            this.btnNewRelation.TabIndex = 12;
-            this.btnNewRelation.Text = "New relation";
-            this.btnNewRelation.UseVisualStyleBackColor = true;
-            this.btnNewRelation.Click += new System.EventHandler(this.btnNewRelation_Click);
+            this.BtnNewRelation.Location = new System.Drawing.Point(6, 34);
+            this.BtnNewRelation.Name = "BtnNewRelation";
+            this.BtnNewRelation.Size = new System.Drawing.Size(124, 23);
+            this.BtnNewRelation.TabIndex = 12;
+            this.BtnNewRelation.Text = "New relation";
+            this.BtnNewRelation.UseVisualStyleBackColor = true;
+            this.BtnNewRelation.Click += new System.EventHandler(this.BtnNewRelation_Click);
             // 
             // tabUnits
             // 
-            this.tabUnits.Controls.Add(this.dgvUnits);
-            this.tabUnits.Controls.Add(this.btnLoadUnits);
-            this.tabUnits.Controls.Add(this.btnAddUnit);
+            this.tabUnits.Controls.Add(this.DgvUnits);
+            this.tabUnits.Controls.Add(this.BtnLoadUnits);
+            this.tabUnits.Controls.Add(this.BtnAddUnit);
             this.tabUnits.Location = new System.Drawing.Point(4, 22);
             this.tabUnits.Name = "tabUnits";
             this.tabUnits.Padding = new System.Windows.Forms.Padding(3);
@@ -464,50 +464,50 @@ namespace MvE_SQL_test
             this.tabUnits.Text = "Units";
             this.tabUnits.UseVisualStyleBackColor = true;
             // 
-            // dgvUnits
+            // DgvUnits
             // 
-            this.dgvUnits.AllowUserToAddRows = false;
-            this.dgvUnits.AllowUserToDeleteRows = false;
-            this.dgvUnits.AllowUserToOrderColumns = true;
-            this.dgvUnits.BackgroundColor = System.Drawing.SystemColors.Control;
-            this.dgvUnits.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvUnits.Location = new System.Drawing.Point(136, 6);
-            this.dgvUnits.Name = "dgvUnits";
-            this.dgvUnits.Size = new System.Drawing.Size(1144, 696);
-            this.dgvUnits.TabIndex = 13;
+            this.DgvUnits.AllowUserToAddRows = false;
+            this.DgvUnits.AllowUserToDeleteRows = false;
+            this.DgvUnits.AllowUserToOrderColumns = true;
+            this.DgvUnits.BackgroundColor = System.Drawing.SystemColors.Control;
+            this.DgvUnits.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.DgvUnits.Location = new System.Drawing.Point(136, 6);
+            this.DgvUnits.Name = "DgvUnits";
+            this.DgvUnits.Size = new System.Drawing.Size(1144, 696);
+            this.DgvUnits.TabIndex = 13;
             // 
-            // btnLoadUnits
+            // BtnLoadUnits
             // 
-            this.btnLoadUnits.Location = new System.Drawing.Point(6, 6);
-            this.btnLoadUnits.Name = "btnLoadUnits";
-            this.btnLoadUnits.Size = new System.Drawing.Size(124, 23);
-            this.btnLoadUnits.TabIndex = 5;
-            this.btnLoadUnits.Text = "Load units";
-            this.btnLoadUnits.UseVisualStyleBackColor = true;
-            this.btnLoadUnits.Click += new System.EventHandler(this.btnLoadUnits_Click);
+            this.BtnLoadUnits.Location = new System.Drawing.Point(6, 6);
+            this.BtnLoadUnits.Name = "BtnLoadUnits";
+            this.BtnLoadUnits.Size = new System.Drawing.Size(124, 23);
+            this.BtnLoadUnits.TabIndex = 5;
+            this.BtnLoadUnits.Text = "Load units";
+            this.BtnLoadUnits.UseVisualStyleBackColor = true;
+            this.BtnLoadUnits.Click += new System.EventHandler(this.BtnLoadUnits_Click);
             // 
-            // btnJobOrderManager
+            // BtnJobOrderManager
             // 
-            this.btnJobOrderManager.Location = new System.Drawing.Point(15, 66);
-            this.btnJobOrderManager.Name = "btnJobOrderManager";
-            this.btnJobOrderManager.Size = new System.Drawing.Size(124, 23);
-            this.btnJobOrderManager.TabIndex = 11;
-            this.btnJobOrderManager.Text = "Job order manager";
-            this.btnJobOrderManager.UseVisualStyleBackColor = true;
-            this.btnJobOrderManager.Click += new System.EventHandler(this.btnJobOrderManager_Click);
+            this.BtnJobOrderManager.Location = new System.Drawing.Point(15, 66);
+            this.BtnJobOrderManager.Name = "BtnJobOrderManager";
+            this.BtnJobOrderManager.Size = new System.Drawing.Size(124, 23);
+            this.BtnJobOrderManager.TabIndex = 11;
+            this.BtnJobOrderManager.Text = "Job order manager";
+            this.BtnJobOrderManager.UseVisualStyleBackColor = true;
+            this.BtnJobOrderManager.Click += new System.EventHandler(this.BtnJobOrderManager_Click);
             // 
             // Navigation
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1484, 861);
-            this.Controls.Add(this.btnJobOrderManager);
+            this.Controls.Add(this.BtnJobOrderManager);
             this.Controls.Add(this.Managers);
-            this.Controls.Add(this.btnStockManager);
-            this.Controls.Add(this.btnPartManager);
-            this.Controls.Add(this.btnAssemblyManager);
-            this.Controls.Add(this.btnProjectManager);
-            this.Controls.Add(this.btnExit);
+            this.Controls.Add(this.BtnStockManager);
+            this.Controls.Add(this.BtnPartManager);
+            this.Controls.Add(this.BtnAssemblyManager);
+            this.Controls.Add(this.BtnProjectManager);
+            this.Controls.Add(this.BtnExit);
             this.Controls.Add(this.label1);
             this.Name = "Navigation";
             this.Text = "Welcome to Zebra ERP";
@@ -517,13 +517,13 @@ namespace MvE_SQL_test
             this.GeneralSettings.ResumeLayout(false);
             this.GeneralSettings.PerformLayout();
             this.tabOperations.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.dgvOperations)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.DgvOperations)).EndInit();
             this.tabMaterials.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.dgvMaterials)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.DgvMaterials)).EndInit();
             this.tabRelations.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.dgvRelations)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.DgvRelations)).EndInit();
             this.tabUnits.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.dgvUnits)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.DgvUnits)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -531,35 +531,35 @@ namespace MvE_SQL_test
 
         #endregion
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.Button btnExit;
-        private System.Windows.Forms.Button btnAddUnit;
-        private System.Windows.Forms.Button btnProjectManager;
-        private System.Windows.Forms.Button btnAssemblyManager;
-        private System.Windows.Forms.Button btnPartManager;
-        private System.Windows.Forms.Button btnStockManager;
+        private System.Windows.Forms.Button BtnExit;
+        private System.Windows.Forms.Button BtnAddUnit;
+        private System.Windows.Forms.Button BtnProjectManager;
+        private System.Windows.Forms.Button BtnAssemblyManager;
+        private System.Windows.Forms.Button BtnPartManager;
+        private System.Windows.Forms.Button BtnStockManager;
         private System.Windows.Forms.TabControl Managers;
-        private System.Windows.Forms.Button btnNewMaterial;
+        private System.Windows.Forms.Button BtnNewMaterial;
         private System.Windows.Forms.TabPage GeneralSettings;
         private System.Windows.Forms.TextBox txtIPAdres;
         private System.Windows.Forms.TextBox txtIPExtern;
         private System.Windows.Forms.TextBox txtIPIntern;
-        private System.Windows.Forms.RadioButton rdbIPAdres2;
-        private System.Windows.Forms.RadioButton rdbIPAdres1;
-        private System.Windows.Forms.Button btnNewRelation;
+        private System.Windows.Forms.RadioButton RdbIPAdres2;
+        private System.Windows.Forms.RadioButton RdbIPAdres1;
+        private System.Windows.Forms.Button BtnNewRelation;
         private System.Windows.Forms.TabPage tabRelations;
-        private System.Windows.Forms.Button btnLoadRelations;
-        private System.Windows.Forms.DataGridView dgvRelations;
+        private System.Windows.Forms.Button BtnLoadRelations;
+        private System.Windows.Forms.DataGridView DgvRelations;
         private System.Windows.Forms.TabPage tabMaterials;
-        private System.Windows.Forms.Button btnLoadMaterials;
-        private System.Windows.Forms.DataGridView dgvMaterials;
+        private System.Windows.Forms.Button BtnLoadMaterials;
+        private System.Windows.Forms.DataGridView DgvMaterials;
         private System.Windows.Forms.TabPage tabUnits;
-        private System.Windows.Forms.DataGridView dgvUnits;
-        private System.Windows.Forms.Button btnLoadUnits;
+        private System.Windows.Forms.DataGridView DgvUnits;
+        private System.Windows.Forms.Button BtnLoadUnits;
         private System.Windows.Forms.TabPage tabOperations;
-        private System.Windows.Forms.DataGridView dgvOperations;
-        private System.Windows.Forms.Button btnLoadOperations;
-        private System.Windows.Forms.Button btnNewOperation;
-        private System.Windows.Forms.Button btnJobOrderManager;
+        private System.Windows.Forms.DataGridView DgvOperations;
+        private System.Windows.Forms.Button BtnLoadOperations;
+        private System.Windows.Forms.Button BtnNewOperation;
+        private System.Windows.Forms.Button BtnJobOrderManager;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.TextBox txtPassword;
         private System.Windows.Forms.Label label2;
@@ -567,7 +567,7 @@ namespace MvE_SQL_test
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.TextBox txtDatabse;
-        private System.Windows.Forms.Button btnConnectSQL;
+        private System.Windows.Forms.Button BtnConnectSQL;
         private System.Windows.Forms.CheckBox ConnectedBox;
     }
 }

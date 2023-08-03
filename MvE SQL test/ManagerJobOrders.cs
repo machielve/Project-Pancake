@@ -45,7 +45,7 @@ namespace MvE_SQL_test
                         {
                             DataTable dt = new DataTable();
                             dt.Load(dr);
-                            this.dgvJobOrders.DataSource = dt;
+                            this.DgvJobOrders.DataSource = dt;
                             dr.Close();
                         }
                     }
@@ -65,12 +65,12 @@ namespace MvE_SQL_test
 
 
 
-        private void btnFinnish_Click(object sender, EventArgs e)
+        private void BtnFinnish_Click(object sender, EventArgs e)
         {
             this.Close();
         }
 
-        private void btnLoadJobOrders_Click(object sender, EventArgs e)
+        private void BtnLoadJobOrders_Click(object sender, EventArgs e)
         {
             RefreshJobOrders();
 

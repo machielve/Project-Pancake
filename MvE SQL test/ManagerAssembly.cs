@@ -42,7 +42,7 @@ namespace MvE_SQL_test
                         {
                             DataTable dt = new DataTable();
                             dt.Load(dr);
-                            this.dgvAssemblies.DataSource = dt;
+                            this.DgvAssemblies.DataSource = dt;
                             dr.Close();
                         }
                     }
@@ -53,7 +53,7 @@ namespace MvE_SQL_test
                     finally
                     {
                         connection.Close();
-                        dgvAssemblies.AutoResizeColumns();
+                        DgvAssemblies.AutoResizeColumns();
                     }
                 }
             }
@@ -87,7 +87,7 @@ namespace MvE_SQL_test
                             {
                                 DataTable dt = new DataTable();
                                 dt.Load(dr);
-                                this.dgvAssemblyParts.DataSource = dt;
+                                this.DgvAssemblyParts.DataSource = dt;
                                 dr.Close();
                             }
                         }
@@ -110,7 +110,7 @@ namespace MvE_SQL_test
                             {
                                 DataTable dt = new DataTable();
                                 dt.Load(dr);
-                                this.dgvAssemblyOps.DataSource = dt;
+                                this.DgvAssemblyOps.DataSource = dt;
                                 dr.Close();
                             }
                         }
@@ -292,7 +292,7 @@ namespace MvE_SQL_test
 
         }
 
-        private void btnFinnish_Click(object sender, EventArgs e)
+        private void BtnFinnish_Click(object sender, EventArgs e)
         {
             this.Close();
         }
@@ -300,21 +300,21 @@ namespace MvE_SQL_test
 
 
 
-        private void btnLoadAssemblies_Click(object sender, EventArgs e)
+        private void BtnLoadAssemblies_Click(object sender, EventArgs e)
         {
             AssemblyRefresh();
         }
-        private void btnNewAssembly_Click(object sender, EventArgs e)
+        private void BtnNewAssembly_Click(object sender, EventArgs e)
         {
             string connectionstring = ConnString; 
             Form frm = new NewAssembly();
             NewAssembly.ConnString = connectionstring;
             frm.Show();
         }              
-        public void dgvAssemblies_SelectionChanged(object sender, EventArgs e)
+        public void DgvAssemblies_SelectionChanged(object sender, EventArgs e)
         {
-            Int32 selectedrowindex = dgvAssemblies.SelectedCells[0].RowIndex;
-            DataGridViewRow SelectedRow = dgvAssemblies.Rows[selectedrowindex];
+            Int32 selectedrowindex = DgvAssemblies.SelectedCells[0].RowIndex;
+            DataGridViewRow SelectedRow = DgvAssemblies.Rows[selectedrowindex];
             string AssemblyId = Convert.ToString(SelectedRow.Cells["Assembly_id"].Value);
 
             txtAssemblyID.Text = AssemblyId;
@@ -322,7 +322,7 @@ namespace MvE_SQL_test
 
             TotalRefresh();
         }
-        private void btnAssemblyLock_Click(object sender, EventArgs e)
+        private void BtnAssemblyLock_Click(object sender, EventArgs e)
         {
             string AssemblyId = txtAssemblyID.Text;
 
@@ -390,7 +390,7 @@ namespace MvE_SQL_test
             AssemblyRefresh();
 
         }
-        private void btnAssemblyUnlock_Click(object sender, EventArgs e)
+        private void BtnAssemblyUnlock_Click(object sender, EventArgs e)
         {
             string AssemblyId = txtAssemblyID.Text;
 
@@ -458,7 +458,7 @@ namespace MvE_SQL_test
             AssemblyRefresh();
 
         }
-        private void btnUpdateAssembly_Click(object sender, EventArgs e)
+        private void BtnUpdateAssembly_Click(object sender, EventArgs e)
         {
             Assemblyupdate();
 
@@ -471,7 +471,7 @@ namespace MvE_SQL_test
 
 
 
-        public void btnAddPart_Click(object sender, EventArgs e)
+        public void BtnAddPart_Click(object sender, EventArgs e)
         {
             string AssemblyId = txtAssemblyID.Text;
             AssemblyID = AssemblyId;
@@ -482,18 +482,18 @@ namespace MvE_SQL_test
             frm.Show();
 
         }
-        private void btnRemovePart_Click(object sender, EventArgs e)
+        private void BtnRemovePart_Click(object sender, EventArgs e)
         {
-            Int32 selectedrowindex = dgvAssemblyParts.SelectedCells[0].RowIndex;
-            DataGridViewRow SelectedRow = dgvAssemblyParts.Rows[selectedrowindex];
+            Int32 selectedrowindex = DgvAssemblyParts.SelectedCells[0].RowIndex;
+            DataGridViewRow SelectedRow = DgvAssemblyParts.Rows[selectedrowindex];
             string AssemblyPartId = Convert.ToString(SelectedRow.Cells["Assemblydetailpart_id"].Value);
 
-            if (dgvAssemblyParts.SelectedRows.Count == 0)
+            if (DgvAssemblyParts.SelectedRows.Count == 0)
             {
                 MessageBox.Show("No part selected");
             }
 
-            else if (dgvAssemblyParts.SelectedRows.Count == 1)
+            else if (DgvAssemblyParts.SelectedRows.Count == 1)
             {
                 // Create the connection.
                 string connectionstring = ConnString;
@@ -518,7 +518,7 @@ namespace MvE_SQL_test
                 }
             }
 
-            else if (dgvAssemblyParts.SelectedRows.Count > 1)
+            else if (DgvAssemblyParts.SelectedRows.Count > 1)
             {
                 MessageBox.Show("More than one part selected. Please select one part");
             }
@@ -534,18 +534,18 @@ namespace MvE_SQL_test
         }
 
 
-        private void btnRemoveOperation_Click(object sender, EventArgs e)
+        private void BtnRemoveOperation_Click(object sender, EventArgs e)
         {
-            Int32 selectedrowindex = dgvAssemblyOps.SelectedCells[0].RowIndex;
-            DataGridViewRow SelectedRow = dgvAssemblyOps.Rows[selectedrowindex];
+            Int32 selectedrowindex = DgvAssemblyOps.SelectedCells[0].RowIndex;
+            DataGridViewRow SelectedRow = DgvAssemblyOps.Rows[selectedrowindex];
             string AssemblyOpsId = Convert.ToString(SelectedRow.Cells["Assemblydetailoperation_id"].Value);
 
-            if (dgvAssemblyOps.SelectedRows.Count == 0)
+            if (DgvAssemblyOps.SelectedRows.Count == 0)
             {
                 MessageBox.Show("No operation selected");
             }
 
-            else if (dgvAssemblyOps.SelectedRows.Count == 1)
+            else if (DgvAssemblyOps.SelectedRows.Count == 1)
             {
                 // Create the connection.
                 string connectionstring = ConnString;
@@ -570,14 +570,14 @@ namespace MvE_SQL_test
                 }
             }
 
-            else if (dgvAssemblyOps.SelectedRows.Count > 1)
+            else if (DgvAssemblyOps.SelectedRows.Count > 1)
             {
                 MessageBox.Show("More than one operation selected. Please select one operation");
             }
 
             TotalRefresh();
         }    
-        private void btnAddOperation_Click(object sender, EventArgs e)
+        private void BtnAddOperation_Click(object sender, EventArgs e)
         {
             string AssemblyId = txtAssemblyID.Text;
             AssemblyID = AssemblyId;
@@ -600,7 +600,7 @@ namespace MvE_SQL_test
 
 
 
-        private void btnLinkPart_Click(object sender, EventArgs e)
+        private void BtnLinkPart_Click(object sender, EventArgs e)
         {
             string AssemblyId = txtAssemblyID.Text;
             AssemblyID = AssemblyId;
@@ -622,7 +622,7 @@ namespace MvE_SQL_test
 
 
 
-        private void btnCreatePart_Click(object sender, EventArgs e)
+        private void BtnCreatePart_Click(object sender, EventArgs e)
         {
 
         }

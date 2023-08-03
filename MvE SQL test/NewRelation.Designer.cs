@@ -29,24 +29,24 @@ namespace MvE_SQL_test
         /// </summary>
         private void InitializeComponent()
         {
-            this.btnAddAnotherRelation = new System.Windows.Forms.Button();
+            this.BtnAddAnotherRelation = new System.Windows.Forms.Button();
             this.txtRelationID = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
-            this.btnNewRelation = new System.Windows.Forms.Button();
-            this.btnFinnish = new System.Windows.Forms.Button();
+            this.BtnNewRelation = new System.Windows.Forms.Button();
+            this.BtnFinnish = new System.Windows.Forms.Button();
             this.txtRelationName = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
-            // btnAddAnotherRelation
+            // BtnAddAnotherRelation
             // 
-            this.btnAddAnotherRelation.Location = new System.Drawing.Point(211, 167);
-            this.btnAddAnotherRelation.Name = "btnAddAnotherRelation";
-            this.btnAddAnotherRelation.Size = new System.Drawing.Size(139, 23);
-            this.btnAddAnotherRelation.TabIndex = 16;
-            this.btnAddAnotherRelation.Text = "Add another relation";
-            this.btnAddAnotherRelation.UseVisualStyleBackColor = true;
-            this.btnAddAnotherRelation.Click += new System.EventHandler(this.btnAddAnotherRelation_Click);
+            this.BtnAddAnotherRelation.Location = new System.Drawing.Point(211, 167);
+            this.BtnAddAnotherRelation.Name = "BtnAddAnotherRelation";
+            this.BtnAddAnotherRelation.Size = new System.Drawing.Size(139, 23);
+            this.BtnAddAnotherRelation.TabIndex = 16;
+            this.BtnAddAnotherRelation.Text = "Add another relation";
+            this.BtnAddAnotherRelation.UseVisualStyleBackColor = true;
+            this.BtnAddAnotherRelation.Click += new System.EventHandler(this.BtnAddAnotherRelation_Click);
             // 
             // txtRelationID
             // 
@@ -65,25 +65,25 @@ namespace MvE_SQL_test
             this.label2.TabIndex = 14;
             this.label2.Text = "Relation ID";
             // 
-            // btnNewRelation
+            // BtnNewRelation
             // 
-            this.btnNewRelation.Location = new System.Drawing.Point(116, 106);
-            this.btnNewRelation.Name = "btnNewRelation";
-            this.btnNewRelation.Size = new System.Drawing.Size(234, 23);
-            this.btnNewRelation.TabIndex = 13;
-            this.btnNewRelation.Text = "Add new relation";
-            this.btnNewRelation.UseVisualStyleBackColor = true;
-            this.btnNewRelation.Click += new System.EventHandler(this.btnNewRelation_Click);
+            this.BtnNewRelation.Location = new System.Drawing.Point(116, 106);
+            this.BtnNewRelation.Name = "BtnNewRelation";
+            this.BtnNewRelation.Size = new System.Drawing.Size(234, 23);
+            this.BtnNewRelation.TabIndex = 13;
+            this.BtnNewRelation.Text = "Add new relation";
+            this.BtnNewRelation.UseVisualStyleBackColor = true;
+            this.BtnNewRelation.Click += new System.EventHandler(this.BtnNewRelation_Click);
             // 
-            // btnFinnish
+            // BtnFinnish
             // 
-            this.btnFinnish.Location = new System.Drawing.Point(23, 167);
-            this.btnFinnish.Name = "btnFinnish";
-            this.btnFinnish.Size = new System.Drawing.Size(146, 23);
-            this.btnFinnish.TabIndex = 12;
-            this.btnFinnish.Text = "Finnish";
-            this.btnFinnish.UseVisualStyleBackColor = true;
-            this.btnFinnish.Click += new System.EventHandler(this.btnFinnish_Click);
+            this.BtnFinnish.Location = new System.Drawing.Point(23, 167);
+            this.BtnFinnish.Name = "BtnFinnish";
+            this.BtnFinnish.Size = new System.Drawing.Size(146, 23);
+            this.BtnFinnish.TabIndex = 12;
+            this.BtnFinnish.Text = "Finnish";
+            this.BtnFinnish.UseVisualStyleBackColor = true;
+            this.BtnFinnish.Click += new System.EventHandler(this.BtnFinnish_Click);
             // 
             // txtRelationName
             // 
@@ -106,11 +106,11 @@ namespace MvE_SQL_test
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(384, 211);
-            this.Controls.Add(this.btnAddAnotherRelation);
+            this.Controls.Add(this.BtnAddAnotherRelation);
             this.Controls.Add(this.txtRelationID);
             this.Controls.Add(this.label2);
-            this.Controls.Add(this.btnNewRelation);
-            this.Controls.Add(this.btnFinnish);
+            this.Controls.Add(this.BtnNewRelation);
+            this.Controls.Add(this.BtnFinnish);
             this.Controls.Add(this.txtRelationName);
             this.Controls.Add(this.label1);
             this.Name = "NewRelation";
@@ -122,11 +122,11 @@ namespace MvE_SQL_test
 
         #endregion
 
-        private System.Windows.Forms.Button btnAddAnotherRelation;
+        private System.Windows.Forms.Button BtnAddAnotherRelation;
         private System.Windows.Forms.TextBox txtRelationID;
         private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.Button btnNewRelation;
-        private System.Windows.Forms.Button btnFinnish;
+        private System.Windows.Forms.Button BtnNewRelation;
+        private System.Windows.Forms.Button BtnFinnish;
         private System.Windows.Forms.TextBox txtRelationName;
         private System.Windows.Forms.Label label1;
     }

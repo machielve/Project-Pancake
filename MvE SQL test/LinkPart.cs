@@ -21,7 +21,7 @@ namespace MvE_SQL_test
 
         public static string ConnString { get; set; }
 
-        private void btnFinnish_Click(object sender, EventArgs e)
+        private void BtnFinnish_Click(object sender, EventArgs e)
         {
             this.Close();
         }
@@ -183,7 +183,7 @@ namespace MvE_SQL_test
             }
         }
 
-        private void btnLinkPart_Click(object sender, EventArgs e)
+        private void BtnLinkPart_Click(object sender, EventArgs e)
         {
             string LinkedPart = txtPartID.Text.ToString();
 

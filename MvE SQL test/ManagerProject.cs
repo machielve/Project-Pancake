@@ -28,8 +28,8 @@ namespace MvE_SQL_test
         private void LoadContent()
         {
 
-            Int32 selectedrowindex = dgvJobOrders.SelectedCells[0].RowIndex;
-            DataGridViewRow SelectedRow = dgvJobOrders.Rows[selectedrowindex];
+            Int32 selectedrowindex = DgvJobOrders.SelectedCells[0].RowIndex;
+            DataGridViewRow SelectedRow = DgvJobOrders.Rows[selectedrowindex];
             string DetailtId = Convert.ToString(SelectedRow.Cells["JobOrder_id"].Value);
 
             txtDetailID.Text = DetailtId;
@@ -58,7 +58,7 @@ namespace MvE_SQL_test
                             {
                                 DataTable dt = new DataTable();
                                 dt.Load(dr);
-                                this.dgvJobOrderParts.DataSource = dt;
+                                this.DgvJobOrderParts.DataSource = dt;
                                 dr.Close();
                             }
                         }
@@ -84,7 +84,7 @@ namespace MvE_SQL_test
                             {
                                 DataTable dt = new DataTable();
                                 dt.Load(dr);
-                                this.dgvJobOrderOperations.DataSource = dt;
+                                this.DgvJobOrderOperations.DataSource = dt;
                                 dr.Close();
                             }
                         }
@@ -101,7 +101,7 @@ namespace MvE_SQL_test
             }
         }
 
-        private void btnLoadProjects_Click(object sender, EventArgs e)
+        private void BtnLoadProjects_Click(object sender, EventArgs e)
         {
             // Create the connection.
             string connectionstring = ConnString;
@@ -120,7 +120,7 @@ namespace MvE_SQL_test
                         {
                             DataTable dt = new DataTable();
                             dt.Load(dr);
-                            this.dgvProject.DataSource = dt;
+                            this.DgvProject.DataSource = dt;
                             dr.Close();
                         }
                     }
@@ -132,7 +132,7 @@ namespace MvE_SQL_test
             }
         }
 
-        private void btnFinnish_Click(object sender, EventArgs e)
+        private void BtnFinnish_Click(object sender, EventArgs e)
         {
             this.Close();
         }
@@ -140,7 +140,7 @@ namespace MvE_SQL_test
 
 
 
-        private void btnNewProject_Click(object sender, EventArgs e)
+        private void BtnNewProject_Click(object sender, EventArgs e)
         {
             string connectionstring = ConnString; 
             Form frm = new NewProject();
@@ -150,10 +150,10 @@ namespace MvE_SQL_test
 
         
 
-        private void btnSeeDetails_Click(object sender, EventArgs e)
+        private void BtnSeeDetails_Click(object sender, EventArgs e)
         {
-            Int32 selectedrowindex = dgvProject.SelectedCells[0].RowIndex;
-            DataGridViewRow SelectedRow = dgvProject.Rows[selectedrowindex];
+            Int32 selectedrowindex = DgvProject.SelectedCells[0].RowIndex;
+            DataGridViewRow SelectedRow = DgvProject.Rows[selectedrowindex];
             string ProjectId = Convert.ToString(SelectedRow.Cells["Project_id"].Value);
 
             txtProjectID.Text = ProjectId;
@@ -182,7 +182,7 @@ namespace MvE_SQL_test
                             {
                                 DataTable dt = new DataTable();
                                 dt.Load(dr);
-                                this.dgvJobOrders.DataSource = dt;
+                                this.DgvJobOrders.DataSource = dt;
                                 dr.Close();
                             }
                         }
@@ -209,7 +209,7 @@ namespace MvE_SQL_test
                             {
                                 DataTable dt = new DataTable();
                                 dt.Load(dr);
-                                this.dgvProjectAssemblies.DataSource = dt;
+                                this.DgvProjectAssemblies.DataSource = dt;
                                 dr.Close();
                             }
                         }
@@ -223,12 +223,12 @@ namespace MvE_SQL_test
 
         }
 
-        private void btnCreateJobOrder_Click(object sender, EventArgs e)
+        private void BtnCreateJobOrder_Click(object sender, EventArgs e)
         {
 
         }
 
-        private void txtSeeContent_Click(object sender, EventArgs e)
+        private void BtnSeeContent_Click(object sender, EventArgs e)
         {
             LoadContent();
         }
@@ -236,7 +236,7 @@ namespace MvE_SQL_test
 
 
 
-        public void txtAddPart_Click(object sender, EventArgs e)
+        public void BtnAddPart_Click(object sender, EventArgs e)
         {
             string DetailID = txtDetailID.Text;
             string connectionstring = ConnString; 

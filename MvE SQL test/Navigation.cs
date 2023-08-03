@@ -28,7 +28,7 @@ namespace MvE_SQL_test
 
         }
 
-        private void btnExit_Click_1(object sender, EventArgs e)
+        private void BtnExit_Click_1(object sender, EventArgs e)
         {
             this.Close();
 
@@ -44,7 +44,7 @@ namespace MvE_SQL_test
 
 
 
-        private void btnConnectSQL_Click(object sender, EventArgs e)
+        private void BtnConnectSQL_Click(object sender, EventArgs e)
         {
             string connectionstring = ConnectorString();
 
@@ -76,18 +76,18 @@ namespace MvE_SQL_test
             }
 
         }
-        private void rdbIPAdres1_CheckedChanged(object sender, EventArgs e)
+        private void RdbIPAdres1_CheckedChanged(object sender, EventArgs e)
         {
-            if (rdbIPAdres1.Checked) //If checked == true
+            if (RdbIPAdres1.Checked) //If checked == true
             {
                 txtIPAdres.Text = txtIPIntern.Text;
                 //example
             }
 
         }
-        private void rdbIPAdres2_CheckedChanged(object sender, EventArgs e)
+        private void RdbIPAdres2_CheckedChanged(object sender, EventArgs e)
         {
-            if (rdbIPAdres2.Checked) //If checked == true
+            if (RdbIPAdres2.Checked) //If checked == true
             {
                 txtIPAdres.Text = txtIPExtern.Text;
                 //example
@@ -96,7 +96,7 @@ namespace MvE_SQL_test
         
 
 
-        private void btnProjectManager_Click(object sender, EventArgs e)
+        private void BtnProjectManager_Click(object sender, EventArgs e)
         {
             string connectionstring = ConnectorString();
             Form frm = new ManagerProject();
@@ -104,7 +104,7 @@ namespace MvE_SQL_test
             frm.Show();
 
         }
-        private void btnAssemblyManager_Click(object sender, EventArgs e)
+        private void BtnAssemblyManager_Click(object sender, EventArgs e)
         {
             string connectionstring = ConnectorString(); 
             Form frm = new ManagerAssembly();
@@ -112,7 +112,7 @@ namespace MvE_SQL_test
             frm.Show();
 
         }
-        private void btnPartManager_Click(object sender, EventArgs e)
+        private void BtnPartManager_Click(object sender, EventArgs e)
         {
             string connectionstring = ConnectorString(); 
             Form frm = new ManagerPart();
@@ -120,7 +120,7 @@ namespace MvE_SQL_test
             frm.Show();
 
         }
-        private void btnStockManager_Click(object sender, EventArgs e)
+        private void BtnStockManager_Click(object sender, EventArgs e)
         {
             string connectionstring = ConnectorString(); 
             Form frm = new ManagerStock();
@@ -128,7 +128,7 @@ namespace MvE_SQL_test
             frm.Show();
 
         }
-        private void btnJobOrderManager_Click(object sender, EventArgs e)
+        private void BtnJobOrderManager_Click(object sender, EventArgs e)
         {
             string connectionstring = ConnectorString(); 
             Form frm = new ManagerJobOrders();
@@ -167,7 +167,7 @@ namespace MvE_SQL_test
                             DataTable dt = new DataTable();
                             dt.Load(dr);
                             dt.DefaultView.Sort = ("Name ASC");
-                            this.dgvMaterials.DataSource = dt;
+                            this.DgvMaterials.DataSource = dt;
                             dr.Close();
                         }
                     }
@@ -179,7 +179,7 @@ namespace MvE_SQL_test
             }
 
         }
-        private void btnNewMaterial_Click(object sender, EventArgs e)
+        private void BtnNewMaterial_Click(object sender, EventArgs e)
         {
             string connectionstring = ConnectorString(); 
             Form frm = new NewMaterial();
@@ -192,7 +192,7 @@ namespace MvE_SQL_test
         {
             RefreshMaterial();
         }
-        private void btnLoadMaterials_Click(object sender, EventArgs e)
+        private void BtnLoadMaterials_Click(object sender, EventArgs e)
         {
             RefreshMaterial();
 
@@ -219,7 +219,7 @@ namespace MvE_SQL_test
                             DataTable dt = new DataTable();
                             dt.Load(dr);
                             dt.DefaultView.Sort = ("Name ASC");
-                            this.dgvRelations.DataSource = dt;
+                            this.DgvRelations.DataSource = dt;
                             dr.Close();
                         }
                     }
@@ -230,7 +230,7 @@ namespace MvE_SQL_test
                 }
             }
         }
-        private void btnNewRelation_Click(object sender, EventArgs e)
+        private void BtnNewRelation_Click(object sender, EventArgs e)
         {
             string connectionstring = ConnectorString(); 
             Form frm = new NewRelation();
@@ -243,7 +243,7 @@ namespace MvE_SQL_test
         {
             RefreshRelations();
         }
-        private void btnLoadRelations_Click(object sender, EventArgs e)
+        private void BtnLoadRelations_Click(object sender, EventArgs e)
         {
             RefreshRelations();
 
@@ -270,7 +270,7 @@ namespace MvE_SQL_test
                             DataTable dt = new DataTable();
                             dt.Load(dr);
                             dt.DefaultView.Sort = ("uGroup ASC");
-                            this.dgvUnits.DataSource = dt;
+                            this.DgvUnits.DataSource = dt;
                             dr.Close();
                         }
                     }
@@ -281,7 +281,7 @@ namespace MvE_SQL_test
                 }
             }
         }
-        private void btnAddUnit_Click(object sender, EventArgs e)
+        private void BtnAddUnit_Click(object sender, EventArgs e)
         {
             string connectionstring = ConnectorString(); 
             Form frm = new NewUnit();
@@ -293,7 +293,7 @@ namespace MvE_SQL_test
         {
             RefreshUnits();
         }
-        private void btnLoadUnits_Click(object sender, EventArgs e)
+        private void BtnLoadUnits_Click(object sender, EventArgs e)
         {
             RefreshUnits();
 
@@ -320,7 +320,7 @@ namespace MvE_SQL_test
                             DataTable dt = new DataTable();
                             dt.Load(dr);
                             dt.DefaultView.Sort = ("Name ASC");
-                            this.dgvOperations.DataSource = dt;
+                            this.DgvOperations.DataSource = dt;
                             dr.Close();
                         }
                     }
@@ -331,7 +331,7 @@ namespace MvE_SQL_test
                 }
             }
         }
-        private void btnNewOperation_Click(object sender, EventArgs e)
+        private void BtnNewOperation_Click(object sender, EventArgs e)
         {
             string connectionstring = ConnectorString(); 
             Form frm = new NewOperation();
@@ -343,7 +343,7 @@ namespace MvE_SQL_test
         {
             RefreshOperatons();
         }
-        private void btnLoadOperations_Click(object sender, EventArgs e)
+        private void BtnLoadOperations_Click(object sender, EventArgs e)
         {
             RefreshOperatons();
 

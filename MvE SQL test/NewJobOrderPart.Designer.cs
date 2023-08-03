@@ -29,26 +29,26 @@ namespace MvE_SQL_test
         /// </summary>
         private void InitializeComponent()
         {
-            this.btnFinnish = new System.Windows.Forms.Button();
+            this.BtnFinnish = new System.Windows.Forms.Button();
             this.txtProjectDetailID = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
             this.countPart = new System.Windows.Forms.NumericUpDown();
             this.label2 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.cmbPart = new System.Windows.Forms.ComboBox();
-            this.btnAddPart = new System.Windows.Forms.Button();
+            this.BtnAddPart = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.countPart)).BeginInit();
             this.SuspendLayout();
             // 
-            // btnFinnish
+            // BtnFinnish
             // 
-            this.btnFinnish.Location = new System.Drawing.Point(180, 176);
-            this.btnFinnish.Name = "btnFinnish";
-            this.btnFinnish.Size = new System.Drawing.Size(146, 23);
-            this.btnFinnish.TabIndex = 11;
-            this.btnFinnish.Text = "Cancel";
-            this.btnFinnish.UseVisualStyleBackColor = true;
-            this.btnFinnish.Click += new System.EventHandler(this.btnFinnish_Click);
+            this.BtnFinnish.Location = new System.Drawing.Point(180, 176);
+            this.BtnFinnish.Name = "BtnFinnish";
+            this.BtnFinnish.Size = new System.Drawing.Size(146, 23);
+            this.BtnFinnish.TabIndex = 11;
+            this.BtnFinnish.Text = "Cancel";
+            this.BtnFinnish.UseVisualStyleBackColor = true;
+            this.BtnFinnish.Click += new System.EventHandler(this.BtnFinnish_Click);
             // 
             // txtProjectDetailID
             // 
@@ -106,28 +106,28 @@ namespace MvE_SQL_test
             this.cmbPart.Size = new System.Drawing.Size(218, 21);
             this.cmbPart.TabIndex = 15;
             // 
-            // btnAddPart
+            // BtnAddPart
             // 
-            this.btnAddPart.Location = new System.Drawing.Point(12, 176);
-            this.btnAddPart.Name = "btnAddPart";
-            this.btnAddPart.Size = new System.Drawing.Size(133, 23);
-            this.btnAddPart.TabIndex = 19;
-            this.btnAddPart.Text = "Add part";
-            this.btnAddPart.UseVisualStyleBackColor = true;
+            this.BtnAddPart.Location = new System.Drawing.Point(12, 176);
+            this.BtnAddPart.Name = "BtnAddPart";
+            this.BtnAddPart.Size = new System.Drawing.Size(133, 23);
+            this.BtnAddPart.TabIndex = 19;
+            this.BtnAddPart.Text = "Add part";
+            this.BtnAddPart.UseVisualStyleBackColor = true;
             // 
             // NewProjectDetailPart
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(384, 211);
-            this.Controls.Add(this.btnAddPart);
+            this.Controls.Add(this.BtnAddPart);
             this.Controls.Add(this.countPart);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.cmbPart);
             this.Controls.Add(this.txtProjectDetailID);
             this.Controls.Add(this.label1);
-            this.Controls.Add(this.btnFinnish);
+            this.Controls.Add(this.BtnFinnish);
             this.Name = "NewProjectDetailPart";
             this.Text = "New Project Detail Part";
             this.Load += new System.EventHandler(this.NewProjectDetailPart_Load);
@@ -139,13 +139,13 @@ namespace MvE_SQL_test
 
         #endregion
 
-        private System.Windows.Forms.Button btnFinnish;
+        private System.Windows.Forms.Button BtnFinnish;
         private System.Windows.Forms.TextBox txtProjectDetailID;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.NumericUpDown countPart;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.ComboBox cmbPart;
-        private System.Windows.Forms.Button btnAddPart;
+        private System.Windows.Forms.Button BtnAddPart;
     }
 }

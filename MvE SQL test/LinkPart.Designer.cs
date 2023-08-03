@@ -29,8 +29,8 @@ namespace MvE_SQL_test
         /// </summary>
         private void InitializeComponent()
         {
-            this.btnLinkPart = new System.Windows.Forms.Button();
-            this.btnFinnish = new System.Windows.Forms.Button();
+            this.BtnLinkPart = new System.Windows.Forms.Button();
+            this.BtnFinnish = new System.Windows.Forms.Button();
             this.txtAssemblyName = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
             this.cmbPart = new System.Windows.Forms.ComboBox();
@@ -55,25 +55,25 @@ namespace MvE_SQL_test
             ((System.ComponentModel.ISupportInitialize)(this.countAssemblyWeight)).BeginInit();
             this.SuspendLayout();
             // 
-            // btnLinkPart
+            // BtnLinkPart
             // 
-            this.btnLinkPart.Location = new System.Drawing.Point(200, 473);
-            this.btnLinkPart.Name = "btnLinkPart";
-            this.btnLinkPart.Size = new System.Drawing.Size(139, 23);
-            this.btnLinkPart.TabIndex = 18;
-            this.btnLinkPart.Text = "Link part";
-            this.btnLinkPart.UseVisualStyleBackColor = true;
-            this.btnLinkPart.Click += new System.EventHandler(this.btnLinkPart_Click);
+            this.BtnLinkPart.Location = new System.Drawing.Point(200, 473);
+            this.BtnLinkPart.Name = "BtnLinkPart";
+            this.BtnLinkPart.Size = new System.Drawing.Size(139, 23);
+            this.BtnLinkPart.TabIndex = 18;
+            this.BtnLinkPart.Text = "Link part";
+            this.BtnLinkPart.UseVisualStyleBackColor = true;
+            this.BtnLinkPart.Click += new System.EventHandler(this.BtnLinkPart_Click);
             // 
-            // btnFinnish
+            // BtnFinnish
             // 
-            this.btnFinnish.Location = new System.Drawing.Point(12, 473);
-            this.btnFinnish.Name = "btnFinnish";
-            this.btnFinnish.Size = new System.Drawing.Size(146, 23);
-            this.btnFinnish.TabIndex = 17;
-            this.btnFinnish.Text = "Finnish";
-            this.btnFinnish.UseVisualStyleBackColor = true;
-            this.btnFinnish.Click += new System.EventHandler(this.btnFinnish_Click);
+            this.BtnFinnish.Location = new System.Drawing.Point(12, 473);
+            this.BtnFinnish.Name = "BtnFinnish";
+            this.BtnFinnish.Size = new System.Drawing.Size(146, 23);
+            this.BtnFinnish.TabIndex = 17;
+            this.BtnFinnish.Text = "Finnish";
+            this.BtnFinnish.UseVisualStyleBackColor = true;
+            this.BtnFinnish.Click += new System.EventHandler(this.BtnFinnish_Click);
             // 
             // txtAssemblyName
             // 
@@ -286,8 +286,8 @@ namespace MvE_SQL_test
             this.Controls.Add(this.cmbPart);
             this.Controls.Add(this.txtAssemblyName);
             this.Controls.Add(this.label1);
-            this.Controls.Add(this.btnLinkPart);
-            this.Controls.Add(this.btnFinnish);
+            this.Controls.Add(this.BtnLinkPart);
+            this.Controls.Add(this.BtnFinnish);
             this.Name = "LinkPart";
             this.Text = "Link part to assembly";
             this.Load += new System.EventHandler(this.LinkPart_Load);
@@ -300,8 +300,8 @@ namespace MvE_SQL_test
 
         #endregion
 
-        private System.Windows.Forms.Button btnLinkPart;
-        private System.Windows.Forms.Button btnFinnish;
+        private System.Windows.Forms.Button BtnLinkPart;
+        private System.Windows.Forms.Button BtnFinnish;
         private System.Windows.Forms.TextBox txtAssemblyName;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.ComboBox cmbPart;
