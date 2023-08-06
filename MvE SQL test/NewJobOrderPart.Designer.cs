@@ -114,6 +114,7 @@ namespace MvE_SQL_test
             this.BtnAddPart.TabIndex = 19;
             this.BtnAddPart.Text = "Add part";
             this.BtnAddPart.UseVisualStyleBackColor = true;
+            this.BtnAddPart.Click += new System.EventHandler(this.BtnAddPart_Click);
             // 
             // NewJobOrderPart
             // 

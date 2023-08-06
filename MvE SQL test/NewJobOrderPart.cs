@@ -61,6 +61,9 @@ namespace MvE_SQL_test
             }
         }
 
+        private void BtnAddPart_Click(object sender, EventArgs e)
+        {
 
+        }
     }
 }
