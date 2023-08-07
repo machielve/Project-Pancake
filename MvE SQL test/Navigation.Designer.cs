@@ -151,6 +151,7 @@ namespace MvE_SQL_test
             // 
             // Managers
             // 
+            this.Managers.Appearance = System.Windows.Forms.TabAppearance.FlatButtons;
             this.Managers.Controls.Add(this.GeneralSettings);
             this.Managers.Controls.Add(this.tabOperations);
             this.Managers.Controls.Add(this.tabMaterials);
@@ -180,10 +181,10 @@ namespace MvE_SQL_test
             this.GeneralSettings.Controls.Add(this.txtIPAdres);
             this.GeneralSettings.Controls.Add(this.txtIPExtern);
             this.GeneralSettings.Controls.Add(this.txtIPIntern);
-            this.GeneralSettings.Location = new System.Drawing.Point(4, 22);
+            this.GeneralSettings.Location = new System.Drawing.Point(4, 25);
             this.GeneralSettings.Name = "GeneralSettings";
             this.GeneralSettings.Padding = new System.Windows.Forms.Padding(3);
-            this.GeneralSettings.Size = new System.Drawing.Size(1302, 814);
+            this.GeneralSettings.Size = new System.Drawing.Size(1302, 811);
             this.GeneralSettings.TabIndex = 3;
             this.GeneralSettings.Text = "General settings";
             this.GeneralSettings.UseVisualStyleBackColor = true;
@@ -321,10 +322,10 @@ namespace MvE_SQL_test
             this.tabOperations.Controls.Add(this.DgvOperations);
             this.tabOperations.Controls.Add(this.BtnLoadOperations);
             this.tabOperations.Controls.Add(this.BtnNewOperation);
-            this.tabOperations.Location = new System.Drawing.Point(4, 22);
+            this.tabOperations.Location = new System.Drawing.Point(4, 25);
             this.tabOperations.Name = "tabOperations";
             this.tabOperations.Padding = new System.Windows.Forms.Padding(3);
-            this.tabOperations.Size = new System.Drawing.Size(1302, 814);
+            this.tabOperations.Size = new System.Drawing.Size(1302, 811);
             this.tabOperations.TabIndex = 7;
             this.tabOperations.Text = "Operations";
             this.tabOperations.UseVisualStyleBackColor = true;
@@ -366,10 +367,10 @@ namespace MvE_SQL_test
             this.tabMaterials.Controls.Add(this.BtnLoadMaterials);
             this.tabMaterials.Controls.Add(this.DgvMaterials);
             this.tabMaterials.Controls.Add(this.BtnNewMaterial);
-            this.tabMaterials.Location = new System.Drawing.Point(4, 22);
+            this.tabMaterials.Location = new System.Drawing.Point(4, 25);
             this.tabMaterials.Name = "tabMaterials";
             this.tabMaterials.Padding = new System.Windows.Forms.Padding(3);
-            this.tabMaterials.Size = new System.Drawing.Size(1302, 814);
+            this.tabMaterials.Size = new System.Drawing.Size(1302, 811);
             this.tabMaterials.TabIndex = 5;
             this.tabMaterials.Text = "Materials";
             this.tabMaterials.UseVisualStyleBackColor = true;
@@ -411,10 +412,10 @@ namespace MvE_SQL_test
             this.tabRelations.Controls.Add(this.BtnLoadRelations);
             this.tabRelations.Controls.Add(this.DgvRelations);
             this.tabRelations.Controls.Add(this.BtnNewRelation);
-            this.tabRelations.Location = new System.Drawing.Point(4, 22);
+            this.tabRelations.Location = new System.Drawing.Point(4, 25);
             this.tabRelations.Name = "tabRelations";
             this.tabRelations.Padding = new System.Windows.Forms.Padding(3);
-            this.tabRelations.Size = new System.Drawing.Size(1302, 814);
+            this.tabRelations.Size = new System.Drawing.Size(1302, 811);
             this.tabRelations.TabIndex = 4;
             this.tabRelations.Text = "Relations";
             this.tabRelations.UseVisualStyleBackColor = true;
@@ -456,10 +457,10 @@ namespace MvE_SQL_test
             this.tabUnits.Controls.Add(this.DgvUnits);
             this.tabUnits.Controls.Add(this.BtnLoadUnits);
             this.tabUnits.Controls.Add(this.BtnAddUnit);
-            this.tabUnits.Location = new System.Drawing.Point(4, 22);
+            this.tabUnits.Location = new System.Drawing.Point(4, 25);
             this.tabUnits.Name = "tabUnits";
             this.tabUnits.Padding = new System.Windows.Forms.Padding(3);
-            this.tabUnits.Size = new System.Drawing.Size(1302, 814);
+            this.tabUnits.Size = new System.Drawing.Size(1302, 811);
             this.tabUnits.TabIndex = 6;
             this.tabUnits.Text = "Units";
             this.tabUnits.UseVisualStyleBackColor = true;
