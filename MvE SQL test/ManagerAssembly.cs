@@ -120,6 +120,29 @@ namespace MvE_SQL_test
                         }
                     }
 
+                    // mysql string subassemblies
+                    const string mysqlString4 = "SELECT * FROM Victoriam.T_ASSEMBLYDETAILSUBASSEMBLY WHERE Assembly = ";
+                    string mysqlString5 = mysqlString4 + AssemblyId;
+                    using (MySqlCommand mysqlcommand = new MySqlCommand(mysqlString5, connection))
+                    {
+
+                        try
+                        {
+                            // connection.Open();
+                            using (MySqlDataReader dr = mysqlcommand.ExecuteReader())
+                            {
+                                DataTable dt = new DataTable();
+                                dt.Load(dr);
+                                this.DgvAssemblySubAssembly.DataSource = dt;
+                                dr.Close();
+                            }
+                        }
+                        catch
+                        {
+                            MessageBox.Show("Subassemblies could not be loaded");
+                        }
+                    }
+
 
                 }
             }
@@ -231,6 +254,8 @@ namespace MvE_SQL_test
                             connection.Close();
                         }
                     }
+
+
 
                     // mysql string assembly price
                     string mysqlString20 = "UPDATE Victoriam.T_ASSEMBLY SET CostPrice = ";
@@ -534,6 +559,17 @@ namespace MvE_SQL_test
         }
 
 
+        private void BtnAddOperation_Click(object sender, EventArgs e)
+        {
+            string AssemblyId = txtAssemblyID.Text;
+            AssemblyID = AssemblyId;
+            string connectionstring = ConnString;
+            Form frm = new NewAssemblyDetailOps();
+            NewAssemblyDetailOps.ConnString = connectionstring;
+            frm.FormClosing += new FormClosingEventHandler(this.NewAssemblyDetailOperation_Formclosing);
+            frm.Show();
+
+        }
         private void BtnRemoveOperation_Click(object sender, EventArgs e)
         {
             Int32 selectedrowindex = DgvAssemblyOps.SelectedCells[0].RowIndex;
@@ -551,7 +587,7 @@ namespace MvE_SQL_test
                 string connectionstring = ConnString;
                 using (MySqlConnection connection = new MySqlConnection(connectionstring))
                 {
-                    // mysql string parts
+                    // mysql string operation
                     const string mysqlString1 = "DELETE FROM Victoriam.T_ASSEMBLYDETAILOPERATION WHERE Assemblydetailoperation_id = ";
                     string mysqlString = mysqlString1 + AssemblyOpsId;
                     using (MySqlCommand mysqlcommand = new MySqlCommand(mysqlString, connection))
@@ -576,19 +612,71 @@ namespace MvE_SQL_test
             }
 
             TotalRefresh();
-        }    
-        private void BtnAddOperation_Click(object sender, EventArgs e)
+        }            
+        public void NewAssemblyDetailOperation_Formclosing(object sender, EventArgs e)
+        {
+            AssemblyRefresh();
+            TotalRefresh();
+
+        }
+
+
+        private void BtnAddSubAssembly_Click(object sender, EventArgs e)
         {
             string AssemblyId = txtAssemblyID.Text;
             AssemblyID = AssemblyId;
-            string connectionstring = ConnString; 
-            Form frm = new NewAssemblyDetailOps();
-            NewAssemblyDetailOps.ConnString = connectionstring;
-            frm.FormClosing += new FormClosingEventHandler(this.NewAssemblyDetailOperation_Formclosing);
+            string connectionstring = ConnString;
+            Form frm = new NewAssemblyDetailSubassembly();
+            NewAssemblyDetailSubassembly.ConnString = connectionstring;
+            frm.FormClosing += new FormClosingEventHandler(this.NewAssemblyDetailSubassembly_Formclosing);
             frm.Show();
 
         }
-        public void NewAssemblyDetailOperation_Formclosing(object sender, EventArgs e)
+        private void BtnRemoveSubAssembly_Click(object sender, EventArgs e)
+        {
+            Int32 selectedrowindex = DgvAssemblySubAssembly.SelectedCells[0].RowIndex;
+            DataGridViewRow SelectedRow = DgvAssemblySubAssembly.Rows[selectedrowindex];
+            string AssemblySubId = Convert.ToString(SelectedRow.Cells["AssemblyDetailSubAssembly_id"].Value);
+
+            if (DgvAssemblyOps.SelectedRows.Count == 0)
+            {
+                MessageBox.Show("No subassembly selected");
+            }
+
+            else if (DgvAssemblyOps.SelectedRows.Count == 1)
+            {
+                // Create the connection.
+                string connectionstring = ConnString;
+                using (MySqlConnection connection = new MySqlConnection(connectionstring))
+                {
+                    // mysql string subassembly
+                    const string mysqlString1 = "DELETE FROM Victoriam.T_ASSEMBLYDETAILSUBASSEMBLY WHERE AssemblyDetailSubAssembly_id = ";
+                    string mysqlString = mysqlString1 + AssemblySubId;
+                    using (MySqlCommand mysqlcommand = new MySqlCommand(mysqlString, connection))
+                    {
+                        try
+                        {
+                            connection.Open();
+                            mysqlcommand.ExecuteNonQuery();
+                        }
+                        catch
+                        {
+                            MessageBox.Show("Subassembly could not be removed");
+                        }
+                    }
+
+                }
+            }
+
+            else if (DgvAssemblySubAssembly.SelectedRows.Count > 1)
+            {
+                MessageBox.Show("More than one subassembly selected. Please select one subassembly");
+            }
+
+            TotalRefresh();
+
+        }
+        public void NewAssemblyDetailSubassembly_Formclosing(object sender, EventArgs e)
         {
             AssemblyRefresh();
             TotalRefresh();
@@ -617,16 +705,11 @@ namespace MvE_SQL_test
             TotalRefresh();
 
         }        
-
-
-
-
-
         private void BtnCreatePart_Click(object sender, EventArgs e)
         {
 
         }
 
-
+        
     }
 }

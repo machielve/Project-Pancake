@@ -50,12 +50,17 @@ namespace MvE_SQL_test
             this.tabPage1 = new System.Windows.Forms.TabPage();
             this.tabPage2 = new System.Windows.Forms.TabPage();
             this.tabPage3 = new System.Windows.Forms.TabPage();
+            this.BtnAddSubAssembly = new System.Windows.Forms.Button();
+            this.BtnRemoveSubAssembly = new System.Windows.Forms.Button();
+            this.DgvAssemblySubAssembly = new System.Windows.Forms.DataGridView();
             ((System.ComponentModel.ISupportInitialize)(this.DgvAssemblies)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.DgvAssemblyParts)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.DgvAssemblyOps)).BeginInit();
             this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
             this.tabPage2.SuspendLayout();
+            this.tabPage3.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.DgvAssemblySubAssembly)).BeginInit();
             this.SuspendLayout();
             // 
             // DgvAssemblies
@@ -120,7 +125,7 @@ namespace MvE_SQL_test
             this.DgvAssemblyParts.Name = "DgvAssemblyParts";
             this.DgvAssemblyParts.RightToLeft = System.Windows.Forms.RightToLeft.No;
             this.DgvAssemblyParts.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.AutoSizeToAllHeaders;
-            this.DgvAssemblyParts.Size = new System.Drawing.Size(1286, 364);
+            this.DgvAssemblyParts.Size = new System.Drawing.Size(1300, 364);
             this.DgvAssemblyParts.TabIndex = 10;
             // 
             // DgvAssemblyOps
@@ -133,7 +138,7 @@ namespace MvE_SQL_test
             this.DgvAssemblyOps.Name = "DgvAssemblyOps";
             this.DgvAssemblyOps.RightToLeft = System.Windows.Forms.RightToLeft.No;
             this.DgvAssemblyOps.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.AutoSizeToAllHeaders;
-            this.DgvAssemblyOps.Size = new System.Drawing.Size(1310, 364);
+            this.DgvAssemblyOps.Size = new System.Drawing.Size(1303, 364);
             this.DgvAssemblyOps.TabIndex = 12;
             // 
             // BtnAssemblyLock
@@ -277,12 +282,48 @@ namespace MvE_SQL_test
             // 
             // tabPage3
             // 
+            this.tabPage3.Controls.Add(this.BtnAddSubAssembly);
+            this.tabPage3.Controls.Add(this.BtnRemoveSubAssembly);
+            this.tabPage3.Controls.Add(this.DgvAssemblySubAssembly);
             this.tabPage3.Location = new System.Drawing.Point(4, 25);
             this.tabPage3.Name = "tabPage3";
             this.tabPage3.Size = new System.Drawing.Size(1456, 388);
             this.tabPage3.TabIndex = 2;
             this.tabPage3.Text = "Assembly subassembly";
             this.tabPage3.UseVisualStyleBackColor = true;
+            // 
+            // BtnAddSubAssembly
+            // 
+            this.BtnAddSubAssembly.Location = new System.Drawing.Point(17, 18);
+            this.BtnAddSubAssembly.Name = "BtnAddSubAssembly";
+            this.BtnAddSubAssembly.Size = new System.Drawing.Size(112, 23);
+            this.BtnAddSubAssembly.TabIndex = 21;
+            this.BtnAddSubAssembly.Text = "Add subassembly";
+            this.BtnAddSubAssembly.UseVisualStyleBackColor = true;
+            this.BtnAddSubAssembly.Click += new System.EventHandler(this.BtnAddSubAssembly_Click);
+            // 
+            // BtnRemoveSubAssembly
+            // 
+            this.BtnRemoveSubAssembly.Location = new System.Drawing.Point(17, 47);
+            this.BtnRemoveSubAssembly.Name = "BtnRemoveSubAssembly";
+            this.BtnRemoveSubAssembly.Size = new System.Drawing.Size(112, 46);
+            this.BtnRemoveSubAssembly.TabIndex = 22;
+            this.BtnRemoveSubAssembly.Text = "Remove subassembly";
+            this.BtnRemoveSubAssembly.UseVisualStyleBackColor = true;
+            this.BtnRemoveSubAssembly.Click += new System.EventHandler(this.BtnRemoveSubAssembly_Click);
+            // 
+            // DgvAssemblySubAssembly
+            // 
+            this.DgvAssemblySubAssembly.AllowUserToAddRows = false;
+            this.DgvAssemblySubAssembly.AllowUserToDeleteRows = false;
+            this.DgvAssemblySubAssembly.BackgroundColor = System.Drawing.SystemColors.Control;
+            this.DgvAssemblySubAssembly.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.DgvAssemblySubAssembly.Location = new System.Drawing.Point(150, 18);
+            this.DgvAssemblySubAssembly.Name = "DgvAssemblySubAssembly";
+            this.DgvAssemblySubAssembly.RightToLeft = System.Windows.Forms.RightToLeft.No;
+            this.DgvAssemblySubAssembly.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.AutoSizeToAllHeaders;
+            this.DgvAssemblySubAssembly.Size = new System.Drawing.Size(1303, 364);
+            this.DgvAssemblySubAssembly.TabIndex = 20;
             // 
             // ManagerAssembly
             // 
@@ -312,6 +353,8 @@ namespace MvE_SQL_test
             this.tabControl1.ResumeLayout(false);
             this.tabPage1.ResumeLayout(false);
             this.tabPage2.ResumeLayout(false);
+            this.tabPage3.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.DgvAssemblySubAssembly)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -340,5 +383,8 @@ namespace MvE_SQL_test
         private System.Windows.Forms.TabPage tabPage1;
         private System.Windows.Forms.TabPage tabPage2;
         private System.Windows.Forms.TabPage tabPage3;
+        private System.Windows.Forms.Button BtnAddSubAssembly;
+        private System.Windows.Forms.Button BtnRemoveSubAssembly;
+        private System.Windows.Forms.DataGridView DgvAssemblySubAssembly;
     }
 }
