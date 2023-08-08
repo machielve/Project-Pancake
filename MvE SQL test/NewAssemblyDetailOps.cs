@@ -46,6 +46,7 @@ namespace MvE_SQL_test
                             DataTable dt = new DataTable();
                             dt.Load(dr);
                             cmbOps.DataSource = dt;
+                            dt.DefaultView.Sort = "Name ASC";
                             cmbOps.DisplayMember = "Name";
                             cmbOps.ValueMember = "Operation_id";
 

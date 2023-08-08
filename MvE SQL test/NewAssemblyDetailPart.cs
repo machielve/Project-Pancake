@@ -40,6 +40,7 @@ namespace MvE_SQL_test
                         {
                             DataTable dt = new DataTable();
                             dt.Load(dr);
+                            dt.DefaultView.Sort = "Name ASC";
                             cmbPart.DataSource = dt;
                             cmbPart.DisplayMember = "Name";
                             cmbPart.ValueMember = "Part_id";

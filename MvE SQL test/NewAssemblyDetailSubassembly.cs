@@ -46,6 +46,7 @@ namespace MvE_SQL_test
                             DataTable dt = new DataTable();
                             dt.Load(dr);
                             cmbSubs.DataSource = dt;
+                            dt.DefaultView.Sort = "Name ASC";
                             cmbSubs.DisplayMember = "Name";
                             cmbSubs.ValueMember = "Assembly_id";
 
