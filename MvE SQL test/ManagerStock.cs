@@ -28,7 +28,19 @@ namespace MvE_SQL_test
             using (MySqlConnection connection = new MySqlConnection(connectionstring))
             {
                 // mysql string StockIn
-                const string mysqlString20 = "SELECT * FROM Victoriam.T_PARTIN";
+                const string mysqlString20 =    "SELECT Quantity, "+
+                                                "T_PART.Name," +
+                                                "T_RELATION.Name, " +
+                                                "JobOrder, " +
+                                                "PurchaseOrderNumber, " +
+                                                "TotalPrice, " +
+                                                "Received, " +
+                                                "Locked, " +
+                                                "PartIn_id " +
+
+                                                "FROM Victoriam.T_PARTIN " +
+                                                "LEFT JOIN Victoriam.T_PART       ON Victoriam.T_PARTIN.Part        =Victoriam.T_PART.Part_id "+
+                                                "LEFT JOIN Victoriam.T_RELATION   ON Victoriam.T_PARTIN.Relation    =Victoriam.T_RELATION.Relation_id "; 
                 using (MySqlCommand mysqlcommand = new MySqlCommand(mysqlString20, connection))
                 {
                     try
@@ -39,6 +51,7 @@ namespace MvE_SQL_test
                         {
                             DataTable dt = new DataTable();
                             dt.Load(dr);
+                            dt.DefaultView.Sort = "PartIn_id DESC";
                             this.DgvStockIn.DataSource = dt;
                             dr.Close();
                         }

@@ -21,10 +21,7 @@ namespace MvE_SQL_test
 
         private void Navigation_Load(object sender, EventArgs e)
         {
-            RefreshUnits();
-            RefreshMaterial();
-            RefreshRelations();
-            RefreshOperatons();
+            
 
         }
 
@@ -57,6 +54,10 @@ namespace MvE_SQL_test
                         connection.Open();
                         ConnectedBox.Checked = true;
                         MessageBox.Show("Connected to database");
+                        RefreshUnits();
+                        RefreshMaterial();
+                        RefreshRelations();
+                        RefreshOperatons();
                         return;
                     }
                     catch 

@@ -57,6 +57,7 @@ namespace MvE_SQL_test
             // 
             this.DgvStock.AllowUserToAddRows = false;
             this.DgvStock.AllowUserToDeleteRows = false;
+            this.DgvStock.BackgroundColor = System.Drawing.SystemColors.Control;
             this.DgvStock.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.DgvStock.Location = new System.Drawing.Point(165, 38);
             this.DgvStock.Name = "DgvStock";
@@ -78,6 +79,7 @@ namespace MvE_SQL_test
             // 
             this.DgvStockIn.AllowUserToAddRows = false;
             this.DgvStockIn.AllowUserToDeleteRows = false;
+            this.DgvStockIn.BackgroundColor = System.Drawing.SystemColors.Control;
             this.DgvStockIn.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.DgvStockIn.Location = new System.Drawing.Point(165, 340);
             this.DgvStockIn.Name = "DgvStockIn";
@@ -89,6 +91,7 @@ namespace MvE_SQL_test
             // 
             this.DgvStockOut.AllowUserToAddRows = false;
             this.DgvStockOut.AllowUserToDeleteRows = false;
+            this.DgvStockOut.BackgroundColor = System.Drawing.SystemColors.Control;
             this.DgvStockOut.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.DgvStockOut.Location = new System.Drawing.Point(165, 550);
             this.DgvStockOut.Name = "DgvStockOut";
