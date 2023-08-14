@@ -20,6 +20,22 @@ namespace MvE_SQL_test
         }
 
         public static string ConnString { get; set; }
+        private void ManagerStock_Load(object sender, EventArgs e)
+        {
+
+            RefreshStock();
+            RefreshPartIN();
+            RefreshPartOUT();
+
+        }
+        private void BtnFinnish_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
+        private void BtnLoadStock_Click(object sender, EventArgs e)
+        {
+            RefreshStock();
+        }
 
         public void RefreshPartIN()
         {
@@ -67,7 +83,6 @@ namespace MvE_SQL_test
                 }
             }
         }
-
         public void RefreshPartOUT()
         {
             // Create the connection.
@@ -101,8 +116,6 @@ namespace MvE_SQL_test
                 }
             }
         }
-
-
         public void RefreshStock()
         {
             // Create the connection.
@@ -139,21 +152,14 @@ namespace MvE_SQL_test
             }
 
         }
+        
+        
 
-        private void BtnFinnish_Click(object sender, EventArgs e)
-        {
-            this.Close();
-        }
 
-        private void BtnLoadStock_Click(object sender, EventArgs e)
-        {
-            RefreshStock();
-        }
 
-        private void BtnReceiveStock_Click(object sender, EventArgs e)
-        {
-            
-        }
+
+
+        
 
         private void BtnStockIn_Click(object sender, EventArgs e)
         {
@@ -164,6 +170,14 @@ namespace MvE_SQL_test
             frm.Show();
 
         }
+        private void BtnReceiveStock_Click(object sender, EventArgs e)
+        {
+
+        }
+        private void BtnCreatePart_Click(object sender, EventArgs e)
+        {
+
+        }
 
         public void NewPartIn_Formclosing(object sender, EventArgs e)
         {
@@ -172,13 +186,6 @@ namespace MvE_SQL_test
 
         }
 
-        private void ManagerStock_Load(object sender, EventArgs e)
-        {
-
-            RefreshStock();
-            RefreshPartIN();
-            RefreshPartOUT();
-
-        }
+        
     }
 }

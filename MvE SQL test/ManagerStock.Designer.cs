@@ -136,6 +136,7 @@ namespace MvE_SQL_test
             this.BtnCreatePart.TabIndex = 15;
             this.BtnCreatePart.Text = "Make part";
             this.BtnCreatePart.UseVisualStyleBackColor = true;
+            this.BtnCreatePart.Click += new System.EventHandler(this.BtnCreatePart_Click);
             // 
             // ManagerStock
             // 
