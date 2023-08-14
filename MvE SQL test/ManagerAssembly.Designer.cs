@@ -177,7 +177,7 @@ namespace MvE_SQL_test
             this.BtnCreatePart.Name = "BtnCreatePart";
             this.BtnCreatePart.Size = new System.Drawing.Size(133, 23);
             this.BtnCreatePart.TabIndex = 17;
-            this.BtnCreatePart.Text = "Create part";
+            this.BtnCreatePart.Text = "Create new part";
             this.BtnCreatePart.UseVisualStyleBackColor = true;
             this.BtnCreatePart.Click += new System.EventHandler(this.BtnCreatePart_Click);
             // 
@@ -235,7 +235,7 @@ namespace MvE_SQL_test
             this.BtnLinkPart.Name = "BtnLinkPart";
             this.BtnLinkPart.Size = new System.Drawing.Size(134, 23);
             this.BtnLinkPart.TabIndex = 23;
-            this.BtnLinkPart.Text = "Link Part";
+            this.BtnLinkPart.Text = "Link existing part";
             this.BtnLinkPart.UseVisualStyleBackColor = true;
             this.BtnLinkPart.Click += new System.EventHandler(this.BtnLinkPart_Click);
             // 
