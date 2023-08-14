@@ -118,7 +118,7 @@ namespace MvE_SQL_test
                 decimal cost = 0;
                 decimal weight = 0;
 
-                string mysqlString = "SELECT Price, Part FROM Victoriam.T_PARTSUPPLIER WHERE Part = ";
+                string mysqlString = "SELECT Price, Part FROM Victoriam.T_PARTRELATION WHERE Part = ";
                 string mysqlString2 = mysqlString + PartID.ToString();
                 using (MySqlCommand mysqlcommand = new MySqlCommand(mysqlString2, connection))
                 {

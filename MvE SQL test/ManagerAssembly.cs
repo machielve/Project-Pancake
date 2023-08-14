@@ -37,7 +37,6 @@ namespace MvE_SQL_test
                     try
                     {
                         connection.Open();
-
                         using (MySqlDataReader dr = mysqlcommand.ExecuteReader())
                         {
                             DataTable dt = new DataTable();
@@ -45,16 +44,19 @@ namespace MvE_SQL_test
                             this.DgvAssemblies.DataSource = dt;
                             dr.Close();
                         }
+                        
+                        
                     }
                     catch
                     {
                         MessageBox.Show("Assemblies could not be loaded");
                     }
-                    finally
+                   finally
                     {
                         connection.Close();
                         DgvAssemblies.AutoResizeColumns();
                     }
+                 
                 }
             }
 
@@ -487,8 +489,8 @@ namespace MvE_SQL_test
         {
             Assemblyupdate();
 
-            TotalRefresh();
-            AssemblyRefresh();
+          //  TotalRefresh();
+          //  AssemblyRefresh();
 
         }
 
