@@ -228,10 +228,10 @@ namespace MvE_SQL_test
                     }
 
                     //mysql string detail ops price
-                    string mysqlString10 = "SELECT SUM(CostPrice) FROM Victoriam.T_ASSEMBLYDETAILOPERATION WHERE Assembly = ";
-                    string mysqlString11 = AssemblyId;
-                    string mysqlString12 = mysqlString10 + mysqlString11;
-                    using (MySqlCommand mysqlcommand = new MySqlCommand(mysqlString12, connection))
+                    string mysqlString20 = "SELECT SUM(CostPrice) FROM Victoriam.T_ASSEMBLYDETAILOPERATION WHERE Assembly = ";
+                    string mysqlString21 = AssemblyId;
+                    string mysqlString22 = mysqlString20 + mysqlString21;
+                    using (MySqlCommand mysqlcommand = new MySqlCommand(mysqlString22, connection))
                     {
                         try
                         {
@@ -257,18 +257,77 @@ namespace MvE_SQL_test
                     }
 
 
+                    //mysql string detail subs price
+                    string mysqlString40 = "SELECT SUM(CostPrice) FROM Victoriam.T_ASSEMBLYDETAILSUBASSEMBLY WHERE Assembly = ";
+                    string mysqlString41 = AssemblyId;
+                    string mysqlString42 = mysqlString40 + mysqlString41;
+                    using (MySqlCommand mysqlcommand = new MySqlCommand(mysqlString42, connection))
+                    {
+                        try
+                        {
+                            connection.Open();
+                            mysqlcommand.ExecuteNonQuery();
+                            using (MySqlDataReader dr = mysqlcommand.ExecuteReader())
+                            {
+                                dr.Read();
+                                decimal Cost = Convert.ToDecimal(dr.GetValue(0).ToString());
+                                TotalCostprice += Cost;
+                                dr.Close();
+                            }
+
+                        }
+                        catch
+                        {
+                            MessageBox.Show("Assembly detail subassembly price could not be loaded");
+                        }
+                        finally
+                        {
+                            connection.Close();
+                        }
+                    }
+
+                    //mysql string detail subs weight
+                    string mysqlString50 = "SELECT SUM(Weight) FROM Victoriam.T_ASSEMBLYDETAILSUBASSEMBLY WHERE Assembly = ";
+                    string mysqlString51 = AssemblyId;
+                    string mysqlString52 = mysqlString50 + mysqlString51;
+                    using (MySqlCommand mysqlcommand = new MySqlCommand(mysqlString52, connection))
+                    {
+                        try
+                        {
+                            connection.Open();
+                            mysqlcommand.ExecuteNonQuery();
+                            using (MySqlDataReader dr = mysqlcommand.ExecuteReader())
+                            {
+                                dr.Read();
+                                decimal Weight = Convert.ToDecimal(dr.GetValue(0).ToString());
+                                TotalWeight += Weight;
+                                dr.Close();
+                            }
+
+                        }
+                        catch
+                        {
+                            MessageBox.Show("Assembly detail subassembly weight could not be loaded");
+                        }
+                        finally
+                        {
+                            connection.Close();
+                        }
+                    }
+
+
 
 
 
 
                     // mysql string assembly price
-                    string mysqlString20 = "UPDATE Victoriam.T_ASSEMBLY SET CostPrice = ";
-                    string mysqlString21 = TotalCostprice.ToString();
-                    string mysqlString22 = "WHERE Assembly_id = ";
-                    string mysqlString23 = AssemblyId.ToString();
-                    string mysqlString24 = mysqlString20 + mysqlString21 + mysqlString22 + mysqlString23;
+                    string mysqlString80 = "UPDATE Victoriam.T_ASSEMBLY SET CostPrice = ";
+                    string mysqlString81 = TotalCostprice.ToString();
+                    string mysqlString82 = "WHERE Assembly_id = ";
+                    string mysqlString83 = AssemblyId.ToString();
+                    string mysqlString84 = mysqlString80 + mysqlString81 + mysqlString82 + mysqlString83;
 
-                    using (MySqlCommand mysqlcommand = new MySqlCommand(mysqlString24, connection))
+                    using (MySqlCommand mysqlcommand = new MySqlCommand(mysqlString84, connection))
                     {
                         try
                         {
@@ -286,13 +345,13 @@ namespace MvE_SQL_test
                     }
 
                     // mysql string assembly weight
-                    string mysqlString40 = "UPDATE Victoriam.T_ASSEMBLY SET Weight = ";
-                    string mysqlString41 = TotalWeight.ToString();
-                    string mysqlString42 = "WHERE Assembly_id = ";
-                    string mysqlString43 = AssemblyId.ToString();
-                    string mysqlString44 = mysqlString40 + mysqlString41 + mysqlString42 + mysqlString43;
+                    string mysqlString90 = "UPDATE Victoriam.T_ASSEMBLY SET Weight = ";
+                    string mysqlString91 = TotalWeight.ToString();
+                    string mysqlString92 = "WHERE Assembly_id = ";
+                    string mysqlString93 = AssemblyId.ToString();
+                    string mysqlString94 = mysqlString90 + mysqlString91 + mysqlString92 + mysqlString93;
 
-                    using (MySqlCommand mysqlcommand = new MySqlCommand(mysqlString44, connection))
+                    using (MySqlCommand mysqlcommand = new MySqlCommand(mysqlString94, connection))
                     {
                         try
                         {
