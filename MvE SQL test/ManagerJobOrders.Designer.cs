@@ -49,6 +49,7 @@ namespace MvE_SQL_test
             // 
             this.DgvJobOrders.AllowUserToAddRows = false;
             this.DgvJobOrders.AllowUserToDeleteRows = false;
+            this.DgvJobOrders.BackgroundColor = System.Drawing.SystemColors.Control;
             this.DgvJobOrders.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.DgvJobOrders.Location = new System.Drawing.Point(165, 38);
             this.DgvJobOrders.Name = "DgvJobOrders";

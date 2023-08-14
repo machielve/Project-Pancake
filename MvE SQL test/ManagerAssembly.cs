@@ -24,8 +24,7 @@ namespace MvE_SQL_test
         public static string ConnString { get; set; }
 
         public void AssemblyRefresh()
-        {
-            
+        {            
             // Create the connection.
             string connectionstring = ConnString;
             using (MySqlConnection connection = new MySqlConnection(connectionstring))
@@ -44,13 +43,13 @@ namespace MvE_SQL_test
                             this.DgvAssemblies.DataSource = dt;
                             dr.Close();
                         }
-                        
-                        
+
                     }
                     catch
                     {
                         MessageBox.Show("Assemblies could not be loaded");
                     }
+
                    finally
                     {
                         connection.Close();
@@ -256,6 +255,9 @@ namespace MvE_SQL_test
                             connection.Close();
                         }
                     }
+
+
+
 
 
 
@@ -640,12 +642,12 @@ namespace MvE_SQL_test
             DataGridViewRow SelectedRow = DgvAssemblySubAssembly.Rows[selectedrowindex];
             string AssemblySubId = Convert.ToString(SelectedRow.Cells["AssemblyDetailSubAssembly_id"].Value);
 
-            if (DgvAssemblyOps.SelectedRows.Count == 0)
+            if (DgvAssemblySubAssembly.SelectedRows.Count == 0)
             {
                 MessageBox.Show("No subassembly selected");
             }
 
-            else if (DgvAssemblyOps.SelectedRows.Count == 1)
+            else if (DgvAssemblySubAssembly.SelectedRows.Count == 1)
             {
                 // Create the connection.
                 string connectionstring = ConnString;

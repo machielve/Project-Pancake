@@ -37,6 +37,8 @@ namespace MvE_SQL_test
             this.label1 = new System.Windows.Forms.Label();
             this.cmbSubs = new System.Windows.Forms.ComboBox();
             this.BtnFinnish = new System.Windows.Forms.Button();
+            this.ChboxPhantom = new System.Windows.Forms.CheckBox();
+            this.label4 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.countSubs)).BeginInit();
             this.SuspendLayout();
             // 
@@ -111,11 +113,31 @@ namespace MvE_SQL_test
             this.BtnFinnish.UseVisualStyleBackColor = true;
             this.BtnFinnish.Click += new System.EventHandler(this.BtnFinnish_Click);
             // 
+            // ChboxPhantom
+            // 
+            this.ChboxPhantom.AutoSize = true;
+            this.ChboxPhantom.Location = new System.Drawing.Point(100, 104);
+            this.ChboxPhantom.Name = "ChboxPhantom";
+            this.ChboxPhantom.Size = new System.Drawing.Size(15, 14);
+            this.ChboxPhantom.TabIndex = 33;
+            this.ChboxPhantom.UseVisualStyleBackColor = true;
+            // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.Location = new System.Drawing.Point(12, 105);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(49, 13);
+            this.label4.TabIndex = 34;
+            this.label4.Text = "Phantom";
+            // 
             // NewAssemblyDetailSubassembly
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(374, 258);
+            this.Controls.Add(this.label4);
+            this.Controls.Add(this.ChboxPhantom);
             this.Controls.Add(this.txtAssemblyID);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.countSubs);
@@ -143,5 +165,7 @@ namespace MvE_SQL_test
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.ComboBox cmbSubs;
         private System.Windows.Forms.Button BtnFinnish;
+        private System.Windows.Forms.CheckBox ChboxPhantom;
+        private System.Windows.Forms.Label label4;
     }
 }

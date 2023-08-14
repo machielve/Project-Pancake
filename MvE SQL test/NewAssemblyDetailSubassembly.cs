@@ -68,14 +68,22 @@ namespace MvE_SQL_test
             int SubID = Convert.ToInt32(cmbSubs.SelectedValue.ToString());
             decimal SubQuantity = Convert.ToDecimal(countSubs.Value);
             string Subname = cmbSubs.Text;
+            int SubPhantom = 0;
+
+            if(ChboxPhantom.Checked == true)
+            {
+                SubPhantom = 1;
+
+            }
 
             // Create the connection.
             string connectionstring = ConnString;
             using (MySqlConnection connection = new MySqlConnection(connectionstring))
             {
                 decimal cost = 0;
+                decimal weight = 0;
 
-                string mysqlString = "SELECT Costprice, Name FROM Victoriam.T_ASSEMBLY WHERE Assembly_id = ";
+                string mysqlString = "SELECT Costprice, Name, Weight FROM Victoriam.T_ASSEMBLY WHERE Assembly_id = ";
                 string mysqlString2 = mysqlString + SubID.ToString();
                 using (MySqlCommand mysqlcommand = new MySqlCommand(mysqlString2, connection))
                 {
@@ -86,7 +94,9 @@ namespace MvE_SQL_test
                         {
                             dr.Read();
                             decimal price = Convert.ToDecimal(dr.GetValue(0).ToString());
+                            decimal weight1 = Convert.ToDecimal(dr.GetValue(0).ToString());
                             cost += price;
+                            weight += weight1;
                             dr.Close();
                         }
                     }
@@ -101,6 +111,7 @@ namespace MvE_SQL_test
                     msqlcommand.CommandType = CommandType.StoredProcedure;
 
                     decimal costprice = cost * SubQuantity;
+                    decimal Weight = weight * SubQuantity;
 
                     msqlcommand.Parameters.Add(new MySqlParameter("SubAssembly", MySqlDbType.Int32));
                     msqlcommand.Parameters["SubAssembly"].Value = AssemblyID;
@@ -120,6 +131,14 @@ namespace MvE_SQL_test
                     msqlcommand.Parameters["SubCostprice"].Precision = 10;
                     msqlcommand.Parameters["SubCostprice"].Scale = 2;
                     msqlcommand.Parameters["SubCostprice"].Value = costprice;
+
+                    msqlcommand.Parameters.Add(new MySqlParameter("SubWeight", MySqlDbType.Decimal));
+                    msqlcommand.Parameters["SubWeight"].Precision = 10;
+                    msqlcommand.Parameters["SubWeight"].Scale = 2;
+                    msqlcommand.Parameters["SubWeight"].Value = Weight;
+
+                    msqlcommand.Parameters.Add(new MySqlParameter("SubPhantom", MySqlDbType.Int32));
+                    msqlcommand.Parameters["SubPhantom"].Value = SubPhantom;
 
                     try
                     {
@@ -143,5 +162,7 @@ namespace MvE_SQL_test
             }
             this.Close();
         }
+
+
     }
 }
