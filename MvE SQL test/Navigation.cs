@@ -409,6 +409,9 @@ namespace MvE_SQL_test
             }
         }
 
-
+        private void BtnLoadMachines_Click(object sender, EventArgs e)
+        {
+            RefreshMachines();
+        }
     }
 }

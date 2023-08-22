@@ -537,6 +537,7 @@ namespace MvE_SQL_test
             this.BtnLoadMachines.TabIndex = 18;
             this.BtnLoadMachines.Text = "Load machines";
             this.BtnLoadMachines.UseVisualStyleBackColor = true;
+            this.BtnLoadMachines.Click += new System.EventHandler(this.BtnLoadMachines_Click);
             // 
             // BtnNewMachine
             // 
