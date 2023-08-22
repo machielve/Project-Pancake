@@ -56,6 +56,8 @@ namespace MvE_SQL_test
             this.label11 = new System.Windows.Forms.Label();
             this.label12 = new System.Windows.Forms.Label();
             this.cmbTrace = new System.Windows.Forms.ComboBox();
+            this.txtLastID = new System.Windows.Forms.TextBox();
+            this.label13 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDown1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtDrawingRevision)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.countRevision)).BeginInit();
@@ -85,7 +87,7 @@ namespace MvE_SQL_test
             // 
             // BtnAddAnotherUnit
             // 
-            this.BtnAddAnotherUnit.Location = new System.Drawing.Point(200, 473);
+            this.BtnAddAnotherUnit.Location = new System.Drawing.Point(200, 510);
             this.BtnAddAnotherUnit.Name = "BtnAddAnotherUnit";
             this.BtnAddAnotherUnit.Size = new System.Drawing.Size(139, 23);
             this.BtnAddAnotherUnit.TabIndex = 16;
@@ -95,7 +97,7 @@ namespace MvE_SQL_test
             // 
             // BtnNewUnit
             // 
-            this.BtnNewUnit.Location = new System.Drawing.Point(105, 404);
+            this.BtnNewUnit.Location = new System.Drawing.Point(105, 441);
             this.BtnNewUnit.Name = "BtnNewUnit";
             this.BtnNewUnit.Size = new System.Drawing.Size(234, 23);
             this.BtnNewUnit.TabIndex = 15;
@@ -105,7 +107,7 @@ namespace MvE_SQL_test
             // 
             // txtUnitID
             // 
-            this.txtUnitID.Location = new System.Drawing.Point(105, 378);
+            this.txtUnitID.Location = new System.Drawing.Point(105, 415);
             this.txtUnitID.Name = "txtUnitID";
             this.txtUnitID.ReadOnly = true;
             this.txtUnitID.Size = new System.Drawing.Size(234, 20);
@@ -114,7 +116,7 @@ namespace MvE_SQL_test
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(12, 381);
+            this.label2.Location = new System.Drawing.Point(12, 418);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(40, 13);
             this.label2.TabIndex = 13;
@@ -138,7 +140,7 @@ namespace MvE_SQL_test
             // 
             // BtnFinnish
             // 
-            this.BtnFinnish.Location = new System.Drawing.Point(12, 473);
+            this.BtnFinnish.Location = new System.Drawing.Point(12, 510);
             this.BtnFinnish.Name = "BtnFinnish";
             this.BtnFinnish.Size = new System.Drawing.Size(146, 23);
             this.BtnFinnish.TabIndex = 10;
@@ -314,11 +316,30 @@ namespace MvE_SQL_test
             this.cmbTrace.Size = new System.Drawing.Size(234, 21);
             this.cmbTrace.TabIndex = 36;
             // 
+            // txtLastID
+            // 
+            this.txtLastID.Location = new System.Drawing.Point(105, 389);
+            this.txtLastID.Name = "txtLastID";
+            this.txtLastID.ReadOnly = true;
+            this.txtLastID.Size = new System.Drawing.Size(234, 20);
+            this.txtLastID.TabIndex = 38;
+            // 
+            // label13
+            // 
+            this.label13.AutoSize = true;
+            this.label13.Location = new System.Drawing.Point(12, 392);
+            this.label13.Name = "label13";
+            this.label13.Size = new System.Drawing.Size(41, 13);
+            this.label13.TabIndex = 37;
+            this.label13.Text = "Last ID";
+            // 
             // NewPart
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(387, 508);
+            this.ClientSize = new System.Drawing.Size(387, 571);
+            this.Controls.Add(this.txtLastID);
+            this.Controls.Add(this.label13);
             this.Controls.Add(this.cmbTrace);
             this.Controls.Add(this.label12);
             this.Controls.Add(this.countRevision);
@@ -386,5 +407,7 @@ namespace MvE_SQL_test
         private System.Windows.Forms.Label label11;
         private System.Windows.Forms.Label label12;
         private System.Windows.Forms.ComboBox cmbTrace;
+        private System.Windows.Forms.TextBox txtLastID;
+        private System.Windows.Forms.Label label13;
     }
 }

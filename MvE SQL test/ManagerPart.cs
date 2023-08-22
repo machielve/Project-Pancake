@@ -32,7 +32,6 @@ namespace MvE_SQL_test
             {
                 // mysql string
                 const string mysqlString = "SELECT * FROM Victoriam.T_PART";
-
                 using (MySqlCommand mysqlcommand = new MySqlCommand(mysqlString, connection))
                 {
                     try
@@ -48,9 +47,11 @@ namespace MvE_SQL_test
                             dr.Close();
                         }
                     }
-                    catch
+                    catch (ArgumentOutOfRangeException argumentOutOfRangeException)
                     {
-                        MessageBox.Show("Parts could not be loaded");
+                        MessageBox.Show("Error: " + argumentOutOfRangeException.Message.ToString());
+                        // MessageBox.Show("Parts could not be loaded");
+
                     }
                     finally
                     {
@@ -148,13 +149,16 @@ namespace MvE_SQL_test
 
         public void DgvPart_SelectionChanged(object sender, EventArgs e)
         {
-            Int32 selectedrowindex = DgvParts.SelectedCells[0].RowIndex;
-            DataGridViewRow SelectedRow = DgvParts.Rows[selectedrowindex];
-            string PartID = Convert.ToString(SelectedRow.Cells["Part_id"].Value);
+            if (DgvParts.Focused)
+            {
+                Int32 selectedrowindex = DgvParts.SelectedCells[0].RowIndex;
+                DataGridViewRow SelectedRow = DgvParts.Rows[selectedrowindex];
+                string PartID = Convert.ToString(SelectedRow.Cells["Part_id"].Value);
 
-            txtPartID.Text = PartID;
+                txtPartID.Text = PartID;
 
-            RelationRefresh();
+                RelationRefresh();
+            }
 
         }
 

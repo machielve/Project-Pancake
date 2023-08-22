@@ -58,6 +58,7 @@ namespace MvE_SQL_test
                         RefreshMaterial();
                         RefreshRelations();
                         RefreshOperatons();
+                        RefreshMachines();
                         return;
                     }
                     catch 
@@ -176,6 +177,12 @@ namespace MvE_SQL_test
                     {
                         MessageBox.Show("Materials could not be loaded");
                     }
+                    finally
+                    {
+                        DgvMaterials.AutoResizeColumns();
+                        connection.Close();
+
+                    }
                 }
             }
 
@@ -228,6 +235,12 @@ namespace MvE_SQL_test
                     {
                         MessageBox.Show("Relations could not be loaded");
                     }
+                    finally
+                    {
+                        DgvRelations.AutoResizeColumns();
+                        connection.Close();
+
+                    }
                 }
             }
         }
@@ -249,6 +262,9 @@ namespace MvE_SQL_test
             RefreshRelations();
 
         }
+
+
+
 
 
         public void RefreshUnits()
@@ -278,6 +294,12 @@ namespace MvE_SQL_test
                     catch
                     {
                         MessageBox.Show("Units could not be loaded");
+                    }
+                    finally
+                    {
+                        DgvUnits.AutoResizeColumns();
+                        connection.Close();
+
                     }
                 }
             }
@@ -322,6 +344,7 @@ namespace MvE_SQL_test
                             dt.Load(dr);
                             dt.DefaultView.Sort = ("Name ASC");
                             this.DgvOperations.DataSource = dt;
+                            DgvOperations.AutoResizeColumns();
                             dr.Close();
                         }
                     }
@@ -329,6 +352,7 @@ namespace MvE_SQL_test
                     {
                         MessageBox.Show("Operatins could not be loaded");
                     }
+                    
                 }
             }
         }
@@ -350,6 +374,41 @@ namespace MvE_SQL_test
 
         }
 
-        
+
+        public void RefreshMachines()
+        {
+            // Create the connection.
+            string connectionstring = ConnectorString();
+            using (MySqlConnection connection = new MySqlConnection(connectionstring))
+            {
+                // mysql string
+                const string mysqlString = "SELECT * FROM Victoriam.T_MACHINE";
+
+                using (MySqlCommand mysqlcommand = new MySqlCommand(mysqlString, connection))
+                {
+                    try
+                    {
+                        connection.Open();
+
+                        using (MySqlDataReader dr = mysqlcommand.ExecuteReader())
+                        {
+                            DataTable dt = new DataTable();
+                            dt.Load(dr);
+                            dt.DefaultView.Sort = ("Name ASC");
+                            this.DgvMachines.DataSource = dt;
+                            DgvMachines.AutoResizeColumns();
+                            dr.Close();
+                        }
+                    }
+                    catch
+                    {
+                        MessageBox.Show("Machines could not be loaded");
+                    }
+                    
+                }
+            }
+        }
+
+
     }
 }

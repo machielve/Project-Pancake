@@ -36,24 +36,29 @@ namespace MvE_SQL_test
                     try
                     {
                         connection.Open();
+
                         using (MySqlDataReader dr = mysqlcommand.ExecuteReader())
                         {
                             DataTable dt = new DataTable();
                             dt.Load(dr);
+                            dt.DefaultView.Sort = ("Name ASC");
                             this.DgvAssemblies.DataSource = dt;
                             dr.Close();
                         }
 
                     }
-                    catch
+                    catch (ArgumentOutOfRangeException argumentOutOfRangeException)
                     {
-                        MessageBox.Show("Assemblies could not be loaded");
+                        MessageBox.Show("Error: "+ argumentOutOfRangeException.Message.ToString());
+                       // MessageBox.Show("Assemblies could not be loaded");
+                        
                     }
 
-                   finally
+                    finally
                     {
-                        connection.Close();
                         DgvAssemblies.AutoResizeColumns();
+                        connection.Close();
+
                     }
                  
                 }
@@ -401,14 +406,17 @@ namespace MvE_SQL_test
         }              
         public void DgvAssemblies_SelectionChanged(object sender, EventArgs e)
         {
-            Int32 selectedrowindex = DgvAssemblies.SelectedCells[0].RowIndex;
-            DataGridViewRow SelectedRow = DgvAssemblies.Rows[selectedrowindex];
-            string AssemblyId = Convert.ToString(SelectedRow.Cells["Assembly_id"].Value);
+            if (DgvAssemblies.Focused)
+            {
 
-            txtAssemblyID.Text = AssemblyId;
+                Int32 selectedrowindex = DgvAssemblies.SelectedCells[0].RowIndex;
+                DataGridViewRow SelectedRow = DgvAssemblies.Rows[selectedrowindex];
+                string AssemblyId = Convert.ToString(SelectedRow.Cells["Assembly_id"].Value);
 
+                txtAssemblyID.Text = AssemblyId;
 
-            TotalRefresh();
+                TotalRefresh();
+            }
         }
         private void BtnAssemblyLock_Click(object sender, EventArgs e)
         {

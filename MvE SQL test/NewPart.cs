@@ -27,9 +27,10 @@ namespace MvE_SQL_test
 
         public static string ConnString { get; set; }
 
+
         public NewPart()
         {
-            InitializeComponent();
+            InitializeComponent(); 
         }
 
         private void BtnFinnish_Click(object sender, EventArgs e)
@@ -37,8 +38,11 @@ namespace MvE_SQL_test
             this.Close();
         }
 
-        private void NewPart_Load(object sender, EventArgs e)
+        public void NewPart_Load(object sender, EventArgs e)
         {
+
+            int PartID;
+
             // Create the connection.
             string connectionstring = ConnString;
             using (MySqlConnection connection = new MySqlConnection(connectionstring))
@@ -184,6 +188,33 @@ namespace MvE_SQL_test
                     }
                 }
 
+                // mysql string types
+                const string mysqlString6 = "SELECT MAX(Part_id) FROM Victoriam.T_PART";
+                using (MySqlCommand mysqlcommand = new MySqlCommand(mysqlString6, connection))
+                {
+                    try
+                    {
+                        connection.Open();
+                        mysqlcommand.ExecuteNonQuery();
+                        using (MySqlDataReader dr = mysqlcommand.ExecuteReader())
+                        {
+                            dr.Read();
+                            PartID = Convert.ToInt32(dr.GetValue(0).ToString());
+                            txtLastID.Text = PartID.ToString();
+                            dr.Close();
+                        }
+                        connection.Close();
+                    }
+                    catch
+                    {
+                        MessageBox.Show("check could not be loaded");
+                    }
+                    finally
+                    {
+                        connection.Close();
+                    }
+                }
+
 
             }
 
@@ -192,6 +223,10 @@ namespace MvE_SQL_test
 
         private void BtnNewUnit_Click(object sender, EventArgs e)
         {
+            int LastID = Convert.ToInt32(txtLastID.Text);
+            int PnumberID = LastID + 1;
+            string Pnumber = PnumberID.ToString().PadLeft(6, '0');
+            string Partnumber = Pnumber.PadLeft(7, 'P');
             string PartName = txtPartName.Text;
             string PartMemo = txtPartMemo.Text;
             int Parttype = Convert.ToInt32(cmbPartType.SelectedValue);
@@ -211,6 +246,9 @@ namespace MvE_SQL_test
                 using (MySqlCommand msqlcommand = new MySqlCommand("uspNewPart", connection))
                 {
                     msqlcommand.CommandType = CommandType.StoredProcedure;
+
+                    msqlcommand.Parameters.Add(new MySqlParameter("PNumber", MySqlDbType.Text));
+                    msqlcommand.Parameters["PNumber"].Value = Partnumber;
 
                     msqlcommand.Parameters.Add(new MySqlParameter("PartName", MySqlDbType.Text));
                     msqlcommand.Parameters["PartName"].Value = PartName;
@@ -257,6 +295,7 @@ namespace MvE_SQL_test
                         msqlcommand.ExecuteNonQuery();
                         this.parsedUnitID = (int)msqlcommand.Parameters["PartID"].Value;
                         this.txtUnitID.Text = Convert.ToString(parsedUnitID);
+                        this.txtLastID.Text = Convert.ToString(parsedUnitID);
 
                     }
 

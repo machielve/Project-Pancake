@@ -68,6 +68,10 @@ namespace MvE_SQL_test
             this.DgvUnits = new System.Windows.Forms.DataGridView();
             this.BtnLoadUnits = new System.Windows.Forms.Button();
             this.BtnJobOrderManager = new System.Windows.Forms.Button();
+            this.tabMachines = new System.Windows.Forms.TabPage();
+            this.DgvMachines = new System.Windows.Forms.DataGridView();
+            this.BtnLoadMachines = new System.Windows.Forms.Button();
+            this.BtnNewMachine = new System.Windows.Forms.Button();
             this.Managers.SuspendLayout();
             this.GeneralSettings.SuspendLayout();
             this.tabOperations.SuspendLayout();
@@ -78,6 +82,8 @@ namespace MvE_SQL_test
             ((System.ComponentModel.ISupportInitialize)(this.DgvRelations)).BeginInit();
             this.tabUnits.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.DgvUnits)).BeginInit();
+            this.tabMachines.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.DgvMachines)).BeginInit();
             this.SuspendLayout();
             // 
             // label1
@@ -153,6 +159,7 @@ namespace MvE_SQL_test
             // 
             this.Managers.Appearance = System.Windows.Forms.TabAppearance.FlatButtons;
             this.Managers.Controls.Add(this.GeneralSettings);
+            this.Managers.Controls.Add(this.tabMachines);
             this.Managers.Controls.Add(this.tabOperations);
             this.Managers.Controls.Add(this.tabMaterials);
             this.Managers.Controls.Add(this.tabRelations);
@@ -339,7 +346,7 @@ namespace MvE_SQL_test
             this.DgvOperations.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.DgvOperations.Location = new System.Drawing.Point(136, 6);
             this.DgvOperations.Name = "DgvOperations";
-            this.DgvOperations.Size = new System.Drawing.Size(1144, 696);
+            this.DgvOperations.Size = new System.Drawing.Size(1144, 543);
             this.DgvOperations.TabIndex = 16;
             // 
             // BtnLoadOperations
@@ -497,6 +504,49 @@ namespace MvE_SQL_test
             this.BtnJobOrderManager.UseVisualStyleBackColor = true;
             this.BtnJobOrderManager.Click += new System.EventHandler(this.BtnJobOrderManager_Click);
             // 
+            // tabMachines
+            // 
+            this.tabMachines.Controls.Add(this.DgvMachines);
+            this.tabMachines.Controls.Add(this.BtnLoadMachines);
+            this.tabMachines.Controls.Add(this.BtnNewMachine);
+            this.tabMachines.Location = new System.Drawing.Point(4, 25);
+            this.tabMachines.Name = "tabMachines";
+            this.tabMachines.Padding = new System.Windows.Forms.Padding(3);
+            this.tabMachines.Size = new System.Drawing.Size(1302, 811);
+            this.tabMachines.TabIndex = 8;
+            this.tabMachines.Text = "Machines";
+            this.tabMachines.UseVisualStyleBackColor = true;
+            // 
+            // DgvMachines
+            // 
+            this.DgvMachines.AllowUserToAddRows = false;
+            this.DgvMachines.AllowUserToDeleteRows = false;
+            this.DgvMachines.AllowUserToOrderColumns = true;
+            this.DgvMachines.BackgroundColor = System.Drawing.SystemColors.Control;
+            this.DgvMachines.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.DgvMachines.Location = new System.Drawing.Point(136, 6);
+            this.DgvMachines.Name = "DgvMachines";
+            this.DgvMachines.Size = new System.Drawing.Size(1144, 543);
+            this.DgvMachines.TabIndex = 19;
+            // 
+            // BtnLoadMachines
+            // 
+            this.BtnLoadMachines.Location = new System.Drawing.Point(6, 6);
+            this.BtnLoadMachines.Name = "BtnLoadMachines";
+            this.BtnLoadMachines.Size = new System.Drawing.Size(124, 23);
+            this.BtnLoadMachines.TabIndex = 18;
+            this.BtnLoadMachines.Text = "Load machines";
+            this.BtnLoadMachines.UseVisualStyleBackColor = true;
+            // 
+            // BtnNewMachine
+            // 
+            this.BtnNewMachine.Location = new System.Drawing.Point(6, 35);
+            this.BtnNewMachine.Name = "BtnNewMachine";
+            this.BtnNewMachine.Size = new System.Drawing.Size(124, 23);
+            this.BtnNewMachine.TabIndex = 17;
+            this.BtnNewMachine.Text = "New machine";
+            this.BtnNewMachine.UseVisualStyleBackColor = true;
+            // 
             // Navigation
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -525,6 +575,8 @@ namespace MvE_SQL_test
             ((System.ComponentModel.ISupportInitialize)(this.DgvRelations)).EndInit();
             this.tabUnits.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.DgvUnits)).EndInit();
+            this.tabMachines.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.DgvMachines)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -570,6 +622,10 @@ namespace MvE_SQL_test
         private System.Windows.Forms.TextBox txtDatabse;
         private System.Windows.Forms.Button BtnConnectSQL;
         private System.Windows.Forms.CheckBox ConnectedBox;
+        private System.Windows.Forms.TabPage tabMachines;
+        private System.Windows.Forms.DataGridView DgvMachines;
+        private System.Windows.Forms.Button BtnLoadMachines;
+        private System.Windows.Forms.Button BtnNewMachine;
     }
 }
 
