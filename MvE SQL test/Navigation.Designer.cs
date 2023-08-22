@@ -526,7 +526,7 @@ namespace MvE_SQL_test
             this.DgvMachines.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.DgvMachines.Location = new System.Drawing.Point(136, 6);
             this.DgvMachines.Name = "DgvMachines";
-            this.DgvMachines.Size = new System.Drawing.Size(1144, 543);
+            this.DgvMachines.Size = new System.Drawing.Size(1144, 738);
             this.DgvMachines.TabIndex = 19;
             // 
             // BtnLoadMachines
