@@ -6,8 +6,8 @@
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
     <ProjectGuid>{8C642501-743D-4AE2-BBA3-06AE64EC8EE5}</ProjectGuid>
     <OutputType>WinExe</OutputType>
-    <RootNamespace>MvE_SQL_test</RootNamespace>
-    <AssemblyName>MvE SQL test</AssemblyName>
+    <RootNamespace>Project_Pancake_client</RootNamespace>
+    <AssemblyName>Project-Pancake client</AssemblyName>
     <TargetFrameworkVersion>v4.8</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
@@ -347,6 +347,7 @@
     <Compile Include="Properties\Resources.Designer.cs">
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
     </Compile>
     <EmbeddedResource Include="UpdatePart.resx">
       <DependentUpon>UpdatePart.cs</DependentUpon>
