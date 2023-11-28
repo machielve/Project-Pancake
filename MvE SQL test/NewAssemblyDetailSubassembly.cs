@@ -11,7 +11,7 @@ using MySql.Data;
 using MySql.Data.MySqlClient;
 
 
-namespace MvE_SQL_test
+namespace Project_pancake
 {
     public partial class NewAssemblyDetailSubassembly : Form
     {
@@ -70,7 +70,7 @@ namespace MvE_SQL_test
             string Subname = cmbSubs.Text;
             int SubPhantom = 0;
 
-            if(ChboxPhantom.Checked == true)
+            if (ChboxPhantom.Checked == true)
             {
                 SubPhantom = 1;
 

@@ -10,7 +10,7 @@ using System.Windows.Forms;
 using MySql.Data;
 using MySql.Data.MySqlClient;
 
-namespace MvE_SQL_test
+namespace Project_pancake
 {
     public partial class NewAssemblyDetailOps : Form
     {
@@ -73,9 +73,9 @@ namespace MvE_SQL_test
             string connectionstring = ConnString;
             using (MySqlConnection connection = new MySqlConnection(connectionstring))
             {
-                decimal cost=0;
+                decimal cost = 0;
 
-                string mysqlString = "SELECT Cost, Name FROM Victoriam.T_OPERATION WHERE Operation_id = " ;
+                string mysqlString = "SELECT Cost, Name FROM Victoriam.T_OPERATION WHERE Operation_id = ";
                 string mysqlString2 = mysqlString + OpsID.ToString();
                 using (MySqlCommand mysqlcommand = new MySqlCommand(mysqlString2, connection))
                 {
@@ -96,7 +96,7 @@ namespace MvE_SQL_test
                     }
                 }
 
-                    using (MySqlCommand msqlcommand = new MySqlCommand("uspNewAssemblyDetailOperation", connection))
+                using (MySqlCommand msqlcommand = new MySqlCommand("uspNewAssemblyDetailOperation", connection))
                 {
                     msqlcommand.CommandType = CommandType.StoredProcedure;
 
@@ -123,7 +123,7 @@ namespace MvE_SQL_test
 
                     try
                     {
-                       // connection.Open();
+                        // connection.Open();
 
                         msqlcommand.ExecuteNonQuery();
 

@@ -9,7 +9,7 @@
 //------------------------------------------------------------------------------
 
 
-namespace MvE_SQL_test.Properties
+namespace Project_pancake.Properties
 {
     /// <summary>
     ///   A strongly-typed resource class, for looking up localized strings, etc.

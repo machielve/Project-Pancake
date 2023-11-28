@@ -8,7 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace MvE_SQL_test
+namespace Project_pancake
 {
     public partial class CreatePart : Form
     {

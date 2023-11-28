@@ -10,7 +10,7 @@ using System.Windows.Forms;
 using MySql.Data;
 using MySql.Data.MySqlClient;
 
-namespace MvE_SQL_test
+namespace Project_pancake
 {
     public partial class NewOperation : Form
     {
@@ -83,9 +83,9 @@ namespace MvE_SQL_test
 
         private void BtnAddAnotherOperation_Click(object sender, EventArgs e)
         {
-                txtOperationName.Clear();
-                txtOperationID.Clear();
-                this.parsedOperationID = 0;
+            txtOperationName.Clear();
+            txtOperationID.Clear();
+            this.parsedOperationID = 0;
         }
 
         private void BtnNewOperation_Click(object sender, EventArgs e)
@@ -115,7 +115,7 @@ namespace MvE_SQL_test
                         msqlcommand.Parameters["OperationUnit"].Value = OperationUnit;
 
                         msqlcommand.Parameters.Add(new MySqlParameter("MaterialModification", MySqlDbType.Text));
-                        msqlcommand.Parameters["MaterialModification"].Value = txtMatMod.Text;                        
+                        msqlcommand.Parameters["MaterialModification"].Value = txtMatMod.Text;
 
                         msqlcommand.Parameters.Add(new MySqlParameter("OperationID", MySqlDbType.Int32));
                         msqlcommand.Parameters["OperationID"].Direction = ParameterDirection.Output;

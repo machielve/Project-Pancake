@@ -10,7 +10,7 @@ using System.Windows.Forms;
 using MySql.Data;
 using MySql.Data.MySqlClient;
 
-namespace MvE_SQL_test
+namespace Project_pancake
 {
     public partial class ManagerStock : Form
     {
@@ -44,7 +44,7 @@ namespace MvE_SQL_test
             using (MySqlConnection connection = new MySqlConnection(connectionstring))
             {
                 // mysql string StockIn
-                const string mysqlString20 =    "SELECT Quantity, "+
+                const string mysqlString20 = "SELECT Quantity, " +
                                                 "T_PART.Name," +
                                                 "T_RELATION.Name, " +
                                                 "JobOrder, " +
@@ -55,8 +55,8 @@ namespace MvE_SQL_test
                                                 "PartIn_id " +
 
                                                 "FROM Victoriam.T_PARTIN " +
-                                                "LEFT JOIN Victoriam.T_PART       ON Victoriam.T_PARTIN.Part        =Victoriam.T_PART.Part_id "+
-                                                "LEFT JOIN Victoriam.T_RELATION   ON Victoriam.T_PARTIN.Relation    =Victoriam.T_RELATION.Relation_id "; 
+                                                "LEFT JOIN Victoriam.T_PART       ON Victoriam.T_PARTIN.Part        =Victoriam.T_PART.Part_id " +
+                                                "LEFT JOIN Victoriam.T_RELATION   ON Victoriam.T_PARTIN.Relation    =Victoriam.T_RELATION.Relation_id ";
                 using (MySqlCommand mysqlcommand = new MySqlCommand(mysqlString20, connection))
                 {
                     try
@@ -148,22 +148,22 @@ namespace MvE_SQL_test
                     }
                 }
 
-                
+
             }
 
         }
-        
-        
 
 
 
 
 
-        
+
+
+
 
         private void BtnStockIn_Click(object sender, EventArgs e)
         {
-            string connectionstring = ConnString; 
+            string connectionstring = ConnString;
             Form frm = new NewPartIn();
             NewPartIn.ConnString = connectionstring;
             frm.FormClosing += new FormClosingEventHandler(this.NewPartIn_Formclosing);
@@ -186,6 +186,6 @@ namespace MvE_SQL_test
 
         }
 
-        
+
     }
 }

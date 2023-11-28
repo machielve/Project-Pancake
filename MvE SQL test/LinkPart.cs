@@ -10,7 +10,7 @@ using System.Windows.Forms;
 using MySql.Data;
 using MySql.Data.MySqlClient;
 
-namespace MvE_SQL_test
+namespace Project_pancake
 {
     public partial class LinkPart : Form
     {
@@ -192,7 +192,7 @@ namespace MvE_SQL_test
             int PartID = Convert.ToInt32(cmbPart.SelectedValue.ToString());
             int PartUnit = Convert.ToInt32(cmbPartUnit.SelectedValue.ToString());
             int Partmaterial = Convert.ToInt32(cmbMaterial.SelectedValue.ToString());
-            
+
             decimal PartWeight = Convert.ToDecimal(countAssemblyWeight.Value);
             string PartDrawing = txtDrawingNumber.Text.ToString();
             int PartDrawingRev = Convert.ToInt32(countDrawingRevision.Value);
@@ -210,7 +210,7 @@ namespace MvE_SQL_test
                     string MysqlString9 = MysqlString1 + PartID.ToString() + MysqlString2 + AssemblyID;
                     using (MySqlCommand msqlcommand = new MySqlCommand(MysqlString9, connection))
                     {
-                       
+
                         try
                         {
                             connection.Open();
@@ -230,7 +230,7 @@ namespace MvE_SQL_test
 
                     // Create command Part update
                     string MysqlString11 = PartWeight.ToString();
-                    string MysqlString10 = "UPDATE Victoriam.T_PART SET Weight = "+ MysqlString11;
+                    string MysqlString10 = "UPDATE Victoriam.T_PART SET Weight = " + MysqlString11;
 
                     string MysqlString21 = PartUnit.ToString();
                     string MysqlString20 = ",PartUnit = " + MysqlString21;
@@ -239,14 +239,14 @@ namespace MvE_SQL_test
                     string MysqlString30 = ",Material = " + MysqlString31;
 
                     string MysqlString41 = PartDrawing.ToString();
-                    string MysqlString40 = ",DrawingNumber = Null" ;
+                    string MysqlString40 = ",DrawingNumber = Null";
 
                     string MysqlString51 = PartDrawingRev.ToString();
-                    string MysqlString50 = ",DrawingRevision = " + MysqlString51; 
+                    string MysqlString50 = ",DrawingRevision = " + MysqlString51;
 
                     string MysqlString81 = PartID.ToString();
                     string MysqlString80 = " WHERE Part_id = " + MysqlString81;
-                    
+
 
                     string MysqlString90 = MysqlString10 + MysqlString20 + MysqlString30 + MysqlString40 + MysqlString50 + MysqlString80;
                     using (MySqlCommand msqlcommand = new MySqlCommand(MysqlString90, connection))

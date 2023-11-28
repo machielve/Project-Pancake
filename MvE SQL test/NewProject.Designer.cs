@@ -1,5 +1,5 @@
 ﻿
-namespace MvE_SQL_test
+namespace Project_pancake
 {
     partial class NewProject
     {

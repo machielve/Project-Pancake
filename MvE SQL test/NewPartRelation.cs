@@ -10,11 +10,11 @@ using System.Windows.Forms;
 using MySql.Data;
 using MySql.Data.MySqlClient;
 
-namespace MvE_SQL_test
+namespace Project_pancake
 {
     public partial class NewPartRelation : Form
     {
-        
+
 
         public NewPartRelation()
         {
@@ -66,7 +66,7 @@ namespace MvE_SQL_test
             txtPartID.Text = ManagerPart.PartID;
 
             RefreshRelations();
-            
+
         }
 
         private void BtnNewSupplier_Click(object sender, EventArgs e)
@@ -130,7 +130,7 @@ namespace MvE_SQL_test
 
         private void BtnCreateSupplier_Click(object sender, EventArgs e)
         {
-            string connectionstring = ConnString; 
+            string connectionstring = ConnString;
             Form frm = new NewRelation();
             NewRelation.ConnString = connectionstring;
             frm.FormClosing += new FormClosingEventHandler(this.NewRelation_Formclosing);

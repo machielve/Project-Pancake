@@ -10,7 +10,7 @@ using System.Windows.Forms;
 using MySql.Data;
 using MySql.Data.MySqlClient;
 
-namespace MvE_SQL_test
+namespace Project_pancake
 {
     public partial class NewPart : Form
     {
@@ -30,7 +30,7 @@ namespace MvE_SQL_test
 
         public NewPart()
         {
-            InitializeComponent(); 
+            InitializeComponent();
         }
 
         private void BtnFinnish_Click(object sender, EventArgs e)

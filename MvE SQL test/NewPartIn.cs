@@ -10,7 +10,7 @@ using System.Windows.Forms;
 using MySql.Data;
 using MySql.Data.MySqlClient;
 
-namespace MvE_SQL_test
+namespace Project_pancake
 {
     public partial class NewPartIn : Form
     {
@@ -136,7 +136,7 @@ namespace MvE_SQL_test
 
                     try
                     {
-                        connection.Open(); 
+                        connection.Open();
                         msqlcommand.ExecuteNonQuery();
                     }
                     catch

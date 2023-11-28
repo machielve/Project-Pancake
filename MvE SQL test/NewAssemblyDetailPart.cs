@@ -10,13 +10,13 @@ using System.Windows.Forms;
 using MySql.Data;
 using MySql.Data.MySqlClient;
 
-namespace MvE_SQL_test
+namespace Project_pancake
 {
     public partial class NewAssemblyDetailPart : Form
     {
-               
+
         public NewAssemblyDetailPart()
-        {       
+        {
             InitializeComponent();
         }
 
@@ -53,7 +53,7 @@ namespace MvE_SQL_test
                         MessageBox.Show("Parts could not be loaded");
                     }
                 }
-            }   
+            }
 
 
         }
@@ -129,7 +129,7 @@ namespace MvE_SQL_test
                         {
                             dr.Read();
                             decimal price = Convert.ToDecimal(dr.GetValue(0).ToString());
-                            cost += (price* PartQuantity);
+                            cost += (price * PartQuantity);
                             dr.Close();
                         }
                         connection.Close();
@@ -143,7 +143,7 @@ namespace MvE_SQL_test
                         connection.Close();
                     }
                 }
-            
+
 
                 string mysqlString5 = "SELECT Weight, Name FROM Victoriam.T_PART WHERE Part_id = ";
                 string mysqlString6 = mysqlString5 + PartID.ToString();
@@ -156,7 +156,7 @@ namespace MvE_SQL_test
                         {
                             dr.Read();
                             decimal Mass = Convert.ToDecimal(dr.GetValue(0).ToString());
-                            weight += (Mass* PartQuantity);
+                            weight += (Mass * PartQuantity);
                             dr.Close();
                         }
                         connection.Close();
@@ -222,7 +222,7 @@ namespace MvE_SQL_test
                 }
             }
             this.Close();
-            
+
 
         }
     }

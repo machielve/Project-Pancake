@@ -10,7 +10,7 @@ using System.Windows.Forms;
 using MySql.Data;
 using MySql.Data.MySqlClient;
 
-namespace MvE_SQL_test
+namespace Project_pancake
 {
     public partial class ManagerProject : Form
     {
@@ -23,7 +23,7 @@ namespace MvE_SQL_test
         public static string AssemblyID = "";
         public static string DetailID = "";
 
-        public static string ConnString { get; set;  }
+        public static string ConnString { get; set; }
 
         private void LoadContent()
         {
@@ -243,12 +243,12 @@ namespace MvE_SQL_test
 
 
 
-        
 
-        
 
-        
-        
+
+
+
+
 
         private void BtnSeeContent_Click(object sender, EventArgs e)
         {
@@ -258,7 +258,7 @@ namespace MvE_SQL_test
         public void BtnAddPart_Click(object sender, EventArgs e)
         {
             string DetailID = txtDetailID.Text;
-            string connectionstring = ConnString; 
+            string connectionstring = ConnString;
             Form frm = new NewJobOrderPart();
             NewJobOrderPart.ConnString = connectionstring;
             frm.FormClosing += new FormClosingEventHandler(this.NewJobOrderPart_Formclosing);

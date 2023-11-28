@@ -10,7 +10,7 @@ using System.Windows.Forms;
 using MySql.Data;
 using MySql.Data.MySqlClient;
 
-namespace MvE_SQL_test
+namespace Project_pancake
 {
     public partial class Navigation : Form
     {
@@ -21,7 +21,7 @@ namespace MvE_SQL_test
 
         private void Navigation_Load(object sender, EventArgs e)
         {
-            
+
 
         }
 
@@ -47,7 +47,7 @@ namespace MvE_SQL_test
 
             if (txtIPAdres.Text != "")
             {
-               using (MySqlConnection connection = new MySqlConnection(connectionstring))
+                using (MySqlConnection connection = new MySqlConnection(connectionstring))
                 {
                     try
                     {
@@ -61,7 +61,7 @@ namespace MvE_SQL_test
                         RefreshMachines();
                         return;
                     }
-                    catch 
+                    catch
                     {
                         MessageBox.Show("Could not connect to database");
                         ConnectedBox.Checked = false;
@@ -95,7 +95,7 @@ namespace MvE_SQL_test
                 //example
             }
         }
-        
+
 
 
         private void BtnProjectManager_Click(object sender, EventArgs e)
@@ -108,7 +108,7 @@ namespace MvE_SQL_test
         }
         private void BtnAssemblyManager_Click(object sender, EventArgs e)
         {
-            string connectionstring = ConnectorString(); 
+            string connectionstring = ConnectorString();
             Form frm = new ManagerAssembly();
             ManagerAssembly.ConnString = connectionstring;
             frm.Show();
@@ -116,7 +116,7 @@ namespace MvE_SQL_test
         }
         private void BtnPartManager_Click(object sender, EventArgs e)
         {
-            string connectionstring = ConnectorString(); 
+            string connectionstring = ConnectorString();
             Form frm = new ManagerPart();
             ManagerPart.ConnString = connectionstring;
             frm.Show();
@@ -124,7 +124,7 @@ namespace MvE_SQL_test
         }
         private void BtnStockManager_Click(object sender, EventArgs e)
         {
-            string connectionstring = ConnectorString(); 
+            string connectionstring = ConnectorString();
             Form frm = new ManagerStock();
             ManagerStock.ConnString = connectionstring;
             frm.Show();
@@ -132,7 +132,7 @@ namespace MvE_SQL_test
         }
         private void BtnJobOrderManager_Click(object sender, EventArgs e)
         {
-            string connectionstring = ConnectorString(); 
+            string connectionstring = ConnectorString();
             Form frm = new ManagerJobOrders();
             ManagerJobOrders.ConnString = connectionstring;
             frm.Show();
@@ -189,7 +189,7 @@ namespace MvE_SQL_test
         }
         private void BtnNewMaterial_Click(object sender, EventArgs e)
         {
-            string connectionstring = ConnectorString(); 
+            string connectionstring = ConnectorString();
             Form frm = new NewMaterial();
             NewMaterial.ConnString = connectionstring;
             frm.FormClosing += new FormClosingEventHandler(this.NewMaterial_Formclosing);
@@ -246,7 +246,7 @@ namespace MvE_SQL_test
         }
         private void BtnNewRelation_Click(object sender, EventArgs e)
         {
-            string connectionstring = ConnectorString(); 
+            string connectionstring = ConnectorString();
             Form frm = new NewRelation();
             NewRelation.ConnString = connectionstring;
             frm.FormClosing += new FormClosingEventHandler(this.NewRelation_Formclosing);
@@ -306,7 +306,7 @@ namespace MvE_SQL_test
         }
         private void BtnAddUnit_Click(object sender, EventArgs e)
         {
-            string connectionstring = ConnectorString(); 
+            string connectionstring = ConnectorString();
             Form frm = new NewUnit();
             NewUnit.ConnString = connectionstring;
             frm.FormClosing += new FormClosingEventHandler(this.NewUnit_Formclosing);
@@ -352,13 +352,13 @@ namespace MvE_SQL_test
                     {
                         MessageBox.Show("Operatins could not be loaded");
                     }
-                    
+
                 }
             }
         }
         private void BtnNewOperation_Click(object sender, EventArgs e)
         {
-            string connectionstring = ConnectorString(); 
+            string connectionstring = ConnectorString();
             Form frm = new NewOperation();
             NewOperation.ConnString = connectionstring;
             frm.FormClosing += new FormClosingEventHandler(this.NewOperation_Formclosing);
@@ -404,7 +404,7 @@ namespace MvE_SQL_test
                     {
                         MessageBox.Show("Machines could not be loaded");
                     }
-                    
+
                 }
             }
         }

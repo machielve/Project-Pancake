@@ -4,7 +4,7 @@ using System.Linq;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace MvE_SQL_test
+namespace Project_pancake
 {
     static class Program
     {

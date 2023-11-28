@@ -13,7 +13,7 @@ using MySql.Data;
 using MySql.Data.MySqlClient;
 
 
-namespace MvE_SQL_test
+namespace Project_pancake
 {
     public partial class NewUnit : Form
     {

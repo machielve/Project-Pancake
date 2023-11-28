@@ -10,7 +10,7 @@ using System.Windows.Forms;
 using MySql.Data;
 using MySql.Data.MySqlClient;
 
-namespace MvE_SQL_test
+namespace Project_pancake
 {
     public partial class ManagerPart : Form
     {
@@ -23,7 +23,7 @@ namespace MvE_SQL_test
         public static string PartID = "";
         public static string ConnString { get; set; }
 
-        
+
         public void PartRefresh()
         {
             // Create the connection.
@@ -42,7 +42,7 @@ namespace MvE_SQL_test
                         {
                             DataTable dt = new DataTable();
                             dt.Load(dr);
-                            dt.DefaultView.Sort = ("Name ASC");                            
+                            dt.DefaultView.Sort = ("Name ASC");
                             this.DgvParts.DataSource = dt;
                             dr.Close();
                         }
@@ -61,7 +61,7 @@ namespace MvE_SQL_test
                 }
             }
 
-        }        
+        }
         public void RelationRefresh()
         {
 
@@ -72,7 +72,7 @@ namespace MvE_SQL_test
                 MessageBox.Show("No part selected");
             }
 
-            else 
+            else
             {
                 // Create the connection.
                 string connectionstring = ConnString;
@@ -83,7 +83,7 @@ namespace MvE_SQL_test
                                                     "T_PART.Name, " +
                                                     "T_RELATION.Name, " +
                                                     "Price ";
-                    string mysqlString2 = "FROM Victoriam.T_PARTRELATION "; 
+                    string mysqlString2 = "FROM Victoriam.T_PARTRELATION ";
                     string mysqlString3 = "LEFT JOIN Victoriam.T_PART       ON Victoriam.T_PARTRELATION.Part        =Victoriam.T_PART.Part_id ";
                     string mysqlString4 = "LEFT JOIN Victoriam.T_RELATION   ON Victoriam.T_PARTRELATION.Relation    =Victoriam.T_RELATION.Relation_id ";
 
@@ -130,11 +130,11 @@ namespace MvE_SQL_test
 
         private void BtnLoadParts_Click(object sender, EventArgs e)
         {
-            PartRefresh();            
+            PartRefresh();
         }
         private void BtnNewPart_Click(object sender, EventArgs e)
         {
-            string connectionstring = ConnString; 
+            string connectionstring = ConnString;
             Form frm = new NewPart();
             NewPart.ConnString = connectionstring;
             frm.FormClosing += new FormClosingEventHandler(this.NewPart_Formclosing);
@@ -162,7 +162,7 @@ namespace MvE_SQL_test
 
         }
 
-        
+
 
         private void BtnAddRelation_Click(object sender, EventArgs e)
         {
@@ -172,7 +172,7 @@ namespace MvE_SQL_test
             string PartId = Convert.ToString(SelectedRow.Cells["Part_id"].Value);
             PartID = PartId;
 
-            string connectionstring = ConnString; 
+            string connectionstring = ConnString;
             Form frm = new NewPartRelation();
             NewPartRelation.ConnString = connectionstring;
             frm.FormClosing += new FormClosingEventHandler(this.NewPartRelation_Formclosing);

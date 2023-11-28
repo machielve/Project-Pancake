@@ -10,7 +10,7 @@ using System.Windows.Forms;
 using MySql.Data;
 using MySql.Data.MySqlClient;
 
-namespace MvE_SQL_test
+namespace Project_pancake
 {
     public partial class ManagerAssembly : Form
     {
@@ -24,7 +24,7 @@ namespace MvE_SQL_test
         public static string ConnString { get; set; }
 
         public void AssemblyRefresh()
-        {            
+        {
             // Create the connection.
             string connectionstring = ConnString;
             using (MySqlConnection connection = new MySqlConnection(connectionstring))
@@ -49,9 +49,9 @@ namespace MvE_SQL_test
                     }
                     catch (ArgumentOutOfRangeException argumentOutOfRangeException)
                     {
-                        MessageBox.Show("Error: "+ argumentOutOfRangeException.Message.ToString());
-                       // MessageBox.Show("Assemblies could not be loaded");
-                        
+                        MessageBox.Show("Error: " + argumentOutOfRangeException.Message.ToString());
+                        // MessageBox.Show("Assemblies could not be loaded");
+
                     }
 
                     finally
@@ -60,7 +60,7 @@ namespace MvE_SQL_test
                         connection.Close();
 
                     }
-                 
+
                 }
             }
 
@@ -68,14 +68,14 @@ namespace MvE_SQL_test
         public void TotalRefresh()
         {
 
-            string AssemblyId=(txtAssemblyID.Text);
+            string AssemblyId = (txtAssemblyID.Text);
 
             if (AssemblyId == "")
             {
                 MessageBox.Show("No assembly selected");
             }
 
-            else 
+            else
             {
                 // Create the connection.
                 string connectionstring = ConnString;
@@ -376,7 +376,7 @@ namespace MvE_SQL_test
                 }
             }
 
-           
+
         }
 
         private void AssemblyManager_Load(object sender, EventArgs e)
@@ -399,11 +399,11 @@ namespace MvE_SQL_test
         }
         private void BtnNewAssembly_Click(object sender, EventArgs e)
         {
-            string connectionstring = ConnString; 
+            string connectionstring = ConnString;
             Form frm = new NewAssembly();
             NewAssembly.ConnString = connectionstring;
             frm.Show();
-        }              
+        }
         public void DgvAssemblies_SelectionChanged(object sender, EventArgs e)
         {
             if (DgvAssemblies.Focused)
@@ -427,7 +427,7 @@ namespace MvE_SQL_test
                 MessageBox.Show("No assembly selected");
             }
 
-            else 
+            else
             {
                 // Create the connection.
                 string connectionstring = ConnString;
@@ -455,7 +455,7 @@ namespace MvE_SQL_test
                     using (MySqlCommand mysqlcommand = new MySqlCommand(mysqlString5, connection))
                     {
                         try
-                        {                            
+                        {
                             mysqlcommand.ExecuteNonQuery();
                         }
                         catch
@@ -558,8 +558,8 @@ namespace MvE_SQL_test
         {
             Assemblyupdate();
 
-          //  TotalRefresh();
-          //  AssemblyRefresh();
+            //  TotalRefresh();
+            //  AssemblyRefresh();
 
         }
 
@@ -571,7 +571,7 @@ namespace MvE_SQL_test
         {
             string AssemblyId = txtAssemblyID.Text;
             AssemblyID = AssemblyId;
-            string connectionstring = ConnString; 
+            string connectionstring = ConnString;
             Form frm = new NewAssemblyDetailPart();
             NewAssemblyDetailPart.ConnString = connectionstring;
             frm.FormClosing += new FormClosingEventHandler(this.NewAssemblyDetailPart_Formclosing);
@@ -609,7 +609,7 @@ namespace MvE_SQL_test
                         {
                             MessageBox.Show("Part could not be removed");
                         }
-                    }                   
+                    }
 
                 }
             }
@@ -683,7 +683,7 @@ namespace MvE_SQL_test
             }
 
             TotalRefresh();
-        }            
+        }
         public void NewAssemblyDetailOperation_Formclosing(object sender, EventArgs e)
         {
             AssemblyRefresh();
@@ -763,7 +763,7 @@ namespace MvE_SQL_test
         {
             string AssemblyId = txtAssemblyID.Text;
             AssemblyID = AssemblyId;
-            string connectionstring = ConnString; 
+            string connectionstring = ConnString;
             Form frm = new LinkPart();
             LinkPart.ConnString = connectionstring;
             frm.FormClosing += new FormClosingEventHandler(this.LinkPart_Formclosing);
@@ -775,12 +775,12 @@ namespace MvE_SQL_test
             AssemblyRefresh();
             TotalRefresh();
 
-        }        
+        }
         private void BtnCreatePart_Click(object sender, EventArgs e)
         {
 
         }
 
-        
+
     }
 }
