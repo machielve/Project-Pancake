@@ -3,7 +3,7 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 16
 VisualStudioVersion = 16.0.32602.291
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Project-Pancake client", "MvE SQL test\Project-Pancake client.csproj", "{8C642501-743D-4AE2-BBA3-06AE64EC8EE5}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Project-Pancake client", "Main client\Project-Pancake client.csproj", "{8C642501-743D-4AE2-BBA3-06AE64EC8EE5}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
