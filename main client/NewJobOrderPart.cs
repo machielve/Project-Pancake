@@ -32,7 +32,7 @@ namespace Project_pancake
             txtProjectDetailID.Text = ManagerProject.DetailID;
 
             // Create the connection.
-            string connectionstring = Properties.Settings.Default.connString;
+            string connectionstring = ConnString;
             using (MySqlConnection connection = new MySqlConnection(connectionstring))
             {
                 // mysql string parts

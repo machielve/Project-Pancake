@@ -52,7 +52,7 @@ namespace Project_pancake
             if (IsUnitNameValid())
             {
                 // Create the connection.
-                string connectionstring = Properties.Settings.Default.connString;
+                string connectionstring = ConnString;
                 using (MySqlConnection connection = new MySqlConnection(connectionstring))
                 {
                     using (MySqlCommand msqlcommand = new MySqlCommand("uspNewMaterial", connection))
